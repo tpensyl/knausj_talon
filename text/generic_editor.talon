@@ -107,7 +107,7 @@ clear line:
 clear left:
     key(backspace)
 
-clear right:
+(clear right | del):
     key(delete)
 
 clear up:
