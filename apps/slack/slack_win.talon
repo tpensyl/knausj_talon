@@ -5,6 +5,10 @@ app: slack
 -
 tag(): user.messaging
 tag(): user.emoji
+
+# Custom Additions
+(slack | lack) search: key("ctrl-g")
+
 # Workspaces
 workspace <number>: key("ctrl-{number}")
 # Channel
