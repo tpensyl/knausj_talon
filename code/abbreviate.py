@@ -6,6 +6,25 @@ mod = Module()
 mod.list("abbreviation", desc="Common abbreviation")
 
 abbreviations = {
+    "Monday": "Mon",
+    "Tuesday": "Tue",
+    "Wednesday": "Wed",
+    "Thursday": "Thu",
+    "Friday": "Fr",
+    "Saturday": "Sat",
+    "Sunday": "Sun",
+    "January": "Jan",
+    "february": "Feb",
+    "March": "Mar",
+    "April": "Apr",
+    "may": "May",
+    "June": "Jun",
+    "July": "Jul",
+    "August": "Aug",
+    "September": "Sep",
+    "October": "Oct",
+    "November": "Nov",
+    "December": "Dec",
     "address": "addr",
     "administrator": "admin",
     "administrators": "admins",
@@ -198,6 +217,7 @@ abbreviations = {
     "text": "txt",
     "time of check time of use": "toctou",
     "token": "tok",
+    "too long didn't read": "TDLR",
     "ultimate": "ulti",
     "unique id": "uuid",
     "user": "usr",
@@ -210,7 +230,6 @@ abbreviations = {
     "visual": "vis",
     "visual studio": "msvc",
     "web": "www",
-    "what the fuck": "wtf",
     "window": "win",
 }
 
