@@ -1,7 +1,8 @@
 tag: terminal
 -
-
+VPN: "vpn\n"
 lisa <user.text>: "ls {text}"
+katy back: "cd .."
 move: "mv "
 copy: "cp "
 cat: "cat "
@@ -23,3 +24,8 @@ recursive grip that:
 	"grep -r '"
 	edit.paste()
 	"' .\n"
+h top: "htop\n"
+
+set title: "set-title "
+home: "~"
+heroku: "heroku "

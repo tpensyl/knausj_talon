@@ -23,6 +23,9 @@ git clone: "git clone "
 # Leave \n out for confirmation since the operation is destructive
 git clean everything: "git clean -dfx"
 git commit message <user.text>: "git commit -m '{text}'"
+git commit message:
+    "git commit -m ''"
+    key(left)
 git commit: "git commit\n"
 git diff (colour|color) words: "git diff --color-words "
 git diff: "git diff "
