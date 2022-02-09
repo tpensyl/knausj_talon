@@ -106,6 +106,7 @@ abbreviations = {
     "extension": "ext",
     "file system": "fs",
     "framework": "fw",
+    "for what it's worth": "fwiw",
     "function": "func",
     "funny": "lol",
     "generic": "gen",
