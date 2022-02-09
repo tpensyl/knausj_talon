@@ -35,6 +35,9 @@ empty escaped string:
 inside (squares | square brackets | list):
 	insert("[]")
 	key(left)
+inside angles:
+	insert("<>")
+	key(left)
 inside (bracket | braces):
 	insert("{}")
 	key(left)
