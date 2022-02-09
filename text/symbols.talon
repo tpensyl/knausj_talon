@@ -41,6 +41,10 @@ inside angles:
 inside (bracket | braces):
 	insert("{}")
 	key(left)
+inside double (bracket | braces):
+	insert("{{}}")
+	key(left)
+	key(left)
 inside percent:
 	insert("%%")
 	key(left)
@@ -62,6 +66,9 @@ angle that:
 (bracket | brace) that:
     text = edit.selected_text()
     user.paste("{{{text}}}")
+double (bracket | brace) that:
+    text = edit.selected_text()
+    user.paste("{{{{text}}}}")
 (parens | args) that:
     text = edit.selected_text()
     user.paste("({text})")
