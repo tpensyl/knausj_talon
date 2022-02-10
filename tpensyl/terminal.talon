@@ -1,8 +1,10 @@
 tag: terminal
 -
+
 VPN: "vpn\n"
 lisa <user.text>: "ls {text}"
-katy back: "cd .."
+katy up: "cd ..\n"
+katy back: "cd -\n"
 move: "mv "
 copy: "cp "
 cat: "cat "
