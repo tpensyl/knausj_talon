@@ -10,7 +10,7 @@ abbreviations = {
     "Tuesday": "Tue",
     "Wednesday": "Wed",
     "Thursday": "Thu",
-    "Friday": "Fr",
+    "Friday": "Fri",
     "Saturday": "Sat",
     "Sunday": "Sun",
     "January": "Jan",

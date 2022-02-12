@@ -183,6 +183,10 @@ copy line:
     edit.select_line()
     edit.copy()
 
+paste line:
+    edit.line_insert_down()
+    edit.paste()
+
 #cut commands
 cut all:
     edit.select_all()
@@ -216,4 +220,5 @@ cut word right:
 cut line:
     edit.select_line()
     edit.cut()
+    key(backspace)
 
