@@ -54,6 +54,7 @@ hey,hey
 pcap,p cap
 pcaps,p caps
 misc,misk
+
 CPNI,cbp n i
 okta,octa
 DNS,d n s
@@ -63,3 +64,9 @@ requeuing,re ceuing
 JIRA,geraa
 sqs,s q s
 Joe,jo
+
+
+bipartite,
+bipoint,
+psuedotree,sudo tree
+

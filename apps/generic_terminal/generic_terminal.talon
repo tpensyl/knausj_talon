@@ -8,6 +8,9 @@ lisa all:
     user.terminal_list_all_directories()
 katie [<user.text>]: user.terminal_change_directory(text or "")
 katie root: user.terminal_change_directory_root()
+katie up: user.terminal_change_directory("..")
+#impl specific
+katie back: user.terminal_change_directory("-")
 clear screen: user.terminal_clear_screen()
 run last: user.terminal_run_last()
 rerun [<user.text>]: user.terminal_rerun_search(text or "")

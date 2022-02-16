@@ -1,4 +1,4 @@
-from talon import Context, Module, actions, imgui, settings, ui, app
+from talon import Context, Module, actions, imgui, settings, ui, app, ctrl
 
 ctx = Context()
 mod = Module()
@@ -13,7 +13,10 @@ directories_to_exclude = {}
 
 @ctx.action_class('edit')
 class EditActions:
-    def delete_line(): actions.key('esc')
+    def delete_line():
+        actions.insert(' ')
+        actions.key('esc')
+    #def paste(): ctrl.mouse_click(button=1)
 
 @ctx.action_class('user')
 class UserActions:
@@ -65,3 +68,35 @@ class UserActions:
     def file_manager_open_volume(volume: str):
         """file_manager_open_volume"""
         actions.user.file_manager_open_directory(volume)
+
+    def terminal_list_directories():
+        """Lists directories"""
+        actions.insert("dir")
+        actions.key("enter")
+
+    def terminal_list_all_directories():
+        actions.insert("dir /a")
+        actions.key("enter")
+
+    def terminal_change_directory(path: str):
+        actions.insert("cd {}".format(path))
+        if path:
+          actions.key("enter")
+
+    def terminal_change_directory_root():
+        """Root of current drive"""
+        actions.insert("cd /")
+        actions.key("enter")
+
+    def terminal_clear_screen():
+        """Clear screen"""
+        actions.insert("cls")
+        actions.key("enter")
+
+    def terminal_run_last():
+        actions.key("up enter")
+
+    def terminal_kill_all():
+        actions.key("ctrl-c")
+        actions.insert("y")
+        actions.key("enter")
