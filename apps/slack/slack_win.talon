@@ -7,7 +7,16 @@ tag(): user.messaging
 tag(): user.emoji
 
 # Custom Additions
+#(slap | shoot | send): key(enter)
+hard slap: key(enter)
 (slack | lack) search: key("ctrl-g")
+remind me:
+    insert("/remind \"\"")
+    key(left)
+    key(left)
+#TODO add delays so this works ?
+
+remind me [to] <user.text>: insert("/remind \"{text}\" ")
 
 # Workspaces
 workspace <number>: key("ctrl-{number}")

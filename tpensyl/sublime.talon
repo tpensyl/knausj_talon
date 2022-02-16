@@ -7,3 +7,8 @@ tag(): user.git
 
 todo: "TODO "
 todo <user.text>: "TODO {text}"
+
+line <user.number_string>:
+	key(ctrl-g)
+	"{number_string}"
+	key(enter)

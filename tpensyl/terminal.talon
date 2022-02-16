@@ -6,6 +6,7 @@ lisa <user.text>: "ls {text}"
 katy up: "cd ..\n"
 katy back: "cd -\n"
 move: "mv "
+remove: "rm "
 copy: "cp "
 cat: "cat "
 cat <user.text>: "cat {text}"
@@ -27,7 +28,10 @@ recursive grip that:
 	edit.paste()
 	"' .\n"
 h top: "htop\n"
+find name:
+	"find -name *"
+	key(left)
 
 set title: "set-title "
-home: "~"
+#home: "~"
 heroku: "heroku "

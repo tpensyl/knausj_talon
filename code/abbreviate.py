@@ -44,6 +44,7 @@ abbreviations = {
     "attributes": "attrs",
     "authenticate": "auth",
     "authentication": "auth",
+    "average": "avg",
     "away from keyboard": "afk",
     "binary": "bin",
     "boolean": "bool",
