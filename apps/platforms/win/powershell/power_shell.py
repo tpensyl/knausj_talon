@@ -1,4 +1,4 @@
-from talon import Context, Module, actions, imgui, settings, ui, app
+from talon import Context, Module, actions, imgui, settings, ui, app, ctrl
 
 ctx = Context()
 mod = Module()
@@ -13,7 +13,10 @@ directories_to_exclude = {}
 
 @ctx.action_class('edit')
 class EditActions:
-    def delete_line(): actions.key('esc')
+    def delete_line():
+        actions.insert(' ')
+        actions.key('esc')
+    #def paste(): ctrl.mouse_click(button=1)
 
 @ctx.action_class('user')
 class UserActions:
