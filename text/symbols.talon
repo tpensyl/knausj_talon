@@ -38,6 +38,9 @@ inside (squares | square brackets | list):
 inside angles:
 	insert("<>")
 	key(left)
+inside pipes:
+	insert("||")
+	key(left)
 inside (bracket | braces):
 	insert("{}")
 	key(left)

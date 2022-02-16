@@ -7,4 +7,6 @@
 
 
 m v <user.number_string>: "MV-{number_string}"
+big delta: "Δ"
+epsilon: "ε"
 
