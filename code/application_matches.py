@@ -54,6 +54,11 @@ os: linux
 and app.name: signal
 """
 
+apps.sublime = """
+os: linux
+and app.name: Sublime_text
+"""
+
 apps.termite = """
 os: linux
 and app.name: /termite/

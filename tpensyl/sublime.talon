@@ -1,4 +1,4 @@
-app.name: Sublime_text
+app: sublime
 -
 
 tag(): user.tabs

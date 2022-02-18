@@ -10,11 +10,14 @@ tag(): user.emoji
 #(slap | shoot | send): key(enter)
 hard slap: key(enter)
 (slack | lack) search: key("ctrl-g")
+(slack | lack) [mark] read: key(esc)
 remind me:
     insert("/remind \"\"")
     key(left)
     key(left)
 #TODO add delays so this works ?
+
+(slack | lack) huddle: key("ctrl-shift-h")
 
 remind me [to] <user.text>: insert("/remind \"{text}\" ")
 

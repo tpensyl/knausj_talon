@@ -5,6 +5,7 @@ VPN: "vpn\n"
 lisa <user.text>: "ls {text}"
 katy up: "cd ..\n"
 katy back: "cd -\n"
+katy home: "cd ~\n"
 move: "mv "
 remove: "rm "
 copy: "cp "
@@ -31,7 +32,11 @@ h top: "htop\n"
 find name:
 	"find -name *"
 	key(left)
+sudo: "sudo "
 
-set title: "set-title "
+maven: "mvn "
+
+(set | sit) title: "set-title "
+(set | sit) title <user.text>: "set-title {text}\n"
 #home: "~"
 heroku: "heroku "
