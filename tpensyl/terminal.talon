@@ -8,9 +8,11 @@ katy back: "cd -\n"
 katy home: "cd ~\n"
 move: "mv "
 remove: "rm "
-copy: "cp "
-cat: "cat "
-cat <user.text>: "cat {text}"
+shell copy: "cp "
+shell cat: "cat "
+shell cat <user.text>: "cat {text}"
+head: "head "
+echo: "echo "
 make der: "mkdir "
 sublime: "subl "
 grip: "grep "
@@ -33,8 +35,10 @@ find name:
 	"find -name *"
 	key(left)
 sudo: "sudo "
-
 maven: "mvn "
+
+yes: "y\n"
+no: "n\n"
 
 (set | sit) title: "set-title "
 (set | sit) title <user.text>: "set-title {text}\n"

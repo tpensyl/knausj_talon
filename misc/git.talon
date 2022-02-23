@@ -27,6 +27,7 @@ git commit message:
     "git commit -m ''"
     key(left)
 git commit: "git commit\n"
+git commit [allow] empty: "git commit --allow-empty -m'empty commit'\n"
 git diff (colour|color) words: "git diff --color-words "
 git diff: "git diff "
 git diff cached: "git diff --cached\n"

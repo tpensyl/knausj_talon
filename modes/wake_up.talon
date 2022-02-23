@@ -13,6 +13,6 @@ mode: all
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
-^(talon sleep | hello (friend | friends)) [<phrase>]$: speech.disable()
+^(talon sleep | hey guys) [<phrase>]$: speech.disable()
 ^talon wake$: speech.enable()
 

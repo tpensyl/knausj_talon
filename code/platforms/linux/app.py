@@ -27,7 +27,7 @@ class AppActions:
     def window_hide():
         actions.key('alt-space space')
         actions.sleep("100ms")
-        actions.key('space')
+        actions.key('space ')
     def window_hide_others():
         actions.key('win-d alt-tab')
         #requires easy window switcher or equivalent (built into most Linux)
