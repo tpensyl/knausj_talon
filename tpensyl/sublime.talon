@@ -86,4 +86,4 @@ action(edit.indent_more):
 shove:
   edit.indent_more()
 tug:
-  edit.indent_lesshag is that()
+  edit.indent_less()

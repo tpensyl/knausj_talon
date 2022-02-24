@@ -3,6 +3,7 @@ tag: terminal
 
 VPN: "vpn\n"
 lisa <user.text>: "ls {text}"
+lisa last: "ls -lastr\n"
 katy up: "cd ..\n"
 katy back: "cd -\n"
 katy home: "cd ~\n"
@@ -30,6 +31,11 @@ recursive grip that:
 	"grep -r '"
 	edit.paste()
 	"' .\n"
+grip word:
+	"grep -r -w '' ."
+	key(left)
+	key(left)
+	key(left)
 h top: "htop\n"
 find name:
 	"find -name *"
@@ -37,8 +43,7 @@ find name:
 sudo: "sudo "
 maven: "mvn "
 
-yes: "y\n"
-no: "n\n"
+my cat bin: "mycatbin\n"
 
 (set | sit) title: "set-title "
 (set | sit) title <user.text>: "set-title {text}\n"
