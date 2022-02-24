@@ -28,6 +28,8 @@ git commit message:
     key(left)
 git commit: "git commit\n"
 git commit [allow] empty: "git commit --allow-empty -m'empty commit'\n"
+git commit amend: "git commit --amend\n"
+git commit existing: "git commit -a\n"s
 git diff (colour|color) words: "git diff --color-words "
 git diff: "git diff "
 git diff cached: "git diff --cached\n"
@@ -54,7 +56,7 @@ git push up stream origin: "git push -u origin"
 git push <user.text>: "git push {text} "
 git push tags: "git push --tags\n"
 git interactive rebase: "git rebase -i "
-git rebase: "git rebase\n"
+git rebase: "git rebase "
 git rebase continue: "git rebase --continue"
 git rebase skip: "git rebase --skip"
 git remove: "git rm "
