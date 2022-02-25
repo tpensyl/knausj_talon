@@ -164,6 +164,7 @@ abbreviations = {
     "package": "pkg",
     "parameter": "param",
     "parameters": "params",
+    "performance": "perf",
     "pico second": "ps",
     "pixel": "px",
     "point": "pt",

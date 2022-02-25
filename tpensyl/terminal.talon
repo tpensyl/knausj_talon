@@ -3,14 +3,17 @@ tag: terminal
 
 VPN: "vpn\n"
 lisa <user.text>: "ls {text}"
+lisa last: "ls -lastr\n"
 katy up: "cd ..\n"
 katy back: "cd -\n"
 katy home: "cd ~\n"
 move: "mv "
 remove: "rm "
-copy: "cp "
-cat: "cat "
-cat <user.text>: "cat {text}"
+shell copy: "cp "
+shell cat: "cat "
+shell cat <user.text>: "cat {text}"
+head: "head "
+echo: "echo "
 make der: "mkdir "
 sublime: "subl "
 grip: "grep "
@@ -28,13 +31,19 @@ recursive grip that:
 	"grep -r '"
 	edit.paste()
 	"' .\n"
+grip word:
+	"grep -r -w '' ."
+	key(left)
+	key(left)
+	key(left)
 h top: "htop\n"
 find name:
 	"find -name *"
 	key(left)
 sudo: "sudo "
-
 maven: "mvn "
+
+my cat bin: "mycatbin\n"
 
 (set | sit) title: "set-title "
 (set | sit) title <user.text>: "set-title {text}\n"

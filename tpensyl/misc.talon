@@ -12,3 +12,5 @@ epsilon: "ε"
 
 comma: ", "
 nope: edit.undo()
+
+pace: " "

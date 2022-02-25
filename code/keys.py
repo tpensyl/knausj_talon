@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bake cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -253,3 +253,12 @@ ctx.lists["self.function_key"] = {
 }
 
 
+@mod.action_class
+class Actions:
+    def move_cursor(s: str):
+        """Given a sequence of directions, eg. 'left left up', moves the cursor accordingly using edit.{left,right,up,down}."""
+        for d in s.split():
+            if d in ('left','right','up','down'):
+                getattr(actions.edit, d)()
+            else:
+                raise RuntimeError(f'invalid arrow key: {d}')

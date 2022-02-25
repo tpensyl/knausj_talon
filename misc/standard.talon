@@ -30,7 +30,8 @@ paste match: edit.paste_match_style()
 file save: edit.save()
 #wipe: key(backspace)
 junk: key(backspace)
-(pad | padding): 
+pad: " "
+padding:
 	insert("  ") 
 	key(left)
 slap: edit.line_insert_down()
