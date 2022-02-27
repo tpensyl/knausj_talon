@@ -1,4 +1,5 @@
 title:/.*Google Search/
+title:/.*Google Scholar/
 -
 # for use with the Web Search Navigator
 up: key(up)
