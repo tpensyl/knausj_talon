@@ -25,6 +25,8 @@ class AppActions:
         actions.key('ctrl-pageup')
     def tab_next():
         actions.key('ctrl-pagedown')
+    def tab_open():
+        actions.key('ctrl-n')
 
 @ctx.action_class('code')
 class CodeActions:
@@ -46,7 +48,7 @@ class EditActions:
         actions.insert(str(n))
         actions.key("enter")
 
-    def find(text: str):
+    def find(text: str=None):
         actions.key("ctrl-f")
         actions.insert(text)
 
