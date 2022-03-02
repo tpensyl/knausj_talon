@@ -32,3 +32,4 @@ slap:
 (hard slap | run): key(enter)
 source category: "_sourceCategory"
 field time slice: "_timeslice"
+field source host: "_sourceHost"
