@@ -1,5 +1,8 @@
 -
 settings():
+    # minimum silence time (in seconds) before speech is cut off, default 0.3
+    speech.timeout = 0.35
+
     # Adjust the scale of the imgui to my liking
     imgui.scale = 1.3
 
@@ -10,7 +13,7 @@ settings():
     user.help_max_command_lines_per_page = 50
 
     # Set the max number of contexts display per page in help
-    user.help_max_contexts_per_page = 20
+    user.help_max_contexts_per_page = 25
 
     # The default amount used when scrolling continuously
     user.mouse_continuous_scroll_amount = 80

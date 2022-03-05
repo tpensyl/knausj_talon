@@ -18,6 +18,7 @@ remind me:
 #TODO add delays so this works ?
 
 (slack | lack) huddle: key("ctrl-shift-h")
+(slack | lack) (mute | unmute): key("ctrl-shift-space")
 
 remind me [to] <user.text>: insert("/remind \"{text}\" ")
 
