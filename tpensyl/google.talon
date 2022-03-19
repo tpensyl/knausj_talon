@@ -5,5 +5,5 @@ title:/.*Google Scholar/
 up: key(up)
 down: key(down)
 slap: key(enter)
-[go] search: '/'
+[go] search: key(escape)
 next page: key(right)
