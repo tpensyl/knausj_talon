@@ -5,6 +5,8 @@ app.exe: Mathematica.exe
 -
 #test: insert("test worked")
 
+more: key(ctrl-.)
+
 go top:
     edit.file_start()
     key(right)
@@ -21,6 +23,20 @@ exit up:
     key(shift-up:50)
     key(up)
 
+(take | select) (cell | box):
+    key(shift-up:50)
+    key(up)
+    key(down)
+    key(shift-down:50)
+    edit.copy()
+
+draft (cell | box):
+    key(shift-up:50)
+    key(up)
+    key(down)
+    key(shift-down:50)
+    user.draft_editor_open()
+
 (cell | box) down:
     # key(right)
     key(shift-down:50)
@@ -36,11 +52,13 @@ cell (delete | del):
     key(up)
     key(shift-down)
     key(delete)
+    key(down)
 
-run [that]:
+(run [that] | hard slap):
     key(shift-enter)
-    sleep(100ms)
-    key(left:2)
+    sleep(500ms)
+    #key(left)
+    key(right:2)
     # key(shift-up:50)
     # key(up:2)
 
