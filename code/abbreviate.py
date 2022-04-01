@@ -6,6 +6,9 @@ mod = Module()
 mod.list("abbreviation", desc="Common abbreviation")
 
 abbreviations = {
+    "square root": "sqrt",
+    "epsilon": "eps",
+    "delete": "del",
     "maven": "mvn",
     "Monday": "Mon",
     "Tuesday": "Tue",

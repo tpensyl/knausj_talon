@@ -1,6 +1,7 @@
 tag: terminal
 -
 
+vscode: "code "
 VPN: "vpn\n"
 lisa <user.text>: "ls {text}"
 lisa last: "ls -lastr\n"

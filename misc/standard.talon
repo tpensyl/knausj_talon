@@ -23,7 +23,7 @@ scroll way down:
 scroll down: edit.page_down()
 copy [that]: edit.copy()
 cut [that]: edit.cut()
-paste [that]: edit.paste()
+paste that: edit.paste()
 undo [that]: edit.undo()
 redo [that]: edit.redo()
 paste match: edit.paste_match_style()
