@@ -29,6 +29,7 @@ MMS,mamas
 SMS,samus
 SMS,s m s
 MM4,m m for
+inbound,
 SSMP,s s m p
 dlr,dealer
 dlr,d l r
@@ -67,7 +68,8 @@ Joe,jo
 diff,dif
 artifactory,artifact ory
 auto,otto
-cursorless
+cursorless,
+cpu,c p u
 
 pensyl,pencil
 bipartite,

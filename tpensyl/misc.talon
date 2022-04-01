@@ -14,3 +14,6 @@ comma: ", "
 nope: edit.undo()
 
 pace: " "
+vim save:
+	key(esc)
+	":wq\n"

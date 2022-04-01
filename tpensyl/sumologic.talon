@@ -11,6 +11,9 @@ time slice <number_small> (minute|minutes):
 time slice <number_small> (second|seconds):
 	"| timeslice {number_small}s "
 count by: "| count by "
+count distinct [by]:
+	"| count_distinct() by "
+	key(left:5)
 count by time slice: "| count by _timeslice "
 count that by time slice:
 	text = edit.selected_text()
@@ -22,7 +25,9 @@ transpose:
 	"| transpose row _timeslice column "
 
 (where|were): "| where "
-parse: "| parse "
+parse:
+	"| parse \"\""
+	key(left)
 (as|ass) [<user.text>]: " as "
 
 slap:
@@ -32,4 +37,5 @@ slap:
 (hard slap | run): key(enter)
 source category: "_sourceCategory"
 field time slice: "_timeslice"
-field source host: "_sourceHost"
+[field] source host: "_sourceHost"
+field count: "_count"
