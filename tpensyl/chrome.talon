@@ -10,6 +10,6 @@ app: chrome
 	sleep(400ms)
 	key(enter)
 	
-go m v <user.number_string>:
-	app.tab_open()
-	browser.go("https://bandwidth-jira.atlassian.net/browse/MV-{number_string}")
+#go m v <user.number_string>:
+#	app.tab_open()
+#	browser.go("https://bandwidth-jira.atlassian.net/browse/MV-{number_string}")

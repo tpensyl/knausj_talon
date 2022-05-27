@@ -6,6 +6,7 @@ mod = Module()
 mod.list("abbreviation", desc="Common abbreviation")
 
 abbreviations = {
+    "on the other hand": "OTOH",
     "square root": "sqrt",
     "epsilon": "eps",
     "delete": "del",

@@ -12,6 +12,6 @@ log work:
 	key(enter)
     key(tab:9)
 
-[log] done:
+([log] done | hard slap):
 	key(tab)
 	key(enter)

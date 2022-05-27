@@ -23,6 +23,13 @@ count that by time slice:
 	"| transpose row _timeslice column {text} "
 transpose:
 	"| transpose row _timeslice column "
+concat:
+	"| concat() as "
+	key(left:5)
+
+comment:
+	key(home)
+	"//"
 
 (where|were): "| where "
 parse:
@@ -34,7 +41,7 @@ slap:
 	edit.line_end()
 	key(shift-enter)
 
-(hard slap | run): key(enter)
+(hard slap | run [that]): key(enter)
 source category: "_sourceCategory"
 field time slice: "_timeslice"
 [field] source host: "_sourceHost"
