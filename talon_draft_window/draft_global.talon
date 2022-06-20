@@ -24,15 +24,15 @@ mode: command
     user.draft_show()
     user.draft_resize(800, 500)
 
-^draft empty: user.draft_show("")
+#^draft empty: user.draft_show("")
 
-^draft edit:
-    text = edit.selected_text()
-    key(backspace)
-    user.draft_show(text)
-
-^draft edit all:
-    edit.select_all()
-    text = edit.selected_text()
-    key(backspace)
-    user.draft_show(text)
+#^draft edit:
+#    text = edit.selected_text()
+#    key(backspace)
+#    user.draft_show(text)
+#
+#^draft edit all:
+#    edit.select_all()
+#    text = edit.selected_text()
+#    key(backspace)
+#    user.draft_show(text)
