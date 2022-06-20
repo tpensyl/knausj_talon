@@ -7,6 +7,11 @@ mod.list("abbreviation", desc="Common abbreviation")
 
 abbreviations = {
     "on the other hand": "OTOH",
+    "fraction": "frac",
+    "optimal": "opt",
+    "infinity": "inf",
+    "algorithm": "alg",
+    "algorithms": "algs",
     "square root": "sqrt",
     "epsilon": "eps",
     "delete": "del",

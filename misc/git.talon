@@ -32,6 +32,7 @@ git commit [allow] empty:
     key(left)
 git commit amend: "git commit --amend\n"
 git commit existing: "git commit -a\n"s
+git config global: "git config --global "
 git diff (colour|color) words: "git diff --color-words "
 git diff: "git diff "
 git diff cached: "git diff --cached\n"

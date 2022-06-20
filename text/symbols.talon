@@ -1,3 +1,5 @@
+epsilon: "ε"
+
 question [mark]: "?"
 (downscore | underscore | sub): "_"
 double dash: "--"
@@ -10,7 +12,7 @@ triple quote: "'''"
 ellipses: "..."
 (comma and | spamma): ", "
 plus: "+"
-times: "*"
+star: "*"
 arrow: "->"
 dub arrow: "=>"
 new line: "\\n"
@@ -31,36 +33,40 @@ empty escaped string:
     key(left)
     key(left)
 (inside parens | args):
-	insert("()")
-	key(left)
+    insert("()")
+    key(left)
 inside (squares | square brackets | list):
-	insert("[]")
-	key(left)
+    insert("[]")
+    key(left)
+inside (dub|double) squares:
+    insert("[[]]")
+    key(left)
+    key(left)
 inside angles:
-	insert("<>")
-	key(left)
+    insert("<>")
+    key(left)
 inside pipes:
-	insert("||")
-	key(left)
+    insert("||")
+    key(left)
 inside (bracket | braces):
-	insert("{}")
-	key(left)
+    insert("{}")
+    key(left)
 inside double (bracket | braces):
-	insert("{{}}")
-	key(left)
-	key(left)
+    insert("{{}}")
+    key(left)
+    key(left)
 inside percent:
-	insert("%%")
-	key(left)
+    insert("%%")
+    key(left)
 inside (quotes | string):
-	insert("''")
-	key(left)
+    insert("''")
+    key(left)
 inside (double quotes | dubquotes):
     insert('""')
-	key(left)
+    key(left)
 inside (graves | back ticks):
-	insert("``")
-	key(left)
+    insert("``")
+    key(left)
 angle that:
     text = edit.selected_text()
     user.paste("<{text}>")
