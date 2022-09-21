@@ -7,6 +7,8 @@ mod.list("abbreviation", desc="Common abbreviation")
 
 abbreviations = {
     "on the other hand": "OTOH",
+    "certificates": "certs",
+    "certificate": "cert",
     "square root": "sqrt",
     "epsilon": "eps",
     "delete": "del",
