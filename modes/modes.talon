@@ -7,6 +7,7 @@ not mode: sleep
     user.code_clear_language_mode()
     mode.disable("user.gdb")
 ^command mode$:
+	mode.disable("user.gameboy")
     mode.disable("sleep")
     mode.disable("dictation")
     mode.enable("command")
@@ -14,3 +15,4 @@ not mode: sleep
     mode.disable("sleep")
     mode.enable("dictation")
     mode.enable("command")
+	

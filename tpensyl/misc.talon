@@ -58,5 +58,10 @@ fake item:
 fake emf:
 	"\\emph{}"
 	key(left)
+fake infinity:
+	"\\infty "
 fake <user.word>:
 	"\\{user.word} "
+fake square root:
+	"\\sqrt{}"
+	key(left)
