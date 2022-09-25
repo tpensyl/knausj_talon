@@ -7,11 +7,14 @@ tag(): user.git
 
 todo: "TODO "
 todo <user.text>: "TODO {text}"
+done: "DONE"
 
 [go] line <user.number_string>:
 	key(ctrl-g)
 	"{number_string}"
 	key(enter)
+
+file open: key(ctrl-o)
 
 ### adoated from 2shea/knausj_talon
 # Sublime Tools
