@@ -4,7 +4,9 @@ and win.title: /.*melonDS.*/
 
 settings():
     # minimum silence time (in seconds) before speech is cut off, default 0.3
-    speech.timeout = .2
+    speech.timeout = .2 
+    user.default_long_press_ms = .128
+    user.default_long_wait_ms = .150
 	
 up:     user.press_wait('up')
 down:   user.press_wait('down')

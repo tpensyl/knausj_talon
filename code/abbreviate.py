@@ -11,6 +11,7 @@ abbreviations = {
     "certificate": "cert",
     "fraction": "frac",
     "optimal": "opt",
+    "constraint": "constr",
     "infinity": "inf",
     "algorithm": "alg",
     "algorithms": "algs",
