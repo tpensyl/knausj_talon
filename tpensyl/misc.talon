@@ -12,8 +12,8 @@ epsilon: "ε"
 
 comma: ", "
 nope: edit.undo()
+dot quote: "\""
 
-pace: " "
 vim save:
 	key(esc)
 	":wq\n"
@@ -22,3 +22,5 @@ go m v <user.number_string>:
 	user.switcher_focus("chrome")
 	app.tab_open()
 	browser.go("https://bandwidth-jira.atlassian.net/browse/MV-{number_string}")
+
+paste plain [text]: key(ctrl-shift-v)

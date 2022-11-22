@@ -7,8 +7,8 @@ archive: key(e)
 #refresh: key(ctrl-u)
 go next: key(j)
 go last: key(k)
-go inbox: "gi"
+go (inbox|box): "gi"
 (undo|nope): key(z)
 mark red: key(shift-i)
 mark unread: key(shift-n)
-(select|toggle|take): key(x)
+mark: key(x)
