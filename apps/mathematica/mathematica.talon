@@ -23,12 +23,26 @@ exit up:
     key(shift-up:50)
     key(up)
 
-(take | select) (cell | box):
+box top:
+    key(shift-up:50)
+    key(left)
+
+box bottom:
+    key(shift-down:50)
+    key(right)
+
+copy (cell | box):
     key(shift-up:50)
     key(up)
     key(down)
     key(shift-down:50)
     edit.copy()
+
+(take | select) (cell | box):
+    key(shift-up:50)
+    key(up)
+    key(down)
+    key(shift-down:50)
 
 draft (cell | box):
     key(shift-up:50)
@@ -47,20 +61,25 @@ draft (cell | box):
     key(shift-up:50)
     key(up:2)
 
-cell (delete | del):
+(cell | box) (delete | del):
     key(shift-up:50)
     key(up)
     key(shift-down)
     key(delete)
     key(down)
+ 
+[cell | box] (expand | collapse | open | close): key(ctrl-')
 
-(run [that] | hard slap):
+(cell run | box run | run that | hard slap):
     key(shift-enter)
     sleep(500ms)
     #key(left)
     key(right:2)
     # key(shift-up:50)
     # key(up:2)
+
+box stop:
+	key(alt-.)
 
 square root: 
 	insert("Sqrt[]")
@@ -77,8 +96,4 @@ inside comment:
     key(left)
     key(left)
 
-inside (dub|double) squares:
-	insert("[[]]")
-	key(left)
-    key(left)
 
