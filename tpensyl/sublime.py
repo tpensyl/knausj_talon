@@ -16,7 +16,7 @@ class AppActions:
 class UserActions:
     def tab_jump(number: int):
         if number < 90:
-            actions.key("alt-{}".format(number))
+            actions.key(f"alt-{number}")
 
     def tab_final():
         actions.key("alt-9")
