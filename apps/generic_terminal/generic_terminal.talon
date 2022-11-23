@@ -11,6 +11,9 @@ katie root: user.terminal_change_directory_root()
 katie up: user.terminal_change_directory("..")
 #impl specific
 katie back: user.terminal_change_directory("-")
+
+go <user.system_path>: insert("cd \"{system_path}\"\n")
+
 clear screen: user.terminal_clear_screen()
 run last: user.terminal_run_last()
 rerun [<user.text>]: user.terminal_rerun_search(text or "")

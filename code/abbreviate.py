@@ -206,6 +206,7 @@ abbreviations = {
     "return": "ret",
     "revision": "rev",
     "ruby": "rb",
+    "rust": "rs",
     "saskatchewan": "sk",
     "service pack": "sp",
     "session id": "sid",
