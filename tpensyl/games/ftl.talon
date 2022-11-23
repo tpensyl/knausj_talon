@@ -1,5 +1,6 @@
 mode: user.gameboy
 win.title: /FTL: Faster Than Light/
+app.exe: FTLGame.exe
 -
 
 <phrase>: skip()

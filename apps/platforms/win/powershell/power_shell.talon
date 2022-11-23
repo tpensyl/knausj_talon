@@ -2,6 +2,8 @@ os: windows
 and app.name: Windows PowerShell
 os: windows
 and app.exe: powershell.exe
+os: windows
+and app.exe: WindowsTerminal.exe
 -
 # makes the commands in generic_terminal available
 tag(): terminal 
