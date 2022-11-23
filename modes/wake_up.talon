@@ -15,4 +15,3 @@ mode: all
     user.engine_sleep()
 ^(talon sleep | drouse | hello hello) [<phrase>]$: speech.disable()
 ^(talon wake | voice mode on)$: speech.enable()
-

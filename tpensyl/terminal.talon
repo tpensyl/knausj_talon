@@ -18,7 +18,7 @@ echo: "echo "
 make der: "mkdir "
 sublime: "subl "
 grip: "grep "
-recursive grip: 
+recursive grip:
 	"grep -r '' ."
  	key(left)
  	key(left)

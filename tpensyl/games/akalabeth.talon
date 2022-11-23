@@ -19,7 +19,7 @@ climb down:
     '2'
     sleep(.5)
     user.press_wait('e')
-(swing [axe]|chop|stab): 
+(swing [axe]|chop|stab):
     "aas"
     sleep(1)
 #stab: "ar"

@@ -25,7 +25,7 @@ class UserActions:
     def quick_load():
         """Quick load"""
         multikey('f11', 'l')
-        
+
     def previous_slot():
         """Previous slot"""
         multikey('f11', ',')

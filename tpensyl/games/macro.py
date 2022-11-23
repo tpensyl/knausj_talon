@@ -20,7 +20,7 @@ class Actions:
         hold_ms = arg_hold_ms if arg_hold_ms else global_hold_ms.get()
         time.sleep(hold_ms)
         actions.key(key+':up')
-    
+
     def press_wait(key:str, arg_wait_ms:float=None):
         """up"""
         global global_wait_ms
@@ -36,7 +36,7 @@ class Actions:
             actions.user.long_press(key)
             time.sleep(pause_ms)
 
-    def combo_key(k1:str, k2:str, pause:float=None): 
+    def combo_key(k1:str, k2:str, pause:float=None):
         """combo"""
         pause_ms = pause if pause else global_wait_ms.get()
         print(pause_ms)
@@ -48,7 +48,7 @@ class Actions:
         time.sleep(pause_ms)
         actions.key(k2+':up')
 
-    #def window_tab(number_small: int): 
+    #def window_tab(number_small: int):
     def window_tab():
         """press alt tab"""
         actions.key("alt:down")
@@ -77,8 +77,3 @@ class Actions:
         else:
             interval_s=1
             cycle_job = cron.interval(interval, actions.user.cycle_up_down)
-
-
-
-
-

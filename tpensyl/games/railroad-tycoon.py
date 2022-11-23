@@ -13,7 +13,7 @@ class UserActions:
     def noise_hiss_start():
         # cancel last drag for convenience
         actions.key('s')
-        actions.key('t') 
+        actions.key('t')
         actions.user.mouse_drag(0)
 
     def noise_hiss_stop():

@@ -28,4 +28,3 @@ def hiss_handler(active):
 
 noise.register("pop", pop_handler)
 noise.register("hiss", hiss_handler)
-

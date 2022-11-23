@@ -2,11 +2,11 @@ mode: user.gameboy
 win.title: /DOSBox-X.*/
 -
 
-^quick save now$: 
+^quick save now$:
     user.quick_save()
-    #for zork 
-    key('backspace') 
-    
+    #for zork
+    key('backspace')
+
 ^quick load now$:
     user.quick_load()
 

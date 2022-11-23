@@ -27,10 +27,10 @@ go m v <user.number_string>:
 
 paste plain [text]: key(ctrl-shift-v)
 
-fake prob: 
+fake prob:
 	"\\Pr[]"
 	key(left)
-fake expect: 
+fake expect:
 	"\\E[]"
 	key(left)
 fake epsilon: "\\eps"
@@ -39,10 +39,10 @@ fake less [than] (equal|equals): "\\le "
 fake greater [than] (equal|equals): "\\ge "
 fake not (equal|equals): "\\ne "
 #fake in: "\\in "
-fake ref: 
+fake ref:
 	"\\ref{}"
 	key(left)
-fake cite: 
+fake cite:
 	"\\cite{}"
 	key(left)
 fake (frack | fraction):

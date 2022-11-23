@@ -7,6 +7,6 @@
 ^gameboy mode off$:
 	mode.disable("user.gameboy")
 	mode.enable("command")
-	
+
 ^add gameboy mode$:
 	mode.enable("user.gameboy")

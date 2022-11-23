@@ -67,7 +67,7 @@ draft (cell | box):
     key(shift-down)
     key(delete)
     key(down)
- 
+
 [cell | box] (expand | collapse | open | close): key(ctrl-')
 
 (cell run | box run | run that | hard slap):
@@ -81,7 +81,7 @@ draft (cell | box):
 box stop:
 	key(alt-.)
 
-square root: 
+square root:
 	insert("Sqrt[]")
 	key(left)
 times: "*"
@@ -95,5 +95,3 @@ inside comment:
     key(left)
     key(left)
     key(left)
-
-

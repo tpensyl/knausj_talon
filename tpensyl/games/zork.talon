@@ -25,7 +25,7 @@ pull <phrase>$: "pull {phrase}"
 # bring minimal editing commands
 pad: key(space)
 junk: key('backspace')
-junk <number_small>: 
+junk <number_small>:
     key('backspace:{number_small}')
 clear line: key('backspace:100')
 word <user.word>: user.insert_formatted(user.word, "NOOP")
