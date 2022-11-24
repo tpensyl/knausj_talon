@@ -221,3 +221,7 @@ cut line:
     edit.select_line()
     edit.cut()
     key(backspace)
+
+(pace | paste) all:
+  edit.select_all()
+  edit.paste()
