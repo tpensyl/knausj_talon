@@ -1,6 +1,7 @@
 import logging
 import re
 from typing import Dict, Sequence, Tuple, Union
+from collections.abc import Sequence
 
 from talon import Context, Module, actions
 from talon.grammar import Phrase

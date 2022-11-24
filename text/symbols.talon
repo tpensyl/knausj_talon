@@ -3,8 +3,6 @@ epsilon: "ε"
 question [mark]: "?"
 (downscore | underscore | sub): "_"
 double dash: "--"
-(bracket | brack | left bracket): "{"
-(rbrack | are bracket | right bracket): "}"
 triple quote: "'''"
 (triple grave | triple back tick | gravy):
     insert("```")
@@ -18,55 +16,22 @@ dub arrow: "=>"
 new line: "\\n"
 carriage return: "\\r"
 line feed: "\\r\\n"
-empty dubstring:
-    '""'
-    key(left)
-empty escaped (dubstring|dub quotes):
-    '\\"\\"'
-    key(left)
-    key(left)
-empty string:
-    "''"
-    key(left)
-empty escaped string:
-    "\\'\\'"
-    key(left)
-    key(left)
-(inside parens | args):
-    insert("()")
-    key(left)
-inside (squares | square brackets | list):
-    insert("[]")
-    key(left)
-inside (dub|double) squares:
-    insert("[[]]")
-    key(left)
-    key(left)
-inside angles:
-    insert("<>")
-    key(left)
-inside pipes:
-    insert("||")
-    key(left)
-inside (bracket | braces):
-    insert("{}")
-    key(left)
-inside double (bracket | braces):
-    insert("{{}}")
-    key(left)
-    key(left)
-inside percent:
-    insert("%%")
-    key(left)
-inside (quotes | string):
-    insert("''")
-    key(left)
-inside (double quotes | dubquotes):
-    insert('""')
-    key(left)
-inside (graves | back ticks):
-    insert("``")
-    key(left)
+
+inside (dub|double) squares: user.insert_between("[[", "]]")
+inside angles: user.insert_between("<", ">")
+inside pipes: user.insert_between("|", "|")
+
+empty dubstring: user.insert_between('"', '"')
+empty escaped (dubstring|dub quotes): user.insert_between('\\"', '\\"')
+empty string: user.insert_between("'", "'")
+empty escaped string: user.insert_between("\\'", "\\'")
+(inside parens | args): user.insert_between("(", ")")
+inside (squares | square brackets | list): user.insert_between("[", "]")
+inside (bracket | braces): user.insert_between("{", "}")
+inside percent: user.insert_between("%", "%")
+inside (quotes | string): user.insert_between("'", "'")
+inside (double quotes | dubquotes): user.insert_between('"', '"')
+inside (graves | back ticks): user.insert_between("`", "`")
 angle that:
     text = edit.selected_text()
     user.paste("<{text}>")
