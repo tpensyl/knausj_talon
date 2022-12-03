@@ -5,10 +5,13 @@
 # * homophones.py can we add some order of precedent
 # * one command to clear and oleate the line properly
 
+start menu: key(super)
 
 m v <user.number_string>: "MV-{number_string}"
 big delta: "Δ"
 epsilon: "ε"
+
+pop: mouse_click(1)
 
 comma: ", "
 nope: edit.undo()

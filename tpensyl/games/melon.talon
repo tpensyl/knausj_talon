@@ -1,6 +1,7 @@
 mode: user.gameboy
 and win.title: /.*melonDS.*/
 -
+tag(): user.game_repeater
 
 settings():
     # minimum silence time (in seconds) before speech is cut off, default 0.3
