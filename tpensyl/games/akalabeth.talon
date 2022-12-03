@@ -1,6 +1,7 @@
 mode: user.gameboy
 and win.title: /.*AKLABETH.*/
 -
+tag(): user.game_repeater
 
 (up | north): user.press_wait("up")
 (down | back | south): user.press_wait("down")
