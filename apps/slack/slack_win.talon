@@ -12,7 +12,7 @@ hard slap: key(enter)
 (slack | lack) search: key("ctrl-g")
 (slack | lack) [mark] read: key(esc)
 remind me:
-    insert("/remind \"\"")
+    insert('/remind ""')
     key(left)
     key(left)
 #TODO add delays so this works ?
@@ -20,7 +20,7 @@ remind me:
 (slack | lack) huddle: key("ctrl-shift-h")
 (slack | lack) (mute | unmute): key("ctrl-shift-space")
 
-remind me [to] <user.text>: insert("/remind \"{text}\" ")
+remind me [to] <user.text>: insert('/remind "{text}" ')
 
 # Workspaces
 workspace <number>: key("ctrl-{number}")

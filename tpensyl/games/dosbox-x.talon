@@ -7,14 +7,10 @@ win.title: /DOSBox-X.*/
     #for zork
     key('backspace')
 
-^quick load now$:
-    user.quick_load()
+^quick load now$: user.quick_load()
 
-^next save slot$:
-    user.next_slot()
+^next save slot$: user.next_slot()
 
-^previous save slot$:
-    user.previous_slot()
+^previous save slot$: user.previous_slot()
 
-^toggle full screen$:
-    user.toggle_full_screen()
+^toggle full screen$: user.toggle_full_screen()

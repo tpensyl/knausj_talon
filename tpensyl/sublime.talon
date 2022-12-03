@@ -10,9 +10,9 @@ todo <user.text>: "TODO {text}"
 done: "DONE"
 
 [go] line <user.number_string>:
-	key(ctrl-g)
-	"{number_string}"
-	key(enter)
+    key(ctrl-g)
+    "{number_string}"
+    key(enter)
 
 file open: key(ctrl-o)
 

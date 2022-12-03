@@ -19,28 +19,28 @@ make der: "mkdir "
 sublime: "subl "
 grip: "grep "
 recursive grip:
-	"grep -r '' ."
- 	key(left)
- 	key(left)
- 	key(left)
+    "grep -r '' ."
+    key(left)
+    key(left)
+    key(left)
 recursive grip <user.text>:
-	"grep -r '{text}' ."
- 	key(left)
- 	key(left)
- 	key(left)
+    "grep -r '{text}' ."
+    key(left)
+    key(left)
+    key(left)
 recursive grip that:
-	"grep -r '"
-	edit.paste()
-	"' .\n"
+    "grep -r '"
+    edit.paste()
+    "' .\n"
 grip word:
-	"grep -r -w '' ."
-	key(left)
-	key(left)
-	key(left)
+    "grep -r -w '' ."
+    key(left)
+    key(left)
+    key(left)
 h top: "htop\n"
 find name:
-	"find -name *"
-	key(left)
+    "find -name *"
+    key(left)
 sudo: "sudo "
 maven: "mvn "
 maven clean install: "mvn clean install"

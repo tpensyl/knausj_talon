@@ -1,45 +1,40 @@
-title:/.*Sumo Logic/
+title: /.*Sumo Logic/
 -
 
 time slice: "| timeslice "
-time slice <number_small> (day|days):
-	"| timeslice {number_small}d "
-time slice <number_small> (hour|hours):
-	"| timeslice {number_small}h "
-time slice <number_small> (minute|minutes):
-	"| timeslice {number_small}m "
-time slice <number_small> (second|seconds):
-	"| timeslice {number_small}s "
+time slice <number_small> (day | days): "| timeslice {number_small}d "
+time slice <number_small> (hour | hours): "| timeslice {number_small}h "
+time slice <number_small> (minute | minutes): "| timeslice {number_small}m "
+time slice <number_small> (second | seconds): "| timeslice {number_small}s "
 count by: "| count by "
 count distinct [by]:
-	"| count_distinct() by "
-	key(left:5)
+    "| count_distinct() by "
+    key(left:5)
 count by time slice: "| count by _timeslice "
 count that by time slice:
-	text = edit.selected_text()
-	key(end)
-	key(shift-enter)
-	"| count by {text}, _timeslice "
-	"| transpose row _timeslice column {text} "
-transpose:
-	"| transpose row _timeslice column "
+    text = edit.selected_text()
+    key(end)
+    key(shift-enter)
+    "| count by {text}, _timeslice "
+    "| transpose row _timeslice column {text} "
+transpose: "| transpose row _timeslice column "
 concat:
-	"| concat() as "
-	key(left:5)
+    "| concat() as "
+    key(left:5)
 
 comment:
-	key(home)
-	"//"
+    key(home)
+    "//"
 
-(where|were): "| where "
+(where | were): "| where "
 parse:
-	"| parse \"\""
-	key(left)
-(as|ass) [<user.text>]: " as "
+    '| parse ""'
+    key(left)
+(as | ass) [<user.text>]: " as "
 
 slap:
-	edit.line_end()
-	key(shift-enter)
+    edit.line_end()
+    key(shift-enter)
 
 (hard slap | run [that]): key(enter)
 source category: "_sourceCategory"

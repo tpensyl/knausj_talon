@@ -9,8 +9,7 @@ settings():
     #user.mouse_wait = 50000
     #user.mouse_hold = 50000
 
-turn left:
-    user.multi_press('left', 8)
+turn left: user.multi_press("left", 8)
 
 try it: user.mouse_drag_end()
 #pull <phrase>$: "pull {phrase}"

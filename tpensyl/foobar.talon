@@ -1,4 +1,4 @@
-title:/.*foo.bar/
+title: /.*foo.bar/
 -
 tag(): terminal
 tag(): user.generic_unix_shell

@@ -1,5 +1,4 @@
 #title: /Mathematica/
-
 os: windows
 app.exe: Mathematica.exe
 -
@@ -16,7 +15,7 @@ go bottom:
     key(left)
 
 exit down:
-	key(shift-down:50)
+    key(shift-down:50)
     key(down)
 
 exit up:
@@ -78,12 +77,11 @@ draft (cell | box):
     # key(shift-up:50)
     # key(up:2)
 
-box stop:
-	key(alt-.)
+box stop: key(alt-.)
 
 square root:
-	insert("Sqrt[]")
-	key(left)
+    insert("Sqrt[]")
+    key(left)
 times: "*"
 
 comment line:

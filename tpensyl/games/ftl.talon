@@ -6,7 +6,7 @@ app.exe: FTLGame.exe
 <phrase>: skip()
 ^jump$: key(j)
 ^ship$: key(u)
-^(closed|clothes|close) doors$: key(x)
+^(closed | clothes | close) doors$: key(x)
 ^return$: key(enter)
 ^drag$: user.mouse_drag(0)
 crew one: key(f1)
