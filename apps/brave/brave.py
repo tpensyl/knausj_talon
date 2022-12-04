@@ -1,4 +1,4 @@
-from talon import ctrl, ui, Module, Context, actions, clip, app
+from talon import Context, Module, actions, app
 
 ctx = Context()
 mod = Module()
@@ -12,6 +12,7 @@ and app.bundle: com.brave.Browser
 ctx.matches = r"""
 app: brave
 """
+
 
 @ctx.action_class("user")
 class user_actions:

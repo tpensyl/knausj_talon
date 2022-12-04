@@ -4,7 +4,7 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Any, List
+from typing import Any
 from uuid import uuid4
 
 from talon import Context, Module, actions, speech_system
@@ -66,7 +66,7 @@ def write_json_exclusive(path: Path, body: Any):
 @dataclass
 class Request:
     command_id: str
-    args: List[Any]
+    args: list[Any]
     wait_for_finish: bool
     return_command_output: bool
     uuid: str

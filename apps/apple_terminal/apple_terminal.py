@@ -1,5 +1,6 @@
-from talon import Context, actions, ui
 import os
+
+from talon import Context, actions, ui
 
 # TODO: fit this to terminal.py
 
@@ -10,16 +11,19 @@ app: apple_terminal
 directories_to_remap = {}
 directories_to_exclude = {}
 
-@ctx.action_class('edit')
-class EditActions:
-    def delete_line(): actions.key('ctrl-u')
 
-@ctx.action_class('user')
+@ctx.action_class("edit")
+class EditActions:
+    def delete_line():
+        actions.key("ctrl-u")
+
+
+@ctx.action_class("user")
 class UserActions:
     def file_manager_current_path():
         title = ui.active_window().title
 
-        #take the first split for the zsh-based terminal
+        # take the first split for the zsh-based terminal
         if " — " in title:
             title = title.split(" — ")[0]
 
@@ -44,12 +48,12 @@ class UserActions:
         actions.insert(path)
         actions.key("enter")
 
-        #jtk - refresh title isn't necessary since the apple terminal does it for us
-        #actions.user.file_manager_refresh_title()
+        # jtk - refresh title isn't necessary since the apple terminal does it for us
+        # actions.user.file_manager_refresh_title()
 
     def file_manager_open_parent():
-        actions.insert('cd ..')
-        actions.key('enter')
+        actions.insert("cd ..")
+        actions.key("enter")
 
     def file_manager_select_directory(path: str):
         """selects the directory"""
@@ -72,6 +76,7 @@ class UserActions:
 
     def file_manager_refresh_title():
         return
+
 
 @ctx.action_class("app")
 class app_actions:

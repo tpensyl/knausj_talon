@@ -1,4 +1,4 @@
-from talon import Context, actions, ui, Module, app, clip
+from talon import Context, Module, actions, app
 
 is_mac = app.platform == "mac"
 
@@ -257,7 +257,9 @@ class UserActions:
     def tab_jump(number: int):
         if number < 10:
             if is_mac:
-                actions.user.vscode_with_plugin(f"workbench.action.openEditorAtIndex{number}")
+                actions.user.vscode_with_plugin(
+                    f"workbench.action.openEditorAtIndex{number}"
+                )
             else:
                 actions.key(f"alt-{number}")
         else:

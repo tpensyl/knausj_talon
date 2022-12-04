@@ -1,6 +1,6 @@
-from talon import Context, Module, actions, imgui, settings, ui
-import os
 import subprocess
+
+from talon import Context, Module, actions, ui
 
 mod = Module()
 mod.apps.mintty = """

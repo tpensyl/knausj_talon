@@ -1,6 +1,6 @@
-from talon import Context, Module, actions, imgui, settings, ui, app
-
 import os
+
+from talon import Context, Module, actions, ui
 
 ctx = Context()
 mod = Module()
@@ -12,20 +12,29 @@ user_path = os.path.expanduser("~")
 directories_to_remap = {}
 directories_to_exclude = {}
 
-@ctx.action_class('app')
+
+@ctx.action_class("app")
 class AppActions:
-    def tab_close(): actions.key('ctrl-shift-w')
-    def tab_open():  actions.key('ctrl-shift-t')
+    def tab_close():
+        actions.key("ctrl-shift-w")
+
+    def tab_open():
+        actions.key("ctrl-shift-t")
 
 
-@ctx.action_class('edit')
+@ctx.action_class("edit")
 class EditActions:
-    def paste(): actions.key('ctrl-shift-v')
-    def copy():  actions.key('ctrl-shift-c')
+    def paste():
+        actions.key("ctrl-shift-v")
+
+    def copy():
+        actions.key("ctrl-shift-c")
+
     def find(text: str = None):
-        actions.key('ctrl-shift-f')
+        actions.key("ctrl-shift-f")
         if text:
             actions.insert(text)
+
 
 @ctx.action_class("user")
 class UserActions:

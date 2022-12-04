@@ -1,6 +1,6 @@
-from talon import Context, Module, actions, imgui, settings, ui, app
-
 import os
+
+from talon import Context, actions, ui
 
 ctx = Context()
 ctx.matches = r"""
@@ -13,25 +13,30 @@ user_path = os.path.expanduser("~")
 directories_to_remap = {}
 directories_to_exclude = {}
 
-ctx.tags = ['user.file_manager', 'user.git', 'user.kubectl', 'terminal']
+ctx.tags = ["user.file_manager", "user.git", "user.kubectl", "terminal"]
 
-@ctx.action_class('edit')
+
+@ctx.action_class("edit")
 class EditActions:
-    def delete_line(): actions.key('esc')
+    def delete_line():
+        actions.key("esc")
 
-@ctx.action_class('user')
+
+@ctx.action_class("user")
 class UserActions:
     def file_manager_refresh_title():
-        actions.insert('title Command Prompt: %CD%')
-        actions.key('enter')
-        #action(user.file_manager_go_back):
+        actions.insert("title Command Prompt: %CD%")
+        actions.key("enter")
+        # action(user.file_manager_go_back):
         #    key("alt-left")
-        #action(user.file_manager_go_forward):
+        # action(user.file_manager_go_forward):
         #    key("alt-right")
+
     def file_manager_open_parent():
-        actions.insert('cd ..')
-        actions.key('enter')
+        actions.insert("cd ..")
+        actions.key("enter")
         actions.user.file_manager_refresh_title()
+
     def file_manager_current_path():
         path = ui.active_window().title
         path = path.replace("Administrator:  ", "").replace("Command Prompt: ", "")

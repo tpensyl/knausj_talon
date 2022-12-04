@@ -1,10 +1,11 @@
 import os
 import os.path
-import requests
+import tempfile
 import time
 from pathlib import Path
-from talon import ctrl, ui, Module, Context, actions, clip
-import tempfile
+
+import requests
+from talon import Context, Module, actions, clip, ui
 
 # Courtesy of https://github.com/anonfunc/talon-user/blob/master/apps/jetbrains.py
 
@@ -61,17 +62,17 @@ port_mapping = {
 def _get_nonce(port, file_prefix):
     file_name = file_prefix + str(port)
     try:
-        with open(os.path.join(tempfile.gettempdir(), file_name), "r") as fh:
+        with open(os.path.join(tempfile.gettempdir(), file_name)) as fh:
             return fh.read()
     except FileNotFoundError as e:
         try:
             home = str(Path.home())
-            with open(os.path.join(home, file_name), "r") as fh:
+            with open(os.path.join(home, file_name)) as fh:
                 return fh.read()
         except FileNotFoundError as eb:
             print(f"Could not find {file_name} in tmp or home")
             return None
-    except IOError as e:
+    except OSError as e:
         print(e)
         return None
 
@@ -252,6 +253,7 @@ class EditActions:
 
     def extend_word_left():
         actions.user.idea("action EditorPreviousWordWithSelection")
+
     def extend_word_right():
         actions.user.idea("action EditorNextWordWithSelection")
 
@@ -314,19 +316,26 @@ class UserActions:
     # multi-cursor tag functions
     def multi_cursor_enable():
         actions.skip()
+
     def multi_cursor_disable():
         actions.key("escape")
+
     def multi_cursor_add_above():
         actions.user.idea("action EditorCloneCaretAbove")
+
     def multi_cursor_add_below():
         actions.user.idea("action EditorCloneCaretBelow")
+
     def multi_cursor_select_fewer_occurrences():
         actions.user.idea("action UnselectPreviousOccurrence")
+
     def multi_cursor_select_more_occurrences():
         actions.user.idea("action SelectNextOccurrence")
+
     # def multi_cursor_skip_occurrence():
     def multi_cursor_select_all_occurrences():
         actions.user.idea("action SelectAllOccurrences")
+
     def multi_cursor_add_to_line_ends():
         actions.user.idea("action EditorAddCaretPerSelectedLine")
 
@@ -338,20 +347,28 @@ class UserActions:
     # def split_window_up():
     def split_window_vertically():
         actions.user.idea("action SplitVertically")
+
     def split_window_horizontally():
         actions.user.idea("action SplitHorizontally")
+
     def split_flip():
         actions.user.idea("action ChangeSplitOrientation")
+
     def split_maximize():
         actions.key("ctrl-shift-f12")
+
     def split_reset():
         actions.key("shift-f12")
+
     # def split_window():
     def split_clear():
         actions.user.idea("action Unsplit")
+
     def split_clear_all():
         actions.user.idea("action UnsplitAll")
+
     def split_next():
         actions.user.idea("action NextSplitter")
+
     # def split_last():
     # def split_number(index: int):
