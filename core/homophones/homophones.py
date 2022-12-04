@@ -1,5 +1,6 @@
-from talon import Context, Module, app, clip, cron, imgui, actions, ui, fs
 import os
+
+from talon import Context, Module, actions, app, clip, fs, imgui, ui
 
 ########################################################################
 # global settings
@@ -31,7 +32,7 @@ def update_homophones(name, flags):
 
     phones = {}
     canonical_list = []
-    with open(homophones_file, "r") as f:
+    with open(homophones_file) as f:
         for line in f:
             words = line.rstrip().split(",")
             canonical_list.append(words[0])
@@ -66,8 +67,8 @@ PHONES_FORMATTERS = [
 
 
 def find_matching_format_function(word_with_formatting, format_functions):
-    """ Finds the formatter function from a list of formatter functions which transforms a word into itself.
-     Returns an identity function if none exists """
+    """Finds the formatter function from a list of formatter functions which transforms a word into itself.
+    Returns an identity function if none exists"""
     for formatter in format_functions:
         formatted_word = formatter(word_with_formatting)
         if word_with_formatting == formatted_word:
@@ -89,7 +90,9 @@ def raise_homophones(word_to_find_homophones_for, forced=False, selection=False)
     if is_selection:
         word_to_find_homophones_for = word_to_find_homophones_for.strip()
 
-    formatter = find_matching_format_function(word_to_find_homophones_for, PHONES_FORMATTERS)
+    formatter = find_matching_format_function(
+        word_to_find_homophones_for, PHONES_FORMATTERS
+    )
 
     word_to_find_homophones_for = word_to_find_homophones_for.lower()
 
@@ -105,23 +108,26 @@ def raise_homophones(word_to_find_homophones_for, forced=False, selection=False)
             lambda w: w + "s", all_homophones[word_to_find_homophones_for[:-1]]
         )
     else:
-        app.notify("homophones.py", f'"{word_to_find_homophones_for}" not in homophones list')
+        app.notify(
+            "homophones.py", f'"{word_to_find_homophones_for}" not in homophones list'
+        )
         return
 
     # Move current word to end of list to reduce searcher's cognitive load
-    valid_homophones_reordered = (
-        list(
-            filter(
-                lambda word_from_list: word_from_list.lower() != word_to_find_homophones_for, valid_homophones)
-        ) + [word_to_find_homophones_for]
-    )
+    valid_homophones_reordered = list(
+        filter(
+            lambda word_from_list: word_from_list.lower()
+            != word_to_find_homophones_for,
+            valid_homophones,
+        )
+    ) + [word_to_find_homophones_for]
     active_word_list = list(map(formatter, valid_homophones_reordered))
 
     if (
-            is_selection
-            and len(active_word_list) == 2
-            and quick_replace
-            and not force_raise
+        is_selection
+        and len(active_word_list) == 2
+        and quick_replace
+        and not force_raise
     ):
         if word_to_find_homophones_for == active_word_list[0].lower():
             new = active_word_list[1]
