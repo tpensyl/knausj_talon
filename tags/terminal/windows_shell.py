@@ -1,10 +1,11 @@
-from talon import app, Module, Context, actions, ui, imgui, settings, app, registry
+from talon import Context, Module, actions
 
 ctx = Context()
 mod = Module()
 ctx.matches = r"""
 tag: user.generic_windows_shell
 """
+
 
 @ctx.action_class("user")
 class Actions:
