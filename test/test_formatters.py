@@ -5,7 +5,6 @@ if hasattr(talon, "test_mode"):
 
     from knausj_talon_pkg.core.text import formatters
     from talon import actions
-    from knausj_talon_pkg.code import formatters
 
     def setup_function():
         actions.reset_test_actions()

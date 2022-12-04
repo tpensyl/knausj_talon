@@ -131,6 +131,7 @@ class Context:
     def action_class(self, path=None):
         def __funcwrapper(clazz):
             return clazz
+
         return __funcwrapper
 
 
@@ -149,6 +150,7 @@ class ImgUI:
             return __inner
 
         return __funcwrapper
+
 
 class UI:
     """
