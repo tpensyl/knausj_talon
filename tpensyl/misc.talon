@@ -13,6 +13,7 @@ epsilon: "ε"
 
 pop: mouse_click(1)
 
+junk: key(backspace)
 comma: ", "
 nope: edit.undo()
 item: "* "

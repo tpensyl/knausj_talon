@@ -19,8 +19,8 @@ add:
 
 repair: key(n)
 
-go: key(a)
-stop: key(e)
+stab: key(a)
+hold: key(e)
 
 delete units: key(del)
 
@@ -54,9 +54,12 @@ academy: key(x)
 
 fish boat: key(q)
 
+slinger: key(e)
+
 bowman: key(q)
 
 #<phrase>: skip()
 
 <number_small> times: core.repeat_command(number_small-1)
 <user.ordinals>: core.repeat_command(ordinals-1)
+twice: core.repeat_command(1)
