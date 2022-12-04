@@ -58,9 +58,7 @@ class Actions:
         """Selects a micropohone"""
         if 1 <= index and index <= len(microphone_device_list):
             actions.speech.set_microphone(microphone_device_list[index - 1])
-            app.notify(
-                f"Activating microphone: {microphone_device_list[index - 1]}"
-            )
+            app.notify(f"Activating microphone: {microphone_device_list[index - 1]}")
             gui.hide()
 
 

@@ -1,23 +1,12 @@
-from talon import (
-    Context,
-    actions,
-    ui,
-    Module,
-    app,
-    clip,
-    speech_system,
-    registry,
-    scope,
-    ui,
-)
-from talon.grammar import Phrase
+import os
+import platform
+import pprint
+import re
+from itertools import islice
 from typing import Union
 
-import os
-import re
-import platform
-from itertools import islice
-import pprint
+from talon import Module, actions, app, clip, registry, scope, speech_system, ui
+from talon.grammar import Phrase
 
 pp = pprint.PrettyPrinter()
 
