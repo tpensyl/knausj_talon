@@ -12,6 +12,7 @@ big delta: "Δ"
 epsilon: "ε"
 
 pop: mouse_click(1)
+yap: "y\n" 
 
 junk: key(backspace)
 comma: ", "

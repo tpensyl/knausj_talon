@@ -21,6 +21,7 @@ app.exe: FTLGame.exe
 ^(send|son)$: key(t)
 ^get$: key(r)
 ^cloak$: key(c)
+^hack$: key(n) 
 
 (pause|stop): key(pgdown)
 (escape | back): key(escape)

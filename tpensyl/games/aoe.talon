@@ -2,7 +2,10 @@ mode: user.gameboy
 app.name: Age of Empires: Definitive Edition
 -
 
+drag: user.mouse_drag(0) 
 pause: key(f3)
+speedup: key(keypad_plus) 
+slowdown: key(keypad_minus) 
 
 town: key(h)
 (vill|villager): key(q)
@@ -18,6 +21,7 @@ add:
 	key("ctrl:up")
 
 repair: key(n)
+unload: key(q) 
 
 stab: key(a)
 hold: key(e)
@@ -57,6 +61,8 @@ fish boat: key(q)
 slinger: key(e)
 
 bowman: key(q)
+
+
 
 #<phrase>: skip()
 
