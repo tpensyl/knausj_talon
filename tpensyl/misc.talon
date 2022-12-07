@@ -11,14 +11,18 @@ m v <user.number_string>: "MV-{number_string}"
 big delta: "Δ"
 epsilon: "ε"
 
+north: edit.up()
+#south: edit.down()
+
+key: user.insert_between("key(", ")")
 pop: mouse_click(1)
 yap: "y\n" 
 
 junk: key(backspace)
-comma: ", "
+spamma: ", "
 nope: edit.undo()
 item: "* "
-pause: ","
+comma: ","
 dot quote: "\""
 
 vim save:

@@ -1,17 +1,25 @@
-from talon import Context, actions
+from talon import Context, actions, ctrl
 
 ctx = Context()
 ctx.matches = r"""
 win.title: /Railroad Tycoon II.*/
 """
+
+LEFT_BUTTON = 0
+RIGHT_BUTTON = 1
+
 @ctx.action_class('user')
 class UserActions:
     def noise_pop():
-        actions.user.mouse_drag_end()
+        buttons_held_down = list(ctrl.mouse_buttons_down())
+        if LEFT_BUTTON in buttons_held_down:
+            ctrl.mouse_click(button=LEFT_BUTTON, up=True)
+            return
+        
         actions.user.game_click(0, times=1, hold=16000)
 
     def noise_hiss_start():
-        # cancel last drag for convenience
+        # safely cancel last drag for convenience
         actions.key('s')
         actions.key('t')
         actions.user.mouse_drag(0)
