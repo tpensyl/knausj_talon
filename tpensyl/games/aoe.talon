@@ -14,9 +14,14 @@ pop: key(esc)
 pause: key(f3)
 speedup: key(keypad_plus) 
 slowdown: key(keypad_minus) 
-zoom men: key(ctrl-keypad_plus)
+slow way down: key(keypad_minus:2)
+zoom men: 
+	sleep(50ms)
+	key(ctrl-keypad_plus)
 zoom way in: key(shift-keypad_plus)
-zoom out: key(ctrl-keypad_minus)
+zoom out: 
+	sleep(50ms)
+	key(ctrl-keypad_minus)
 zoom way out: key(shift-keypad_minus)
 
 # Jump camera/focus
@@ -33,13 +38,15 @@ go granary: key(ctrl-shift-g)
 go storage [pit]: key(ctrl-shift-s)
 go government [center]: key(ctrl-shift-c)
 go wonder: key(ctrl-o)
+go battle: key(backspace)
 
 tech tree: key(f6)
 diplomacy: key(f7)
 objectives: key(f9)
 menu: key(f10)
 
-idle: key(.)
+idle [ville|villager]: key(.)
+idle military: key(,)
 all idle: key(ctrl-shift-.) 
 
 queue: 
@@ -50,14 +57,19 @@ add:
     key("ctrl:down")
 	mouse_click(0)
 	key("ctrl:up")
+add all:
+    key("ctrl:down")
+	mouse_click(0)
+	mouse_click(0)
+	key("ctrl:up")
 
 
-set {user.control_group}: key('ctrl-{control_group}')
+group {user.control_group}: key('ctrl-{control_group}')
 {user.control_group}: key('{control_group}')
 go {user.control_group}: key('alt-{control_group}')
 merge {user.control_group}: key('shift-{control_group}')
 
-delete units: 
+delete unit: 
 	key(del)
 	sleep(10ms)
 
@@ -66,18 +78,19 @@ delete units:
 (stand ground | hold): key(e)
 aggressive: key(q)
 defensive: key(w)
-set no attack: key(r)
+no attack: key(r)
+attack ground: key(s)
 
 # Transport
 unload: key(q) 
 
 # Training general
-{user.repeat_num} times: core.repeat_command(repeat_num-1)
+<user.repeat_num> times: core.repeat_command(repeat_num-1) 
 <user.ordinals>: core.repeat_command(ordinals-1)
-#twice: core.repeat_command(1)
-#third: core.repeat_command(2)
-#forth: core.repeat_command(3)
-#fifth: core.repeat_command(4)
+twice: 
+	sleep(10ms)
+	core.repeat_command(1)
+	
 stop: key(m)
 
 # Towns Center

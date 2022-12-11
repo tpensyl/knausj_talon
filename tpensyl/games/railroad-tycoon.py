@@ -12,8 +12,9 @@ RIGHT_BUTTON = 1
 class UserActions:
     def noise_pop():
         buttons_held_down = list(ctrl.mouse_buttons_down())
-        if LEFT_BUTTON in buttons_held_down:
-            ctrl.mouse_click(button=LEFT_BUTTON, up=True)
+        if buttons_held_down:
+            for button in buttons_held_down:
+                ctrl.mouse_click(button=button, up=True)
             return
         
         actions.user.game_click(0, times=1, hold=16000)

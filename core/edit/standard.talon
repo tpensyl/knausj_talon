@@ -14,7 +14,7 @@ cut that: edit.cut()
 paste that: edit.paste()
 copy paste:
     edit.copy()
-    edit.cut()
+    edit.paste()
 undo [that]: edit.undo()
 redo [that]: edit.redo()
 paste match: edit.paste_match_style()
