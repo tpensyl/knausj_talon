@@ -23,3 +23,7 @@ class TpensylClick:
         wait = hold
         for i in range(times):
             ctrl.mouse_click(button, hold=hold, wait=wait)
+
+    def toggle_drag(button: int = 0):
+        """Toggle drag"""
+        return
