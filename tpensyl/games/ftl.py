@@ -1,15 +1,31 @@
-from talon import Context, actions, ctrl
+from talon import Context, Module, actions, ctrl
 ctx = Context()
 ctx.matches = r"""
 mode: user.gameboy
-win.title: /FTL: Faster Than Light/
+app.exe: FTLGame.exe
 """
+mod = Module()
+
+ftl_crew_list = "one two three four five six seven eight".split()
+ftl_crew_map = {word: str(i + 1) for i, word in enumerate(ftl_crew_list)}
+
+mod.list("ftl_crew", desc="FTL crew numbers")
+ctx.lists["self.ftl_crew"] = ftl_crew_map
 
 @ctx.action_class('user')
 class UserActions:
     def noise_pop():
         ctrl.mouse_click(0)
+
     def noise_hiss_start():
-        ctrl.mouse_click(1)
+        ctrl.mouse_click(button=0, down=True)
+
     def noise_hiss_stop():
-        return
+        ctrl.mouse_click(button=0, up=True)
+
+    def parrot_palate():
+        actions.key("space")
+
+    def parrot_tut():
+        ctrl.mouse_click(1)
+        #actions.user.toggle_drag(0)
