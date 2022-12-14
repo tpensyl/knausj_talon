@@ -23,11 +23,6 @@ class NoiseActions:
         #print('tut unimplemented')
         pass
 
-    def sound_debug(name:str, power:float, f0:float, f1:float, f2:float):
-        """for debugging"""
-        print(name, [int(x) for x in (power, f0, f1, f2)])
-        #print(f"{power}")
-
     def parrot_buzz():
         """parrot buzz sound"""
         pass
@@ -38,7 +33,9 @@ class NoiseActions:
         #print("palate unimplemented")
         pass
 
-    
+    def sound_debug(name:str, power:float, f0:float, f1:float, f2:float):
+        """for debugging"""
+        print(name, [int(x) for x in (power, f0, f1, f2)])
 
 def pop_handler(active):
     actions.user.noise_pop()
