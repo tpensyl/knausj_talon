@@ -22,8 +22,9 @@ app.exe: FTLGame.exe
 ^get$: key(r)
 ^cloak$: key(c)
 ^hack$: key(n) 
+^mind control$: key(m)
 
-(pause|stop): key(pgdown)
+(pause|stop): key(space)
 (escape | back): key(escape)
 ^one$: key('1')
 ^two$: key('2')
