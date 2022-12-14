@@ -1,6 +1,6 @@
 tag: terminal
 and tag: user.git
-
+-
 git add dot: "git add . \n"
 git amend: "git commit --amend"
 git branch delete: "git branch -D "
@@ -15,7 +15,7 @@ git commit [allow] empty:
     key(left)
 git show head: "git show HEAD"
 
--
+
 git {user.git_command} [<user.git_arguments>]:
     args = git_arguments or ""
     "git {git_command}{args} "
