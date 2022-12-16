@@ -10,7 +10,7 @@ go left: edit.left()
 
 go right: edit.right()
 
-go up: edit.up()
+#go up: edit.up()
 
 go down: edit.down()
 
