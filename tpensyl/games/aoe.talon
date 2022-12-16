@@ -65,7 +65,7 @@ add all:
 
 
 group {user.control_group}: key('ctrl-{control_group}')
-{user.control_group}: key('{control_group}')
+^{user.control_group}$: key('{control_group}')
 go {user.control_group}: key('alt-{control_group}')
 merge {user.control_group}: key('shift-{control_group}')
 
