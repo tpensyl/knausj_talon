@@ -34,7 +34,6 @@ speed_scaler_x = max_speed / (maximum_log - neutral_log)
 
 use_static_scale = True
 
-# @mod.action_class
 @ctx.action_class('self')
 class WhistleActions:
 
