@@ -1,12 +1,14 @@
 from talon import Module, Context, actions, noise, ctrl
 from math import log
 
-ctx = Context()
-ctx.tags = ["user.whistle_mouse_look"]
-
 mod = Module()
 mod.tag("whistle_mouse_look", desc="move cursor with a whistle, y=power, x=f0") 
  
+ctx = Context()
+ctx.matches = """
+tag: user.whistle_mouse_look
+"""
+
 # initialize
 ts = 0
 stop_ts = 0
@@ -21,20 +23,20 @@ speed_scaler_y = .02
 # x axis based on frequency
 # range is about from A#4-A#5 (466.16-932.33)
 # halfway is E5=659.25
-minimum_freq = 466.16
+min_freq = 466.16
 neutral_freq = 659.25
-maximum_freq = 932.33
-minimum_log = log(minimum_freq)
+max_freq = 932.33
+min_pitch = log(min_freq)
 neutral_log = log(neutral_freq)
-maximum_log = log(maximum_freq) 
+max_pitch = log(max_freq) 
 
 max_speed = 10 #30 for talon a, 10 for mouse_event
-speed_scaler_x = max_speed / (maximum_log - neutral_log)
+speed_scaler_x = max_speed / (max_pitch - neutral_log)
 
 
 use_static_scale = True
 
-@ctx.action_class('self')
+@ctx.action_class('user')
 class WhistleActions:
 
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
