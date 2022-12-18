@@ -1,4 +1,4 @@
-tag: user.whistle_mouse
+tag: user.whistle_mouse_look
 -
 
 parrot(whistle):
