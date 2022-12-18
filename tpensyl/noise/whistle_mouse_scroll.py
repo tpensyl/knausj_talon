@@ -1,7 +1,8 @@
 from talon import Module, Context, actions, ctrl
 from math import log, copysign
 
-""" patterns.json
+""" 
+    patterns.json
 	"whistle": {
 		"sounds": ["sound_whistle"],
 		"threshold": {
@@ -18,32 +19,40 @@ from math import log, copysign
 	},
 """
 
-ctx = Context()
-ctxtags = ["user.whistle_mouse_scroll"]
-
 mod = Module()
 mod.tag("whistle_mouse_scroll", desc="scroll by changing whistle pitch")
+
+ctx = Context()
+ctx.matches = """
+tag: user.whistle_mouse_scroll
+"""
+
 
 # initialize
 ts = 0
 stop_ts = 0
-
-# relative scaling, based on first sound
 start_frames = []
-delta_threshold = 100
-pause_threshold = .2
+
+# Add tolerance for accidental 'breaks' during a whistle
+pause_threshold = .25
 
 # range is about from A#4-A#5 (466.16-932.33)
 # halfway is E5=659.25
-minimum_freq = 466.16
-maximum_freq = 932.33
-minimum_log = log(minimum_freq)
-maximum_log = log(maximum_freq) 
-
+min_freq = 466.16
+max_freq = 932.33
+min_pitch = log(min_freq)
+max_pitch = log(max_freq) 
 max_speed = 10 
-speed_scaler_x = max_speed / (maximum_log - minimum_log)
+speed_scaler_x = max_speed / (max_pitch - min_pitch)
 
-@ctx.action_class('self')
+def shaping_function(pitch_delta):
+    "Map difference in pitch into scroll speed"
+    x = pitch_delta * speed_scaler_x
+    # linear into exponential
+    return copysign(abs(x)*(1.5**abs(x)), -x)
+
+
+@ctx.action_class('user')
 class WhistleActions:
 
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
@@ -66,20 +75,14 @@ class WhistleActions:
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         """for debugging"""
         global start_frames 
-        f = f0
+        f = log(f0)
         if len(start_frames) < 5:
-            start_frames += [log(f)]
+            start_frames += [f]
 
         base = sum(start_frames) / len(start_frames)
+        pitch_delta = f - base
+        scroll_speed = shaping_function(pitch_delta)
         
-        delta = -(log(f) - base) * speed_scaler_x
-        # linear into exponential
-        delta =copysign(abs(delta)*(1.5**abs(delta)), delta)
-        
-        #actions.user.swoop_move(delta)
-        actions.mouse_scroll(by_lines=False, y=int(delta))
+        actions.mouse_scroll(by_lines=False, y=scroll_speed)
         print("whistle", [int(x) for x in [power, f0, f1, f2, f]])
-
-    # def swoop_move(delta:float):
-    #     mouse_move(delta)
  
