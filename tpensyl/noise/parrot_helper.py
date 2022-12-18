@@ -7,8 +7,7 @@ mod = Module()
 class ParrotNoiseActions:
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
         "whistle start stub"
-        print('whistle stark stub')
-        x = 1
+        x = 1 # mute 'unimplemented' warnings
 
     def whistle_stop(ts:float, power:float, f0:float, f1:float, f2:float):
         "whistle stop stub"

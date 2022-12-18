@@ -1,13 +1,28 @@
-from talon import Module, Context, actions, noise, ctrl
-from math import log
+from talon import Module, Context, actions, ctrl
+from math import log, copysign
 
-ctx = Context()
-ctx.matches = r"""
-tag: user.whistle_mouse_swoop
+""" patterns.json
+	"whistle": {
+		"sounds": ["sound_whistle"],
+		"threshold": {
+			">power": 20,
+			">probability": 0.85,
+			">f0": 250
+		},
+		"graceperiod": 0.1,
+		"grace_threshold": {
+			">power": 10,
+			">probability": 0.3,
+			">f0": 250
+		}
+	},
 """
 
+ctx = Context()
+ctxtags = ["user.whistle_mouse_scroll"]
+
 mod = Module()
-mod.tag("whistle_mouse_swoop", desc="move cursor with a whistle, relative to the starting pitch")
+mod.tag("whistle_mouse_scroll", desc="scroll by changing whistle pitch")
 
 # initialize
 ts = 0
@@ -16,10 +31,8 @@ stop_ts = 0
 # relative scaling, based on first sound
 start_frames = []
 delta_threshold = 100
-speed_scaler_x = .1
-pause_threshold = .3
+pause_threshold = .2
 
-neutral_power = 250
 # range is about from A#4-A#5 (466.16-932.33)
 # halfway is E5=659.25
 minimum_freq = 466.16
@@ -27,11 +40,10 @@ maximum_freq = 932.33
 minimum_log = log(minimum_freq)
 maximum_log = log(maximum_freq) 
 
-max_speed = 10 #30 for talon mouse, 10 for mouse_event
-speed_scaler_x = max_speed / (maximum_log - neutral_log)
-speed_scaler_y = -.05
+max_speed = 10 
+speed_scaler_x = max_speed / (maximum_log - minimum_log)
 
-@mod.action_class
+@ctx.action_class('self')
 class WhistleActions:
 
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
@@ -42,19 +54,17 @@ class WhistleActions:
             print("continue")
             return 
         
-        f = f0
-        start_frames = [log(f)]
+        f = log(f0)
+        start_frames = [f]
 
     def whistle_stop(ts:float, power:float, f0:float, f1:float, f2:float):
         """for debugging"""
         print("whistle stop",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global stop_ts
         stop_ts = ts 
-        
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         """for debugging"""
-        # relative scaling; need to clean
         global start_frames 
         f = f0
         if len(start_frames) < 5:
@@ -62,24 +72,14 @@ class WhistleActions:
 
         base = sum(start_frames) / len(start_frames)
         
-        delta_x = (log(f) - base) * speed_scaler_x
+        delta = -(log(f) - base) * speed_scaler_x
+        # linear into exponential
+        delta =copysign(abs(delta)*(1.5**abs(delta)), delta)
         
-        delta_y = (power - neutral_power) * speed_scaler_y
-        delta_y_threshold = 2
-
-        if abs(delta_y) < delta_y_threshold:
-            delta_y = 0 
-        else:
-            delta_y = (abs(delta_y) - delta_y_threshold) * abs(delta_y)/delta_y
-
-        mouse_move(delta_x, delta_y)
+        #actions.user.swoop_move(delta)
+        actions.mouse_scroll(by_lines=False, y=int(delta))
         print("whistle", [int(x) for x in [power, f0, f1, f2, f]])
 
-import win32api, win32con
-def mouse_move(dx, dy):
-    win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
-    # with talon, but might not work in a game based on relative motion
-    # mouse_pos = ctrl.mouse_pos()
-    # x = mouse_pos[0] + dx
-    # y = mouse_pos[1] + dy
-    # ctrl.mouse_move(x, y)
+    # def swoop_move(delta:float):
+    #     mouse_move(delta)
+ 
