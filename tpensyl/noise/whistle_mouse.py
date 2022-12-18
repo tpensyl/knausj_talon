@@ -2,10 +2,10 @@ from talon import Module, Context, actions, noise, ctrl
 from math import log
 
 ctx = Context()
-ctx.tags = ["user.whistle_mouse"]
+ctx.tags = ["user.whistle_mouse_look"]
 
 mod = Module()
-mod.tag("whistle_mouse", desc="move cursor with a whistle") 
+mod.tag("whistle_mouse_look", desc="move cursor with a whistle, y=power, x=f0") 
  
 # initialize
 ts = 0
@@ -14,9 +14,9 @@ stop_ts = 0
 pause_threshold = .3
 
 # y axis based on power (volume)
-neutral_power = 400
-delta_y_threshold = 3
-speed_scaler_y = -.02
+power_deadzone = (250, 400)
+min_delta_y = 1
+speed_scaler_y = .02
 
 # x axis based on frequency
 # range is about from A#4-A#5 (466.16-932.33)
@@ -51,6 +51,7 @@ class WhistleActions:
         print("whistle stop ",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global stop_ts
         stop_ts = ts 
+        ctrl.mouse_click(0)
         
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
@@ -61,15 +62,14 @@ class WhistleActions:
         
         delta_x = (log(f) - base_x) * speed_scaler_x
         
-        delta_y = (power - neutral_power) * speed_scaler_y
-        
-        if abs(delta_y) < delta_y_threshold:
-            delta_y = 0 
+        if power > power_deadzone[1]:
+            delta_y = (power - power_deadzone[1]) * speed_scaler_y + min_delta_y
+        elif power < power_deadzone[0]:
+            delta_y = (power - power_deadzone[0]) * speed_scaler_y - min_delta_y
         else:
-            delta_y = delta_y
-            #delta_y = (abs(delta_y) - delta_y_threshold) * abs(delta_y)/delta_y
+            delta_y = 0
 
-        mouse_move(delta_x, delta_y)
+        mouse_move(delta_x, -delta_y)
         print("whistle cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
 import win32api, win32con
