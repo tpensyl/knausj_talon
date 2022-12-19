@@ -27,14 +27,11 @@ min_freq = 466.16
 neutral_freq = 659.25
 max_freq = 932.33
 min_pitch = log(min_freq)
-neutral_log = log(neutral_freq)
-max_pitch = log(max_freq) 
+max_pitch = log(max_freq)
+mid_pitch = (min_pitch + max_pitch) / 2
 
-max_speed = 10 #30 for talon a, 10 for mouse_event
-speed_scaler_x = max_speed / (max_pitch - neutral_log)
-
-
-use_static_scale = True
+max_speed = 10
+speed_scaler_x = max_speed / (max_pitch - mid_pitch)
 
 @ctx.action_class('user')
 class WhistleActions:
@@ -57,7 +54,7 @@ class WhistleActions:
         """for debugging"""
         f = f0
 
-        base_x = neutral_log
+        base_x = mid_pitch
         
         delta_x = (log(f) - base_x) * speed_scaler_x
         

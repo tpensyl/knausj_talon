@@ -1,11 +1,11 @@
-#app.title: disable
+app.title: disable
 -
 
 parrot(cluck):
 	user.sound_debug("cluck", power, f0, f1, f2) 
 
-# parrot(tut):
-# 	user.sound_debug("tut", power, f0, f1, f2)
+parrot(tut):
+	user.sound_debug("tut", power, f0, f1, f2)
 
 parrot(palate_click):
 	user.sound_debug("palate_click", power, f0, f1, f2)
@@ -37,14 +37,14 @@ parrot(yee:repeat):
 parrot(ee):
 	user.sound_debug("ee", power, f0, f1, f2)
 
-parrot(ee:repeat):
-	user.sound_debug("ee:r", power, f0, f1, f2)
+# parrot(ee:repeat):
+# 	user.sound_debug("ee:r", power, f0, f1, f2)
 
 parrot(ue):
 	user.sound_debug("ue", power, f0, f1, f2)
 
-parrot(ue:repeat):
-	user.sound_debug("ue:r", power, f0, f1, f2)
+# parrot(ue:repeat):
+# 	user.sound_debug("ue:r", power, f0, f1, f2)
 
 parrot(ae):
 	user.sound_debug("ae", power, f0, f1, f2)

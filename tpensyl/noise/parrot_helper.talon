@@ -10,7 +10,3 @@ parrot(whistle:repeat):
 
 parrot(whistle:stop):
     user.whistle_stop(ts, power, f0, f1, f2)
-
-parrot(yee):
-    print("ye")
-    user.whistle_start(ts, power, f0, f1, f2)
