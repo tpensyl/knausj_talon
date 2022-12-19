@@ -1,6 +1,7 @@
 
 -
 tag(): user.whistle_mouse_scroll
+tag(): user.dumdum_look
 
 parrot(whistle):
     user.whistle_start(ts, power, f0, f1, f2)
