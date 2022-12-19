@@ -72,8 +72,8 @@ class WhistleActions:
         print("whistle cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
 import win32api, win32con
-def mouse_move(x, y):
-    win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(x),int(y),0,0)
+def mouse_move(dx, dy):
+    win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
     # with talon, but might not work in a game
     # mouse_pos = ctrl.mouse_pos()
     # x = mouse_pos[0] + delta*speed_scaler_x

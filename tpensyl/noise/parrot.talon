@@ -1,11 +1,11 @@
-app.title: disable
+#app.title: disable
 -
 
 parrot(cluck):
 	user.sound_debug("cluck", power, f0, f1, f2) 
 
-parrot(tut):
-	user.sound_debug("tut", power, f0, f1, f2)
+# parrot(tut):
+# 	user.sound_debug("tut", power, f0, f1, f2)
 
 parrot(palate_click):
 	user.sound_debug("palate_click", power, f0, f1, f2)
@@ -28,8 +28,17 @@ parrot(ah):
 parrot(oh):
 	user.sound_debug("oh", power, f0, f1, f2)
 
+parrot(yee):
+	user.sound_debug("yee", power, f0, f1, f2)
+
+parrot(yee:repeat):
+	user.sound_debug("yee:r", power, f0, f1, f2)
+
 parrot(ee):
 	user.sound_debug("ee", power, f0, f1, f2)
+
+parrot(ee:repeat):
+	user.sound_debug("ee:r", power, f0, f1, f2)
 
 parrot(ue):
 	user.sound_debug("ue", power, f0, f1, f2)
@@ -61,12 +70,6 @@ parrot(oo):
 parrot(lll):
 	user.sound_debug("lll", power, f0, f1, f2)
 
-parrot(yee):
-	user.sound_debug("yee", power, f0, f1, f2)
-
-parrot(yee:repeat):
-	user.sound_debug("yee:r", power, f0, f1, f2)
-
 parrot(uh):
 	user.sound_debug("uh", power, f0, f1, f2)
 
@@ -74,7 +77,10 @@ parrot(fff):
 	user.sound_debug("fff", power, f0, f1, f2)
 
 parrot(buzz):
-	user.sound_debug("buzz", power, f0, f1, f2)
+	user.sound_debug("buzz:s", power, f0, f1, f2)
+
+parrot(buzz:repeat):
+	user.sound_debug("buzz:r", power, f0, f1, f2)
 
 parrot(generator):
 	user.sound_debug("generator", power, f0, f1, f2)

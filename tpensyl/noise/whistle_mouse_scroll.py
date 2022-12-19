@@ -47,7 +47,7 @@ def shaping_function(pitch_delta):
     # Normalize value to range [-10, 10]
     x = pitch_delta / (max_pitch - min_pitch) * 10
     # linear into exponential
-    return copysign(3*abs(x)*(1.5**abs(x)), -x)
+    return copysign(2*abs(x)*(1.5**abs(x)), -x)
 
 
 @ctx.action_class('user')
@@ -71,10 +71,12 @@ class WhistleActions:
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         """for debugging"""
+        # Use first few ticks to record starting pitch
         global start_frames 
         f = log(f0)
         if len(start_frames) < 5:
             start_frames += [f]
+            return
 
         base = sum(start_frames) / len(start_frames)
         pitch_delta = f - base
