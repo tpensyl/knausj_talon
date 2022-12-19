@@ -27,7 +27,6 @@ ctx.matches = """
 tag: user.whistle_mouse_scroll
 """
 
-
 # initialize
 ts = 0
 stop_ts = 0
@@ -42,19 +41,17 @@ min_freq = 466.16
 max_freq = 932.33
 min_pitch = log(min_freq)
 max_pitch = log(max_freq) 
-max_speed = 10 
-speed_scaler_x = max_speed / (max_pitch - min_pitch)
 
 def shaping_function(pitch_delta):
     "Map difference in pitch into scroll speed"
-    x = pitch_delta * speed_scaler_x
+    # Normalize value to range [-10, 10]
+    x = pitch_delta / (max_pitch - min_pitch) * 10
     # linear into exponential
-    return copysign(abs(x)*(1.5**abs(x)), -x)
+    return copysign(3*abs(x)*(1.5**abs(x)), -x)
 
 
 @ctx.action_class('user')
 class WhistleActions:
-
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
         """for debugging"""
         print("whistle start",[int(x) for x in (10*ts, power, f0, f1, f2)])

@@ -1,4 +1,3 @@
-#app.title: disable
 -
 
 parrot(palate_click):

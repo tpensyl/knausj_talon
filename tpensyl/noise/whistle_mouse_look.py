@@ -38,7 +38,6 @@ use_static_scale = True
 
 @ctx.action_class('user')
 class WhistleActions:
-
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
         """for debugging"""
         print("whistle start",[int(x) for x in (10*ts, power, f0, f1, f2)])
@@ -53,7 +52,6 @@ class WhistleActions:
         global stop_ts
         stop_ts = ts 
         ctrl.mouse_click(0)
-        
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         """for debugging"""
