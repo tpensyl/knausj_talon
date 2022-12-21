@@ -33,9 +33,18 @@ git stash [push] [<user.git_arguments>] message [<user.prose>]:
 git status$: "git status\n"
 git add patch$: "git add --patch\n"
 git show head$: "git show HEAD\n"
-git diff: "git diff\n"
+git diff$: "git diff\n"
 git diff (cached | cashed)$: "git diff --cached\n"
-git log: "git log\n"
+git log$: "git log\n"
+
+git checkout dot$: "git checkout . \n"
+git add dot$: "git add . \n"
+git push$: "git push \n"
+git pull$: "git pull \n"
+
+git commit allow empty: 
+    "git commit --allow-empty -m''"
+    key(left)
 
 # Convenience
 git clone clipboard:
