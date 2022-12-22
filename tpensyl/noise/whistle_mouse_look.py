@@ -13,7 +13,7 @@ tag: user.whistle_mouse_look
 ts = 0
 stop_ts = 0
 
-pause_threshold = .3
+pause_threshold = .4
 
 # y axis based on power (volume)
 power_deadzone = (250, 400)

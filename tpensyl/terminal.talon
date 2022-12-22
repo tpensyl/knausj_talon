@@ -1,6 +1,8 @@
 tag: terminal
 -
 
+pip install: "pip install "
+pip show: "pip show "
 vscode: "code "
 VPN: "vpn\n"
 lisa <user.text>: "ls {text}"

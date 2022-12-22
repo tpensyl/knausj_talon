@@ -1,4 +1,4 @@
-from talon import Module, actions, noise
+from talon import Module, actions, noise, ctrl
 
 
 mod = Module()
