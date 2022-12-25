@@ -149,7 +149,7 @@ punctuation_words = {
     "grave": "`",
     "comma": ",",
     # Workaround for issue with conformer b-series; see #946
-    "coma": ",",
+    "comma": ",",
     "period": ".",
     "full stop": ".",
     "semicolon": ";",

@@ -30,6 +30,7 @@ class NoiseActions:
     def parrot_palate():
         """parrot palate sound, has some false positives with speech"""
         x=1
+        #ctrl.mouse_click(0)
         #print("palate unimplemented")
         pass
 
