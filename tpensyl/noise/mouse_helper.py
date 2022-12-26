@@ -1,14 +1,7 @@
 import time
-
-from talon import noise, ctrl
-from talon import Module, Context
+from talon import ctrl, Module
 
 mod = Module()
-
-#ctx = Context()
-#ctx.matches = r"""
-#os: windows
-#"""
 
 @mod.action_class
 class TpensylClick:

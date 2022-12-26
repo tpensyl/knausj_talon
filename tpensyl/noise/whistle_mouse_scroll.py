@@ -25,7 +25,7 @@ mod.tag("whistle_mouse_scroll", desc="scroll by changing whistle pitch")
 ctx = Context()
 ctx.matches = """
 tag: user.whistle_mouse_scroll
-and not app.exe: thief.exe
+and not tag: user.whistle_mouse_look
 """
 
 # initialize
