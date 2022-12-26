@@ -9,8 +9,8 @@ mod = Module()
 class DumdumWidgetWrapper:
     def dumdum_widget(x: float, y: float):
         "draw an indicator on the stream"
-        dw.dx = x
-        dw.dy = y
+        dw.dx = x * 30
+        dw.dy = y * 30
         
 class DumdumWidget:
     def __init__(self):
@@ -22,7 +22,7 @@ class DumdumWidget:
         c.register("draw", self.on_draw)
 
     def on_draw(self, c):
-        size = 20
+        size = 12
         c.paint.color = "ff2233bb"
 
         center_x = c.x + c.width / 2

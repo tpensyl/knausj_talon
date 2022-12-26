@@ -7,6 +7,7 @@ mod = Module()
 class ParrotNoiseActions:
     def dumdum_start(ts:float, power:float, f0:float, f1:float, f2:float):
         "dumdum start stub"
+        # print("dumdum start ", [int(x) for x in [10*ts, power, f0, f1, f2]])
         x = 1 # mute 'unimplemented' warnings
 
     def dumdum_stop(ts:float, power:float, f0:float, f1:float, f2:float):
@@ -15,5 +16,4 @@ class ParrotNoiseActions:
 
     def dumdum_repeat(ts:float, power:float, f0:float, f1:float, f2:float):
         "dumdum repeat stub"
-        print("dumdum cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
         x = 1

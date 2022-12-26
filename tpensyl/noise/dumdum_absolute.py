@@ -2,18 +2,15 @@ from talon import Module, Context, actions, ctrl, cron
 from math import log
 
 mod = Module()
-mod.tag("dumdum_look", desc="move cursor with silly voice, y=power, x=f0") 
+mod.tag("dumdum_look_absolute", desc="move cursor with silly voice, y=power, x=f0") 
  
 ctx = Context()
 ctx.matches = """
-tag: user.dumdum_look
+tag: user.dumdum_look_absolute
 """
 
 # initialize
-ts = 0
-stop_ts = 0
-
-pause_threshold = .3
+stop_job = None
 
 # y axis based on power (volume)
 power_deadzone = (225, 240)
@@ -33,28 +30,23 @@ speed_scaler_x = max_speed / (max_pitch - mid_pitch)
 @ctx.action_class('user')
 class DumdumActions:
     def dumdum_start(ts:float, power:float, f0:float, f1:float, f2:float):
-        """for debugging"""
-        print("whistle start",[int(x) for x in (10*ts, power, f0, f1, f2)])
-        if ts - stop_ts < pause_threshold:
-            print("continue")
-            if stop_job:
-                cron.cancel(stop_job)
+        """dumdum_start"""
+        if stop_job:
+            cron.cancel(stop_job)
             return
 
-        ctrl.mouse_click(0,down=True)
+        ctrl.mouse_click(0, down=True)
 
     def dumdum_stop(ts:float, power:float, f0:float, f1:float, f2:float):
         """for debugging"""
-        print("whistle stop ",[int(x) for x in (10*ts, power, f0, f1, f2)])
-        global stop_ts, stop_job
-        stop_ts = ts 
-
         def do_stop():
-            print("do_stop")
+            global stop_job
             ctrl.mouse_click(0,up=True)
-            
-        stop_job = cron.after("150ms", do_stop)
-        print("eee stop ", [int(x) for x in [10*ts, power, f0, f1, f2]])
+            stop_job = None
+        global stop_job
+        if stop_job:
+            cron.cancel(stop_job)
+        stop_job = cron.after("200ms", do_stop) 
 
     def dumdum_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         """for debugging"""
@@ -72,8 +64,8 @@ class DumdumActions:
             delta_y = 0
 
         mouse_move(delta_x, -delta_y)
-        actions.user.dumdum_widget(30 * delta_x, 30 * -delta_y)
-        print("eee cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
+        actions.user.dumdum_widget(delta_x, -delta_y)
+        #print("eee cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
 should_print = True
 def print_attributes_once(object):

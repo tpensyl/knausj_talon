@@ -1,4 +1,4 @@
-from talon import Module, Context, actions, noise, ctrl
+from talon import Module, Context, actions, ctrl, cron
 from math import log
 
 mod = Module()
@@ -10,15 +10,14 @@ tag: user.whistle_mouse_look
 """
 
 # initialize
-ts = 0
-stop_ts = 0
+stop_job = None
 
 pause_threshold = .4
 
 # y axis based on power (volume)
-power_deadzone = (250, 400)
+power_deadzone = (300, 320)
 min_delta_y = 1
-speed_scaler_y = .02
+speed_scaler_y = .03
 
 # x axis based on frequency
 # range is about from A#4-A#5 (466.16-932.33)
@@ -30,25 +29,29 @@ min_pitch = log(min_freq)
 max_pitch = log(max_freq)
 mid_pitch = (min_pitch + max_pitch) / 2
 
-max_speed = 10
+max_speed = 50
 speed_scaler_x = max_speed / (max_pitch - mid_pitch)
 
 @ctx.action_class('user')
 class WhistleActions:
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
-        """for debugging"""
-        print("whistle start",[int(x) for x in (10*ts, power, f0, f1, f2)])
-        #actions.user.whistle_repeat(ts, power, f0, f1, f2)
-        if ts - stop_ts < pause_threshold:
-            print("continue")
+        """whistle_start debugging"""
+        if stop_job:
+            cron.cancel(stop_job)
             return
 
+        ctrl.mouse_click(0, down=True)
+    
     def whistle_stop(ts:float, power:float, f0:float, f1:float, f2:float):
-        """for debugging"""
-        print("whistle stop ",[int(x) for x in (10*ts, power, f0, f1, f2)])
-        global stop_ts
-        stop_ts = ts 
-        ctrl.mouse_click(0)
+        """whistle_stop debugging"""
+        def do_stop():
+            global stop_job
+            ctrl.mouse_click(0,up=True)
+            stop_job = None
+        global stop_job
+        if stop_job:
+            cron.cancel(stop_job)
+        stop_job = cron.after("200ms", do_stop) 
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         """for debugging"""
@@ -66,13 +69,9 @@ class WhistleActions:
             delta_y = 0
 
         mouse_move(delta_x, -delta_y)
-        print("whistle cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
+        actions.user.dumdum_widget(delta_x, -delta_y)
+        # print("whistle cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
 import win32api, win32con
 def mouse_move(dx, dy):
     win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
-    # with talon, but might not work in a game
-    # mouse_pos = ctrl.mouse_pos()
-    # x = mouse_pos[0] + delta*speed_scaler_x
-    # y = mouse_pos[1]
-    # ctrl.mouse_move(x, y)
