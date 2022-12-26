@@ -27,6 +27,10 @@ ctx.matches = """
 tag: user.whistle_mouse_scroll
 """
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 # initialize
 ts = 0
 stop_ts = 0
@@ -48,7 +52,6 @@ def shaping_function(pitch_delta):
     x = pitch_delta / (max_pitch - min_pitch) * 10
     # linear into exponential
     return copysign(2*abs(x)*(1.5**abs(x)), -x)
-
 
 @ctx.action_class('user')
 class WhistleActions:
