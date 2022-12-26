@@ -48,6 +48,11 @@ class DumdumActions:
         print("whistle stop ",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global stop_ts, stop_job
         stop_ts = ts 
+
+        def do_stop():
+            print("do_stop")
+            ctrl.mouse_click(0,up=True)
+            
         stop_job = cron.after("150ms", do_stop)
         print("eee stop ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
@@ -66,62 +71,17 @@ class DumdumActions:
         else:
             delta_y = 0
 
-        dw.x = delta_x * 30
-        dw.y = -delta_y * 30
         mouse_move(delta_x, -delta_y)
+        actions.user.dumdum_widget(30 * delta_x, 30 * -delta_y)
         print("eee cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
-def do_stop():
-    print("do_stop")
-    ctrl.mouse_click(0,up=True)
-
-
-from talon import canvas, screen, ui
-from talon.types.point import Point2d
-from talon.skia import Paint, Rect
-
-class DumdumWidget:
-    def __init__(self):
-        self.mcanvas = None
-        self.center = None
-        self.x = 0
-        self.y = 0
-
-    def initialize_widget(self):
-        screen = ui.screens()[0]
-        self.center = screen.rect.center
-        self.mcanvas = canvas.Canvas.from_screen(screen)
-        self.mcanvas.register("draw", self.draw)
-
-    def draw(self, canvas):
-        paint = canvas.paint
-        paint.color = "ff2233bb"
-        #point = Point2d(5, 20)
-        #canvas.draw_line(5, 20, 200, 400)
-        self.draw_target(canvas, self.x, self.y)
-        # print_attributes_once(canvas)
-    
-    def draw_target(self, canvas, x, y):
-        size = 20
-        target_x = self.center.x + x - size / 2
-        target_y = self.center.y + y - size / 2
-        target_x = max(0, min(2*self.center.x, target_x))
-        target_y = max(0, min(2*self.center.y, target_y))
-        rect = Rect(target_x, target_y, size, size)
-        canvas.draw_rect(rect)
-
-
-
 should_print = True
-def print_once(object):
+def print_attributes_once(object):
     global should_print
     if should_print:
         should_print = False
         print([method_name for method_name in dir(object)
                   if callable(getattr(object, method_name))])
-
-dw = DumdumWidget()
-dw.initialize_widget()
 
 import win32api, win32con
 def mouse_move(dx, dy):

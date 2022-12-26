@@ -53,7 +53,7 @@ def shaping_function(pitch_delta):
 class WhistleActions:
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
         """for debugging"""
-        print("whistle start",[int(x) for x in (10*ts, power, f0, f1, f2)])
+        # print("whistle start",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global start_frames, stop_ts
         if ts - stop_ts < pause_threshold:
             print("continue")
@@ -64,7 +64,7 @@ class WhistleActions:
 
     def whistle_stop(ts:float, power:float, f0:float, f1:float, f2:float):
         """for debugging"""
-        print("whistle stop",[int(x) for x in (10*ts, power, f0, f1, f2)])
+        # print("whistle stop",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global stop_ts
         stop_ts = ts 
 
@@ -82,5 +82,5 @@ class WhistleActions:
         scroll_speed = shaping_function(pitch_delta)
         
         actions.mouse_scroll(by_lines=False, y=scroll_speed)
-        print("whistle", [int(x) for x in [power, f0, f1, f2, f]])
+        # print("whistle", [int(x) for x in [power, f0, f1, f2, f]])
  
