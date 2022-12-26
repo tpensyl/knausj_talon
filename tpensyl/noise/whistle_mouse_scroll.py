@@ -27,10 +27,6 @@ ctx.matches = """
 tag: user.whistle_mouse_scroll
 """
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 # initialize
 ts = 0
 stop_ts = 0
