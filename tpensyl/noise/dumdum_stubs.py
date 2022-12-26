@@ -15,4 +15,5 @@ class ParrotNoiseActions:
 
     def dumdum_repeat(ts:float, power:float, f0:float, f1:float, f2:float):
         "dumdum repeat stub"
+        print("dumdum cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
         x = 1
