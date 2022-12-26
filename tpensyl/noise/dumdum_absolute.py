@@ -99,7 +99,7 @@ class DumdumWidget:
         #point = Point2d(5, 20)
         #canvas.draw_line(5, 20, 200, 400)
         self.draw_target(canvas, self.x, self.y)
-        # debug(canvas)1
+        # print_attributes_once(canvas)
     
     def draw_target(self, canvas, x, y):
         size = 20
