@@ -1,12 +1,13 @@
 from talon import Module, Context, actions, ctrl, cron
-from math import log
+from math import log, sin, cos, pi
 
 mod = Module()
 mod.tag("whistle_mouse_look", desc="move cursor with a whistle, y=power, x=f0") 
  
 ctx = Context()
 ctx.matches = """
-tag: user.whistle_mouse_look
+os: windows
+and tag: user.whistle_mouse_look
 """
 
 # initialize
@@ -15,7 +16,7 @@ stop_job = None
 pause_threshold = .4
 
 # y axis based on power (volume)
-power_deadzone = (300, 320)
+neutral_power = 330
 min_delta_y = 1
 speed_scaler_y = .03
 
@@ -29,7 +30,7 @@ min_pitch = log(min_freq)
 max_pitch = log(max_freq)
 mid_pitch = (min_pitch + max_pitch) / 2
 
-max_speed = 50
+max_speed = 3
 speed_scaler_x = max_speed / (max_pitch - mid_pitch)
 
 @ctx.action_class('user')
@@ -61,17 +62,19 @@ class WhistleActions:
         
         delta_x = (log(f) - base_x) * speed_scaler_x
         
-        if power > power_deadzone[1]:
-            delta_y = (power - power_deadzone[1]) * speed_scaler_y + min_delta_y
-        elif power < power_deadzone[0]:
-            delta_y = (power - power_deadzone[0]) * speed_scaler_y - min_delta_y
-        else:
-            delta_y = 0
+        delta_y = (power - neutral_power) * speed_scaler_y
+        delta_x, delta_y = map_radial(delta_y, delta_x * pi)
 
         mouse_move(delta_x, -delta_y)
         actions.user.dumdum_widget(delta_x, -delta_y)
         # print("whistle cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
+def map_radial(r, θ):
+    x = r * sin(θ)
+    y = r * cos(θ)
+    return x, y
+
 import win32api, win32con
 def mouse_move(dx, dy):
     win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
+    

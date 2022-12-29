@@ -1,9 +1,16 @@
-from talon import Module, canvas, screen, ui
+from talon import Module, Context, canvas, screen, ui
 #from talon.types.point import Point2d
 from talon.skia import Paint, Rect
 from talon.canvas import Canvas
 
 mod = Module()
+mod.tag("aim_widget", desc="visual indicator for aim modules")
+
+# doesn't actually work for gating the raw python at bottom
+ctx = Context()
+ctx.matches = """
+tag: user.aim_widget
+"""
 
 global radial_indicator
 radial_indicator = False
@@ -52,4 +59,4 @@ class DumdumWidget:
 
     
 
-dw = DumdumWidget()
+#dw = DumdumWidget()

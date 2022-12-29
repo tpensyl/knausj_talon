@@ -6,14 +6,15 @@ mod.tag("dumdum_look_radial", desc="move cursor with silly voice, y=power, x=f0"
  
 ctx = Context()
 ctx.matches = """
-tag: user.dumdum_look_radial
+os: windows
+and tag: user.dumdum_look_radial
 """
 
 # initialize
 stop_job = None
 
 # y axis based on power (volume)
-power_deadzone = (225, 240)
+neutral_power = 220
 min_delta_y = 1
 speed_scaler_y = .06
 
@@ -49,7 +50,7 @@ class DumdumActions:
         global stop_job
         if stop_job:
             cron.cancel(stop_job)
-        stop_job = cron.after("200ms", do_stop) 
+        stop_job = cron.after("500ms", do_stop) 
 
     def dumdum_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         """for debugging"""
@@ -58,13 +59,7 @@ class DumdumActions:
         base_x = mid_pitch
         
         delta_x = (log(f) - base_x) * speed_scaler_x
-        
-        if power > power_deadzone[1]:
-            delta_y = (power - power_deadzone[1]) * speed_scaler_y + min_delta_y
-        elif power < power_deadzone[0]:
-            delta_y = (power - power_deadzone[0]) * speed_scaler_y - min_delta_y
-        else:
-            delta_y = 0
+        delta_y = (power - neutral_power) * speed_scaler_y
         
         delta_x, delta_y = map_radial(delta_y, delta_x)
 
