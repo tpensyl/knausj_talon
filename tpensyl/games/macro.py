@@ -57,23 +57,3 @@ class Actions:
         actions.key("tab")
         actions.sleep("100ms")
         actions.key("alt:up")
-
-
-    def cycle_up_down():
-        """move up and down continuously"""
-        global cycle_key
-        actions.key(cycle_key+':up')
-        cycle_key= 'down' if cycle_key=='up' else 'up'
-        actions.key(cycle_key+':down')
-
-    def start_cycle_up_down(interval:str):
-        """Start loop"""
-        global cycle_job
-        if(cycle_job):
-            cron.cancel(cycle_job)
-            cycle_job = None
-            actions.key('up:up')
-            actions.key('down:up')
-        else:
-            interval_s=1
-            cycle_job = cron.interval(interval, actions.user.cycle_up_down)

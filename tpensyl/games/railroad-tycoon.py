@@ -20,11 +20,13 @@ class UserActions:
         actions.user.game_click(0, times=1, hold=16000)
 
     def noise_hiss_start():
-        # safely cancel last drag for convenience
-        actions.key('s')
-        actions.key('t')
-        actions.user.mouse_drag(0)
+        actions.user.mouse_drag(1)
 
     def noise_hiss_stop():
-        return
-        #pop to stop drag
+        ctrl.mouse_click(button=1, up=True)
+
+    def parrot_palate():
+        actions.key("esc")
+
+    def parrot_tut():
+        actions.user.toggle_drag(0)  

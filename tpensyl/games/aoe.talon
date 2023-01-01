@@ -3,7 +3,7 @@ app.name: Age of Empires: Definitive Edition
 -
 
 # temporary for convenience
-(fix|edit) commands:
+fix commands:
     mode.disable("user.gameboy")
     mode.enable("command")
 	user.switcher_focus("code")

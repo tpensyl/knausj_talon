@@ -15,7 +15,7 @@ north: edit.up()
 #south: edit.down()
 
 key: user.insert_between("key(", ")")
-pop: mouse_click(1)
+#pop: mouse_click(1)
 yap: "y\n" 
 
 junk: key(backspace)

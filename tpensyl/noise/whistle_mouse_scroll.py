@@ -74,7 +74,7 @@ class WhistleActions:
         # Use first few ticks to record starting pitch
         global start_frames 
         f = log(f0)
-        if len(start_frames) < 1:
+        if len(start_frames) < 2:
             start_frames += [f]
             return
 
