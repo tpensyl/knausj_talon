@@ -82,6 +82,12 @@ class WhistleActions:
         pitch_delta = f - base
         scroll_speed = shaping_function(pitch_delta)
         
-        actions.mouse_scroll(by_lines=False, y=scroll_speed)
-        # print("whistle", [int(x) for x in [power, f0, f1, f2, f]])
+        actions.user.whistle_action(scroll_speed)
+        # actions.mouse_scroll(by_lines=False, y=scroll_speed)
+        # print("whistle", [int(x) for x in [power, f0,, f2, f]])
  
+@mod.action_class
+class WhistleAction:
+    def whistle_action(delta:float):
+        """Define action to take based on relative whistle pitch"""
+        actions.mouse_scroll(by_lines=False, y=delta)

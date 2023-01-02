@@ -21,7 +21,7 @@ class UserActions:
         buttons_held_down = list(ctrl.mouse_buttons_down())
         if LEFT_BUTTON in buttons_held_down:
             ctrl.mouse_click(button=LEFT_BUTTON, up=True)
-            return
+            #return
 
         global last_click_ts
         new_click_ts = time()
@@ -45,6 +45,24 @@ class UserActions:
     def parrot_tut():
         actions.user.toggle_autorun()
 
+    def whistle_action(delta):
+        slow_scroll(delta)
+
+def slow_scroll(delta):
+    global last_whistle_time
+    this_whistle_time = time()
+    if this_whistle_time - last_whistle_time < min_whistle_event_time:
+        return
+    else:
+        if delta < -delta_threshold:
+            actions.mouse_scroll(by_lines=True, y=-10)
+        elif delta > delta_threshold:
+            actions.mouse_scroll(by_lines=True, y=10)
+        last_whistle_time = this_whistle_time
+
+min_whistle_event_time = .35
+delta_threshold = 2
+last_whistle_time = time()
 currently_moving = False
 autorun_start_time = time()
 
@@ -113,7 +131,7 @@ def hold_on_double_press(key):
         print('up', key)
         actions.key(key+':up')
         del(keys_down[key])
-        return
+        #return
 
     last_press = keys_last_press.get(key, 0)
     this_press = time()
