@@ -13,6 +13,7 @@ RIGHT_BUTTON = 1
 
 last_click_ts = time()
 double_click_threshold = .5
+double_click_threshold = .35
 
 @ctx.action_class('user')
 class UserActions:
