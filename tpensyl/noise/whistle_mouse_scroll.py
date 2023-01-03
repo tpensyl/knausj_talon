@@ -1,24 +1,6 @@
 from talon import Module, Context, actions, ctrl
 from math import log, copysign
 
-""" 
-    patterns.json
-	"whistle": {
-		"sounds": ["sound_whistle"],
-		"threshold": {
-			">power": 20,
-			">probability": 0.85,
-			">f0": 250
-		},
-		"graceperiod": 0.1,
-		"grace_threshold": {
-			">power": 10,
-			">probability": 0.3,
-			">f0": 250
-		}
-	},
-"""
-
 mod = Module()
 mod.tag("whistle_mouse_scroll", desc="scroll by changing whistle pitch")
 
