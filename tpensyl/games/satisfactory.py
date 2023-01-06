@@ -1,4 +1,4 @@
-from talon import Context, Module, actions, ctrl
+from talon import Context, Module, actions, ctrl, cron
 from time import time
 
 mod = Module()
@@ -38,12 +38,13 @@ class UserActions:
     def noise_hiss_stop():
         actions.user.set_autorun(False)
 
-    def parrot_palate():
+    def parrot_tut():
         #actions.user.press_wait('e') 
         #actions.key('e:down')
-        actions.user.toggle_hold_on_double_press('e')
+        #actions.user.toggle_hold_on_double_press('e')
+        tertiary_noise_action()
 
-    def parrot_tut():
+    def parrot_palate():
         actions.user.toggle_autorun()
 
     def whistle_action(delta):
@@ -70,8 +71,21 @@ autorun_start_time = time()
 # if the run button is held down longer than this, don't use autorun
 manual_autorun_min_time = .11
 
+action_map = {
+    "use": (lambda: actions.user.toggle_hold_on_double_press('e')), 
+    "jump": (lambda: actions.user.long_press('space'))
+}
+tertiary_noise_action = action_map["use"]
+
 @mod.action_class
 class Actions:
+    def set_tertiary_noise_action(action:str):
+        "Set tertiary noise action"
+        global tertiary_noise_action
+        if action in action_map:
+            print("==========SET", action, action_map[action])
+            tertiary_noise_action = action_map[action]
+
     def set_autorun(new_moving_state:bool):
         "Explicitly turn autorun on or off"
         update_autorun(new_moving_state)
@@ -94,7 +108,8 @@ class Actions:
 
     def toggle_hold_on_double_press(key:str):
         "Allow holding of various keys"
-        hold_on_double_press(key)
+        # hold_on_double_press(key)
+        hold_until_double_press(key)
 
 def update_autorun(state = None, toggle = False):
     global currently_moving, autorun_start_ts
@@ -144,4 +159,28 @@ def hold_on_double_press(key):
         actions.user.long_press(key)
     keys_last_press[key] = this_press
 
+# Double press is drag, without releasing the first press
+# This means the key is not released until the wait time.
+keys_release_job = {}
+double_click_wait_time = "300ms"
+def hold_until_double_press(key):
+    def finish_press():
+        print("up")
+        actions.key(key+':up')
+        del(keys_release_job[key])
+        
+    if key in keys_release_job:
+        print("hold")
+        # leave held down
+        cron.cancel(keys_release_job[key])
+        del(keys_release_job[key])
+    else:
+        print("down")
+        actions.key(key+':down')
+        keys_release_job[key] = cron.after(double_click_wait_time, finish_press)
 
+# def cron_replace(delay, f):
+#     global stop_job
+#     if stop_job:
+#         cron.cancel(stop_job)
+#     stop_job = cron.after(delay, f) 

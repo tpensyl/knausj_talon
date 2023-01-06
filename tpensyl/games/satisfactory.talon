@@ -4,6 +4,11 @@ and app.name: Satisfactory
 
 tag(): user.whistle_mouse_scroll
 
+pogo: user.set_tertiary_noise_action("jump")
+use: 
+    user.long_press('e')
+    user.set_tertiary_noise_action("use")
+
 key(w:down):
     user.set_autorun(true)
 key(w:up):
@@ -18,15 +23,17 @@ key(s:down):
     key(up:up)
 key(s:up): key(down:up)
 
+^(recipe|recipes)$: key('o')
 ^back$: key(esc)
 ^belt$: key(1)
 ^power$: key(2)
 ^gun$: key(h)
 ^delete$: key(f)
 ^build$: key(q)
-^stuff$: key(tab)
+^(stuff|item)$: key(tab)
 ^light$: key(b)
 ^crouch$: user.toggle_hold('c')
+^backpedal$: user.toggle_hold('s')
 ^(run|walk)$: key(shift)
 ^jump$: user.long_press('space')
 ^scan$:
@@ -41,5 +48,11 @@ key(s:up): key(down:up)
     mode.disable("user.gameboy")
     mode.enable("command")
 	user.switcher_focus("code")
+
+^alt tab$:
+    user.window_tab()
+    user.switcher_focus("code")
+    mode.disable("user.gameboy")
+    mode.enable("command")
 
 <phrase>$: skip()

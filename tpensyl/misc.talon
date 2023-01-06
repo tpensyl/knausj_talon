@@ -5,6 +5,12 @@
 # * homophones.py can we add some order of precedent
 # * one command to clear and oleate the line properly
 
+#^alt tab$:
+#    user.window_tab()
+#    user.switcher_focus("code")
+#    mode.disable("user.gameboy")
+#    mode.enable("command")
+
 start menu: key(super)
 
 m v <user.number_string>: "MV-{number_string}"
