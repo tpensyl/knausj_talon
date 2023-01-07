@@ -3,25 +3,25 @@ and app.name: Satisfactory
 -
 
 tag(): user.whistle_mouse_scroll
-
 pogo: user.set_tertiary_noise_action("jump")
 use: 
     user.long_press('e')
     user.set_tertiary_noise_action("use")
 
 key(w:down):
-    user.set_autorun(true)
+    user.hold_on_double_press_down('up')
+    user.set_hold('down', false)
 key(w:up):
-    user.set_autorun(false)
-    #user.end_long_autorun()
+    user.hold_on_double_press_up('up')
 key(a:down): key(left:down)
 key(a:up): key(left:up)
 key(d:down): key(right:down)
 key(d:up): key(right:up)
 key(s:down): 
-    key(down:down)
-    key(up:up)
-key(s:up): key(down:up)
+    user.hold_on_double_press_down('down')
+    user.set_hold('up', false)
+key(s:up):
+    user.hold_on_double_press_up('down')
 
 ^(recipe|recipes)$: key('o')
 ^back$: key(esc)
@@ -32,6 +32,7 @@ key(s:up): key(down:up)
 ^build$: key(q)
 ^(stuff|item)$: key(tab)
 ^light$: key(b)
+^paint$: key(x)
 ^crouch$: user.toggle_hold('c')
 ^backpedal$: user.toggle_hold('s')
 ^(run|walk)$: key(shift)
@@ -51,8 +52,8 @@ key(s:up): key(down:up)
 
 ^alt tab$:
     user.window_tab()
-    user.switcher_focus("code")
     mode.disable("user.gameboy")
     mode.enable("command")
+    user.switcher_focus("code")
 
 <phrase>$: skip()

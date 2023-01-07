@@ -1,5 +1,6 @@
-#mode: user.gameboy
-#tag: user.dumdum_look
+mode: user.gameboy
+tag: user.dumdum_look_radial
+tag: user.dumdum_look_relative
 -
 
 parrot(broad_ee):
