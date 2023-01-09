@@ -1,3 +1,4 @@
+mode: all
 #tag: disable
 
 -
