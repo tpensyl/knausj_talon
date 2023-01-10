@@ -1,6 +1,4 @@
 mode: all
-#tag: disable
-
 -
 
 parrot(whistle):

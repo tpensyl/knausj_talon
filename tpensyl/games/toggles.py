@@ -34,6 +34,10 @@ class Actions:
         "Release unless a hold was just triggered"
         hold_on_double_press_up(key)
 
+key_mutex = defaultdict(lambda: list())
+key_mutex['up'] = ['down']
+key_mutex['down'] = ['up']
+
 key_is_held = defaultdict(lambda: False)
 key_hold_start_ts = {}
 
@@ -46,6 +50,8 @@ def set_hold(key, new_state):
         key_hold_start_ts[key] = time()
 
     if old_state == False and new_state == True:
+        for incompatible_key in key_mutex[key]:
+            set_hold(incompatible_key, False)
         actions.key(key+':down')
     elif old_state == True and new_state == False: 
         # Doing :up carelessly leads to repeated key press during a hold
@@ -53,20 +59,23 @@ def set_hold(key, new_state):
 
     key_is_held[key] = new_state
 
-def hold_on_double_press_down(key):
-    set_hold(key, True)
     
-# pairs with hold_on_double_press_down()
-keys_last_up = {}
+keys_this_down = {}
+keys_last_down = {}
 double_press_threshold = .2
 def hold_on_double_press_up(key):
-    last_up = keys_last_up.get(key, 0)
+    last_up = keys_last_down.get(key, 0)
     this_up = time()
     if this_up - last_up > double_press_threshold:
         set_hold(key, False)
     else:
+        #something is broken
         print("leaving key [" + key + "] pressed due to rapid press")
-    keys_last_up[key] = this_up
+    keys_last_down[key] = keys_this_down[key]
+
+def hold_on_double_press_down(key):
+    keys_this_down[key] = time()
+    set_hold(key, True)
 
 # Double press is drag, without releasing the first press
 # This means the key is not released until the wait time.
