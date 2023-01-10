@@ -297,4 +297,5 @@ ctx.lists["self.prose_formatter"] = {
     "say": "NOOP",
     "speak": "NOOP",
     "sentence": "CAPITALIZE_FIRST_WORD",
+    "sent": "CAPITALIZE_FIRST_WORD",
 }

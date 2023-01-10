@@ -81,3 +81,5 @@ toggle right sidebar: key(ctrl-.)
 (previous | last) (element | bit):
     app.notify("please use the voice command 'element last' instead of 'last element'")
     key(shift-tab)
+
+locate <user.text>: "/locate {text}"
