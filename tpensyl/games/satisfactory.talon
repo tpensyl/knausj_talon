@@ -72,4 +72,4 @@ key(e:up): user.hold_on_double_press_up('i')
     mode.enable("command")
     user.switcher_focus("code")
 
-<phrase>$: skip()
+#<phrase>$: skip()

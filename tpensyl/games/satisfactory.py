@@ -15,6 +15,13 @@ last_click_ts = time()
 double_click_threshold = .5
 double_click_threshold = .35
 
+action_map = {
+    "use_old": (lambda: actions.user.hold_until_double_press('i')),
+    "use": (lambda: actions.user.long_press('i')),
+    "jump": (lambda: actions.user.long_press('space'))
+}
+tertiary_noise_action = action_map["use"]
+
 @ctx.action_class('user')
 class UserActions:
     def noise_pop():
@@ -50,27 +57,34 @@ class UserActions:
     def whistle_action(delta):
         slow_scroll(delta)
 
+min_whistle_event_time = .35
+delta_threshold = 2
+delta_scaler = 15 #higher is slower
+last_whistle_time = time()
+
 def slow_scroll(delta):
     global last_whistle_time
     this_whistle_time = time()
-    if this_whistle_time - last_whistle_time < min_whistle_event_time:
+    #TODO consider using remainder instead
+    delta_interval = min_whistle_event_time * delta_scaler / max(0.1, abs(delta))
+
+    debug_log(this_whistle_time - last_whistle_time, delta_interval, delta)
+
+    if this_whistle_time - last_whistle_time < delta_interval:# and False :
         return
     else:
+        print("rotate")
         if delta < -delta_threshold:
+            print("scroll down")
             actions.mouse_scroll(by_lines=True, y=-10)
+            last_whistle_time = this_whistle_time
         elif delta > delta_threshold:
             actions.mouse_scroll(by_lines=True, y=10)
-        last_whistle_time = this_whistle_time
+            last_whistle_time = this_whistle_time
 
-min_whistle_event_time = .35
-delta_threshold = 2
-last_whistle_time = time()
-
-action_map = {
-    "use": (lambda: actions.user.hold_until_double_press('e')), 
-    "jump": (lambda: actions.user.long_press('space'))
-}
-tertiary_noise_action = action_map["use"]
+def debug_log(*args):
+    text = ', '.join(map(lambda x: str(int(1000*x)/1000), args))
+    actions.user.set_debug_text(text)
 
 @mod.action_class
 class Actions:
