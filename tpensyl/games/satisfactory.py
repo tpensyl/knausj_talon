@@ -2,10 +2,11 @@ from talon import Context, Module, actions, ctrl, cron
 from time import time
 
 mod = Module()
-ctx = Context()
 
+ctx = Context()
 ctx.matches = r"""
-app.name: Satisfactory
+mode: user.gameboy
+and app.name: Satisfactory
 """
 
 LEFT_BUTTON = 0
@@ -56,6 +57,10 @@ class UserActions:
 
     def whistle_action(delta):
         slow_scroll(delta)
+
+    def init_box_widget():
+        "override this method to create widget"
+        actions.user.set_box_widget(695, 23, 1225, 107, "000000ff")  
 
 min_whistle_event_time = .35
 delta_threshold = 2

@@ -1,4 +1,27 @@
-from talon import Module
+from talon import Module, ui, actions, scope
 
 mod = Module()
-mod.mode("gameboy", desc="visualboy-m")
+mod.mode("gameboy", desc="Limited command mode intended for games")
+
+game_list = [
+    "Satisfactory"
+]
+
+def on_app_switch(app):
+    modes = scope.get("mode")
+    if "sleep" in modes:
+        return
+        
+    if app.name in game_list:
+        if "user.gameboy" not in modes:
+            actions.mode.disable("command")
+            actions.mode.enable("user.gameboy")
+            print(f"App [{app.name}] triggered gameboy mode.")
+    else:
+        if "user.gameboy" in modes:
+            actions.mode.enable("command")
+            actions.mode.disable("user.gameboy")
+            print(f"App [{app.name}] triggered command mode.")
+
+ui.register("app_activate", on_app_switch)
+
