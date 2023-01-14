@@ -35,11 +35,17 @@ key(e:up): user.hold_on_double_press_up('i')
 ^belt pole$: key(4)
 ^lift$: key(6)
 ^tower$: key(0)
-^(bar|tab) next$: user.scroll_with_modifier('alt', 1, '10ms')
-^(bar|tab) last$: user.scroll_with_modifier('alt', -1, '10ms')
+^(bar|tab) next [one]$:
+    user.scroll_with_modifier('alt', 1, '10ms')
+^(bar|tab) next <user.repeat_num>$:
+    user.scroll_with_modifier('alt', 1, '10ms', repeat_num)
+^(bar|tab) last$:
+    user.scroll_with_modifier('alt', -1, '10ms')
+^(bar|tab) last <user.repeat_num>$:
+    user.scroll_with_modifier('alt', -1, '10ms', repeat_num)
 
 ^(recipe|recipes)$: key('o')
-^back$: key(esc)
+^back$: key(ctrl:up esc)
 ^gun$: key(h)
 ^delete$: key(f)
 ^build$: key(q)
@@ -47,16 +53,21 @@ key(e:up): user.hold_on_double_press_up('i')
 ^light$: key(b)
 ^paint$: key(x)
 
-^forage$: key(i:down)
+^mid click$: mouse_click(2)
+^split$: mouse_click(1)
+^gather$: key(i:down)
 ^control$: user.toggle_hold('ctrl')
 ^crouch$: user.toggle_hold('c')
-^backpedal$: user.toggle_hold('s')
+^stand$: user.set_hold('c', false)
+^toggle ping$: user.toggle_hold('alt')
+^(backpedal)$:
+    user.set_hold('c', true)
+    sleep(5ms)
+    user.toggle_hold('s')
 ^(run|walk)$: key(shift)
 ^jump$: user.long_press('space')
-^scan$:
-    key(v:down)
-    sleep(2s)
-    key(v:up)
+^surface$: user.long_press('space', 1)
+^scan$: user.long_press('v', 2)
 ^drag$:
     user.mouse_drag(0)
 ^end drag | drag end$: user.mouse_drag_end()

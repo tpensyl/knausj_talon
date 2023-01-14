@@ -60,10 +60,11 @@ class Actions:
         actions.sleep("20ms")
         actions.key("alt:up")
 
-    def scroll_with_modifier(mod:str, amount:float, fudge:str="10ms"):
+    def scroll_with_modifier(mod:str, amount:float, fudge:str="10ms", times:int=1):
         """scroll while holding on a mono far key"""
         actions.key(mod+":down")
         actions.sleep(fudge)
-        actions.user.mouse_scroll_up(amount)
-        actions.sleep(fudge)
+        for x in range(times):
+            actions.user.mouse_scroll_up(amount)
+            actions.sleep(fudge)
         actions.key(mod+":up")

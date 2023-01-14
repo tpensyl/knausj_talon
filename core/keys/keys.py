@@ -229,7 +229,8 @@ symbol_key_words = {
     "double quote": '"',
     # Currencies
     "dollar": "$",
-    "pound": "£",
+    # conflicts with cursorless's 'bound'
+    #"pound": "£",
 }
 
 # make punctuation words also included in {user.symbol_keys}

@@ -37,6 +37,7 @@ class Actions:
 key_mutex = defaultdict(lambda: list())
 key_mutex['up'] = ['down']
 key_mutex['down'] = ['up']
+key_mutex['c'] = ['ctrl']
 
 key_is_held = defaultdict(lambda: False)
 key_hold_start_ts = {}
@@ -51,7 +52,9 @@ def set_hold(key, new_state):
 
     if old_state == False and new_state == True:
         for incompatible_key in key_mutex[key]:
-            set_hold(incompatible_key, False)
+            # Preempt infinite loops
+            if not(incompatible_key == key):
+                set_hold(incompatible_key, False)
         actions.key(key+':down')
     elif old_state == True and new_state == False: 
         # Doing :up carelessly leads to repeated key press during a hold
