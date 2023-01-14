@@ -17,7 +17,6 @@ class DebugWidgetActions:
         "draw text to screen"
         dw.set_text(str(text))
 
-    
 class DebugWidget:
     def __init__(self):
         self.text_size = 40
