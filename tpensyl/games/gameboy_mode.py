@@ -9,8 +9,8 @@ game_list = [
 
 def on_app_switch(app):
     modes = scope.get("mode")
-    if "sleep" in modes:
-        return
+    # if "sleep" in modes:
+    #     return
         
     if app.name in game_list:
         if "user.gameboy" not in modes:

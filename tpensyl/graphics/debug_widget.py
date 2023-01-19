@@ -50,7 +50,6 @@ class DebugWidget:
 
     def clear_text(self):
         time_remaining = self.expire_time - time()
-        print(time_remaining)
         if time_remaining <= .030:
             self.text = ""
             self.expire_job = None
