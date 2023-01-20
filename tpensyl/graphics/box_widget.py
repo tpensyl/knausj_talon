@@ -41,6 +41,7 @@ class BoxWidget:
 
         self.screen = ui.screens()[0]
         self.c = canvas.Canvas.from_screen(self.screen)
+        # Change this to try different drawing methods
         self.draw_method = self.on_draw_thick_grid
         self.c.register("draw", self.draw_method)
 
@@ -49,8 +50,7 @@ class BoxWidget:
         rect = Rect(self.x1, self.y1, self.x2 - self.x1, self.y2 - self.y1)
         c.draw_rect(rect)
         
-    # I think we can sample more pixels ado our own blurring, 
-    # to use less cpu than drawing many objects
+    # To try to day more bluring, seems to be too slow
     def on_draw_blur_grid(self, c):
         grain = 8
         grainY = 8
@@ -77,21 +77,25 @@ class BoxWidget:
         width = self.x2 - self.x1
         height = self.y2 - self.y1
         rect = Rect(self.x1, self.y1, width, height)
+        is_top_offscreen = self.y1 < 0
         img = screen.capture_rect(rect)
         bitmap = img.to_bitmap()
          
         for x in range(0, width - grain, grain):
             col1 = bitmap.get_pixel(x + int(grain/2), self.y2 - self.y1 - 1)
-            col2 = bitmap.get_pixel(x + int(grain/2), 0)
+            if is_top_offscreen:
+                col2 = col1
+            else:
+                col2 = bitmap.get_pixel(x + int(grain/2), 0)
             for i in range(1):
                 for y in range(1, height - 1 - grainY, grainY):
                     c.paint.color = average_colors(col1, col2, x=y/height, alpha=1)
                     rect = Rect(self.x1 + x - blur, self.y1 + y, grain + blur, grainY)
                     c.draw_rect(rect)
 
-
+    # TODO use the bitmap method above; below method is unable to match real time
     def on_draw_thick_bars(self, c):
-        width = 20
+        width = 8
         for x in range(self.x1, self.x2, width):
             c.paint.color = screen.get_pixel(x, self.y2)
             rect = Rect(x, self.y1, width, self.y2 - self.y1)

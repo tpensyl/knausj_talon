@@ -105,5 +105,20 @@ class Actions:
         block_compass()
         cron.after("40s", actions.user.get_widget().close)
 
+    def satisfactory_back():
+        "complex back command"
+        actions.key('ctrl:up')
+        actions.key('shift:up')
+        actions.key('alt:up')
+        actions.key('i:up')
+        print(actions.user.get_hold('up'))
+        if actions.user.get_hold('up'):
+            actions.user.set_hold('up', False)
+        elif actions.user.get_hold('down'):
+            actions.user.set_hold('down', False)
+        else:
+            actions.key('esc')
+
 def block_compass():
-    actions.user.set_box_widget(630, 0, 1300, 135, "000000ff")
+    # actions.user.set_box_widget(620, 0, 1310, 135, "000000ff")
+    actions.user.set_box_widget(400, -1, 1500, 200, "000000ff")

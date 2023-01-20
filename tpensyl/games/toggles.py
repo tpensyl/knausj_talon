@@ -13,6 +13,10 @@ class Actions:
         "Explicitly turn hold on or off"
         set_hold(key, new_hold_state)
 
+    def get_hold(key:str):
+        "Returned the current toggle state of a key"
+        return key_is_held[key]
+
     def toggle_hold(key:str):
         "Toggle hold on and off"
         set_hold(key, not key_is_held[key])

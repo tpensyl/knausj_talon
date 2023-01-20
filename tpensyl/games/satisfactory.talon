@@ -7,6 +7,7 @@ pogo: user.set_tertiary_noise_action("jump")
 use: 
     user.long_press('e')
     user.set_tertiary_noise_action("use")
+get: user.long_press('e')
 
 key(w:down):        user.hold_on_double_press_down('up')
 key(ctrl-w:down):   user.hold_on_double_press_down('up')
@@ -31,6 +32,7 @@ key(e:up): user.hold_on_double_press_up('i')
 
 build$: key(q)
 build <user.number_key>$: key(number_key)
+^change mode$: key(r)
 ^rebuild$: key(q:2)
 belt$: key(1)
 power$: key(2)
@@ -46,12 +48,12 @@ lift$: key(6)
 ^(bar|tab) last <user.repeat_num>$:
     user.scroll_with_modifier('alt', -1, '10ms', repeat_num)
 
-^back: 
-    key(ctrl:up esc)
+^(back|escape):
     user.mouse_drag_end()
+    user.satisfactory_back()
 ^(recipe|recipes)$: key('o')
 ^gun$: key(h)
-^[bull] doze$: key(f)
+^(doze|junk)$: key(f)
 ^(stuff|item)$: key(tab)
 ^flashlight$: key(b)
 paint$: key(x)
