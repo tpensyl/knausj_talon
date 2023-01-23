@@ -38,11 +38,9 @@ def shaping_function(pitch_delta):
 @ctx.action_class('user')
 class WhistleActions:
     def whistle_start(ts:float, power:float, f0:float, f1:float, f2:float):
-        """for debugging"""
         # print("whistle start",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global start_frames, stop_ts, remainder
         if ts - stop_ts < pause_threshold:
-            print("continue")
             return 
         
         f = log(f0)
@@ -50,13 +48,12 @@ class WhistleActions:
         remainder = 0
 
     def whistle_stop(ts:float, power:float, f0:float, f1:float, f2:float):
-        """for debugging"""
         # print("whistle stop",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global stop_ts
         stop_ts = ts 
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
-        """for debugging"""
+        # print("whistle", [int(x) for x in [power, f0, f1, f2]])
         # Use first few ticks to record starting pitch
         global start_frames, remainder
         f = log(f0)
@@ -72,8 +69,6 @@ class WhistleActions:
 
         actions.user.set_debug_text("%.2f" % scroll_speed)
         actions.user.whistle_action(scroll_speed)
-        # actions.mouse_scroll(by_lines=False, y=scroll_speed)
-        # print("whistle", [int(x) for x in [power, f0,, f2, f]])
  
 @mod.action_class
 class WhistleAction:

@@ -59,8 +59,8 @@ class UserActions:
         slow_scroll(delta)
 
     def init_box_widget():
-        "override this method to create widget"
-        actions.user.set_box_widget(695, 23, 1225, 107, "000000ff")  
+        #block_compass()
+        noop = None
 
 min_whistle_event_time = .35
 delta_threshold = 2
@@ -99,3 +99,11 @@ class Actions:
         if action in action_map:
             print("==========SET", action, action_map[action])
             tertiary_noise_action = action_map[action]
+
+    def block_compass():
+        "Block compass temporarily, to make scans more opaque"
+        block_compass()
+        cron.after("40s", actions.user.get_widget().close)
+
+def block_compass():
+    actions.user.set_box_widget(630, 0, 1300, 135, "000000ff")

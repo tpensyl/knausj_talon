@@ -9,9 +9,3 @@
     mode.enable("command")
 
 ^add gameboy mode$: mode.enable("user.gameboy")
-
-focus satisfactory:
-    mode.disable("command")
-    mode.enable("user.gameboy")
-	user.switcher_focus("satisfactory")
-    #speech.disable()
