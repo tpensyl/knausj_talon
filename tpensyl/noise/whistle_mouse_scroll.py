@@ -10,6 +10,8 @@ tag: user.whistle_mouse_scroll
 and not tag: user.whistle_mouse_look
 """
 
+config_scaler = mod.setting("whistle_scroll_speed", float, default=1) 
+
 # initialize
 ts = 0
 stop_ts = 0
@@ -17,7 +19,7 @@ start_frames = []
 remainder = 0
 
 # Add tolerance for accidental 'breaks' during a whistle
-pause_threshold = .35
+pause_threshold = .4
 
 # range is about from A#4-A#5 (466.16-932.33)
 # halfway is E5=659.25
@@ -31,7 +33,7 @@ def shaping_function(pitch_delta):
     # Normalize value to range [-10, 10]
     x = pitch_delta / (max_pitch - min_pitch) * 10
     # linear into exponential
-    return copysign(2*abs(x)*(1.5**abs(x)), -x)
+    return copysign(2*abs(x)*(1.5**abs(x)), -x) * config_scaler.get()
 
 @ctx.action_class('user')
 class WhistleActions:
