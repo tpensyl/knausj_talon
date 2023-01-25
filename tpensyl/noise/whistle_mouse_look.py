@@ -18,7 +18,7 @@ pause_threshold = .4
 # y axis based on power (volume)
 neutral_power = 330
 min_delta_y = 1
-speed_scaler_y = .03
+speed_scaler_y = .06
 
 # x axis based on frequency
 # range is about from A#4-A#5 (466.16-932.33)

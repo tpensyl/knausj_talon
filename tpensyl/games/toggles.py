@@ -9,17 +9,23 @@ manual_toggle_min_time = .11
 
 @mod.action_class
 class Actions:
-    def set_hold(key:str, new_hold_state:bool = True):
+    def set_hold(key:str, new_hold_state:bool = True, halfStop:bool = False):
         "Explicitly turn hold on or off"
-        set_hold(key, new_hold_state)
+        set_hold(key, new_hold_state, halfStop)
 
     def get_hold(key:str):
         "Returned the current toggle state of a key"
         return key_is_held[key]
 
-    def toggle_hold(key:str):
+    def toggle_hold(key:str, halfStop:bool = False):
         "Toggle hold on and off"
-        set_hold(key, not key_is_held[key])
+        set_hold(key, not key_is_held[key], halfStop)
+
+    def release_all_holds():
+        "release all holds"
+        for key in key_is_held:
+            if key_is_held[key]:
+                set_hold(key, False)
 
     def end_long_toggle(key:str):
         "Disable hold only if it's been on for awhile"
@@ -40,6 +46,8 @@ class Actions:
 
 key_mutex = defaultdict(lambda: list())
 key_mutex['up'] = ['down']
+key_mutex['left'] = ['right']
+key_mutex['right'] = ['left']
 key_mutex['down'] = ['up']
 key_mutex['c'] = ['ctrl']
 
@@ -49,7 +57,7 @@ key_hold_start_ts = {}
 def toggle_hold(key):
     set_hold(key, not key_is_held[key])
 
-def set_hold(key, new_state):
+def set_hold(key, new_state, halfStop = False):
     old_state = key_is_held[key]
     if (not key_is_held[key]) and new_state == True:
         key_hold_start_ts[key] = time()
@@ -57,8 +65,10 @@ def set_hold(key, new_state):
     if old_state == False and new_state == True:
         for incompatible_key in key_mutex[key]:
             # Preempt infinite loops
-            if not(incompatible_key == key):
+            if not(incompatible_key == key) and key_is_held[incompatible_key]:
                 set_hold(incompatible_key, False)
+                if halfStop:
+                    return
         actions.key(key+':down')
     elif old_state == True and new_state == False: 
         # Doing :up carelessly leads to repeated key press during a hold

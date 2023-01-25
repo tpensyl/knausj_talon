@@ -21,6 +21,8 @@ def on_app_switch(app):
         if "user.gameboy" in modes:
             actions.mode.enable("command")
             actions.mode.disable("user.gameboy")
+            actions.mode.disable("sleep")
+            actions.mode.disable("dictation")
             print(f"App [{app.name}] triggered command mode.")
 
 ui.register("app_activate", on_app_switch)

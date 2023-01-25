@@ -68,3 +68,7 @@ class Actions:
             actions.user.mouse_scroll_up(amount)
             actions.sleep(fudge)
         actions.key(mod+":up")
+
+    def long_click(button:int, hold_us:str=610000):
+        "hold a mouse press"
+        ctrl.mouse_click(button, hold=hold_us)

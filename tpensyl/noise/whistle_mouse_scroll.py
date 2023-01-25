@@ -67,7 +67,7 @@ class WhistleActions:
         int_speed = int(scroll_speed)
         remainder = scroll_speed - int_speed
 
-        actions.user.set_debug_text("%.2f" % scroll_speed)
+        #actions.user.set_debug_text("%.2f" % scroll_speed)
         actions.user.whistle_action(scroll_speed)
  
 @mod.action_class
