@@ -7,7 +7,19 @@ pogo: user.set_tertiary_noise_action("jump")
 use: 
     user.long_press('e')
     user.set_tertiary_noise_action("use")
-get: user.long_press('e')
+get: 
+    #user.set_hold('up')
+    user.release_all_holds()
+    user.long_press('e')
+^(back|escape):
+    user.mouse_drag_end()
+    user.satisfactory_back()
+
+^photo mode$: key(p)
+^screenshot$: key(f12)
+
+^drag$: user.mouse_drag(0)
+^end drag | drag end$: user.mouse_drag_end()
 
 key(w:down):        user.hold_on_double_press_down('up')
 key(ctrl-w:down):   user.hold_on_double_press_down('up')
@@ -31,13 +43,19 @@ key(e:down): user.hold_on_double_press_down('i')
 key(e:up): user.hold_on_double_press_up('i')
 
 build$: key(q)
-build <user.number_key>$: key(number_key)
+build <user.number_key>: key(number_key)
+choose <user.number_key>: 
+    #user.release_all_holds()
+    key(number_key)
+    sleep(15ms)
+    user.set_hold('i', true)
 ^change mode$: key(r)
+^reload$: key(r)
 ^rebuild$: key(q:2)
 belt$: key(1)
 power$: key(2)
+lift$: key(3)
 ^belt pole$: key(4)
-lift$: key(6)
 
 ^(bar|tab) next [one]$:
     user.scroll_with_modifier('alt', 1, '10ms')
@@ -48,9 +66,6 @@ lift$: key(6)
 ^(bar|tab) last <user.repeat_num>$:
     user.scroll_with_modifier('alt', -1, '10ms', repeat_num)
 
-^(back|escape):
-    user.mouse_drag_end()
-    user.satisfactory_back()
 ^(recipe|recipes)$: key('o')
 ^gun$: key(h)
 ^(doze|junk)$: key(f)
@@ -60,25 +75,46 @@ paint$: key(x)
 
 ^mid click$: mouse_click(2)
 ^split$: mouse_click(1)
-^gather$: key(i:down)
+^long split$: user.long_click(1, 300000)
+^boom$: mouse_click(1)
+^gather$: user.toggle_hold('i')
 ^control$: user.toggle_hold('ctrl')
 ^hold shift$: user.toggle_hold('shift')
 crouch$: user.toggle_hold('c')
 ^stand$: user.set_hold('c', false)
 ^toggle ping$: user.toggle_hold('alt')
 ^(backpedal)$:
-    #user.set_hold('c', true)
-    #sleep(5ms)
     user.set_hold('down', true)
 ^(run|walk): key(shift)
+
+^lefty$: 
+    user.set_hold('left', true, true)
+    sleep(1s)
+    user.set_hold('left', false)
+^righty$: 
+    user.set_hold('right', true, true)
+    sleep(1s)
+    user.set_hold('right', false)
+^slight left$: 
+    user.set_hold('left', true, false)
+    sleep(500ms)
+    user.set_hold('left', false)
+^slight right$: 
+    user.set_hold('right', true, false)
+    sleep(500ms)
+    user.set_hold('right', false)
+^(letter queue|truck record)$: key(q)
+^(letter f | truck load)$: user.toggle_hold('f')
+^(letter ex)$: key(x)
+^(letter ah | hide hud)$: key(h)
+
+
 ^jump$: user.long_press('space')
-^surface$: user.long_press('space', 1)
+# e.g. from underwater
+^surface$: user.long_press('space', 2)
 ^scan$: 
     user.long_press('v', 2)
     user.block_compass()
-^drag$:
-    user.mouse_drag(0)
-^end drag | drag end$: user.mouse_drag_end()
 
 ^fix commands$:
     mode.disable("user.gameboy")

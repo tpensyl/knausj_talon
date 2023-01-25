@@ -26,11 +26,12 @@ tertiary_noise_action = action_map["use"]
 @ctx.action_class('user')
 class UserActions:
     def noise_pop():
-        # Release drag if dragging
-        buttons_held_down = list(ctrl.mouse_buttons_down())
-        if LEFT_BUTTON in buttons_held_down:
-            ctrl.mouse_click(button=LEFT_BUTTON, up=True)
-            #return
+        # Close selection menu
+        if actions.user.get_hold('i'):
+            actions.user.set_hold('i', False)
+            return
+
+        actions.user.mouse_drag_end()
 
         global last_click_ts
         new_click_ts = time()
@@ -53,7 +54,7 @@ class UserActions:
         tertiary_noise_action()
 
     def parrot_palate():
-        actions.user.toggle_hold('up')
+        actions.user.toggle_hold('up', halfStop=True)
 
     def whistle_action(delta):
         slow_scroll(delta)
@@ -73,7 +74,7 @@ def slow_scroll(delta):
     #TODO consider using remainder instead
     delta_interval = min_whistle_event_time * delta_scaler / max(0.1, abs(delta))
 
-    debug_log(this_whistle_time - last_whistle_time, delta_interval, delta)
+    #debug_log(this_whistle_time - last_whistle_time, delta_interval, delta)
 
     if this_whistle_time - last_whistle_time < delta_interval:# and False :
         return
@@ -103,21 +104,28 @@ class Actions:
     def block_compass():
         "Block compass temporarily, to make scans more opaque"
         block_compass()
-        cron.after("40s", actions.user.get_widget().close)
+        cron.after("46s", actions.user.get_widget().close)
 
     def satisfactory_back():
         "complex back command"
-        actions.key('ctrl:up')
-        actions.key('shift:up')
-        actions.key('alt:up')
-        actions.key('i:up')
-        print(actions.user.get_hold('up'))
-        if actions.user.get_hold('up'):
-            actions.user.set_hold('up', False)
-        elif actions.user.get_hold('down'):
-            actions.user.set_hold('down', False)
-        else:
+        #if actions.user.get_hold('up'):
+        #    actions.user.set_hold('up', False)
+        actions.user.mouse_drag_end()
+        released_at_least_one_key = False
+        for key in ('down', 'left', 'right', 'i'):
+            if actions.user.get_hold(key):
+                print(key, 'back releasing')
+                actions.user.set_hold(key, False)
+                released_at_least_one_key = True
+        actions.user.release_all_holds()
+        if not released_at_least_one_key:
             actions.key('esc')
+
+def satisfactory_key_release():  
+    actions.key('ctrl:up')
+    actions.key('shift:up')
+    actions.key('alt:up')
+    actions.key('i:up')
 
 def block_compass():
     # actions.user.set_box_widget(620, 0, 1310, 135, "000000ff")
