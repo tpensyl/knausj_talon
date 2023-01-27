@@ -41,6 +41,7 @@ git checkout dot$: "git checkout . \n"
 git add dot$: "git add . \n"
 git push$: "git push \n"
 git pull$: "git pull \n"
+git fetch$: "git fetch \n"
 
 git commit allow empty: 
     "git commit --allow-empty -m''"

@@ -50,6 +50,11 @@ find (everywhere | all) <user.text> [over]:
     user.idea("action SearchEverywhere")
     sleep(500ms)
     insert(text)
+hunt all: user.idea("action FindInPath")
+hunt all <user.text> [over]:
+    user.idea("action FindInPath")
+    sleep(500ms)
+    insert(text)
 (search | find) class: user.idea("action GotoClass")
 # (search | find) file: user.idea("action GotoFile")
 file hunt: user.idea("action GotoFile")

@@ -1,6 +1,7 @@
 title: /.*budget.*Excel/
+title: /.*LibreOffice Calc/
 -
-
+slap: key(enter)
 [go] down: key(down)
 [go] up: key(up)
 [go] left: key(left)
