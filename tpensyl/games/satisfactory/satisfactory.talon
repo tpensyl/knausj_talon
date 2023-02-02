@@ -9,7 +9,7 @@ use:
     user.set_tertiary_noise_action("use")
 get: 
     #user.set_hold('up')
-    user.release_all_holds()
+    user.set_hold('up', false)
     user.long_press('e')
 ^(back|escape):
     user.mouse_drag_end()
@@ -44,7 +44,7 @@ key(e:up): user.hold_on_double_press_up('i')
 
 build$: key(q)
 build <user.number_key>: key(number_key)
-choose <user.number_key>: 
+pick <user.number_key>: 
     #user.release_all_holds()
     key(number_key)
     sleep(15ms)
@@ -54,21 +54,21 @@ choose <user.number_key>:
 ^rebuild$: key(q:2)
 belt$: key(1)
 power$: key(2)
-lift$: key(3)
-^belt pole$: key(4)
+(lift|left|liff)$: key(3)
+^(belt pole|pipe)$: key(4)
 
-^(bar|tab) next [one]$:
-    user.scroll_with_modifier('alt', 1, '10ms')
-^(bar|tab) next <user.repeat_num>$:
-    user.scroll_with_modifier('alt', 1, '10ms', repeat_num)
-^(bar|tab) last$:
-    user.scroll_with_modifier('alt', -1, '10ms')
-^(bar|tab) last <user.repeat_num>$:
-    user.scroll_with_modifier('alt', -1, '10ms', repeat_num)
+^(bar|tab) next:
+    user.scroll_with_modifier('alt', 1, '18ms')
+^(bar|tab) next <user.repeat_num>:
+    user.scroll_with_modifier('alt', 1, '18ms', repeat_num)
+^(bar|tab) last:
+    user.scroll_with_modifier('alt', -1, '18ms')
+^(bar|tab) last <user.repeat_num>:
+    user.scroll_with_modifier('alt', -1, '18ms', repeat_num)
 
 ^(recipe|recipes)$: key('o')
 ^gun$: key(h)
-^(doze|junk)$: key(f)
+junk$: key(f)
 ^(stuff|item)$: key(tab)
 ^flashlight$: key(b)
 paint$: key(x)
@@ -79,7 +79,12 @@ paint$: key(x)
 ^boom$: mouse_click(1)
 ^gather$: user.toggle_hold('i')
 ^control$: user.toggle_hold('ctrl')
-^hold shift$: user.toggle_hold('shift')
+^split power$: 
+    key(shift:down)
+    mouse_click(0)
+    key(shift:up)
+    # untoggle run
+    key(shift)
 crouch$: user.toggle_hold('c')
 ^stand$: user.set_hold('c', false)
 ^toggle ping$: user.toggle_hold('alt')
@@ -109,12 +114,15 @@ crouch$: user.toggle_hold('c')
 ^(letter ah | hide hud)$: key(h)
 
 
-^jump$: user.long_press('space')
+^hop$: user.long_press('space')
 # e.g. from underwater
 ^surface$: user.long_press('space', 2)
 ^scan$: 
-    user.long_press('v', 2)
-    user.block_compass()
+    user.long_press('v', 2.3)
+    user.block_scan(46)
+^compass show$: user.block_compass(0)
+^compass hide$: user.block_compass(-1)
+
 
 ^fix commands$:
     mode.disable("user.gameboy")

@@ -85,17 +85,23 @@ class BoxWidget:
             col1 = bitmap.get_pixel(x + int(grain/2), self.y2 - self.y1 - 1)
             if is_top_offscreen:
                 col2 = col1
+                grainY = height
+                #col2 = Color.from_components(0, 0, 0, int(1 * 255))
             else:
                 col2 = bitmap.get_pixel(x + int(grain/2), 0)
-            for i in range(1):
-                for y in range(1, height - 1 - grainY, grainY):
-                    c.paint.color = average_colors(col1, col2, x=y/height, alpha=1)
-                    rect = Rect(self.x1 + x - blur, self.y1 + y, grain + blur, grainY)
-                    c.draw_rect(rect)
+            for y in range(1, height, grainY):
+                c.paint.color = average_colors(col1, col2, x=y/height, alpha=1)
+                x0 = self.x1 + x - blur
+                y0 = self.y1 + y
+                w = grain + blur
+                h = min(grainY, height - y - 1)
+                #print(y0, h, height, y)
+                rect = Rect(x0, y0, w, h)
+                c.draw_rect(rect)
 
     # TODO use the bitmap method above; below method is unable to match real time
     def on_draw_thick_bars(self, c):
-        width = 8
+        width = 24
         for x in range(self.x1, self.x2, width):
             c.paint.color = screen.get_pixel(x, self.y2)
             rect = Rect(x, self.y1, width, self.y2 - self.y1)

@@ -59,10 +59,6 @@ class UserActions:
     def whistle_action(delta):
         slow_scroll(delta)
 
-    def init_box_widget():
-        #block_compass()
-        noop = None
-
 min_whistle_event_time = .35
 delta_threshold = 2
 delta_scaler = 15 #higher is slower
@@ -101,10 +97,15 @@ class Actions:
             print("==========SET", action, action_map[action])
             tertiary_noise_action = action_map[action]
 
-    def block_compass():
-        "Block compass temporarily, to make scans more opaque"
-        block_compass()
-        cron.after("46s", actions.user.get_widget().close)
+    def block_scan(time:int = -1):
+        "Give positive argument to block compass plus scan bubbles"
+        actions.user.set_box_widget(400, -1, 1500, 200, "000000ff")
+        set_expire(time)
+
+    def block_compass(time:int = -1):
+        "Give positive argument to block compass"
+        actions.user.set_box_widget(690, 20, 1244, 131, "000000ff")
+        set_expire(time)
 
     def satisfactory_back():
         "complex back command"
@@ -127,6 +128,10 @@ def satisfactory_key_release():
     actions.key('alt:up')
     actions.key('i:up')
 
-def block_compass():
-    # actions.user.set_box_widget(620, 0, 1310, 135, "000000ff")
-    actions.user.set_box_widget(400, -1, 1500, 200, "000000ff")
+expire_job = None
+def set_expire(time):
+    global expire_job
+    if expire_job:
+        cron.cancel(expire_job)
+    if time >= 0:
+        expire_job = cron.after(str(time) + "s", actions.user.get_widget().close)

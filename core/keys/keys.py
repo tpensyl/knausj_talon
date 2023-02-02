@@ -235,7 +235,9 @@ symbol_key_words = {
 symbol_key_words.update(punctuation_words)
 ctx.lists["self.punctuation"] = punctuation_words
 ctx.lists["self.symbol_key"] = symbol_key_words
-ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
+number_key_dict = dict(zip(default_digits, numbers))
+number_key_dict["ocho"] = "8"
+ctx.lists["self.number_key"] = number_key_dict
 ctx.lists["self.arrow_key"] = {
     "down": "down",
     "left": "left",

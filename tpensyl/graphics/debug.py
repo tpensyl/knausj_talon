@@ -12,20 +12,32 @@ class DebugWidgetActions:
         "log mouse coordinates"
         ctrl.mouse_pos()
 
-# @ctx.action_class('user')
-# class DebugWidgetOverrides:
-#     def init_box_widget():
-#         "override this method to create widget"
-#         print("debugwidget: there should be a box - debug.py") 
-#         actions.user.set_box_widget(0, 0, 300, 100)
+    def hide_debug_box():  
+        "hide the box"
+        actions.user.close_widget()
 
-    # def noise_pop():
-    #     actions.user.slow_click()
-    #     widget = actions.user.get_widget()
-    #     widget.x1, widget.y1 = ctrl.mouse_pos()
-    #     print(widget.x1, widget.y1, widget.x2, widget.y2)
+    def show_debug_box():  
+        "show the box"
+        actions.user.set_box_widget(0, 0, 300, 100)
 
-    # def parrot_palate():
-    #     widget = actions.user.get_widget()
-    #     widget.x2, widget.y2 = ctrl.mouse_pos()  
-    #     print(widget.x1, widget.y1, widget.x2, widget.y2)
+@ctx.action_class('user')
+class DebugWidgetOverrides:
+    # def init_box_widget():
+    #     "override this method to create widget"
+    #     print("debugwidget: there should be a box - debug.py") 
+    #     actions.user.set_box_widget(0, 0, 300, 100)
+
+    def noise_pop():
+        actions.user.slow_click()
+        widget = actions.user.get_widget()
+        if widget:
+            widget.x1, widget.y1 = ctrl.mouse_pos()
+            print(widget.x1, widget.y1, widget.x2, widget.y2)
+        else:
+            print("debug.py:pop")
+
+    def parrot_palate():
+        widget = actions.user.get_widget()
+        if widget:
+            widget.x2, widget.y2 = ctrl.mouse_pos()  
+            print(widget.x1, widget.y1, widget.x2, widget.y2)
