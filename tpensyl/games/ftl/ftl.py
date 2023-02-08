@@ -7,7 +7,7 @@ app.exe: FTLGame.exe
 mod = Module()
 
 ftl_crew_list = "one two three four five six seven eight".split()
-ftl_crew_map = {word: str(i + 1) for i, word in enumerate(ftl_crew_list)}
+ftl_crew_map = {word: 'f' + str(i + 1) for i, word in enumerate(ftl_crew_list)}
 
 mod.list("ftl_crew", desc="FTL crew numbers")
 ctx.lists["self.ftl_crew"] = ftl_crew_map
@@ -29,3 +29,11 @@ class UserActions:
     def parrot_tut():
         ctrl.mouse_click(1)
         #actions.user.toggle_drag(0)
+
+@mod.action_class
+class FTLActions:
+    def target_gun(key: str):
+        """Select weapon and click e.g. to target"""
+        actions.key(key)
+        actions.sleep("15ms")
+        actions.mouse_click(0)

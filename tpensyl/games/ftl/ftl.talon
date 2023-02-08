@@ -3,13 +3,18 @@ win.title: /FTL: Faster Than Light/
 app.exe: FTLGame.exe
 -
 
+settings():
+    # minimum silence time (in seconds) before speech is cut off, default 0.3
+    speech.timeout = 0.2
 #<phrase>: skip()
 
 ^jump$: key(j)
 ^ship$: key(u)
+^store$: key(s)
 ^(closed | clothes | close) doors$: key(x)
 ^return$: key(enter)
 ^drag$: user.mouse_drag(0)
+
 (crew|cru) (1|on): key(f1)
 (crew|cru) (2|to): key(f2)
 (crew|cru) three: key(f3)
@@ -18,6 +23,10 @@ app.exe: FTLGame.exe
 (crew|cru) six: key(f6)
 (crew|cru) seven: key(f7)
 (crew|cru) eight: key(f8)
+bring {user.ftl_crew}: 
+    key(ftl_crew)
+    mouse_click(1)
+
 ^(send|son)$: key(t)
 ^get$: key(r)
 ^cloak$: key(c)
@@ -30,12 +39,12 @@ app.exe: FTLGame.exe
 ^two$: key('2')
 ^three$: key('3')
 ^four$: key('4')
-##,<user.letter>: key(letter)
-
-#alt tab: user.window_tab()
-
-# TODO alt-tab how to get working??
-#alt tab: user.combo_key('alt', 'tab', .2)
-#test: user.long_press('alt-enter', .2)
-
-# ignore garbage
+shoot one: user.target_gun('1')
+shoot two: user.target_gun('2')
+shoot three: user.target_gun('3')
+shoot four: user.target_gun('4')
+shoot all:
+    user.target_gun('1')
+    user.target_gun('2')
+    user.target_gun('3')
+    user.target_gun('4')
