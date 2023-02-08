@@ -1,11 +1,8 @@
-^gameboy mode$:
-    mode.disable("sleep")
-    mode.disable("dictation")
-    mode.disable("command")
-    mode.enable("user.gameboy")
-
-^gameboy mode off$:
+mode: user.gameboy
+-
+tag(): user.game_media
+^alt tab$:
+    user.window_tab()
     mode.disable("user.gameboy")
     mode.enable("command")
-
-^add gameboy mode$: mode.enable("user.gameboy")
+    user.switcher_focus("code")

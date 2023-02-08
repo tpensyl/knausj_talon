@@ -4,11 +4,14 @@ mod = Module()
 mod.mode("gameboy", desc="Limited command mode intended for games")
 
 game_list = [
-    "Satisfactory"
+    "Satisfactory", 
+    "Age of Empires: Definitive Edition"
 ]
 
 def on_app_switch(app):
     modes = scope.get("mode")
+    if modes is None:
+        return
     # if "sleep" in modes:
     #     return
         

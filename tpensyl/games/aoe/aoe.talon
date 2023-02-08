@@ -1,13 +1,14 @@
 mode: user.gameboy
 app.name: Age of Empires: Definitive Edition
 -
+-
+settings():
+    # minimum silence time (in seconds) before speech is cut off, default 0.3
+    speech.timeout = 0.25
 
-# temporary for convenience
-fix commands:
-    mode.disable("user.gameboy")
-    mode.enable("command")
-	user.switcher_focus("code")
-
+back:
+	key(esc)
+	
 drag: user.mouse_drag(0) 
 pop: key(esc)
 

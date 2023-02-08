@@ -17,9 +17,10 @@ double_click_threshold = .5
 double_click_threshold = .35
 
 action_map = {
-    "use_old": (lambda: actions.user.hold_until_double_press('i')),
+    #"use_old": (lambda: actions.user.hold_until_double_press('i')),
     "use": (lambda: actions.user.long_press('i')),
-    "jump": (lambda: actions.user.long_press('space'))
+    "jump": (lambda: actions.user.long_press('space')),
+    "drag": (lambda: actions.user.mouse_drag(0))
 }
 tertiary_noise_action = action_map["use"]
 
@@ -111,7 +112,6 @@ class Actions:
         "complex back command"
         #if actions.user.get_hold('up'):
         #    actions.user.set_hold('up', False)
-        actions.user.mouse_drag_end()
         released_at_least_one_key = False
         for key in ('down', 'left', 'right', 'i'):
             if actions.user.get_hold(key):

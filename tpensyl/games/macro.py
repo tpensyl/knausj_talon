@@ -48,12 +48,10 @@ class Actions:
         time.sleep(pause_ms)
         actions.key(k2+':up')
 
-    #def window_tab(number_small: int):
     def window_tab():
-        """press alt tab"""
+        """press alt tab, slowly"""
         actions.key("alt:down")
         actions.sleep("100ms")
-        # actions.key(f"tab:{number_small}")
         actions.key("tab:down")
         actions.sleep("20ms")
         actions.key("tab:up")

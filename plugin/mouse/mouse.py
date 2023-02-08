@@ -1,8 +1,8 @@
 import os
 
 from talon import Module, actions, app, clip, cron, ctrl, imgui, noise, ui
-from talon_plugins import eye_mouse, eye_zoom_mouse
-from talon_plugins.eye_mouse import config, toggle_camera_overlay, toggle_control
+#from talon_plugins import eye_mouse, eye_zoom_mouse
+#from talon_plugins.eye_mouse import config, toggle_camera_overlay, toggle_control
 
 key = actions.key
 self = actions.self
@@ -289,7 +289,7 @@ def on_pop(active):
             ctrl.mouse_click(button=0, hold=16000)
 
 
-noise.register("pop", on_pop)
+# noise.register("pop", on_pop)
 
 
 def mouse_scroll(amount):

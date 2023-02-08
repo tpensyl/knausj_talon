@@ -1,9 +1,9 @@
 mode: user.gameboy
 and app.name: Satisfactory
 -
-tag(): user.game_media
 tag(): user.whistle_mouse_scroll
 pogo: user.set_tertiary_noise_action("jump")
+drag mode: user.set_tertiary_noise_action("drag")
 use: 
     user.long_press('e')
     user.set_tertiary_noise_action("use")
@@ -14,6 +14,7 @@ get:
 ^(back|escape):
     user.mouse_drag_end()
     user.satisfactory_back()
+    sleep(10ms)
 
 ^photo mode$: key(p)
 ^screenshot$: key(f12)
@@ -90,7 +91,7 @@ crouch$: user.toggle_hold('c')
 ^toggle ping$: user.toggle_hold('alt')
 ^(backpedal)$:
     user.set_hold('down', true)
-^(run|walk): key(shift)
+^(sprint|walk): key(shift)
 
 ^lefty$: 
     user.set_hold('left', true, true)
@@ -114,7 +115,7 @@ crouch$: user.toggle_hold('c')
 ^(letter ah | hide hud)$: key(h)
 
 
-^hop$: user.long_press('space')
+^jump$: user.long_press('space')
 # e.g. from underwater
 ^surface$: user.long_press('space', 2)
 ^scan$: 
@@ -122,17 +123,5 @@ crouch$: user.toggle_hold('c')
     user.block_scan(46)
 ^compass show$: user.block_compass(0)
 ^compass hide$: user.block_compass(-1)
-
-
-^fix commands$:
-    mode.disable("user.gameboy")
-    mode.enable("command")
-	user.switcher_focus("code")
-
-^alt tab$:
-    user.window_tab()
-    mode.disable("user.gameboy")
-    mode.enable("command")
-    user.switcher_focus("code")
 
 #^<phrase>$: skip()

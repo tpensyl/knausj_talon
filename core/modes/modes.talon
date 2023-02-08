@@ -15,3 +15,9 @@ not mode: sleep
     mode.disable("sleep")
     mode.enable("dictation")
     mode.enable("command")
+
+^gameboy mode$:
+    mode.disable("sleep")
+    mode.disable("dictation")
+    mode.disable("command")
+    mode.enable("user.gameboy")
