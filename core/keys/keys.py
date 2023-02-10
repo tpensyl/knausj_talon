@@ -167,8 +167,7 @@ punctuation_words = {
     "ampersand": "&",
     # Currencies
     "dollar sign": "$",
-    "pound sign": "£",
-    "theta": "θ",
+    "pound sign": "£"
 }
 symbol_key_words = {
     "dot": ".",
