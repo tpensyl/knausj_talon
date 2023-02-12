@@ -1,5 +1,4 @@
-from talon import Module, ctrl, actions, cron
-import time
+from talon import Module, ctrl, actions
 #, multiprocessing, subprocess
 
 mod = Module()
@@ -18,7 +17,7 @@ class Actions:
         global global_hold_ms
         actions.key(key+':down')
         hold_ms = arg_hold_ms if arg_hold_ms else global_hold_ms.get()
-        time.sleep(hold_ms)
+        actions.sleep(hold_ms)
         actions.key(key+':up')
 
     def press_wait(key:str, arg_wait_ms:float=None):
@@ -26,7 +25,7 @@ class Actions:
         global global_wait_ms
         pause_ms = arg_wait_ms if arg_wait_ms else global_wait_ms.get()
         actions.user.long_press(key)
-        time.sleep(pause_ms)
+        actions.sleep(pause_ms)
 
     def multi_press(key:str, times:int=1, arg_wait_ms:float=None):
         """up"""
@@ -34,18 +33,18 @@ class Actions:
         pause_ms = arg_wait_ms if arg_wait_ms else global_wait_ms.get()
         for i in range(times):
             actions.user.long_press(key)
-            time.sleep(pause_ms)
+            actions.sleep(pause_ms)
 
     def combo_key(k1:str, k2:str, pause:float=None):
         """combo"""
         pause_ms = pause if pause else global_wait_ms.get()
         print(pause_ms)
         actions.key(k1+':down')
-        time.sleep(pause_ms)
+        actions.sleep(pause_ms)
         actions.key(k2+':down')
-        time.sleep(pause_ms)
+        actions.sleep(pause_ms)
         actions.key(k1+':up')
-        time.sleep(pause_ms)
+        actions.sleep(pause_ms)
         actions.key(k2+':up')
 
     def window_tab():

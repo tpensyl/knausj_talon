@@ -1,3 +1,4 @@
+mode: user.gameboy
 tag: user.game_repeater
 -
 

@@ -1,5 +1,4 @@
-import time
-from talon import ctrl, Module
+from talon import ctrl, Module, actions
 
 mod = Module()
 
@@ -8,7 +7,7 @@ class TpensylClick:
     def slow_click():
         """Click with hold time"""
         ctrl.mouse_click(button=0, down=True)
-        time.sleep(.016)
+        actions.sleep(.016)
         ctrl.mouse_click(button=0, up=True)
 
     def game_click(button: int = 0, times: int = 1, hold: int = None):

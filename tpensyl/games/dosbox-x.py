@@ -1,5 +1,4 @@
 from talon import Context, actions, Module
-import time
 ctx = Context()
 ctx.matches = r"""
 win.title: /DOSBox-X.*/
@@ -18,7 +17,7 @@ class UserActions:
         """Quick save"""
         multikey('f11', 's')
         #Enable: "no remark when saving state"
-        #time.sleep(.1)
+        #actions.sleep(.1)
         #actions.insert("talon")
         #actions.key('enter')
 

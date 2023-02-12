@@ -36,6 +36,9 @@ self taught: "self."
 pie test: "pytest"
 state past: "pass"
 
+constant <user.text> [over]:
+    insert(user.formatted_text(user.formatted_text(text, "SNAKE_CASE"), "ALL_CAPS"))
+
 [state] raise {user.python_exception}:
     user.insert_between("raise {python_exception}(", ")")
 [state] except {user.python_exception}: "except {python_exception}:"

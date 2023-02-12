@@ -6,7 +6,8 @@ mod.mode("gameboy", desc="Limited command mode intended for games")
 game_list = [
     "Satisfactory", 
     "Age of Empires: Definitive Edition", 
-    "FTLGame.exe"
+    "FTLGame.exe", 
+    "Sokobond.exe"
 ]
 
 def on_app_switch(app):
