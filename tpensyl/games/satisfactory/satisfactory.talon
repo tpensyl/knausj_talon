@@ -2,8 +2,13 @@ mode: user.gameboy
 and app.name: Satisfactory
 -
 tag(): user.whistle_mouse_scroll
+
+settings():
+    speech.timeout = 0.2
+
 pogo: user.set_tertiary_noise_action("jump")
 drag mode: user.set_tertiary_noise_action("drag")
+lunge mode: user.set_tertiary_noise_action("lunge")
 use: 
     user.long_press('e')
     user.set_tertiary_noise_action("use")
@@ -21,6 +26,7 @@ get:
 
 ^drag$: user.mouse_drag(0)
 ^end drag | drag end$: user.mouse_drag_end()
+^drop$: user.satisfactory_drop()
 
 key(w:down):        user.hold_on_double_press_down('up')
 key(ctrl-w:down):   user.hold_on_double_press_down('up')
@@ -51,6 +57,7 @@ pick <user.number_key>:
     sleep(15ms)
     user.set_hold('i', true)
 ^change mode$: key(r)
+^pick mode$: user.long_press('r', 2.3)
 ^reload$: key(r)
 ^rebuild$: key(q:2)
 belt$: key(1)
@@ -116,6 +123,7 @@ crouch$: user.toggle_hold('c')
 
 
 ^jump$: user.long_press('space')
+^lunge$: user.satisfactory_lunge()
 # e.g. from underwater
 ^surface$: user.long_press('space', 2)
 ^scan$: 

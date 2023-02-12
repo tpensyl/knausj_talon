@@ -20,7 +20,8 @@ action_map = {
     #"use_old": (lambda: actions.user.hold_until_double_press('i')),
     "use": (lambda: actions.user.long_press('i')),
     "jump": (lambda: actions.user.long_press('space')),
-    "drag": (lambda: actions.user.mouse_drag(0))
+    "drag": (lambda: actions.user.mouse_drag(0)),
+    "lunge": (lambda: actions.user.satisfactory_lunge())
 }
 tertiary_noise_action = action_map["use"]
 
@@ -121,6 +122,28 @@ class Actions:
         actions.user.release_all_holds()
         if not released_at_least_one_key:
             actions.key('esc')
+
+    def satisfactory_drop():  
+        "drag the hovered item from inventory onto the ground"
+        ORIGINAL_MOUSE_POSITION = ctrl.mouse_pos()
+        OUT_OF_INVENTORY = 10, 10
+
+        ctrl.mouse_click(button=0, down=True)
+        # actions.sleep('510ms')
+        ctrl.mouse_move(*OUT_OF_INVENTORY)
+        actions.sleep('128ms')
+        ctrl.mouse_click(button=0, up=True)
+        # 
+        # actions.sleep('10ms')
+        ctrl.mouse_move(*ORIGINAL_MOUSE_POSITION)
+
+    def satisfactory_lunge():  
+        "forward crouch jump"
+        actions.user.set_hold('up', True)
+        actions.sleep('110ms')
+        actions.user.toggle_hold('c')
+        actions.user.long_press('space')
+        actions.user.toggle_hold('c')
 
 def satisfactory_key_release():  
     actions.key('ctrl:up')
