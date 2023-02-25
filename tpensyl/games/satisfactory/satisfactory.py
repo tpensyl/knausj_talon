@@ -106,7 +106,9 @@ class Actions:
 
     def block_compass(time:int = -1):
         "Give positive argument to block compass"
-        actions.user.set_box_widget(690, 20, 1244, 131, "000000ff")
+        # Before I discovered you can turn off the icons
+        # actions.user.set_box_widget(690, 20, 1244, 131, "000000ff")
+        actions.user.set_box_widget(696, 23, 1232, 38, "000000ff")
         set_expire(time)
 
     def satisfactory_back():
@@ -131,7 +133,7 @@ class Actions:
         ctrl.mouse_click(button=0, down=True)
         # actions.sleep('510ms')
         ctrl.mouse_move(*OUT_OF_INVENTORY)
-        actions.sleep('128ms')
+        actions.sleep('180ms')
         ctrl.mouse_click(button=0, up=True)
         # 
         # actions.sleep('10ms')
@@ -140,7 +142,7 @@ class Actions:
     def satisfactory_lunge():  
         "forward crouch jump"
         actions.user.set_hold('up', True)
-        actions.sleep('110ms')
+        actions.sleep('120ms')
         actions.user.toggle_hold('c')
         actions.user.long_press('space')
         actions.user.toggle_hold('c')

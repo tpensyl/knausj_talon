@@ -50,7 +50,8 @@ class WhistleActions:
     def whistle_stop(ts:float, power:float, f0:float, f1:float, f2:float):
         # print("whistle stop",[int(x) for x in (10*ts, power, f0, f1, f2)])
         global stop_ts
-        stop_ts = ts 
+        if len(start_frames) >= 2:
+            stop_ts = ts
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
         # print("whistle", [int(x) for x in [power, f0, f1, f2]])

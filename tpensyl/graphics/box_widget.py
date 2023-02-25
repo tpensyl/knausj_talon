@@ -72,7 +72,7 @@ class BoxWidget:
 
     def on_draw_thick_grid(self, c):
         grain = 8
-        grainY = 8
+        grainY = 2
         blur = 0
         width = self.x2 - self.x1
         height = self.y2 - self.y1

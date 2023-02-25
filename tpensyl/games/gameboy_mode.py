@@ -7,10 +7,12 @@ game_list = [
     "Satisfactory", 
     "Age of Empires: Definitive Edition", 
     "FTLGame.exe", 
-    "Sokobond.exe"
+    "Sokobond.exe",
+    "Talos"
 ]
 
 def on_app_switch(app):
+    #print(f"App [{app.name}] triggered.")
     modes = scope.get("mode")
     if modes is None:
         return
