@@ -3,10 +3,6 @@ from talon import Module, ctrl, actions
 
 mod = Module()
 
-cycle_job=None
-
-cycle_key='up'
-
 global_hold_ms=mod.setting("default_long_press_ms", float, default=.128)
 global_wait_ms=mod.setting("default_long_wait_ms", float, default=.150)
 

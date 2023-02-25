@@ -16,10 +16,11 @@ get:
     #user.set_hold('up')
     user.set_hold('up', false)
     user.long_press('i')
-^(back|escape):
+    sleep(5ms)
+(back|escape):
     user.mouse_drag_end()
     user.satisfactory_back()
-    sleep()
+    sleep(10ms)
 
 ^photo mode$: key(p)
 ^screenshot$: key(f12)
@@ -136,16 +137,24 @@ crouch$: user.toggle_hold('c')
 ^compass show$: user.block_compass(0)
 ^compass hide$: user.block_compass(-1)
 
-press <user.keys>: key(keys)
-say <user.prose>: insert(prose)
-enter: key(enter)
-chat <user.prose>:
+^press <user.keys>: key(keys)
+^say <user.prose>: insert(prose)
+^enter$: key(enter)
+^chat <user.prose>:
     key(enter)
     sleep(10ms)
     insert(prose)
     key(enter)
-emote:
+^emote$:
     user.long_press('t', 3.3)
+copy that: key(ctrl-c)
+paste that: key(ctrl-v)
+<number_small> percent:
+    edit.delete_line()
+    insert("{number_small}\n")
+<number_small> (point|dot) <digit_string> percent:
+    edit.delete_line()
+    insert("{number_small}.{digit_string}\n")
     
 
 #^<phrase>$: skip()

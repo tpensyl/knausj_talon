@@ -17,6 +17,11 @@ class DebugWidgetActions:
         "draw text to screen"
         dw.set_text(str(text))
 
+    def start_stopwatch():
+        "display a stopwatch"
+        dw.start_stopwatch()
+
+
 class DebugWidget:
     def __init__(self):
         self.text_size = 40
@@ -43,6 +48,10 @@ class DebugWidget:
         c.draw_text(self.text, self.x, self.y)
 
     def set_text(self, text):
+        global stopwatch_job
+        if stopwatch_job:
+            cron.cancel(stopwatch_job)
+            stopwatch_job = None
         self.text = text
         self.expire_time = time() + self.vanish_sec
         if not self.expire_job:
@@ -55,6 +64,20 @@ class DebugWidget:
             self.expire_job = None
         else:
             cron.after(sec_to_cron_str(time_remaining), self.clear_text)
+
+    def start_stopwatch(self):  
+        global stopwatch_s, stopwatch_job
+        stopwatch_s = 0
+        stopwatch_job = cron.interval("1s", self.increment_timer)
+
+    def increment_timer(self):
+        global stopwatch_s
+        stopwatch_s += 1
+        dw.text = str(stopwatch_s)  
+
+stopwatch_job = None
+stopwatch_s = 0
+
 
 def sec_to_cron_str(sec):
     ms = int(sec * 1000)

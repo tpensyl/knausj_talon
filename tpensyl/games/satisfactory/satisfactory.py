@@ -123,7 +123,8 @@ class Actions:
                 released_at_least_one_key = True
         actions.user.release_all_holds()
         if not released_at_least_one_key:
-            actions.key('esc')
+            actions.user.long_press('esc')
+            # actions.key('esc')
 
     def satisfactory_drop():  
         "drag the hovered item from inventory onto the ground"
@@ -133,7 +134,7 @@ class Actions:
         ctrl.mouse_click(button=0, down=True)
         # actions.sleep('510ms')
         ctrl.mouse_move(*OUT_OF_INVENTORY)
-        actions.sleep('180ms')
+        actions.sleep('32ms')
         ctrl.mouse_click(button=0, up=True)
         # 
         # actions.sleep('10ms')
@@ -142,16 +143,10 @@ class Actions:
     def satisfactory_lunge():  
         "forward crouch jump"
         actions.user.set_hold('up', True)
-        actions.sleep('120ms')
+        actions.sleep('130ms')
         actions.user.toggle_hold('c')
         actions.user.long_press('space')
         actions.user.toggle_hold('c')
-
-def satisfactory_key_release():  
-    actions.key('ctrl:up')
-    actions.key('shift:up')
-    actions.key('alt:up')
-    actions.key('i:up')
 
 expire_job = None
 def set_expire(time):
