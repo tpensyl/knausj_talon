@@ -19,7 +19,7 @@ start_frames = []
 remainder = 0
 
 # Add tolerance for accidental 'breaks' during a whistle
-pause_threshold = .4
+pause_threshold = .35
 
 # range is about from A#4-A#5 (466.16-932.33)
 # halfway is E5=659.25

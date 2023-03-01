@@ -5,6 +5,7 @@ ctx = Context()
 class UserActions:
     def noise_pop():
         #ctrl.mouse_click(button=1, up=True)
+        actions.user.stop_mouse_move()
         actions.user.slow_click()
 
     def noise_hiss_start():

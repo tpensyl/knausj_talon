@@ -5,4 +5,5 @@ tag(): user.game_media
     user.window_tab()
     mode.disable("user.gameboy")
     mode.enable("command")
-    user.switcher_focus("code")
+    #half the time focus doesn't work for code, just litters the logs with an air
+    #user.switcher_focus("code")

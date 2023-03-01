@@ -15,6 +15,7 @@ RIGHT_BUTTON = 1
 last_click_ts = time()
 double_click_threshold = .5
 double_click_threshold = .35
+double_click_threshold = .3
 
 action_map = {
     #"use_old": (lambda: actions.user.hold_until_double_press('i')),
@@ -23,7 +24,7 @@ action_map = {
     "drag": (lambda: actions.user.mouse_drag(0)),
     "lunge": (lambda: actions.user.satisfactory_lunge())
 }
-tertiary_noise_action = action_map["use"]
+tertiary_noise_action = action_map["jump"]
 
 @ctx.action_class('user')
 class UserActions:
@@ -41,7 +42,7 @@ class UserActions:
             ctrl.mouse_click(0, down=True)
         else:
             ctrl.mouse_click(0)
-        last_click_ts = new_click_ts
+            last_click_ts = new_click_ts
 
     def noise_hiss_start():
         actions.user.set_hold('up', True)
@@ -56,7 +57,11 @@ class UserActions:
         tertiary_noise_action()
 
     def parrot_palate():
-        actions.user.toggle_hold('up', halfStop=True)
+        mouse_move_cancel = actions.user.set_hold('mouse_move_down', False)
+        mouse_move_cancel = actions.user.set_hold('mouse_move_up', False) or mouse_move_cancel
+        if mouse_move_cancel:
+            return
+        actions.user.toggle_hold('up', half_stop=True)
 
     def whistle_action(delta):
         slow_scroll(delta)
@@ -96,7 +101,6 @@ class Actions:
         "Set tertiary noise action"
         global tertiary_noise_action
         if action in action_map:
-            print("==========SET", action, action_map[action])
             tertiary_noise_action = action_map[action]
 
     def block_scan(time:int = -1):
@@ -121,7 +125,7 @@ class Actions:
                 print(key, 'back releasing')
                 actions.user.set_hold(key, False)
                 released_at_least_one_key = True
-        actions.user.release_all_holds()
+        actions.user.release_all_holds(exclude=['up'])
         if not released_at_least_one_key:
             actions.user.long_press('esc')
             # actions.key('esc')

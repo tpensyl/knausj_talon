@@ -25,7 +25,7 @@ class UserActions:
 
     def parrot_palate():
         print("talos palate")
-        actions.user.toggle_hold('up', halfStop=True)
+        actions.user.toggle_hold('up', half_stop=True)
 
     def whistle_action(delta):
         x=1

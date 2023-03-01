@@ -105,6 +105,14 @@ crouch$: user.toggle_hold('c')
     user.set_hold('down', true)
 ^(sprint|walk): key(shift)
 
+^look upper: 
+    user.set_toggle_mouse_speed(50)
+    user.set_hold('mouse_move_up', true)
+^look downer: 
+    user.set_toggle_mouse_speed(50)
+    user.set_hold('mouse_move_down', true)
+^look stop: user.stop_mouse_move()
+
 ^lefty$: 
     user.set_hold('left', true, true)
     sleep(1s)
@@ -134,6 +142,7 @@ crouch$: user.toggle_hold('c')
 ^scan$: 
     user.long_press('v', 2.3)
     user.block_scan(46)
+    user.start_stopwatch()
 ^compass show$: user.block_compass(0)
 ^compass hide$: user.block_compass(-1)
 
@@ -149,12 +158,12 @@ crouch$: user.toggle_hold('c')
     user.long_press('t', 3.3)
 copy that: key(ctrl-c)
 paste that: key(ctrl-v)
-<number_small> percent:
+<user.number_string> percent:
     edit.delete_line()
-    insert("{number_small}\n")
-<number_small> (point|dot) <digit_string> percent:
+    insert("{number_string}\n")
+<user.number_string> (point|dot) <number_small> percent:
     edit.delete_line()
-    insert("{number_small}.{digit_string}\n")
+    insert("{number_string}.{number_small}\n")
     
 
 #^<phrase>$: skip()

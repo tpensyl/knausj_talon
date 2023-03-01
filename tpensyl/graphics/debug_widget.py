@@ -48,10 +48,7 @@ class DebugWidget:
         c.draw_text(self.text, self.x, self.y)
 
     def set_text(self, text):
-        global stopwatch_job
-        if stopwatch_job:
-            cron.cancel(stopwatch_job)
-            stopwatch_job = None
+        self.stop_stopwatch()
         self.text = text
         self.expire_time = time() + self.vanish_sec
         if not self.expire_job:
@@ -65,15 +62,22 @@ class DebugWidget:
         else:
             cron.after(sec_to_cron_str(time_remaining), self.clear_text)
 
-    def start_stopwatch(self):  
+    def start_stopwatch(self):
+        self.stop_stopwatch()
         global stopwatch_s, stopwatch_job
         stopwatch_s = 0
-        stopwatch_job = cron.interval("1s", self.increment_timer)
+        stopwatch_job = cron.interval("100ms", self.increment_timer)
+
+    def stop_stopwatch(self):  
+        global stopwatch_job
+        if stopwatch_job:
+            cron.cancel(stopwatch_job)
+            stopwatch_job = None
 
     def increment_timer(self):
         global stopwatch_s
-        stopwatch_s += 1
-        dw.text = str(stopwatch_s)  
+        stopwatch_s += .1
+        dw.text = "{:5.1f}".format(stopwatch_s)  
 
 stopwatch_job = None
 stopwatch_s = 0
