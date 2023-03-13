@@ -101,17 +101,9 @@ paint$: key(x)
 crouch$: user.toggle_hold('c')
 ^stand$: user.set_hold('c', false)
 ^toggle ping$: user.toggle_hold('alt')
-^(backpedal)$:
+backpedal:
     user.set_hold('down', true)
 ^(sprint|walk): key(shift)
-
-^look upper: 
-    user.set_toggle_mouse_speed(50)
-    user.set_hold('mouse_move_up', true)
-^look downer: 
-    user.set_toggle_mouse_speed(50)
-    user.set_hold('mouse_move_down', true)
-^look stop: user.stop_mouse_move()
 
 ^lefty$: 
     user.set_hold('left', true, true)
@@ -121,11 +113,11 @@ crouch$: user.toggle_hold('c')
     user.set_hold('right', true, true)
     sleep(1s)
     user.set_hold('right', false)
-^slight left$: 
+slight left: 
     user.set_hold('left', true, false)
     sleep(500ms)
     user.set_hold('left', false)
-^slight right$: 
+slight right: 
     user.set_hold('right', true, false)
     sleep(500ms)
     user.set_hold('right', false)
@@ -134,6 +126,45 @@ crouch$: user.toggle_hold('c')
 ^(letter ex)$: key(x)
 ^(letter ah | hide hud)$: key(h)
 
+^look upper: 
+    user.set_toggle_mouse_speed(50)
+    user.set_hold('mouse_move_up', true)
+^look downer: 
+    user.set_toggle_mouse_speed(50)
+    user.set_hold('mouse_move_down', true)
+^look lefty: 
+    user.set_toggle_mouse_speed(70)
+    user.set_hold('mouse_move_left', true)
+^look righty: 
+    user.set_toggle_mouse_speed(70)
+    user.set_hold('mouse_move_right', true)
+^look stop: user.stop_mouse_move()
+
+# Left Peddle (strafe)
+# key(f16:down): user.set_hold('left', true)
+# key(f16:up): user.set_hold('left', false)
+
+look speed <number_small>: user.set_toggle_mouse_speed(number_small)
+
+# Left Peddle
+key(f16:down): user.set_hold('mouse_move_left', true)
+key(f16:up): user.set_hold('mouse_move_left', false)
+
+# Right Peddle (strafe)
+# key(f18:down): user.set_hold('right', true)
+# key(f18:up): user.set_hold('right', false)
+
+# Right Peddle
+key(f18:down): user.set_hold('mouse_move_right', true)
+key(f18:up): user.set_hold('mouse_move_right', false)
+
+# Bottom Peddle
+key(f17:down): user.set_hold('mouse_move_up', true)
+key(f17:up): user.set_hold('mouse_move_up', false)
+
+# Top Peddle
+key(f19:down): user.set_hold('mouse_move_down', true)
+key(f19:up): user.set_hold('mouse_move_down', false)
 
 ^jump$: user.long_press('space')
 ^lunge$: user.satisfactory_lunge()

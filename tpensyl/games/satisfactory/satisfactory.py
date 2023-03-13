@@ -133,21 +133,19 @@ class Actions:
     def satisfactory_drop():  
         "drag the hovered item from inventory onto the ground"
         ORIGINAL_MOUSE_POSITION = ctrl.mouse_pos()
-        OUT_OF_INVENTORY = 10, 10
+        OUT_OF_INVENTORY = 100, 100
 
+        actions.user.release_all_holds()
         ctrl.mouse_click(button=0, down=True)
-        # actions.sleep('510ms')
-        ctrl.mouse_move(*OUT_OF_INVENTORY)
-        actions.sleep('32ms')
+        actions.user.mouse_move_smooth(*OUT_OF_INVENTORY, 3, 64)
         ctrl.mouse_click(button=0, up=True)
-        # 
-        # actions.sleep('10ms')
+        # actions.sleep('256ms')
         ctrl.mouse_move(*ORIGINAL_MOUSE_POSITION)
 
     def satisfactory_lunge():  
         "forward crouch jump"
         actions.user.set_hold('up', True)
-        actions.sleep('130ms')
+        actions.sleep('140ms')
         actions.user.toggle_hold('c')
         actions.user.long_press('space')
         actions.user.toggle_hold('c')

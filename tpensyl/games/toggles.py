@@ -57,14 +57,19 @@ class Actions:
 
 MOUSE_MOVE_UP = "mouse_move_up"
 MOUSE_MOVE_DOWN = "mouse_move_down"
+MOUSE_MOVE_LEFT = "mouse_move_left"
+MOUSE_MOVE_RIGHT = "mouse_move_right"
 key_mutex = defaultdict(lambda: list())
-key_mutex['up'] = ['down', MOUSE_MOVE_UP, MOUSE_MOVE_DOWN]
+key_mutex['up'] = ['down', MOUSE_MOVE_UP, MOUSE_MOVE_DOWN, 
+                   MOUSE_MOVE_LEFT, MOUSE_MOVE_RIGHT]
 key_mutex['left'] = ['right']
 key_mutex['right'] = ['left']
 key_mutex['down'] = ['up']
 key_mutex['c'] = ['ctrl']
 key_mutex[MOUSE_MOVE_UP] = [MOUSE_MOVE_DOWN]
 key_mutex[MOUSE_MOVE_DOWN] = [MOUSE_MOVE_UP]
+key_mutex[MOUSE_MOVE_LEFT] = [MOUSE_MOVE_RIGHT]
+key_mutex[MOUSE_MOVE_RIGHT] = [MOUSE_MOVE_LEFT]
 
 key_is_held = defaultdict(lambda: False)
 key_hold_start_ts = {}
@@ -134,16 +139,18 @@ def hold_until_double_press(key):
 
 def key_down(key):
     if key == MOUSE_MOVE_UP:
-        actions.user.start_mouse_move_up(mouse_move_speed)
+        actions.user.start_mouse_move_down(-mouse_move_speed)
     elif key == MOUSE_MOVE_DOWN:
         actions.user.start_mouse_move_down(mouse_move_speed)
+    elif key == MOUSE_MOVE_LEFT:
+        actions.user.start_mouse_move_right(-mouse_move_speed)
+    elif key == MOUSE_MOVE_RIGHT:
+        actions.user.start_mouse_move_right(mouse_move_speed)
     else:
         actions.key(key+':down')
 
 def key_up(key):
-    if key == MOUSE_MOVE_UP:
-        actions.user.stop_mouse_move()
-    elif key == MOUSE_MOVE_DOWN:
+    if key in [MOUSE_MOVE_UP, MOUSE_MOVE_DOWN, MOUSE_MOVE_LEFT, MOUSE_MOVE_RIGHT]:
         actions.user.stop_mouse_move()
     else:
         actions.key(key+':up')
