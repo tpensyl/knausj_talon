@@ -83,3 +83,4 @@ toggle right sidebar: key(ctrl-.)
     key(shift-tab)
 
 locate <user.text>: "/locate {text}"
+giphy <user.text>: "/giphy {text}"

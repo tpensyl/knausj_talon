@@ -7,3 +7,5 @@ https://www.google.com/search?q=%s,google
 https://maps.google.com/maps?q=%s,map
 
 https://en.wikipedia.org/w/index.php?search=%s,wiki
+
+https://github.com/Bandwidth/%s,github
