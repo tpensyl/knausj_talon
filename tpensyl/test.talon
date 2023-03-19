@@ -4,7 +4,7 @@ mode: all
 -
 tag(): user.debug_widget
 move debug <number>: user.set_debug_coordinates(number, number)
-debug <user.text>: user.set_debug_text("{text}")I
+debug <user.text>: user.set_debug_text("{text}")
 #hack <user.text>: user.set_debug_text(3)
 #vyeet <number>: 
 stopwatch start: user.start_stopwatch()

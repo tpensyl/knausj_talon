@@ -5,6 +5,7 @@ tag(): user.whistle_mouse_scroll
 
 settings():
     speech.timeout = 0.2
+    key_wait = 8.0
 
 pogo: user.set_tertiary_noise_action("jump")
 drag mode: user.set_tertiary_noise_action("drag")
@@ -15,8 +16,9 @@ use:
 get: 
     #user.set_hold('up')
     user.set_hold('up', false)
-    user.long_press('i')
-    sleep(5ms)
+    #user.long_press('i')
+    key(i)
+    #sleep(5ms)
 (back|escape):
     user.mouse_drag_end()
     user.satisfactory_back()
@@ -51,7 +53,7 @@ get:
 # key(e:up): user.hold_on_double_press_up('i')
 
 build$: key(q)
-build <user.number_key>: key(number_key)
+(build|make) <user.number_key>: key(number_key)
 pick <user.number_key>: 
     #user.release_all_holds()
     key(number_key)
@@ -61,7 +63,7 @@ pick <user.number_key>:
 ^pick mode$: user.long_press('r', 2.3)
 ^reload$: key(r)
 ^rebuild$: key(q:2)
-belt$: key(1)
+belt: key(1)
 pick belt:
     key(1)
     sleep(15ms)
@@ -91,7 +93,8 @@ paint$: key(x)
 ^long split$: user.long_click(1, 300000)
 ^boom$: mouse_click(1)
 ^gather$: user.toggle_hold('i')
-^control$: user.toggle_hold('ctrl')
+# remapped the control key to a non modifier, to simplify key intercept
+^control$: user.toggle_hold('z')
 ^split power$: 
     key(shift:down)
     mouse_click(0)

@@ -57,9 +57,8 @@ class UserActions:
         tertiary_noise_action()
 
     def parrot_palate():
-        mouse_move_cancel = actions.user.set_hold('mouse_move_down', False)
-        mouse_move_cancel = actions.user.set_hold('mouse_move_up', False) or mouse_move_cancel
-        if mouse_move_cancel:
+        mouse_moves = ['mouse_move_down', 'mouse_move_up', 'mouse_move_left', 'mouse_move_right']
+        if any([actions.user.set_hold(button, False) for button in mouse_moves]):
             return
         actions.user.toggle_hold('up', half_stop=True)
 
