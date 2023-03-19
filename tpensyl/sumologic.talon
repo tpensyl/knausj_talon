@@ -22,7 +22,7 @@ concat:
     "| concat() as "
     key(left:5)
 
-comment:
+comment [line]:
     key(home)
     "//"
 

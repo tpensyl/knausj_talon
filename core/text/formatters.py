@@ -112,6 +112,7 @@ formatters_dict = {
     ),
     "NO_SPACES": (NOSEP, every_word(lambda w: w)),
     "DASH_SEPARATED": words_with_joiner("-"),
+    "DASH_SEPARATED_ARG": (NOSEP, first_vs_rest(lambda w: '--' + w, lambda w: '-' + w)),
     "TERMINAL_DASH_SEPARATED": (
         NOSEP,
         first_vs_rest(lambda w: " --" + w.lower(), lambda w: "-" + w.lower()),
@@ -146,6 +147,7 @@ formatters_words = {
     "dunder": formatters_dict["DOUBLE_UNDERSCORE"],
     "hammer": formatters_dict["PUBLIC_CAMEL_CASE"],
     "kebab": formatters_dict["DASH_SEPARATED"],
+    "shell arg": formatters_dict["DASH_SEPARATED_ARG"],
     "packed": formatters_dict["DOUBLE_COLON_SEPARATED"],
     "padded": formatters_dict["SPACE_SURROUNDED_STRING"],
     "slasher": formatters_dict["SLASH_SEPARATED"],
