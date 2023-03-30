@@ -45,7 +45,7 @@ find name:
     key(left)
 sudo: "sudo "
 maven: "mvn "
-maven clean install: "mvn clean install"
+maven clean install: "mvn clean install -T6 \n"
 maven spring boot run: "mvn spring-boot:run"
 source AWS connect: "source aws-connect default"
 

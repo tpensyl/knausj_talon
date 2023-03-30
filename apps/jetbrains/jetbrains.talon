@@ -7,6 +7,10 @@ tag(): user.splits
 tag(): user.tabs
 # multiple_cursors.py support end
 
+#e.g. key(alt-enter)
+show fix: user.idea("action ShowIntentionActions")
+show folder: user.idea("action ProjectView.AutoscrollFromSource")
+
 # Auto complete
 complete: user.idea("action CodeCompletion")
 perfect: user.idea("action CodeCompletion,action CodeCompletion")
@@ -38,7 +42,7 @@ fix (format | formatting): user.idea("action ReformatCode")
 fix imports: user.idea("action OptimizeImports")
 #navigation
 (go declaration | follow): user.idea("action GotoDeclaration")
-go implementation: user.idea("action GotoImplementation")
+go (implement | implementation): user.idea("action GotoImplementation")
 go usage: user.idea("action FindUsages")
 go type: user.idea("action GotoTypeDeclaration")
 go test: user.idea("action GotoTest")
@@ -255,8 +259,6 @@ replace last <user.text> [over]: user.idea("find prev {text}, action EditorPaste
 replace next <user.text> [over]: user.idea("find next {text}, action EditorPaste")
 select last <user.text> [over]: user.idea("find prev {text}")
 select next <user.text> [over]: user.idea("find next {text}")
-
-paste that: key(ctrl-v)
 
 select camel left: user.extend_camel_left()
 select camel right: user.extend_camel_right()
