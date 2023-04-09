@@ -8,9 +8,11 @@ settings():
     key_wait = 8.0
 
 pogo: user.set_tertiary_noise_action("jump")
+jetpack mode: user.set_tertiary_noise_action("jetpack")
+
 drag mode: user.set_tertiary_noise_action("drag")
 lunge mode: user.set_tertiary_noise_action("lunge")
-use: 
+use mode: 
     user.long_press('i')
     user.set_tertiary_noise_action("use")
 get: 
@@ -53,24 +55,21 @@ get:
 # key(e:up): user.hold_on_double_press_up('i')
 
 build$: key(q)
-(build|make) <user.number_key>: key(number_key)
-pick <user.number_key>: 
+(build|make) <user.satisfactory_number_key>: key(satisfactory_number_key)
+pick <user.satisfactory_number_key>: 
     #user.release_all_holds()
-    key(number_key)
+    key(satisfactory_number_key)
     sleep(15ms)
     user.set_hold('i', true)
+belt: key(1)
+power: key(2)
+lift: key(3)
+pipe: key(4)
+
 ^change mode$: key(r)
 ^pick mode$: user.long_press('r', 2.3)
 ^reload$: key(r)
 ^rebuild$: key(q:2)
-belt: key(1)
-pick belt:
-    key(1)
-    sleep(15ms)
-    user.set_hold('i', true)
-power$: key(2)
-(lift|left|liff)$: key(3)
-^(belt pole|pipe)$: key(4)
 
 ^(bar|tab) next:
     user.scroll_with_modifier('alt', 1, '18ms')
@@ -82,7 +81,7 @@ power$: key(2)
     user.scroll_with_modifier('alt', -1, '18ms', repeat_num)
 
 ^(recipe|recipes)$: key('o')
-^gun$: key(h)
+^holster$: key(h)
 junk$: key(f)
 ^(stuff|item)$: key(tab)
 ^flashlight$: key(b)
@@ -155,11 +154,15 @@ key(f16:up): user.set_hold('mouse_move_left', false)
 
 # Right Peddle (strafe)
 # key(f18:down): user.set_hold('right', true)
-# key(f18:up): user.set_hold('right', false)
+# key(f18:up) user.set_hold('right', false)
+
+# # Right Peddle
+# key(f18:down): user.set_hold('mouse_move_right', true)
+# key(f18:up): user.set_hold('mouse_move_right', false)
 
 # Right Peddle
-key(f18:down): user.set_hold('mouse_move_right', true)
-key(f18:up): user.set_hold('mouse_move_right', false)
+key(f18:down): key(space:down)
+key(f18:up): key(space:up)
 
 # Bottom Peddle
 key(f17:down): user.set_hold('mouse_move_up', true)
@@ -170,7 +173,7 @@ key(f19:down): user.set_hold('mouse_move_down', true)
 key(f19:up): user.set_hold('mouse_move_down', false)
 
 ^jump$: user.long_press('space')
-^lunge$: user.satisfactory_lunge()
+^(lunge|lunch)$: user.satisfactory_lunge()
 # e.g. from underwater
 ^surface$: user.long_press('space', 2)
 ^scan$: 
@@ -200,4 +203,4 @@ paste that: key(ctrl-v)
     insert("{number_string}.{number_small}\n")
     
 
-#^<phrase>$: skip()
+#<phrase>$: skip()

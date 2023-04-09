@@ -14,11 +14,11 @@ RIGHT_BUTTON = 1
 
 last_click_ts = time()
 double_click_threshold = .5
-double_click_threshold = .35
 double_click_threshold = .3
 
 action_map = {
     #"use_old": (lambda: actions.user.hold_until_double_press('i')),
+    "jetpack": (lambda: actions.user.long_press('space', .45)),
     "use": (lambda: actions.user.long_press('i')),
     "jump": (lambda: actions.user.long_press('space')),
     "drag": (lambda: actions.user.mouse_drag(0)),
@@ -45,10 +45,10 @@ class UserActions:
             last_click_ts = new_click_ts
 
     def noise_hiss_start():
-        actions.user.set_hold('up', True)
+        actions.user.set_hold('space', True)
 
     def noise_hiss_stop():
-        actions.user.set_hold('up', False)
+        actions.user.set_hold('space', False)
 
     def parrot_tut():
         #actions.user.press_wait('e') 
@@ -144,8 +144,9 @@ class Actions:
     def satisfactory_lunge():  
         "forward crouch jump"
         actions.user.set_hold('up', True)
-        actions.sleep('140ms')
+        actions.sleep('100ms')
         actions.user.toggle_hold('c')
+        actions.sleep('70ms')
         actions.user.long_press('space')
         actions.user.toggle_hold('c')
 
@@ -156,3 +157,5 @@ def set_expire(time):
         cron.cancel(expire_job)
     if time >= 0:
         expire_job = cron.after(str(time) + "s", actions.user.get_widget().close)
+        cron.after(str(time) + "s", actions.user.clear_stopwatch)
+        

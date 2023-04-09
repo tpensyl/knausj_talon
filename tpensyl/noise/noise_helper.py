@@ -43,8 +43,10 @@ def pop_handler(active):
 
 def hiss_handler(active):
     if active:
+        print("hiss start")
         actions.user.noise_hiss_start()
     else:
+        print("hiss stop")
         actions.user.noise_hiss_stop()
 
 noise.register("pop", pop_handler)

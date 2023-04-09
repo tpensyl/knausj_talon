@@ -15,10 +15,10 @@ class UserActions:
         ctrl.mouse_click(0)
 
     def noise_hiss_start():
-        actions.user.set_hold('up', True)
+        actions.user.set_hold('space', True)
 
     def noise_hiss_stop():
-        actions.user.set_hold('up', False)
+        actions.user.set_hold('space', False)
 
     def parrot_tut():
         ctrl.mouse_click(1)

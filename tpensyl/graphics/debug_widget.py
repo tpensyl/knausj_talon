@@ -21,6 +21,10 @@ class DebugWidgetActions:
         "display a stopwatch"
         dw.start_stopwatch()
 
+    def clear_stopwatch():
+        "display a stopwatch"
+        dw.set_text("")
+
 
 class DebugWidget:
     def __init__(self):
