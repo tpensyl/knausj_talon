@@ -32,6 +32,8 @@ class AppActions:
 
     def window_hide():
         actions.key("alt-space n")
+        actions.sleep("100ms")
+        actions.key("enter")
 
     def window_hide_others():
         actions.key("win-d alt-tab")

@@ -8,6 +8,7 @@ mod.list("abbreviation", desc="Common abbreviation")
 # TODO: Make this a csv file. Not necessarily a settings/ csv file, it might be
 # better to be like homophones.csv.
 abbreviations = {
+    "never mind": "nvm",
     "asynchronous": "async",
     "evaluate": "eval",
     "tuple": "tup",

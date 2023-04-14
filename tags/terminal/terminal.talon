@@ -4,7 +4,11 @@ tag: terminal
 
 lisa: user.terminal_list_directories()
 lisa all: user.terminal_list_all_directories()
-katie [dir] [<user.text>]: user.terminal_change_directory(text or "")
+katie$: "cd "
+katie <user.text>$: "cd {text}\t"
+katie <user.letter>: "cd {letter}\t"
+katie dot <user.text>: "cd .{text}\t"
+    #user.terminal_change_directory(text or "")
 katie root: user.terminal_change_directory_root()
 katie up: user.terminal_change_directory("..")
 #impl specific

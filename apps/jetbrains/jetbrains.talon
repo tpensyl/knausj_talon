@@ -7,6 +7,10 @@ tag(): user.splits
 tag(): user.tabs
 # multiple_cursors.py support end
 
+settings():
+    # Sometimes it loses several characters at the start of a word e.g. in global search
+    key_wait = 5
+
 #e.g. key(alt-enter)
 show fix: user.idea("action ShowIntentionActions")
 show folder: user.idea("action ProjectView.AutoscrollFromSource")
@@ -38,7 +42,7 @@ refactor in line: user.idea("action Inline")
 refactor move: user.idea("action Move")
 refactor rename: user.idea("action RenameElement")
 rename file: user.idea("action RenameFile")
-fix (format | formatting): user.idea("action ReformatCode")
+fix (format | formatting | style): user.idea("action ReformatCode")
 fix imports: user.idea("action OptimizeImports")
 #navigation
 (go declaration | follow): user.idea("action GotoDeclaration")

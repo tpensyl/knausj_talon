@@ -19,7 +19,7 @@ head: "head "
 echo: "echo "
 make der: "mkdir "
 sublime: "subl "
-grip: "grep "
+grip: "|grep "
 recursive grip:
     "grep -r '' ."
     key(left)
@@ -45,8 +45,10 @@ find name:
     key(left)
 sudo: "sudo "
 maven: "mvn "
-maven clean install: "mvn clean install -T6 \n"
+maven clean: "mvn clean \n"
+maven clean install: "mvn clean install -T4 \n"
 maven spring boot run: "mvn spring-boot:run"
+maven dependency tree: "mvn dependency:tree "
 source AWS connect: "source aws-connect default"
 
 my cat bin: "mycatbin\n"
@@ -56,3 +58,6 @@ my cat bin: "mycatbin\n"
 #home: "~"
 heroku: "heroku "
 heroku login: "heroku login\n\n"
+
+process all: "ps -aux"
+process kill: "kill "

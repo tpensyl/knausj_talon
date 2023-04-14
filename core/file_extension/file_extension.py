@@ -24,6 +24,7 @@ _file_extensions_defaults = {
     "dot bend": ".bin",
     "dot jason": ".json",
     "dot jay son": ".json",
+    "dot java": ".java",
     "dot J S": ".js",
     "dot java script": ".js",
     "dot TS": ".ts",
