@@ -78,7 +78,7 @@ def slow_scroll(delta):
 
     #debug_log(this_whistle_time - last_whistle_time, delta_interval, delta)
 
-    if this_whistle_time - last_whistle_time < delta_interval:# and False :
+    if this_whistle_time - last_whistle_time < delta_interval:
         return
     else:
         print("rotate")
@@ -140,6 +140,15 @@ class Actions:
         ctrl.mouse_click(button=0, up=True)
         # actions.sleep('256ms')
         ctrl.mouse_move(*ORIGINAL_MOUSE_POSITION)
+
+    def satisfactory_click():  
+        "click specific location, returning the cursor afterward"
+        ORIGINAL_MOUSE_POSITION = ctrl.mouse_pos()
+        TARGET = 100, 100
+
+        actions.user.mouse_move_smooth(*TARGET, 3, 64)
+        ctrl.mouse_click(button=0)
+        actions.user.mouse_move_smooth(*ORIGINAL_MOUSE_POSITION, 3, 64)
 
     def satisfactory_lunge():  
         "forward crouch jump"

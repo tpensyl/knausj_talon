@@ -4,8 +4,10 @@ and app.name: Satisfactory
 tag(): user.whistle_mouse_scroll
 
 settings():
-    speech.timeout = 0.2
-    key_wait = 8.0
+    speech.timeout = 0.1
+    key_wait = 10
+    key_hold = 30
+#    key_hold = 12
 
 pogo: user.set_tertiary_noise_action("jump")
 jetpack mode: user.set_tertiary_noise_action("jetpack")
@@ -16,9 +18,7 @@ use mode:
     user.long_press('i')
     user.set_tertiary_noise_action("use")
 get: 
-    #user.set_hold('up')
     user.set_hold('up', false)
-    #user.long_press('i')
     key(i)
     #sleep(5ms)
 (back|escape):
@@ -172,7 +172,7 @@ key(f17:up): user.set_hold('mouse_move_up', false)
 key(f19:down): user.set_hold('mouse_move_down', true)
 key(f19:up): user.set_hold('mouse_move_down', false)
 
-^jump$: user.long_press('space')
+#^jump$: user.long_press('space')
 ^(lunge|lunch)$: user.satisfactory_lunge()
 # e.g. from underwater
 ^surface$: user.long_press('space', 2)
@@ -198,9 +198,12 @@ paste that: key(ctrl-v)
 <user.number_string> percent:
     edit.delete_line()
     insert("{number_string}\n")
+    # a click is required to return focus to the game
+    user.satisfactory_click()
 <user.number_string> (point|dot) <number_small> percent:
     edit.delete_line()
     insert("{number_string}.{number_small}\n")
+    user.satisfactory_click()
     
 
 #<phrase>$: skip()

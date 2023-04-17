@@ -39,6 +39,7 @@ class NoiseActions:
         print(name, [int(x) for x in (power, f0, f1, f2)])
 
 def pop_handler(active):
+    print("pop")
     actions.user.noise_pop()
 
 def hiss_handler(active):

@@ -8,7 +8,8 @@ game_list = [
     "Age of Empires: Definitive Edition", 
     "FTLGame.exe", 
     "Sokobond.exe",
-    "Talos"
+    "Talos",
+    "DSPGAME.exe"
 ]
 
 def on_app_switch(app):
