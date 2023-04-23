@@ -44,3 +44,5 @@ go m v <user.number_string>:
 
 paste plain [text]: key(ctrl-shift-v)
 
+
+boom: mouse_click(1)

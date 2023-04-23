@@ -23,6 +23,9 @@ class user_actions:
     def tab_jump(number):
         actions.key(f"alt-{number}")
 
+    def tab_duplicate():
+        actions.key("ctrl-shift-t")
+
 
 @ctx.action_class("app")
 class app_actions:

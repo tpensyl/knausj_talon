@@ -46,6 +46,7 @@ show
 sparse-checkout,sparse checkout
 stash
 stash apply
+stash drop
 stash list
 stash pop
 stash push

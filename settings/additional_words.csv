@@ -80,6 +80,10 @@ postgres
 GLORG
 catbin
 journalctl,journal cuddle
+pr,p r
+intellij,intellijay
+rxjava,rex java
+async-sqs,async s q s
 
 Iași,yash
 yall,yall
@@ -87,6 +91,7 @@ Alioth,allioth
 pto,peetio
 kraken,kraken
 Vijay,Vijay
+Sachin,Sachin
 
 pensyl,pencil
 bipartite,
@@ -102,3 +107,5 @@ align,aline
 approximability,a proxim ability
 discretization
 cron
+ascii,asky
+util,you till
