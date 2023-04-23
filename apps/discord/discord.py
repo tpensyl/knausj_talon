@@ -1,4 +1,4 @@
-from talon import Context, Module
+from talon import Context, Module, actions
 
 mod = Module()
 apps = mod.apps
@@ -23,6 +23,11 @@ ctx.lists["user.discord_destination"] = {
     "server": "*",
 }
 
+
+@ctx.action_class("edit")
+class EditActions:
+    def line_insert_down():
+        actions.key("shift-enter")
 
 @mod.action_class
 class discord_actions:

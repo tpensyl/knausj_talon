@@ -11,12 +11,12 @@ and app.name: DSPGAME.exe
 
 last_rotate_time = time()
 rotate_delta = .5
-
+right_click_action = actions.user.move_command
+set_move_mode_cron = None
 @ctx.action_class('user')
 class UserActions:
     def parrot_palate():
-        actions.key("shift:up")
-        ctrl.mouse_click(1)
+        right_click_action()
 
     def parrot_tut():
         actions.key("shift:up")
@@ -47,3 +47,22 @@ class Actions:
         ctrl.mouse_click(1)
         actions.sleep("15ms")
         actions.key("shift:up")
+
+    def add_mode():
+        "temporarily make right clicks into queuing mode"
+        global right_click_action
+        global set_move_mode_cron
+        if set_move_mode_cron:
+            cron.cancel(set_move_mode_cron)
+            set_move_mode_cron = None
+        right_click_action = actions.user.queue_click
+        set_move_mode_cron = cron.after("20s", set_move_mode)
+
+    def move_command():
+        "move the mech"
+        actions.key("shift:up")
+        ctrl.mouse_click(1)
+
+def set_move_mode():
+    global right_click_action
+    right_click_action = actions.user.move_command

@@ -21,6 +21,9 @@ get:
     user.set_hold('up', false)
     key(i)
     #sleep(5ms)
+get get:
+    user.set_hold('up', false)
+    key(i:2)
 (back|escape):
     user.mouse_drag_end()
     user.satisfactory_back()
