@@ -11,6 +11,7 @@
 #    mode.disable("user.gameboy")
 #    mode.enable("command")
 
+del: key(delete)
 
 back: key(esc)
 start menu: key(super)
