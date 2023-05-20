@@ -30,7 +30,6 @@ get get:
     sleep(10ms)
 
 ^photo mode$: key(p)
-^screenshot$: key(f12)
 
 ^drag$: user.mouse_drag(0)
 ^end drag | drag end$: user.mouse_drag_end()

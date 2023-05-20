@@ -16,6 +16,13 @@ class TpensylClick:
         for i in range(times):
             ctrl.mouse_click(button, hold=hold, wait=wait)
 
+    def click_with_modifier(button: int, modifier: str, modifier_hold_time: int = "16ms"):
+        """Click with modifier"""
+        actions.key(modifier + ":down")
+        ctrl.mouse_click(button)
+        actions.sleep(modifier_hold_time)
+        actions.key(modifier + ":up")
+
     def toggle_drag(button: int = 0):
         """Toggle drag"""
         buttons_held_down = list(ctrl.mouse_buttons_down())

@@ -1,4 +1,5 @@
 title: /.* Mail/
+title: /.*Gmail.*/
 #e.g. Inbox (20) - tpensyl@bandwidth.com - Bandwidth.com Mail
 # [JIRA] (MV-7336) Update LucidChart for application service - tpensyl@bandwidth.com - Bandwidth.com Mail
 -

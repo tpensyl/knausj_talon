@@ -24,7 +24,7 @@ action_map = {
     "drag": (lambda: actions.user.mouse_drag(0)),
     "lunge": (lambda: actions.user.satisfactory_lunge())
 }
-tertiary_noise_action = action_map["jump"]
+tertiary_noise_action = action_map["use"]
 
 @ctx.action_class('user')
 class UserActions:
