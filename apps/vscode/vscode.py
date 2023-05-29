@@ -60,7 +60,7 @@ class AppActions:
     def tab_close():
         actions.user.vscode("workbench.action.closeActiveEditor")
         # this might only work for windows
-        actions.sleep("10ms")
+        actions.sleep("30ms")
         actions.key("n")
 
     def tab_next():

@@ -12,8 +12,11 @@ and app.name: DSPGAME.exe
 last_rotate_time = time()
 rotate_delta = .5
 palate_action = actions.user.move_command
-hiss_start_action = actions.user.start_camera_drag
-hiss_stop_action = actions.user.stop_camera_drag
+pop_action = actions.user.slow_click
+# hiss_start_action = actions.user.start_camera_drag
+# hiss_stop_action = actions.user.stop_camera_drag
+hiss_start_action = lambda: actions.key("space:down") 
+hiss_stop_action = lambda: actions.key("space:up") 
 tut_action = actions.user.dyson_back
 set_palate_mode_cron = None
 @ctx.action_class('user')
@@ -24,7 +27,7 @@ class UserActions:
 
     def noise_pop():
         actions.key("ctrl:up")
-        actions.user.slow_click()
+        pop_action()
 
     def parrot_tut():
         tut_action()
@@ -70,6 +73,16 @@ class Actions:
     def yeet_mode():
         "temporarily make right clicks into move all items"
         set_palate_action(actions.user.yeet)
+
+    def move_mode():
+        "Set pop action to move"
+        global pop_action 
+        pop_action = actions.user.move_command
+
+    def click_mode():
+        "Set pop action to click"
+        global pop_action 
+        pop_action = actions.user.slow_click  
 
     def move_command():
         "move the mech"

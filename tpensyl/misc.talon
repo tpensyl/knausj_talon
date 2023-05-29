@@ -47,3 +47,6 @@ paste plain [text]: key(ctrl-shift-v)
 
 
 boom: mouse_click(1)
+
+# TODO move to windows-only file
+task manager: key(ctrl-shift-esc) 

@@ -9,7 +9,9 @@ game_list = [
     "FTLGame.exe", 
     "Sokobond.exe",
     "Talos",
-    "DSPGAME.exe"
+    "DSPGAME.exe",
+    "DOSBox DOS Emulator",
+    "Unofficial source port for Blake Stone classic series"   
 ]
 
 def on_app_switch(app):
@@ -24,7 +26,7 @@ def on_app_switch(app):
         if "user.gameboy" not in modes:
             actions.mode.disable("command")
             actions.mode.enable("user.gameboy")
-            print(f"App [{app.name}] triggered gameboy mode.")
+            print(f"App [{app.name}] triggered gameboy mode: win.title=[{actions.win.title()}]")
     else:
         if "user.gameboy" in modes:
             actions.mode.enable("command")

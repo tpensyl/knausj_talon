@@ -5,3 +5,6 @@ set volume <number>: user.media_set_volume(number)
 [media] play next: key(next)
 [media] play previous: key(prev)
 media (play | pause): user.play_pause()
+
+^volume up <number_small>$: key('volup:{number_small}')
+^volume down <number_small>$: key('voldown:{number_small}')

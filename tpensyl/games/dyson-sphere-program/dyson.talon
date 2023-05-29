@@ -24,6 +24,8 @@ scrape: user.fast_fill()
 grab: user.click_with_modifier(0, 'shift')
 yeet: user.yeet()
 mode yeet: user.yeet_mode()
+mode click: user.click_mode() 
+mode move: user.move_mode() 
 shifty: user.toggle_hold('shift')
 drag: user.mouse_drag(0)
 change mode: key(r)
@@ -38,10 +40,14 @@ up: key(up)
 down: key(down)
 plus: key(plus)
 minus: key(minus)
+<user.number_string> percent:
+    edit.delete_line()
+    insert("{number_string}\n")
 
 power: key(2 1 f1)
+plugin: key(2 1 f2)
 power tower: key(2 1 f2)
-windmill: key(2 1 f4)
+[wind] mill: key(2 1 f4)
 miner: key(1 2 f1)
 #pump: key(1 2 f3)
 oil extractor: key(1 2 f4)
@@ -58,6 +64,7 @@ research: key(1 7 f1)
 foundation: key(1 9 f1)
 blueprint: key(0 f1)
 force blueprint: key(shift-enter)
+cut [blue] print: key(ctrl-c) 
 build <user.dyson_number_key>: key('f{dyson_number_key}')
 upgrade: key(u)
 
@@ -69,4 +76,13 @@ stats: key(p)
 mecca: key(c)
 journal: key(g)
 
-# tag(): user.whistle_mouse_look
+parrot(whistle):
+    user.whistle_start(ts, power, f0, f1, f2)
+    user.start_camera_drag()
+
+parrot(whistle:repeat):
+    user.whistle_repeat(ts, power, f0, f1, f2)
+
+parrot(whistle:stop):
+    user.whistle_stop(ts, power, f0, f1, f2)
+    user.stop_camera_drag()
