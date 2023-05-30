@@ -91,4 +91,5 @@ def sec_to_cron_str(sec):
     ms = int(sec * 1000)
     return str(ms) + "ms"
 
-dw = DebugWidget()
+# this hogs cpu on Linux, even if unused
+#dw = DebugWidget()

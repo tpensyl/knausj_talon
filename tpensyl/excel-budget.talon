@@ -1,6 +1,11 @@
 title: /.*budget.*Excel/
 title: /.*LibreOffice Calc/
 -
+
+# LibreOffice kept jumbling words
+settings():
+    key_wait = 2
+
 slap: key(enter)
 [go] down: key(down)
 [go] up: key(up)

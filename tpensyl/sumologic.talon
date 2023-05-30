@@ -1,6 +1,9 @@
 title: /.*Sumo Logic/
 -
 
+index V two: "_index=msg_api "
+index argo: "_index=argo_infrequent"
+
 time slice: "| timeslice "
 time slice <number_small> (day | days): "| timeslice {number_small}d "
 time slice <number_small> (hour | hours): "| timeslice {number_small}h "
@@ -41,3 +44,5 @@ source category: "_sourceCategory"
 field time slice: "_timeslice"
 [field] source host: "_sourceHost"
 field count: "_count"
+
+no drop: " nodrop "
