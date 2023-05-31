@@ -92,7 +92,7 @@ paint$: key(x)
 ^mid click$: mouse_click(2)
 ^split$: mouse_click(1)
 ^long split$: user.long_click(1, 300000)
-^boom$: mouse_click(1)
+^(boom|boon)$: mouse_click(1)
 ^gather$: user.toggle_hold('i')
 # remapped the control key to a non modifier, to simplify key intercept
 ^control$: user.toggle_hold('z')

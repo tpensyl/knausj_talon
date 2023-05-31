@@ -14,6 +14,12 @@ game_list = [
     "Unofficial source port for Blake Stone classic series"   
 ]
 
+ahk_script_dir = "C:\\games\\ahk-scripts\\"
+ahk_script_map = {
+    "Unofficial source port for Blake Stone classic series": "bstone.ahk" 
+}
+ahk_kill_switch = "f24"
+
 def on_app_switch(app):
     #print(f"App [{app.name}] triggered.")
     modes = scope.get("mode")
@@ -27,13 +33,22 @@ def on_app_switch(app):
             actions.mode.disable("command")
             actions.mode.enable("user.gameboy")
             print(f"App [{app.name}] triggered gameboy mode: win.title=[{actions.win.title()}]")
+
+            if app.name in ahk_script_map:
+                actions.user.system_command_nb(ahk_script_dir + ahk_script_map[app.name])
     else:
         if "user.gameboy" in modes:
             actions.mode.enable("command")
             actions.mode.disable("user.gameboy")
-            actions.mode.disable("sleep")
-            actions.mode.disable("dictation")
+
+            actions.key(ahk_kill_switch)
+            # Sometimes the key doesn't get through during the context switch?  
+            actions.sleep("100ms")
+            actions.key(ahk_kill_switch)
+
             print(f"App [{app.name}] triggered command mode.")
+
+
 
 ui.register("app_activate", on_app_switch)
 
