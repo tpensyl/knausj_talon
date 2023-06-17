@@ -9,7 +9,9 @@ debug <user.text>: user.set_debug_text("{text}")
 #vyeet <number>: 
 stopwatch start: user.start_stopwatch()
 stopwatch stop: user.set_debug_text("")
-
+ 
 look upper: user.start_mouse_move_up()
 look downer: user.start_mouse_move_down()
-look stop: user.stop_mouse_move()
+look stop: user.stop_mouse_move() 
+auto run: user.system_command_nb("C:\\games\\ahk-scripts\\bstone.ahk") 
+auto stop: key(f24) 
