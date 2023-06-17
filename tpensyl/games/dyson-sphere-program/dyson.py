@@ -19,6 +19,17 @@ hiss_start_action = lambda: actions.key("space:down")
 hiss_stop_action = lambda: actions.key("space:up") 
 tut_action = actions.user.dyson_back
 set_palate_mode_cron = None
+
+hiss_actions = {
+    "jump": (lambda: actions.key("space:down"),
+             lambda: actions.key("space:up")), 
+    "accelerate": (lambda: actions.key("shift:down"),
+             lambda: actions.key("shift:up")), 
+    "decelerate": (lambda: actions.key("s:down"),
+             lambda: actions.key("s:up"))        
+
+}
+
 @ctx.action_class('user')
 class UserActions:
     def parrot_palate():
@@ -84,6 +95,13 @@ class Actions:
         global pop_action 
         pop_action = actions.user.slow_click  
 
+    def set_hiss_mode(mode:str):
+        "change the action of hiss"
+        global hiss_start_action, hiss_stop_action
+        hiss_start_action = hiss_actions[mode][0]
+        hiss_stop_action = hiss_actions[mode][1]
+        print("changed his mode: " + mode)
+
     def move_command():
         "move the mech"
         actions.user.set_hold('shift', False)
@@ -91,6 +109,7 @@ class Actions:
 
     def fast_fill():
         "pull items from a conveyor belt"
+        ctrl.mouse_click(0, up=True)
         actions.key("ctrl:down")
         ctrl.mouse_click(0, down=True)
         
