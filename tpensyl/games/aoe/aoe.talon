@@ -4,7 +4,7 @@ app.name: Age of Empires: Definitive Edition
 
 settings():
     # minimum silence time (in seconds) before speech is cut off, default 0.3
-    speech.timeout = 0.25
+    speech.timeout = 0.15
 
 back:
 	key(esc)
@@ -64,7 +64,9 @@ add all:
 	mouse_click(0)
 	key("ctrl:up")
 
-
+add group {user.control_group}:
+	key('shift-{control_group}')
+	key('ctrl-{control_group}')
 group {user.control_group}: key('ctrl-{control_group}')
 ^{user.control_group}$: key('{control_group}')
 go {user.control_group}: key('alt-{control_group}')
@@ -75,7 +77,10 @@ delete unit:
 	sleep(10ms)
 
 # Military
-(attack [move] | stab): key(a)
+(attack [move] | stab): 
+	key(a)
+	mouse_click(0)
+
 (stand ground | hold): key(e)
 aggressive: key(q)
 defensive: key(w)

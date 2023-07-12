@@ -11,12 +11,15 @@ game_list = [
     "Talos",
     "DSPGAME.exe",
     "DOSBox DOS Emulator",
-    "Unofficial source port for Blake Stone classic series"   
+    "Unofficial source port for Blake Stone classic series",
+    "Adobe Flash Player 29.0 r0",
+    "Space Engineers"
 ]
 
 ahk_script_dir = "C:\\games\\ahk-scripts\\"
 ahk_script_map = {
-    "Unofficial source port for Blake Stone classic series": "bstone.ahk" 
+    "Talos": "talos-pad.ahk",
+    "Unofficial source port for Blake Stone classic series": "bstone-joy.ahk" 
 }
 ahk_kill_switch = "f24"
 
@@ -35,7 +38,9 @@ def on_app_switch(app):
             print(f"App [{app.name}] triggered gameboy mode: win.title=[{actions.win.title()}]")
 
             if app.name in ahk_script_map:
-                actions.user.system_command_nb(ahk_script_dir + ahk_script_map[app.name])
+                ahk_script = ahk_script_dir + ahk_script_map[app.name]
+                print(f"Running AHK script: {ahk_script}")
+                actions.user.system_command_nb(ahk_script)
     else:
         if "user.gameboy" in modes:
             actions.mode.enable("command")
