@@ -5,6 +5,7 @@ tag: terminal
 lisa: user.terminal_list_directories()
 lisa all: user.terminal_list_all_directories()
 katie$: "cd "
+katie <user.text> slap$: "cd {text}\t\n"
 katie <user.text>$: "cd {text}\t"
 katie <user.letter>: "cd {letter}\t"
 katie dot <user.text>: "cd .{text}\t"
@@ -26,3 +27,6 @@ copy paste:
     edit.copy()
     sleep(50ms)
     edit.paste()
+
+vim : "vim "
+vim <user.text>$: "vim {text}\t"

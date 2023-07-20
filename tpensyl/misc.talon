@@ -34,6 +34,8 @@ item: "* "
 comma: ","
 dot quote: "\""
 
+semi: ";"
+
 vim save:
 	key(esc)
 	":wq\n"

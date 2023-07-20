@@ -33,15 +33,21 @@ git stash [push] [<user.git_arguments>] message [<user.prose>]:
 git status$: "git status \n"
 git add patch$: "git add --patch \n"
 git show head$: "git show HEAD \n"
-git diff color$: "git diff --color-words \n"
+
+git diff$: "git diff \n"
 git diff (cached | cashed)$: "git diff --cached \n"
 git log$: "git log \n"
 
 git checkout dot$: "git checkout . \n"
+# Not sure how much this helps yet
+git checkout <user.text>$: "git checkout {text}\t"
+
 git add dot$: "git add . \n"
 git push$: "git push \n"
 git pull$: "git pull \n"
 git fetch$: "git fetch \n"
+git stash$: "git stash \n"
+git stash pop$: "git stash pop \n"
 
 git commit allow empty: 
     "git commit --allow-empty -m''"

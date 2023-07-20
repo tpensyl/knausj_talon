@@ -61,3 +61,5 @@ heroku login: "heroku login\n\n"
 
 process all: "ps -aux"
 process kill: "kill "
+
+system c t l: "systemctl "

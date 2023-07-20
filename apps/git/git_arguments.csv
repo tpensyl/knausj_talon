@@ -59,6 +59,12 @@ Option, Spoken form
 -d, deep
 -vv, very verbose
 HEAD
+HEAD~1, head one
+HEAD~2, head two
+HEAD~3, head three
+HEAD~4, head four
+HEAD~5, head five
+HEAD~6, head six
 main
 master
 origin

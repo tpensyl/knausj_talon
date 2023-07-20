@@ -11,6 +11,8 @@ settings():
     # Sometimes it loses several characters at the start of a word e.g. in global search
     key_wait = 5
 
+replace it: key(ctrl-r)
+
 #e.g. key(alt-enter)
 show fix: user.idea("action ShowIntentionActions")
 show folder: user.idea("action ProjectView.AutoscrollFromSource")

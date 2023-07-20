@@ -114,6 +114,29 @@ copy word: user.copy_word()
 copy word left: user.copy_word_left()
 copy word right: user.copy_word_right()
 
+# tpensyl, for parity with cursorless
+copy head:
+    edit.extend_line_start()
+    edit.copy()
+copy tail:
+    edit.extend_line_end()
+    edit.copy()
+
+cut head:
+    edit.extend_line_start()
+    edit.cut()
+cut tail:
+    edit.extend_line_end()
+    edit.cut()
+
+chuck line: edit.delete_line()
+chuck head:
+    edit.extend_line_start()
+    edit.delete()
+chuck tail:
+    edit.extend_line_end()
+    edit.delete()
+
 #to do: do we want these variants, seem to conflict
 # copy left:
 #      edit.extend_left()
@@ -137,10 +160,6 @@ cut line end: user.cut_line_end()
 cut word: user.cut_word()
 cut word left: user.cut_word_left()
 cut word right: user.cut_word_right()
-
-copy word left: user.copy_word_left()
-
-copy word right: user.copy_word_right()
 
 copy line:
     edit.select_line()
