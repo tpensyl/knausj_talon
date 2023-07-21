@@ -10,7 +10,7 @@ os: linux
 
 @ctx.action_class('user')
 class NoiseActions:
-    # def noise_pop():
+    # def noise_trigger_pop():
     #     pass
 
     # def noise_hiss_start():

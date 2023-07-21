@@ -28,7 +28,7 @@ tertiary_noise_action = action_map["use"]
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         # Close selection menu
         if actions.user.get_hold('i'):
             actions.user.set_hold('i', False)

@@ -27,7 +27,7 @@ class DebugWidgetOverrides:
     #     print("debugwidget: there should be a box - debug.py") 
     #     actions.user.set_box_widget(0, 0, 300, 100)
 
-    def noise_pop():
+    def noise_trigger_pop():
         print("debug.py:pop")
         actions.user.slow_click()
         widget = actions.user.get_widget()

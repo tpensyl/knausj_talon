@@ -6,7 +6,7 @@ win.title: /.*DOSBox.*ZORK.*/
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         actions.key('enter')
     def noise_hiss_start():
         actions.key('backspace:down')

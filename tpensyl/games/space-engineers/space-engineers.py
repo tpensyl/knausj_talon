@@ -28,7 +28,7 @@ tertiary_noise_action = action_map["use"]
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         actions.user.set_hold('f', False)
 
         actions.user.mouse_drag_end()

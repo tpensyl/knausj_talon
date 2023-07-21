@@ -7,6 +7,6 @@ and win.title: /.*AKLABETH.*/
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         actions.key('up')
         print("test tpensyl")

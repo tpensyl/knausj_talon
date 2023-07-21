@@ -10,7 +10,7 @@ RIGHT_BUTTON = 1
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         buttons_held_down = list(ctrl.mouse_buttons_down())
         if buttons_held_down:
             for button in buttons_held_down:

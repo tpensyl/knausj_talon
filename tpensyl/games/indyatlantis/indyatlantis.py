@@ -7,7 +7,7 @@ win.title: /Indiana Jones and the Fate of Atlantis/
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         actions.key('.')
         ctrl.mouse_click(0)
     def noise_hiss_start():

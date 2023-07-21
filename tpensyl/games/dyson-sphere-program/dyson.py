@@ -36,7 +36,7 @@ class UserActions:
         actions.key("ctrl:up")
         palate_action()
 
-    def noise_pop():
+    def noise_trigger_pop():
         actions.key("ctrl:up")
         pop_action()
 
