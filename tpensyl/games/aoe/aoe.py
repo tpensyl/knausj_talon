@@ -31,11 +31,14 @@ class UserActions:
 
     def noise_hiss_start():
         # Right-click drag to scroll viewport
+        #ctrl.mouse_click(0, down=True)
         ctrl.mouse_click(1) # Deselect
         ctrl.mouse_click(button=1, down=True)
 
     def noise_hiss_stop():
         ctrl.mouse_click(button=1, up=True)
+        #ctrl.mouse_click(0, up=True)
+
 
     def parrot_palate():
         ctrl.mouse_click(1) # Deselect

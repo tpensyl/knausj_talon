@@ -4,10 +4,10 @@ mod = Module()
 
 @mod.action_class
 class TpensylClick:
-    def slow_click():
+    def slow_click(delay_s: float = .016):
         """Click with hold time"""
         ctrl.mouse_click(button=0, down=True)
-        actions.sleep(.016)
+        actions.sleep(delay_s)
         ctrl.mouse_click(button=0, up=True)
 
     def game_click(button: int = 0, times: int = 1, hold: int = None):
@@ -16,10 +16,21 @@ class TpensylClick:
         for i in range(times):
             ctrl.mouse_click(button, hold=hold, wait=wait)
 
-    def click_with_modifier(button: int, modifier: str, modifier_hold_time: int = "16ms"):
+    def click_with_modifier(button: int, modifier: str, modifier_hold_time: str = "16ms"): 
         """Click with modifier"""
+        print(modifier_hold_time)
         actions.key(modifier + ":down")
+        actions.sleep(modifier_hold_time)
         ctrl.mouse_click(button)
+        actions.sleep(modifier_hold_time)
+        actions.key(modifier + ":up")
+
+    def click_with_modifier(button: int, modifier: str, modifier_hold_time: str = "16ms"): 
+        """Click with modifier"""
+        print(modifier_hold_time)
+        actions.key(modifier + ":down")
+        actions.sleep(modifier_hold_time)
+        ctrl.mouse_click(button, hold=32000)
         actions.sleep(modifier_hold_time)
         actions.key(modifier + ":up")
 

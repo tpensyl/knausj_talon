@@ -11,7 +11,7 @@ scroll way down:
 scroll down: edit.page_down()
 copy that: edit.copy()
 cut that: edit.cut()
-paste that: edit.paste()
+(paste|post) that: edit.paste()
 copy paste:
     edit.copy()
     edit.paste()

@@ -13,7 +13,8 @@ game_list = [
     "DOSBox DOS Emulator",
     "Unofficial source port for Blake Stone classic series",
     "Adobe Flash Player 29.0 r0",
-    "Space Engineers"
+    "Space Engineers",
+    "RCT.EXE"
 ]
 
 ahk_script_dir = "C:\\games\\ahk-scripts\\"

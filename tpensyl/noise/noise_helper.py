@@ -7,6 +7,7 @@ mod = Module()
 class NoiseActions:
     def noise_pop():
         """Invoked when the user does the pop noise."""
+        print("noise_helper pop")
         pass
 
     def noise_hiss_start():
@@ -44,10 +45,10 @@ def pop_handler(active):
 
 def hiss_handler(active):
     if active:
-        #print("hiss start")
+        print("hiss start")
         actions.user.noise_hiss_start()
     else:
-        #print("hiss stop")
+        print("hiss stop")
         actions.user.noise_hiss_stop()
 
 noise.register("pop", pop_handler)

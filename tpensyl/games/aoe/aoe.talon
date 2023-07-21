@@ -10,7 +10,6 @@ back:
 	key(esc)
 	
 drag: user.mouse_drag(0) 
-pop: key(esc)
 
 pause: key(f3)
 speedup: key(keypad_plus) 
@@ -113,7 +112,7 @@ build dock: key(t)
 build barracks: key(w)
 build market: key(d)
 [build] [stone] wall: key(u)
-[build] tower: key(y)
+[build] [watch] tower: key(y)
 [build] farm: key(f)
 build (archery | archer) range: key(a)
 build stable: key(s)
