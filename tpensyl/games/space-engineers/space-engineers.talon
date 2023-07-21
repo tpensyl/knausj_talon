@@ -79,7 +79,7 @@ tab <number>: key("ctrl-{number}")
 ^split power$: 
     key(shift:down)
     mouse_click(0)
-    key(shift:up)'out here with you'
+    key(shift:up)
     # untoggle run
     key(shift)
 ^toggle ping$: user.toggle_hold('alt')
