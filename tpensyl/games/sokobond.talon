@@ -4,7 +4,7 @@ app.name: Sokobond.exe
 tag(): user.game_repeater
 
 (enter | slap): key(enter)
-escape: key(esc)
+(escape | back): key(esc)
 reset: key(r)
 nope:
     key(z)

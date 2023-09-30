@@ -17,7 +17,7 @@ double_click_threshold = .5
 double_click_threshold = .3
 
 action_map = {
-    #"use_old": (lambda: actions.user.hold_until_double_press('i')),
+    "use_old": (lambda: actions.user.hold_until_double_press('i')),
     "jetpack": (lambda: actions.user.long_press('space', .45)),
     "use": (lambda: actions.user.long_press('i')),
     "jump": (lambda: actions.user.long_press('space')),

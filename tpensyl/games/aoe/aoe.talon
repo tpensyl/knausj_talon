@@ -15,6 +15,15 @@ pause: key(f3)
 speedup: key(keypad_plus) 
 slowdown: key(keypad_minus) 
 slow way down: key(keypad_minus:2)
+
+##### Cheat Engine Hotkeys
+# speed zero: key(f14)
+# speed one: key(f20)
+# speed too: key(f21)
+# speed three: key(f22)
+# speed for: key(f23)
+
+
 zoom men: 
 	sleep(50ms)
 	key(ctrl-keypad_plus)
@@ -27,7 +36,7 @@ zoom way out: key(shift-keypad_minus)
 # Jump camera/focus
 go town [center]: key(ctrl-shift-h)
 go market: key(ctrl-shift-m)
-go barracks: key(ctrl-shift-b)
+go (barracks|borax): key(ctrl-shift-b)
 go (archer|archery) [range]: key(ctrl-shift-a)
 go stable: key(ctrl-shift-l)
 go siege [workshop]: key(ctrl-shift-k)
@@ -53,7 +62,7 @@ queue:
 	key("shift:down")
 	mouse_click(0)
 	key("shift:up")
-add:
+^(add|had)$:
     key("ctrl:down")
 	mouse_click(0)
 	key("ctrl:up")
@@ -63,13 +72,13 @@ add all:
 	mouse_click(0)
 	key("ctrl:up")
 
-add group {user.control_group}:
+merge {user.control_group}:
 	key('shift-{control_group}')
 	key('ctrl-{control_group}')
 group {user.control_group}: key('ctrl-{control_group}')
 ^{user.control_group}$: key('{control_group}')
 go {user.control_group}: key('alt-{control_group}')
-merge {user.control_group}: key('shift-{control_group}')
+take {user.control_group}: key('shift-{control_group}')
 
 delete unit: 
 	key(del)
@@ -91,7 +100,7 @@ unload: key(q)
 
 # Training general
 <user.repeat_num> times: core.repeat_command(repeat_num-1) 
-<user.ordinals>: core.repeat_command(ordinals-1)
+#<user.ordinals>: core.repeat_command(ordinals-1)
 twice: 
 	sleep(10ms)
 	core.repeat_command(1)
@@ -100,7 +109,7 @@ stop: key(m)
 
 # Towns Center
 (vil|villager): key(q)
-town vil:
+town bill:
 	key(ctrl-shift-h)
 	sleep(10ms)
 	key(q)
@@ -128,7 +137,7 @@ repair: key(n)
 # Dock
 (fish|fishing) [boat|ship]: key(q)
 transport [boat|ship]: key(e)
-(trade|merchant) [boat|ship]: key(e)
+(trade|merchant) [boat|ship]: key(w)
 (scout [ship] | [war] galley | trireme): key(r)
 (catapult [trireme] | juggernaut): key(t)
 fire (galley | ship | boat): key(y)

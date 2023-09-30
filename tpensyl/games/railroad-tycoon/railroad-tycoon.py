@@ -2,6 +2,7 @@ from talon import Context, actions, ctrl
 
 ctx = Context()
 ctx.matches = r"""
+mode: user.gameboy
 win.title: /Railroad Tycoon II.*/
 """
 

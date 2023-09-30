@@ -1,4 +1,4 @@
-from talon import Context, Module, actions, ctrl, actions
+from talon import Context, Module, actions, ctrl
 ctx = Context()
 ctx.matches = r"""
 mode: user.gameboy
@@ -27,6 +27,10 @@ def repeat_num(m) -> int:
 @ctx.action_class('user')
 class UserActions:
     def noise_trigger_pop():
+        buttons_held_down = list(ctrl.mouse_buttons_down())
+        for button in buttons_held_down:
+            ctrl.mouse_click(button=button, up=True)
+            return
         ctrl.mouse_click(0)
 
     def noise_hiss_start():

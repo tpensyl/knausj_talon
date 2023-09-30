@@ -38,7 +38,7 @@ class UserActions:
         if new_click_ts - last_click_ts < double_pop_threshold:
             ctrl.mouse_click(0, down=True)
         else:
-            actions.user.slow_click()
+            actions.user.slow_click("16ms")
             last_click_ts = new_click_ts
 
     def noise_hiss_start():
@@ -112,7 +112,18 @@ def debug_log(*args):
 class Actions:
     def start_destroying():
         "hold right mouse button"
-        ctrl.mouse_click(button=1, down=True) 
+        ctrl.mouse_click(button=1, down=True)
+
+    def make_x(num:int):
+        "make x items"
+        n1000 = num//1000
+        n100 = (num%1000)//100
+        n10 = (num%100)//10
+        n1 = num%10
+        actions.user.game_click(times=n1, wait='32ms', hold='16ms', modifier=None, modifier_hold_time='16ms')
+        actions.user.game_click(times=n10, wait='32ms', hold='16ms', modifier='ctrl', modifier_hold_time='16ms')
+        actions.user.game_click(times=n100, wait='32ms', hold='16ms', modifier='shift', modifier_hold_time='16ms')
+        #actions.user.game_click(times=n1000, wait='32ms', hold='16ms', modifier='ctrl-shift', modifier_hold_time='16ms')
 
     def set_tertiary_noise_action(action:str):
         "Set tertiary noise action"
@@ -120,53 +131,6 @@ class Actions:
         if action in action_map:
             tertiary_noise_action = action_map[action]
 
-    def block_scan(time:int = -1):
-        "Give positive argument to block compass plus scan bubbles"
-        actions.user.set_box_widget(400, -1, 1500, 200, "000000ff")
-        set_expire(time)
-
-    def block_compass(time:int = -1):
-        "Give positive argument to block compass"
-        # Before I discovered you can turn off the icons
-        # actions.user.set_box_widget(690, 20, 1244, 131, "000000ff")
-        actions.user.set_box_widget(696, 23, 1232, 38, "000000ff")
-        set_expire(time)
-
-    def satisfactory_back():
-        "complex back command"
-        #if actions.user.get_hold('up'):
-        #    actions.user.set_hold('up', False)
-        released_at_least_one_key = False
-        for key in ('down', 'left', 'right', 'i'):
-            if actions.user.get_hold(key):
-                print(key, 'back releasing')
-                actions.user.set_hold(key, False)
-                released_at_least_one_key = True
-        actions.user.release_all_holds(exclude=['up'])
-        if not released_at_least_one_key:
-            actions.user.long_press('esc')
-            # actions.key('esc')
-
-    def satisfactory_drop():  
-        "drag the hovered item from inventory onto the ground"
-        ORIGINAL_MOUSE_POSITION = ctrl.mouse_pos()
-        OUT_OF_INVENTORY = 100, 100
-
-        actions.user.release_all_holds()
-        ctrl.mouse_click(button=0, down=True)
-        actions.user.mouse_move_smooth(*OUT_OF_INVENTORY, 3, 64)
-        ctrl.mouse_click(button=0, up=True)
-        # actions.sleep('256ms')
-        ctrl.mouse_move(*ORIGINAL_MOUSE_POSITION)
-
-    def satisfactory_click():  
-        "click specific location, returning the cursor afterward"
-        ORIGINAL_MOUSE_POSITION = ctrl.mouse_pos()
-        TARGET = 100, 100
-
-        actions.user.mouse_move_smooth(*TARGET, 3, 64)
-        ctrl.mouse_click(button=0)
-        actions.user.mouse_move_smooth(*ORIGINAL_MOUSE_POSITION, 3, 64)
 
     def satisfactory_lunge():  
         "forward crouch jump"

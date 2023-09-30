@@ -11,6 +11,8 @@ class UserActions:
 
     def noise_hiss_start():
         ctrl.mouse_click(button=0, down=True)
-
+        return
+ 
     def noise_hiss_stop():
         ctrl.mouse_click(button=0, up=True)
+        return

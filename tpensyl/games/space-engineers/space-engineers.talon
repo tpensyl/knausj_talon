@@ -13,9 +13,14 @@ stuff: key(k)
 helmet: key(j)
 crouch: key(c)
 jetpack: key(x)
+upright:
+    key(x)
+    sleep(500ms)
+    key(x)
 flashlight: key(l)
 configure: key(g)
 park: key(p)
+change mode: key(b)
 
 third person: key(v)
 inertia: key(z)
@@ -25,17 +30,24 @@ destroy: user.start_destroying()
 please respond: key(backspace)
 test: mouse_click(2, 32000)
 
-grab: 
-    mouse_click(0, hold=32000)
-    sleep("20ms")
-    mouse_click(0, hold=32000)
-make ten: user.click_with_modifier(0, 'ctrl', "100ms")
-make thirty: 
-    user.click_with_modifier(0, 'ctrl', "100ms")
-    user.click_with_modifier(0, 'ctrl', "100ms")
-    user.click_with_modifier(0, 'ctrl', "100ms")
-make [a|one] hundred: user.click_with_modifier(0, 'shift', "100ms")
-make [a|one] thousand: user.click_with_modifier(0, 'ctrl-shift', "100ms")
+# grab: 
+#     mouse_click(0, hold=32000)
+#     sleep("20ms")
+#     mouse_click(0, hold=32000)
+make <number>: user.make_x(number)
+# make ten: user.click_with_modifier(0, 'ctrl', "100ms")
+# make thirty: 
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+# make fifty: 
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+#     user.click_with_modifier(0, 'ctrl', "100ms")
+# make [a|one] hundred: user.click_with_modifier(0, 'shift', "100ms")
+# make [a|one] thousand: user.click_with_modifier(0, 'ctrl-shift', "100ms")
 
 rotate left: key(delete)
 rotate right: key(pagedown)
@@ -66,7 +78,7 @@ drill: key(ctrl-1  3)
 pipe: key(ctrl-1  4)
 
 tab <number>: key("ctrl-{number}")
-(build|make) <user.satisfactory_number_key>: key(satisfactory_number_key)
+(build) <user.satisfactory_number_key>: key(satisfactory_number_key)
 ###
 
 
@@ -88,21 +100,29 @@ backpedal:
 ^(sprint|walk): key(shift)
 
 ^lefty$: 
-    user.set_hold('left', true, true)
+    user.set_hold('a', true, true)
     sleep(1s)
-    user.set_hold('left', false)
+    user.set_hold('a', false)
 ^righty$: 
-    user.set_hold('right', true, true)
+    user.set_hold('d', true, true)
     sleep(1s)
-    user.set_hold('right', false)
+    user.set_hold('d', false)
+^left <number_small>$: 
+    user.set_hold('a', true, true)
+    sleep("{number_small}s")
+    user.set_hold('a', false)
+^right <number_small>$: 
+    user.set_hold('d', true, true)
+    sleep("{number_small}s")
+    user.set_hold('d', false)
 slight left: 
-    user.set_hold('left', true, false)
+    user.set_hold('a', true, false)
     sleep(500ms)
-    user.set_hold('left', false)
+    user.set_hold('a', false)
 slight right: 
-    user.set_hold('right', true, false)
+    user.set_hold('d', true, false)
     sleep(500ms)
-    user.set_hold('right', false)
+    user.set_hold('d', false)
 
 # Left Peddle (strafe)
 # key(f16:down): user.set_hold('left', true)

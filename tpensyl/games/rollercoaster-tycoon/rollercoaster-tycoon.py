@@ -1,4 +1,5 @@
 from talon import Context, actions, ctrl
+from time import time
 
 ctx = Context()
 ctx.matches = r"""
@@ -9,10 +10,20 @@ app.name: /RCT.EXE/
 LEFT_BUTTON = 0
 RIGHT_BUTTON = 1
 
+last_click_ts = time()
+double_click_threshold = .3
+
 @ctx.action_class('user')
 class UserActions:
     def noise_trigger_pop():
-        ctrl.mouse_click(0)
+        
+        global last_click_ts
+        new_click_ts = time()
+        if new_click_ts - last_click_ts < double_click_threshold:
+            ctrl.mouse_click(0, down=True)
+        else:
+            ctrl.mouse_click(0)
+            last_click_ts = new_click_ts
 
     def noise_hiss_start():
         actions.user.mouse_drag(1)
@@ -24,4 +35,5 @@ class UserActions:
         actions.key("esc")
 
     def parrot_tut():
-        actions.user.toggle_drag(0)  
+        # actions.user.toggle_drag(0)  
+        ctrl.mouse_click(1)

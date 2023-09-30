@@ -84,7 +84,7 @@ pipe: key(4)
 
 ^(recipe|recipes)$: key('o')
 ^holster$: key(h)
-junk$: key(f)
+(junk|drunk)$: key(f)
 ^(stuff|item)$: key(tab)
 ^flashlight$: key(b)
 paint$: key(x)
