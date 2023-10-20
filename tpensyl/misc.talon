@@ -34,7 +34,7 @@ item: "* "
 comma: ","
 dot quote: "\""
 
-semi: ";"
+#semi: ";"
 
 vim save:
 	key(esc)

@@ -24,30 +24,15 @@ change mode: key(b)
 
 third person: key(v)
 inertia: key(z)
+fix inertia: key(ctrl-z)
 
 destroy: user.start_destroying()
 
 please respond: key(backspace)
 test: mouse_click(2, 32000)
-
-# grab: 
-#     mouse_click(0, hold=32000)
-#     sleep("20ms")
-#     mouse_click(0, hold=32000)
+paint: mouse_click(2)
 make <number>: user.make_x(number)
-# make ten: user.click_with_modifier(0, 'ctrl', "100ms")
-# make thirty: 
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-# make fifty: 
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-#     user.click_with_modifier(0, 'ctrl', "100ms")
-# make [a|one] hundred: user.click_with_modifier(0, 'shift', "100ms")
-# make [a|one] thousand: user.click_with_modifier(0, 'ctrl-shift', "100ms")
+
 
 rotate left: key(delete)
 rotate right: key(pagedown)
@@ -158,7 +143,7 @@ key(f19:up): user.set_hold('mouse_move_down', false)
 
 ^press <user.keys>: key(keys)
 ^say <user.prose>: insert(prose)
-^enter$: key(enter)
+^(enter|slap)$: key(enter)
 # ^chat <user.prose>:
 #     key(enter)
 #     sleep(10ms)

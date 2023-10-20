@@ -7,6 +7,7 @@ mod.list("abbreviation", desc="Common abbreviation")
 
 
 abbreviations = {
+    "conjecture": "conj", 
     "never mind": "nvm",
     "asynchronous": "async",
     "evaluate": "eval",

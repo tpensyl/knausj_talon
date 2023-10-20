@@ -208,4 +208,4 @@ paste that: key(ctrl-v)
     user.satisfactory_click()
     
 
-#<phrase>$: skip()
+<phrase>$: skip()
