@@ -14,8 +14,10 @@ fake cite: user.insert_between("\\cite{", "}")
 fake (frack | fraction): user.insert_between("\\frac{", "}{}")
 fake (begin|began) <user.word>:
 	"\\begin{{{user.word}}}"
+fake begin: user.insert_between("\\begin{", "}")
 fake end <user.word>:
 	"\\end{{{user.word}}}"
+fake end: user.insert_between("\\end{", "}")
 fake item:
 	"\\item "
 fake emf: user.insert_between("\\emph{", "}")
@@ -28,4 +30,5 @@ fake square root: user.insert_between("\\sqrt{", "}")
 fake subsection: user.insert_between("\\subsection{", "}")
 fake subsubsection: user.insert_between("\\subsubsection{", "}")
 fake label: user.insert_between("\\label{", "}")
+fake tommy: user.insert_between("\\tommy{", "}")
 
