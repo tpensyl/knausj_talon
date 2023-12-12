@@ -1,4 +1,4 @@
-from talon import Context, Module, actions, ctrl, actions
+from talon import Context, Module, actions, ctrl
 ctx = Context()
 ctx.matches = r"""
 mode: user.gameboy
@@ -26,16 +26,23 @@ def repeat_num(m) -> int:
 # One button mouse interface
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
+        buttons_held_down = list(ctrl.mouse_buttons_down())
+        for button in buttons_held_down:
+            ctrl.mouse_click(button=button, up=True)
+            return
         ctrl.mouse_click(0)
 
     def noise_hiss_start():
         # Right-click drag to scroll viewport
+        #ctrl.mouse_click(0, down=True)
         ctrl.mouse_click(1) # Deselect
         ctrl.mouse_click(button=1, down=True)
 
     def noise_hiss_stop():
         ctrl.mouse_click(button=1, up=True)
+        #ctrl.mouse_click(0, up=True)
+
 
     def parrot_palate():
         ctrl.mouse_click(1) # Deselect

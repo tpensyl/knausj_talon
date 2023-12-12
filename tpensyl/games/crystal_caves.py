@@ -7,7 +7,7 @@ and win.title: /Crystal Caves HD/
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         actions.user.long_press('ctrl')
 
     def noise_hiss_start():

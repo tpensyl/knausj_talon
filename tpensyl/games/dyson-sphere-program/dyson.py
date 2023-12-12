@@ -12,7 +12,7 @@ and app.name: DSPGAME.exe
 last_rotate_time = time()
 rotate_delta = .5
 palate_action = actions.user.move_command
-pop_action = actions.user.slow_click
+pop_action = lambda: actions.user.game_click(0)
 # hiss_start_action = actions.user.start_camera_drag
 # hiss_stop_action = actions.user.stop_camera_drag
 hiss_start_action = lambda: actions.key("space:down") 
@@ -23,11 +23,12 @@ set_palate_mode_cron = None
 hiss_actions = {
     "jump": (lambda: actions.key("space:down"),
              lambda: actions.key("space:up")), 
-    "accelerate": (lambda: actions.key("shift:down"),
-             lambda: actions.key("shift:up")), 
+    "accelerate": (lambda: actions.key("shift:down") or actions.key("w:down"),
+             lambda: actions.key("shift:up")or actions.key("w:up")), 
     "decelerate": (lambda: actions.key("s:down"),
-             lambda: actions.key("s:up"))        
-
+             lambda: actions.key("s:up")), 
+    "flight": (lambda: actions.key("w:down"),
+             lambda: actions.key("w:up"))        
 }
 
 @ctx.action_class('user')
@@ -36,7 +37,7 @@ class UserActions:
         actions.key("ctrl:up")
         palate_action()
 
-    def noise_pop():
+    def noise_trigger_pop():
         actions.key("ctrl:up")
         pop_action()
 
@@ -71,7 +72,9 @@ class Actions:
 
     def add_mode():
         "temporarily make right clicks into queuing mode"
-        set_palate_action(actions.user.queue_click)
+        # set_palate_action(actions.user.queue_click)
+        global pop_action 
+        pop_action = actions.user.queue_click
 
     def jump_mode():
         "temporarily make right clicks into jumping mode"
@@ -100,7 +103,7 @@ class Actions:
         global hiss_start_action, hiss_stop_action
         hiss_start_action = hiss_actions[mode][0]
         hiss_stop_action = hiss_actions[mode][1]
-        print("changed his mode: " + mode)
+        print("changed hiss mode: " + mode)
 
     def move_command():
         "move the mech"

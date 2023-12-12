@@ -7,7 +7,7 @@ and win.title: /.*VisualBoyAdvance.*/
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         actions.key('l:down')
         actions.sleep('32ms')
         actions.key('l:up')

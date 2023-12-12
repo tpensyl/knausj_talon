@@ -5,9 +5,10 @@ mod = Module()
 
 @mod.action_class
 class NoiseActions:
-    def noise_pop():
-        """Invoked when the user does the pop noise."""
-        pass
+    # def noise_trigger_pop():
+    #     """Invoked when the user does the pop noise."""
+    #     print("noise_helper pop")
+    #     pass
 
     def noise_hiss_start():
         """Invoked when the user starts hissing (potentially while speaking)"""
@@ -38,17 +39,17 @@ class NoiseActions:
         """for debugging"""
         print(name, [int(x) for x in (power, f0, f1, f2)])
 
-def pop_handler(active):
-    print("pop")
-    actions.user.noise_pop()
+# def pop_handler(active):
+#     actions.user.noise_trigger_pop()
 
 def hiss_handler(active):
     if active:
-        #print("hiss start")
+        print("hiss start")
         actions.user.noise_hiss_start()
     else:
-        #print("hiss stop")
+        print("hiss stop")
         actions.user.noise_hiss_stop()
 
-noise.register("pop", pop_handler)
+# delegating to core/noise.py
+#noise.register("pop", pop_handler)
 noise.register("hiss", hiss_handler)

@@ -27,14 +27,15 @@ class DebugWidgetOverrides:
     #     print("debugwidget: there should be a box - debug.py") 
     #     actions.user.set_box_widget(0, 0, 300, 100)
 
-    def noise_pop():
+    def noise_trigger_pop():
+        print("debug.py:pop")
         actions.user.slow_click()
         widget = actions.user.get_widget()
         if widget:
             widget.x1, widget.y1 = ctrl.mouse_pos()
             print(widget.x1, widget.y1, widget.x2, widget.y2)
         else:
-            print("debug.py:pop")
+            print("debug.py:else")
 
     def parrot_palate():
         widget = actions.user.get_widget()

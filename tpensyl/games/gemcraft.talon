@@ -7,10 +7,10 @@ bomb:
     key(b)
     user.toggle_drag(0)
 tower: key(t)
-(trench|pit): key(w)
+(trench|pit|trap): key(w)
 (jam|gem|gym): key(c)
-(combine|join): key(g)
-join this:
+(combine): key(g)
+join:
     key(g)
     sleep(10ms)
     user.toggle_drag(0)

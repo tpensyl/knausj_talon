@@ -14,7 +14,7 @@ ctx.lists["self.ftl_crew"] = ftl_crew_map
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         ctrl.mouse_click(0)
 
     def noise_hiss_start():

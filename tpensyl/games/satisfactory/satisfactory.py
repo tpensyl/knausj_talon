@@ -17,7 +17,7 @@ double_click_threshold = .5
 double_click_threshold = .3
 
 action_map = {
-    #"use_old": (lambda: actions.user.hold_until_double_press('i')),
+    "use_old": (lambda: actions.user.hold_until_double_press('i')),
     "jetpack": (lambda: actions.user.long_press('space', .45)),
     "use": (lambda: actions.user.long_press('i')),
     "jump": (lambda: actions.user.long_press('space')),
@@ -28,7 +28,7 @@ tertiary_noise_action = action_map["use"]
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         # Close selection menu
         if actions.user.get_hold('i'):
             actions.user.set_hold('i', False)

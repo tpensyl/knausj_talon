@@ -7,7 +7,7 @@ and win.title: /.*melonDS.*/
 
 @ctx.action_class('user')
 class UserActions:
-    def noise_pop():
+    def noise_trigger_pop():
         #actions.key('a')
         actions.key('a:down')
         actions.sleep('32ms')

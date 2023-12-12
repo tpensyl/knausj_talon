@@ -4,6 +4,8 @@ title: /.*Gmail.*/
 # [JIRA] (MV-7336) Update LucidChart for application service - tpensyl@bandwidth.com - Bandwidth.com Mail
 -
 
+bold: key(ctrl-b)
+compile: key(f8)
 archive: key(e)
 #refresh: key(ctrl-u)
 go next: key(j)

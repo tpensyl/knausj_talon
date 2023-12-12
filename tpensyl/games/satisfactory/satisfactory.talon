@@ -84,7 +84,7 @@ pipe: key(4)
 
 ^(recipe|recipes)$: key('o')
 ^holster$: key(h)
-junk$: key(f)
+(junk|drunk)$: key(f)
 ^(stuff|item)$: key(tab)
 ^flashlight$: key(b)
 paint$: key(x)
@@ -208,4 +208,4 @@ paste that: key(ctrl-v)
     user.satisfactory_click()
     
 
-#<phrase>$: skip()
+<phrase>$: skip()

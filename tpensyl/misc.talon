@@ -33,7 +33,7 @@ nope: edit.undo()
 item: "* "
 dot quote: "\""
 
-semi [colon]: ";"
+semicolon: ";"
 
 vim save:
 	key(esc)
