@@ -10,7 +10,8 @@ tag: user.whistle_mouse_scroll
 and not tag: user.whistle_mouse_look
 """
 
-config_scaler = mod.setting("whistle_scroll_speed", float, default=1) 
+config_scaler = mod.setting("whistle_scroll_speed", float, default=1)
+config_scaler = mod.setting("whistle_scroll_acc", float, default=1.5) 
 
 # initialize
 ts = 0
@@ -33,7 +34,8 @@ def shaping_function(pitch_delta):
     # Normalize value to range [-10, 10]
     x = pitch_delta / (max_pitch - min_pitch) * 10
     # linear into exponential
-    return copysign(2*abs(x)*(1.5**abs(x)), -x) * config_scaler.get()
+    # return copysign(2*abs(x)*(1.5**abs(x)), -x) * config_scaler.get()
+    return copysign(1*abs(x)*(1.5**abs(x)), -x) * config_scaler.get()
 
 @ctx.action_class('user')
 class WhistleActions:

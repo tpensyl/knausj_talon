@@ -39,6 +39,10 @@ class NoiseActions:
         """for debugging"""
         print(name, [int(x) for x in (power, f0, f1, f2)])
 
+HISS_DELAY = "350ms" 
+hiss_prestart_handle = None
+
+# TODO this thing is just asking for a race condition
 def hiss_handler(active):
     if active:
         print("hiss start")
@@ -46,6 +50,27 @@ def hiss_handler(active):
     else:
         print("hiss stop")
         actions.user.noise_hiss_stop()
+        
+    global hiss_prestart_handle
+    print("hiss", active, "intrp" if hiss_prestart_handle else "fresh")
+    if hiss_prestart_handle:
+        if not active:
+            print("hiss cancel")
+            cron.cancel(hiss_prestart_handle)
+            hiss_prestart_handle = None
+        else:
+            return # consider restarting the cron
+    else:
+        if active:
+            hiss_prestart_handle = cron.after(HISS_DELAY, hiss_start)
+        else:
+            actions.user.noise_hiss_stop()
+
+def hiss_start():
+    print("hiss start")
+    global hiss_prestart_handle
+    hiss_prestart_handle = None
+    actions.user.noise_hiss_start()
 
 # delegating to core/noise.py
 #noise.register("pop", pop_handler)
