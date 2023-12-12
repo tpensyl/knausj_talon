@@ -1,3 +1,4 @@
+tag: user.debug
 -
 # I have mapped the Olympus RS31H foot pedal to these virtual keys.
 # see https://liannaee.blogspot.com/2023/03/olympus-rs31h-hardware-with-talon-voice.html

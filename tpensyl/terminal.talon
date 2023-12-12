@@ -10,6 +10,10 @@ lisa last: "ls -lastr\n"
 katy up: "cd ..\n"
 katy back: "cd -\n"
 katy home: "cd ~\n"
+katy that: 
+    "cd "
+    edit.paste()
+    " \n"
 move: "mv "
 remove: "rm "
 shell copy: "cp "
@@ -63,3 +67,15 @@ process all: "ps -aux"
 process kill: "kill "
 
 system c t l: "systemctl "
+
+# tmp macros. remove after!
+# remove codeowners:
+#     "git co master && g pull && rm CODEOWNERS && g a . && g diff --cached\n"
+#     "g s\n"
+
+# push new branch:
+#     "git checkout -b MV-10393-remove-code-owners && g cm -m'MV-10393 remove CODEOWNERS' && git push --set-upstream origin MV-10393-remove-code-owners\n"
+#     "g s\n"
+
+# add missing tag:
+#     "g cm --allow-empty -m'MV-10393' && g push\n"

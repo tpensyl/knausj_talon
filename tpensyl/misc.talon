@@ -31,10 +31,9 @@ junk: key(backspace)
 spamma: ", "
 nope: edit.undo()
 item: "* "
-comma: ","
 dot quote: "\""
 
-semi: ";"
+semi [colon]: ";"
 
 vim save:
 	key(esc)
@@ -50,5 +49,7 @@ paste plain [text]: key(ctrl-shift-v)
 
 ^(boom|boon)$: mouse_click(1)
 
-# TODO move to windows-only file
-task manager: key(ctrl-shift-esc) 
+# TODO move to windows-only files
+task manager: key(ctrl-shift-esc)
+
+key(f1): speech.toggle()
