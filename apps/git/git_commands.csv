@@ -7,7 +7,6 @@ branch
 checkout
 cherry-pick, cherry pick
 clean
-clone
 commit
 config
 diff

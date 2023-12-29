@@ -6,6 +6,7 @@ mod.tag("dumdum_look_absolute", desc="move cursor with silly voice, y=power, x=f
  
 ctx = Context()
 ctx.matches = """
+os: windows
 tag: user.dumdum_look_absolute
 """
 
@@ -63,9 +64,18 @@ class DumdumActions:
         else:
             delta_y = 0
 
-        mouse_move(delta_x, -delta_y)
+        actions.user.mouse_move(delta_x, -delta_y)
         actions.user.dumdum_widget(delta_x, -delta_y)
         #print("eee cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
+
+    def mouse_move(dx, dy):
+        import win32api, win32con
+        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
+        # with talon, but might not work in a game
+        # mouse_pos = ctrl.mouse_pos()
+        # x = mouse_pos[0] + delta*speed_scaler_x
+        # y = mouse_pos[1]
+        # ctrl.mouse_move(x, y)
 
 should_print = True
 def print_attributes_once(object):
@@ -75,11 +85,3 @@ def print_attributes_once(object):
         print([method_name for method_name in dir(object)
                   if callable(getattr(object, method_name))])
 
-import win32api, win32con
-def mouse_move(dx, dy):
-    win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
-    # with talon, but might not work in a game
-    # mouse_pos = ctrl.mouse_pos()
-    # x = mouse_pos[0] + delta*speed_scaler_x
-    # y = mouse_pos[1]
-    # ctrl.mouse_move(x, y)

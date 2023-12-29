@@ -34,6 +34,7 @@ git status$: "git status \n"
 git add patch$: "git add --patch \n"
 git show head$: "git show HEAD \n"
 
+git clone: "git clone git@github.com:"
 git diff$: "git diff \n"
 git diff (cached | cashed)$: "git diff --cached \n"
 git log$: "git log \n"

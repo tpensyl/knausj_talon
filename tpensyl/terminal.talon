@@ -53,7 +53,7 @@ maven clean: "mvn clean \n"
 maven clean install: "mvn clean install -T4 \n"
 maven spring boot run: "mvn spring-boot:run"
 maven dependency tree: "mvn dependency:tree "
-source AWS connect: "source aws-connect default"
+source AWS [connect]: "source aws-connect default"
 
 my cat bin: "mycatbin\n"
 

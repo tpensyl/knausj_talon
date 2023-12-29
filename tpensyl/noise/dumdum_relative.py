@@ -6,6 +6,7 @@ mod.tag("dumdum_look_relative", desc="move cursor with silly voice, y=power, x=f
  
 ctx = Context()
 ctx.matches = """
+os: windows
 tag: user.dumdum_look_relative
 """
 
@@ -68,6 +69,6 @@ class DumdumActions:
         actions.user.dumdum_widget(delta_x, -delta_y)
         #print("eee cont ", [int(x) for x in [10*ts, power, f0, f1, f2]])
 
-import win32api, win32con
-def mouse_move(dx, dy):
-    win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
+    def mouse_move(dx, dy):
+        import win32api, win32con
+        win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
