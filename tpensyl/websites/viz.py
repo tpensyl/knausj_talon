@@ -1,7 +1,9 @@
 from talon import Context, ctrl, actions
 ctx = Context()
 ctx.matches = r"""
-browser.host: www.viz.com
+os: windows
+and app.exe: chrome.exe
+and win.title: /VIZ.*/
 """
 
 @ctx.action_class("user")
