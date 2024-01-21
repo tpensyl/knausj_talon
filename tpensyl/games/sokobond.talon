@@ -5,7 +5,7 @@ tag(): user.game_repeater
 
 (enter | slap): key(enter)
 (escape | back): key(esc)
-reset: key(r)
+(reset|restart) (level|puzzle): key(r)
 nope:
     key(z)
     sleep(200ms)

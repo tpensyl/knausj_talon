@@ -8,6 +8,7 @@ mod = Module()
 
 control_group_list = "zero one two three four five six seven eight nine".split()
 control_group_map = {word: str(i) for i, word in enumerate(control_group_list)}
+control_group_map["servant"] = str(7)
 
 mod.list("control_group", desc="List of assignable control groups in AOE1")
 ctx.lists["self.control_group"] = control_group_map
@@ -34,14 +35,17 @@ class UserActions:
         ctrl.mouse_click(0)
 
     def noise_hiss_start():
+        ctrl.mouse_click(button=0, down=True)
         # Right-click drag to scroll viewport
-        #ctrl.mouse_click(0, down=True)
-        ctrl.mouse_click(1) # Deselect
-        ctrl.mouse_click(button=1, down=True)
+        
+        # ctrl.mouse_click(1) # Deselect
+        # ctrl.mouse_click(button=1, down=True)
 
     def noise_hiss_stop():
-        ctrl.mouse_click(button=1, up=True)
-        #ctrl.mouse_click(0, up=True)
+        buttons_held_down = list(ctrl.mouse_buttons_down())
+        for button in buttons_held_down:
+            ctrl.mouse_click(button=button, up=True)
+        # ctrl.mouse_click(button=1, up=True)
 
 
     def parrot_palate():
@@ -49,10 +53,14 @@ class UserActions:
         ctrl.mouse_click(0)
 
     def parrot_tut():
-        buttons_held_down = list(ctrl.mouse_buttons_down())
-        if buttons_held_down:
-            for button in buttons_held_down:
-                ctrl.mouse_click(button=button, up=True)
-            return
-        else:
-            ctrl.mouse_click(button=0, down=True)
+        # drag_select()
+        pass
+
+def drag_select():
+    buttons_held_down = list(ctrl.mouse_buttons_down())
+    if buttons_held_down:
+        for button in buttons_held_down:
+            ctrl.mouse_click(button=button, up=True)
+        return
+    else:
+        ctrl.mouse_click(button=0, down=True)

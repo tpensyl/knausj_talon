@@ -1,5 +1,5 @@
 mode: user.gameboy
 and win.title: /DOSBox.*BS_AOG/
 -
-test: key(up)
+#test: key(up)
 get: key(space)

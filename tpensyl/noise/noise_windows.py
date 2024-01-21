@@ -36,4 +36,5 @@ class NoiseActions:
         actions.key("ctrl:down")
         ctrl.mouse_click(0)
         actions.key("ctrl:up")
+        # actions.user.toggle_drag(0)
         pass

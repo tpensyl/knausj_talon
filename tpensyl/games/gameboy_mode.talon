@@ -1,7 +1,7 @@
 mode: user.gameboy
 -
 tag(): user.game_media
-^alt tab$:
+^(alt tab|altab)$:
     #prevent ahk button-mashing from cancelling next operation
     key(f24)
     user.window_tab()

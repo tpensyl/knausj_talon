@@ -7,7 +7,7 @@ settings():
     key_wait = 30
 
 back: key(esc)
-#<phrase>$: skip()
+^<phrase>$: skip()
 
 nope: mouse_click(1)
 add: user.queue_click()

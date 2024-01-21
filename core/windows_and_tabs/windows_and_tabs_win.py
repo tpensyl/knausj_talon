@@ -32,7 +32,7 @@ class AppActions:
 
     def window_hide():
         actions.key("alt-space")
-        actions.sleep("20ms")
+        actions.sleep("30ms")
         actions.key("n")
 
     def window_hide_others():

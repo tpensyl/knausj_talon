@@ -4,7 +4,7 @@ mod = Module()
 mod.mode("gameboy", desc="Limited command mode intended for games")
 
 game_list = [
-    "Satisfactory", 
+    "FactoryGame", 
     "Age of Empires: Definitive Edition", 
     "FTLGame.exe", 
     "Sokobond.exe",
@@ -14,7 +14,9 @@ game_list = [
     "Unofficial source port for Blake Stone classic series",
     "Adobe Flash Player 29.0 r0",
     "Space Engineers",
-    "RCT.EXE"
+    "RCT.EXE",
+    "Main executable for OpenRCT2",
+    "http://www.scummvm.org/"
 ]
 
 ahk_script_dir = "C:\\games\\ahk-scripts\\"
@@ -25,7 +27,7 @@ ahk_script_map = {
 ahk_kill_switch = "f24"
 
 def on_app_switch(app):
-    #print(f"App [{app.name}] triggered.")
+    # print(f"App [{app.name}] triggered.")
     modes = scope.get("mode")
     if modes is None:
         return

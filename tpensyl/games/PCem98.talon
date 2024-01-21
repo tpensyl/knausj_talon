@@ -6,3 +6,4 @@ settings():
 
 escape context: key(ctrl-end)
 alt tab: key(ctrl-end)
+full screen: key(ctrl-alt-pagedown)
