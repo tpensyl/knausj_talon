@@ -29,7 +29,7 @@ fix inertia: key(ctrl-z)
 destroy: user.start_destroying()
 
 please respond: key(backspace)
-test: mouse_click(2, 32000)
+#test: mouse_click(2, 32000)
 paint: mouse_click(2)
 make <number>: user.make_x(number)
 

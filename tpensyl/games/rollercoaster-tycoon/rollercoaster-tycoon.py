@@ -5,6 +5,7 @@ ctx = Context()
 ctx.matches = r"""
 mode: user.gameboy
 app.name: /RCT.EXE/
+app.name: /.*OpenRCT2/
 """
 
 LEFT_BUTTON = 0

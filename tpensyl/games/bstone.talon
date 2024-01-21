@@ -8,5 +8,5 @@ settings():
     key_wait = 16
     speech.timeout = 0.1
 
-test: key(up)
+#test: key(up)
 (get|open): key(space)

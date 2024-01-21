@@ -14,6 +14,7 @@ default_digits = "zero one two three four five six seven eight nine".split(" ")
 numbers = [str(i) for i in range(10)]
 number_key_dict = dict(zip(default_digits, numbers))
 number_key_dict["ocho"] = "8"
+number_key_dict["hate"] = "8"
 number_key_dict["ladder"] = "9"
 number_key_dict["belt"] = "1"
 number_key_dict["power"] = "2"

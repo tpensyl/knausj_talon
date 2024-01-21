@@ -1,5 +1,6 @@
 mode: user.gameboy
-and app.name: Satisfactory
+and app.name: FactoryGame
+
 -
 tag(): user.whistle_mouse_scroll
 
@@ -9,17 +10,17 @@ settings():
     key_hold = 30
 #    key_hold = 12
 
-pogo: user.set_tertiary_noise_action("jump")
-jetpack mode: user.set_tertiary_noise_action("jetpack")
+# pogo: user.set_tertiary_noise_action("jump")
+# jetpack mode: user.set_tertiary_noise_action("jetpack")
 
-drag mode: user.set_tertiary_noise_action("drag")
-lunge mode: user.set_tertiary_noise_action("lunge")
+#drag mode: user.set_tertiary_noise_action("drag")
+#lunge mode: user.set_tertiary_noise_action("lunge")
 use mode: 
-    user.long_press('i')
+    user.long_press('e')
     user.set_tertiary_noise_action("use")
 get: 
     user.set_hold('up', false)
-    key(i)
+    key(e)
     #sleep(5ms)
 get get:
     user.set_hold('up', false)
@@ -34,6 +35,10 @@ get get:
 ^drag$: user.mouse_drag(0)
 ^end drag | drag end$: user.mouse_drag_end()
 ^drop|poop$: user.satisfactory_drop()
+^(yeet|yet)$: 
+    key(ctrl:down)
+    mouse_click(0)
+    key(ctrl:up)
 
 # key(w:down):        user.hold_on_double_press_down('up')
 # key(ctrl-w:down):   user.hold_on_double_press_down('up')
@@ -62,8 +67,10 @@ pick <user.satisfactory_number_key>:
     #user.release_all_holds()
     key(satisfactory_number_key)
     sleep(15ms)
-    user.set_hold('i', true)
-belt: key(1)
+    user.set_hold('e', true)
+belt: 
+    user.set_hold('z', false)
+    key(1)
 power: key(2)
 lift: key(3)
 pipe: key(4)
@@ -90,10 +97,11 @@ pipe: key(4)
 paint$: key(x)
 
 ^mid click$: mouse_click(2)
+^I drop$: user.long_click(2, 300000)
 ^split$: mouse_click(1)
 ^long split$: user.long_click(1, 300000)
-^(boom|boon)$: mouse_click(1)
-^gather$: user.toggle_hold('i')
+^(boom|boon)$: user.long_click(1, 300000)
+^gather$: user.toggle_hold('e')
 # remapped the control key to a non modifier, to simplify key intercept
 ^control$: user.toggle_hold('z')
 ^split power$: 
@@ -106,7 +114,7 @@ crouch$: user.toggle_hold('c')
 ^stand$: user.set_hold('c', false)
 ^toggle ping$: user.toggle_hold('alt')
 backpedal:
-    user.set_hold('down', true)
+    user.set_hold('s', true)
 ^(sprint|walk): key(shift)
 
 ^lefty$: 

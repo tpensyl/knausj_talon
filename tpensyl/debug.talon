@@ -18,7 +18,7 @@ key(f18):
 # Top Puddle
 key(f19): 
     print("f16")
-test: print("test")
+#test: print("test")
 gamepad(dpad_up):           print("dpad_up")
 gamepad(dpad_down):         print("dpad_down")
 gamepad(dpad_left):         print("dpad_left")
