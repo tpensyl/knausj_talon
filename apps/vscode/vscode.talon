@@ -19,6 +19,7 @@ please [<user.text>]:
 revert that: user.vscode("git.revertSelectedRanges")
 stage that: user.vscode("git.stageSelectedRanges")
 unstage that: user.vscode("git.unstageSelectedRanges")
+key: user.insert_between("key(", ")")
 
 # Sidebar
 bar explore: user.vscode("workbench.view.explorer")

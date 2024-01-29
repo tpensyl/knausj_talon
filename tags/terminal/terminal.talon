@@ -15,6 +15,8 @@ katie up: user.terminal_change_directory("..")
 #impl specific
 katie back: user.terminal_change_directory("-")
 
+katie source: user.terminal_change_directory("src")
+
 go <user.system_path>: insert('cd "{system_path}"\n')
 path <user.system_path>: insert('"{system_path}"')
 clear screen: user.terminal_clear_screen()

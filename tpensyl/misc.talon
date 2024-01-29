@@ -2,14 +2,8 @@
 # * octa shortcuts
 # * get sublime tabs running
 # * find in replace, find_and_replace
-# * homophones.py can we add some order of precedent
-# * one command to clear and oleate the line properly
 
-#^alt tab$:
-#    user.window_tab()
-#    user.switcher_focus("code")
-#    mode.disable("user.gameboy")
-#    mode.enable("command")
+# * one command to clear and oleate the line properly
 
 del: key(delete)
 
@@ -23,9 +17,7 @@ epsilon: "ε"
 north: edit.up()
 #south: edit.down()
 
-key: user.insert_between("key(", ")")
-#pop: mouse_click(1)
-yap: "y\n" 
+(yap|yep): "y\n" 
 
 junk: key(backspace)
 spamma: ", "

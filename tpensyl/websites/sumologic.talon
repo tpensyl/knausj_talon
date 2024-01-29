@@ -43,6 +43,7 @@ slap:
 source category: "_sourceCategory"
 field time slice: "_timeslice"
 [field] source host: "_sourceHost"
+[field] source name: "_sourceName"
 field count: "_count"
 
 no drop: " nodrop "
