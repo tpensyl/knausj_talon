@@ -1,6 +1,8 @@
 #tag: disabled
 -
 # latex shortcuts
+insert (phi|fee): "ϕ"
+
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 
 fake epsilon: "\\eps"

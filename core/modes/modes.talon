@@ -21,3 +21,4 @@ not mode: sleep
     mode.disable("dictation")
     mode.disable("command")
     mode.enable("user.gameboy")
+    speech.disable()

@@ -45,3 +45,10 @@ paste plain [text]: key(ctrl-shift-v)
 task manager: key(ctrl-shift-esc)
 
 key(f1): speech.toggle()
+# TODO move to windows-only file
+task manager: key(ctrl-shift-esc) 
+
+mute discord: key(ctrl-shift-m)
+
+center mouse: user.mouse_move_center_active_window()
+

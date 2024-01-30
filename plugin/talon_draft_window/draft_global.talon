@@ -1,5 +1,5 @@
 # These are available globally (in command mode)
-mode: unused
+#mode: unused
 -
 ^draft show:
     # Do this toggle so we can have focus when saying 'draft show'

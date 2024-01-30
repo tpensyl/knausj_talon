@@ -11,3 +11,8 @@ tag(): user.game_media
     #user.switcher_focus("code")
 
 ^screenshot$: key(f12)
+
+^command mode$:
+    mode.disable("user.gameboy")
+    mode.disable("sleep")
+    mode.enable("command")

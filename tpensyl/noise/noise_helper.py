@@ -39,9 +39,6 @@ class NoiseActions:
         """for debugging"""
         print(name, [int(x) for x in (power, f0, f1, f2)])
 
-# def pop_handler(active):
-#     actions.user.noise_trigger_pop()
-
 def hiss_handler(active):
     if active:
         print("hiss start")

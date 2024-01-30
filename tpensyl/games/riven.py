@@ -13,11 +13,11 @@ class UserActions:
         actions.user.toggle_drag(0)
 
     def parrot_palate():
-        ctrl.mouse_click(0)
+        ctrl.mouse_click(0, hold=16000)
     
     def noise_hiss_start():
         global move_job
-        move_job = cron.interval("20ms", lambda: ctrl.mouse_click(0))
+        move_job = cron.interval("20ms", lambda: ctrl.mouse_click(0, hold=16000))
 
     def noise_hiss_stop():
         if move_job:
