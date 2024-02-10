@@ -134,24 +134,17 @@ copy word right: user.copy_word_right()
 cut that: edit.cut()
 cut all: user.cut_all()
 cut line: user.cut_line()
-cut line start: user.cut_line_start()
-cut line end: user.cut_line_end()
+cut (line start | head): user.cut_line_start()
+cut (line end | tail): user.cut_line_end()
 cut word: user.cut_word()
 cut word left: user.cut_word_left()
 cut word right: user.cut_word_right()
-
-copy line:
-    edit.select_line()
-    edit.copy()
 
 paste line:
     edit.line_insert_down()
     edit.paste()
 
 #cut commands
-cut all:
-    edit.select_all()
-    edit.cut()
 #to do: do we want these variants
 # cut left:
 #      edit.select_all()
