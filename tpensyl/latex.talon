@@ -1,11 +1,15 @@
 #tag: disabled
 -
 # latex shortcuts
-insert (phi|fee): "ϕ"
+(phi|fee): "ϕ"
+big delta: "Δ"
+delta: "δ"
+epsilon: "ε"
 
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 
 fake epsilon: "\\eps"
+fake (phi|fee): "\\phi"
 fake bar: "\\bar "
 fake less [than] (equal|equals): "\\le "
 fake greater [than] (equal|equals): "\\ge "

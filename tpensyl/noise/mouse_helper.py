@@ -1,4 +1,4 @@
-from talon import ctrl, Module, actions
+from talon import ctrl, Module, actions, cron
 
 mod = Module()
 
@@ -48,7 +48,7 @@ class TpensylClick:
         actions.sleep(modifier_hold_time)
         actions.key(modifier + ":up")
 
-    def toggle_drag(button: int = 0):
+    def toggle_drag(button : int = 0):
         """Toggle drag"""
         buttons_held_down = list(ctrl.mouse_buttons_down())
         if buttons_held_down:
@@ -57,6 +57,16 @@ class TpensylClick:
             return
         else:
             ctrl.mouse_click(button=button, down=True)
+
+    def mouse_rest(duration_ms : int = 1500):
+        """Effectively ignore mouse movements for short duration"""
+        do_mouse_rest(duration_ms, ctrl.mouse_pos())
+        position = ctrl.mouse_pos()
+
+def do_mouse_rest(duration_ms, position):
+    ctrl.mouse_move(*position)
+    if duration_ms > 0:
+        cron.after("10ms", lambda: do_mouse_rest(duration_ms - 10, position))
 
 def to_ms(time_str):
     if not time_str:

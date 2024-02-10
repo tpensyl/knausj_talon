@@ -124,7 +124,8 @@ def hold_on_double_press_down(key):
 # Double press is drag, without releasing the first press
 # This means the key is not released until the wait time.
 keys_release_job = {}
-double_click_wait_time = "300ms"
+# double_click_wait_time = "300ms"
+double_click_wait_time = "250ms"
 def hold_until_double_press(key):
     def finish_press():
         print("up")

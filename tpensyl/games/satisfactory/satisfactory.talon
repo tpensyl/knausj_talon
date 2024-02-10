@@ -97,7 +97,7 @@ pipe: key(4)
 paint$: key(x)
 
 ^mid click$: mouse_click(2)
-^I drop$: user.long_click(2, 300000)
+^(Eye | I) (drop | dropper)$: user.long_click(2, 300000)
 ^split$: mouse_click(1)
 ^long split$: user.long_click(1, 300000)
 ^(boom|boon)$: user.long_click(1, 300000)

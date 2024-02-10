@@ -3,7 +3,7 @@ mode: user.gameboy
 app.exe: flashplayer_29_gemcraft.exe
 -
 pause: key(p)
-bomb: 
+(bomb|bob): 
     key(b)
     user.toggle_drag(0)
 tower: key(t)
@@ -22,3 +22,6 @@ make all:
     user.click_with_modifier(0, 'ctrl', 0)
 manna: key(m)
 control: user.click_with_modifier(0, 'ctrl')
+
+# Not reversible
+full screen: key(ctrl-f)

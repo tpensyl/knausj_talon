@@ -11,8 +11,6 @@ back: key(esc)
 start menu: key(super)
 
 m v <user.number_string>: "MV-{number_string}"
-big delta: "Δ"
-epsilon: "ε"
 
 north: edit.up()
 #south: edit.down()
@@ -51,4 +49,5 @@ task manager: key(ctrl-shift-esc)
 mute discord: key(ctrl-shift-m)
 
 center mouse: user.mouse_move_center_active_window()
+mouse rest: user.mouse_rest()
 

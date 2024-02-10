@@ -8,6 +8,9 @@ app.name: /.*OpenRCT2/
 settings():
     speech.timeout = .13
 
+drag:
+    user.mouse_drag(0)
+
 insert password: "farts"
 
 open research: key(d)
@@ -16,7 +19,7 @@ open guest: key(g)
 (bill|build) (right|riot|ride): key(f5)
 terraform: key(f1)
 
-mark (right|ride) [height]: "("r
+mark (right|ride) [height]: "("
 mark land [height]: key(8)
 mark ride [height]: key(9)
 mark path [height]: key(0)

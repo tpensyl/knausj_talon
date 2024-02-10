@@ -5,7 +5,7 @@ mod = Module()
 ctx.matches = r"""
 app: windows_power_shell
 app: windows_terminal
-and win.title: /PowerShell/
+and win.title: /(Windows )?PowerShell/
 """
 
 directories_to_remap = {}
