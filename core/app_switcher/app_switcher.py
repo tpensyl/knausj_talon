@@ -305,7 +305,13 @@ class Actions:
     def switcher_focus(name: str):
         """Focus a new application by name"""
         app = actions.user.get_running_app(name)
-        actions.user.switcher_focus_app(app)
+
+        # Focus next window on same app
+        if app == ui.active_app():
+            actions.app.window_next()
+        # Focus new app
+        else:
+            actions.user.switcher_focus_app(app)
 
     def switcher_focus_app(app: ui.App):
         """Focus application and wait until switch is made"""
@@ -315,6 +321,9 @@ class Actions:
             if time.perf_counter() - t1 > 1:
                 raise RuntimeError(f"Can't focus app: {app.name}")
             actions.sleep(0.1)
+
+    def switcher_focus_last():
+        """Focus last window/application"""
 
     def switcher_focus_window(window: ui.Window):
         """Focus window and wait until switch is made"""
@@ -327,12 +336,15 @@ class Actions:
 
     def switcher_launch(path: str):
         """Launch a new application by path (all OSes), or AppUserModel_ID path on Windows"""
-        if app.platform != "windows":
-            # separate command and arguments
+        if app.platform == "mac":
+            ui.launch(path=path)
+        elif app.platform == "linux":
+            # Could potentially be merged with OSX code. Done in this explicit
+            # way for expediency around the 0.4 release.
             cmd = shlex.split(path)[0]
             args = shlex.split(path)[1:]
             ui.launch(path=cmd, args=args)
-        else:
+        elif app.platform == "windows":
             is_valid_path = False
             try:
                 current_path = Path(path)
@@ -344,6 +356,8 @@ class Actions:
             else:
                 cmd = f"explorer.exe shell:AppsFolder\\{path}"
                 subprocess.Popen(cmd, shell=False)
+        else:
+            print("Unhandled platform in switcher_launch: " + app.platform)
 
     def switcher_menu():
         """Open a menu of running apps to switch to"""

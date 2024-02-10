@@ -3,7 +3,7 @@ double dash: "--"
 triple quote: "'''"
 (triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
-ellipses: "..."
+ellipsis: "..."
 (comma and | spamma): ", "
 arrow: "->"
 dub arrow: "=>"
@@ -22,10 +22,10 @@ inside (graves | back ticks): user.insert_between("`", "`")
 angle that:
     text = edit.selected_text()
     user.paste("<{text}>")
-(square | square bracket) that:
+(square | bracket | square bracket) that:
     text = edit.selected_text()
     user.paste("[{text}]")
-(bracket | brace) that:
+(brace | curly bracket) that:
     text = edit.selected_text()
     user.paste("{{{text}}}")
 (parens | args) that:
