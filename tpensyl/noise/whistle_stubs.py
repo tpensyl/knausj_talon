@@ -15,4 +15,4 @@ class ParrotNoiseActions:
 
     def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float):
         "whistle repeat stub"
-        x = 1
+        print("whistle repeat stub")

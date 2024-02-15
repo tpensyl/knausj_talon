@@ -11,7 +11,7 @@ and not tag: user.whistle_mouse_look
 """
 
 config_scaler = mod.setting("whistle_scroll_speed", float, default=1)
-config_scaler = mod.setting("whistle_scroll_acc", float, default=1.5) 
+# config_acc = mod.setting("whistle_scroll_acc", float, default=1.5) 
 
 # initialize
 ts = 0
@@ -70,11 +70,13 @@ class WhistleActions:
         int_speed = int(scroll_speed)
         remainder = scroll_speed - int_speed
 
-        #actions.user.set_debug_text("%.2f" % scroll_speed)
+        # actions.user.set_debug_text("%.2f" % scroll_speed)
+        #print(scroll_speed)
         actions.user.whistle_action(scroll_speed)
  
 @mod.action_class
 class WhistleAction:
     def whistle_action(delta:float):
         """Define action to take based on relative whistle pitch"""
+        print(f'by_lines=False, y={delta}')
         actions.mouse_scroll(by_lines=False, y=delta)

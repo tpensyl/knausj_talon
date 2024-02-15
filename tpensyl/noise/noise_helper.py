@@ -45,17 +45,17 @@ hiss_prestart_handle = None
 # TODO this thing is just asking for a race condition
 def hiss_handler(active):
     if active:
-        print("hiss start")
+        # print("hiss start")
         actions.user.noise_hiss_start()
     else:
-        print("hiss stop")
+        # print("hiss stop")
         actions.user.noise_hiss_stop()
         
     global hiss_prestart_handle
-    print("hiss", active, "intrp" if hiss_prestart_handle else "fresh")
+    # print("hiss", active, "intrp" if hiss_prestart_handle else "fresh")
     if hiss_prestart_handle:
         if not active:
-            print("hiss cancel")
+            # print("hiss cancel")
             cron.cancel(hiss_prestart_handle)
             hiss_prestart_handle = None
         else:

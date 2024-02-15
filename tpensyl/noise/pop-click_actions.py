@@ -10,9 +10,9 @@ class UserActions:
         actions.user.slow_click()
 
     def noise_hiss_start():
-        ctrl.mouse_click(button=0, down=True)
+        #ctrl.mouse_click(button=0, down=True)
         return
  
     def noise_hiss_stop():
-        ctrl.mouse_click(button=0, up=True)
+        #ctrl.mouse_click(button=0, up=True)
         return
