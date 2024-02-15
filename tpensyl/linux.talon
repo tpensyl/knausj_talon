@@ -1,7 +1,9 @@
 os: linux
 -
 
-screenshot:
+    
+
+screenshot unused:
     key(shift:down)
     sleep(100ms)
     key(printscr)

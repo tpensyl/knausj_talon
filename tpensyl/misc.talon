@@ -42,12 +42,18 @@ paste plain [text]: key(ctrl-shift-v)
 # TODO move to windows-only files
 task manager: key(ctrl-shift-esc)
 
-key(f1): speech.toggle()
-# TODO move to windows-only file
-task manager: key(ctrl-shift-esc) 
+key(keypad_enter:up): 
+	speech.toggle()
+	key(ctrl-shift-space)
+
+key(f9:up): 
+	speech.toggle()
+	key(ctrl-shift-space)
 
 mute discord: key(ctrl-shift-m)
 
 center mouse: user.mouse_move_center_active_window()
 mouse rest: user.mouse_rest()
+
+hold shift: key(shift:down)
 

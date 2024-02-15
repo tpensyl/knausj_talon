@@ -1,6 +1,11 @@
 tag: terminal
 -
 
+(sudo|pseudo): "sudo "
+ansible vault view: "ansible-vault view " 
+
+diff: "diff "
+
 pip install: "pip install "
 pip show: "pip show "
 vscode: "code "
@@ -14,6 +19,11 @@ katy that:
     "cd "
     edit.paste()
     " \n"
+katie text: "cd ~/txt\n"
+katie source: "cd ~/src\n"
+
+quick build catapult: "quick-build-catapult\n"
+
 move: "mv "
 remove: "rm "
 shell copy: "cp "
@@ -63,8 +73,9 @@ my cat bin: "mycatbin\n"
 heroku: "heroku "
 heroku login: "heroku login\n\n"
 
-process all: "ps -aux"
+process list: "ps -aux"
 process kill: "kill "
+live tail: "tail -f "
 
 system c t l: "systemctl "
 
