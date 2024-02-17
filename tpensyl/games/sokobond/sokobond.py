@@ -15,7 +15,7 @@ class UserActions:
         actions.key('z:down')
     
     def noise_hiss_stop():
-        actions.key('i:up')
+        actions.key('z:up')
 
     def parrot_tut():
         pass
