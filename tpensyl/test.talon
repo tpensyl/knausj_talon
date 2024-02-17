@@ -1,6 +1,6 @@
 mode: all
 #tag: user.debug_widget
-tag: disabled
+# tag: disabled
 -
 tag(): user.debug_widget
 move debug <number>: user.set_debug_coordinates(number, number)

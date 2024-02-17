@@ -3,6 +3,7 @@ from talon import Module, ui, actions, scope
 mod = Module()
 mod.mode("gameboy", desc="Limited command mode intended for games")
 
+# Trigger gameboy mode when app.name is in this list
 game_list = [
     "FactoryGame", 
     "Age of Empires: Definitive Edition", 
@@ -16,8 +17,10 @@ game_list = [
     "Space Engineers",
     "RCT.EXE",
     "Main executable for OpenRCT2",
-    "http://www.scummvm.org/"
+    "http://www.scummvm.org/",
+    "Crystal Caves HD.exe"
 ]
+
 
 ahk_script_dir = "C:\\games\\ahk-scripts\\"
 ahk_script_map = {

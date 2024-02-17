@@ -8,21 +8,21 @@ tag(): user.game_repeater
 (reset|restart) (level|puzzle): key(r)
 (nope | back):
     key(z)
-    sleep(200ms)
+    sleep(220ms)
 
 (north|up): 
     key(up)
-    sleep(200ms)
+    sleep(220ms)
 
 (south|down): 
     key(down)
-    sleep(200ms)
+    sleep(220ms)
 
 (east|right): 
     key(right)
-    sleep(200ms)
+    sleep(220ms)
 
 (west|left): 
     key(left)
-    sleep(200ms)
+    sleep(220ms)
  
