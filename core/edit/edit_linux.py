@@ -100,7 +100,9 @@ class EditActions:
         # action(edit.find_previous):
 
     def indent_less():
-        actions.key("home delete")
+        # actions.key("home delete")
+        # two pensyl this might break other things
+        actions.key("shift-tab")
 
     def indent_more():
         actions.key("home tab")

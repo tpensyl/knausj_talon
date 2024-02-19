@@ -21,3 +21,11 @@ chuck head:
 chuck tail:
     edit.extend_line_end()
     edit.delete()
+
+twin wrap this:
+    text = edit.selected_text()
+    user.paste("'{text}'")
+
+quad wrap this:
+    text = edit.selected_text()
+    user.paste("\"{text}\"")

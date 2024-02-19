@@ -212,7 +212,8 @@ class EditActions:
         actions.key("ctrl-v")
 
     def find_next():
-        actions.user.idea("action FindNext")
+        # actions.user.idea("action FindNext")
+        actions.key("f3")
 
     def find_previous():
         actions.user.idea("action FindPrevious")
