@@ -52,8 +52,8 @@ class TpensylClick:
         """Toggle drag"""
         buttons_held_down = list(ctrl.mouse_buttons_down())
         if buttons_held_down:
-            for button in buttons_held_down:
-                ctrl.mouse_click(button=button, up=True)
+            for button_down in buttons_held_down:
+                ctrl.mouse_click(button=button_down, up=True)
             return
         else:
             ctrl.mouse_click(button=button, down=True)

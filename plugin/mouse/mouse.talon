@@ -34,6 +34,13 @@ mid click:
 #option = alt
 #shift
 #super = windows key
+
+# tpensyl to improve misrecognitions
+(shove|sit) touch:
+    key("shift:down")
+    mouse_click(0)
+    key("shift:up")
+    
 <user.modifiers> touch:
     # close zoom if open
     user.zoom_close()

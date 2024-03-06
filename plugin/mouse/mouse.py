@@ -109,6 +109,11 @@ def gui_wheel(gui: imgui.GUI):
 
 @mod.action_class
 class Actions:
+    def grid_close():
+        """Close the active grid. This definition is required because we have removed mouse grid"""
+        x = 3
+        pass
+        
     def zoom_close():
         """Closes an in-progress zoom. Talon will move the cursor position but not click."""
         if eye_zoom_mouse.zoom_mouse.state == eye_zoom_mouse.STATE_OVERLAY:

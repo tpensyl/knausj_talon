@@ -8,6 +8,6 @@ os: linux
 class UserActions:
     def whistle_action(delta:float):
         """Define action to take based on relative whistle pitch"""
-        print(f'RAby_lines=False, y={delta}')
+        # print(f'RAby_lines=False, y={delta}')
         #TODO make bylines configurable instead of overwriting
         actions.mouse_scroll(by_lines=True, y=delta)

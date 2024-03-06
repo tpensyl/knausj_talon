@@ -1,4 +1,4 @@
-#tag: disabled
+tag: disabled
 -
 # latex shortcuts
 (phi|fee): "ϕ"

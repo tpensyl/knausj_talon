@@ -5,6 +5,7 @@ tag: terminal
 ansible vault view: "ansible-vault view " 
 
 diff: "diff "
+diff so fancy: " -u|diff-so-fancy"
 
 pip install: "pip install "
 pip show: "pip show "
@@ -23,6 +24,8 @@ katie text: "cd ~/txt\n"
 katie source: "cd ~/src\n"
 
 quick build catapult: "quick-build-catapult\n"
+v two cuddle start: "./v2ctl start\n"
+v two cuddle stop: "./v2ctl stop\n"
 
 move: "mv "
 remove: "rm "

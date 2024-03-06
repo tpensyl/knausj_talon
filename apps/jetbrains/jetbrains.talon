@@ -16,6 +16,8 @@ replace it: key(ctrl-r)
 #e.g. key(alt-enter)
 show fix: user.idea("action ShowIntentionActions")
 show folder: user.idea("action ProjectView.AutoscrollFromSource")
+project build: user.idea("action CompileProject")
+run that: key("shift-f10")
 
 # Auto complete
 complete: user.idea("action CodeCompletion")

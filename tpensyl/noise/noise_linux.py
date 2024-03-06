@@ -23,9 +23,9 @@ class NoiseActions:
 
     def parrot_tut():
         """parrot tut sound"""
-        x=1
-        print('tut unimplemented')
         pass
+        # would be nice ut tut doesn't seem to be working on my linux machine and microphone
+        # actions.toggle_drag()
 
     # def parrot_buzz():
     #     """parrot buzz sound"""

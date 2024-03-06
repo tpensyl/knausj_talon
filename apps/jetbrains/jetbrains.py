@@ -196,6 +196,9 @@ class CodeActions:
 
 @ctx.action_class("edit")
 class EditActions:
+    def delete_line():
+        actions.user.idea("action EditorDeleteLine")
+        
     # talon edit actions
     def copy():
         #actions.user.idea("action EditorCopy")
