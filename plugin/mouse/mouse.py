@@ -244,6 +244,10 @@ class Actions:
         global hiss_scroll_up
         hiss_scroll_up = False
 
+    def grid_close():
+        """tpensyl: define stub here since we disabled mouse grid"""
+        x = 3
+
 
 def show_cursor_helper(show):
     """Show/hide the cursor"""

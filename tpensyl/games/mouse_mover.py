@@ -28,6 +28,18 @@ class Actions:
         "stop automatic mouse movement"
         stop_mouse()
 
+    def mouse_auto_click(interval_ms:int=2000):
+        "autoclick until mouse moves"
+        mouse_initial_pos = ctrl.mouse_pos()
+        cron_interval = str(interval_ms) + "ms"
+        mouse_click_repeat(mouse_initial_pos, cron_interval)
+              
+
+def mouse_click_repeat(mouse_initial_pos, interval):
+        if(ctrl.mouse_pos() == mouse_initial_pos):
+            ctrl.mouse_click(0)
+            cron.after(interval, lambda: mouse_click_repeat(mouse_initial_pos, interval)) 
+
 def interpolate(xy1, xy2, t):
     x1, y1 = xy1
     x2, y2 = xy2

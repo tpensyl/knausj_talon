@@ -5,7 +5,7 @@ from pathlib import Path
 
 from talon import Module, actions, app, ui
 
-APPS_DIR = Path(__file__).parent.parent.parent / "apps"
+APPS_DIR = Path(__file__).parent.parent.parent / "tpensyl"
 
 mod = Module()
 
