@@ -17,7 +17,7 @@ north: edit.up()
 
 (yap|yep): "y\n" 
 
-junk: key(backspace)
+# junk: key(backspace)
 spamma: ", "
 nope: edit.undo()
 item: "* "

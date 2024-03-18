@@ -40,7 +40,7 @@ _search_engine_defaults = {
     "google": "https://www.google.com/search?q=%s",
     "map": "https://maps.google.com/maps?q=%s",
     "scholar": "https://scholar.google.com/scholar?q=%s",
-    "wiki": "https://en.wikipedia.org/w/index.php?search=%s",
+    # "wiki": "https://en.wikipedia.org/w/index.php?search=%s",
 }
 
 ctx = Context()

@@ -4,7 +4,7 @@ talon (open|show) rebel:
     menu.open_repl()
     sleep(500ms)
     "from time import sleep\n"
-    "sleep(5000); sim('')"
+    "sleep(5); sim('')"
     key(left:2)
 talon home: menu.open_talon_home()
 talon copy context pie: user.talon_add_context_clipboard_python()

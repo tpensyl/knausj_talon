@@ -218,6 +218,7 @@ symbol_key_words = {
     "greater than": ">",
     "star": "*",
     "hash": "#",
+    "pound": "#",
     "percent": "%",
     "power": "^",
     "carrot": "^",
@@ -259,9 +260,10 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "wipe": "backspace",
-    "delete": "backspace",
-    #'junk': 'backspace',
+    # "wipe": "backspace",
+    "junk": "backspace",
+    # "delete": "backspace",
+    "pad": 'space',
     "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",

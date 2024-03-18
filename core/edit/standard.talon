@@ -20,7 +20,6 @@ redo [that]: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
 file save all: edit.save_all()
-pad: key(space) 
 padding: user.insert_between(" ", " ")
 padding <user.symbol_key>+:
     insert(" ")
