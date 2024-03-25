@@ -29,3 +29,12 @@ twin wrap this:
 quad wrap this:
     text = edit.selected_text()
     user.paste("\"{text}\"")
+
+round wrap this:
+    text = edit.selected_text()
+    user.paste("({text})")
+
+drink (this|line): edit.line_insert_up()
+pour (this|line): edit.line_insert_down()
+
+

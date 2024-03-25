@@ -160,7 +160,7 @@ paste line:
 #     edit.cut()
 
 # Paste
-(pace | paste) that: edit.paste()
+((pace | paste) that | pit slap): edit.paste()
 (pace | paste) enter:
     edit.paste()
     key(enter)

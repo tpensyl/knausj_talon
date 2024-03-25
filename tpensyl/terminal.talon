@@ -66,6 +66,7 @@ maven clean: "mvn clean \n"
 maven clean install: "mvn clean install -T4 \n"
 maven spring boot run: "mvn spring-boot:run"
 maven dependency tree: "mvn dependency:tree "
+maven check style: "mvn clean install -Dcobertura.skip -DskipTests  -T3 \n"
 source AWS [connect]: "source aws-connect default"
 
 my cat bin: "mycatbin\n"
