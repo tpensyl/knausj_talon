@@ -63,6 +63,12 @@ class TpensylClick:
         do_mouse_rest(duration_ms, ctrl.mouse_pos())
         position = ctrl.mouse_pos()
 
+    def mouse_move(dx : int = 0, dy : int = 0):
+        """Perform relative mouse movement"""
+        pos = ctrl.mouse_pos() 
+        new_pos = (pos[0] + dx, pos[1] + dy)
+        ctrl.mouse_move(*new_pos)
+
 def do_mouse_rest(duration_ms, position):
     ctrl.mouse_move(*position)
     if duration_ms > 0:

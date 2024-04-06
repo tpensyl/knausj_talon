@@ -1,7 +1,7 @@
 from talon import Context, ctrl
 ctx = Context()
 ctx.matches = r"""
-win.title: /Kittens Game - Year.*/
+win.title: /Kittens Game.*/
 """
 
 @ctx.action_class("user")

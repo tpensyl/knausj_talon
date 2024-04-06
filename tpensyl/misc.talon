@@ -7,7 +7,7 @@
 
 del: key(delete)
 
-back: key(esc)
+^back$: key(esc)
 start menu: key(super)
 
 m v <user.number_string>: "MV-{number_string}"
