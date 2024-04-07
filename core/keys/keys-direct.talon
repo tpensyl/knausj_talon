@@ -1,4 +1,5 @@
-not tag: user.rango_direct_clicking
+not tag: browser
+not tag: user.rango_direct_clicking_forced
 -
 <user.letter>: key(letter)
 <user.symbol_key>: key(symbol_key)
