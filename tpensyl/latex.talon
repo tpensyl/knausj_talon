@@ -1,4 +1,4 @@
-tag: disabled
+# tag: disabled
 -
 # latex shortcuts
 (phi|fee): "ϕ"
@@ -29,6 +29,7 @@ fake item:
 fake emf: user.insert_between("\\emph{", "}")
 fake infinity:
 	"\\infty "
+fake in: "\\in "
 #High potential for unwanted matches
 #fake <user.word>:
 	#"\\{user.word} "
@@ -36,5 +37,5 @@ fake square root: user.insert_between("\\sqrt{", "}")
 fake subsection: user.insert_between("\\subsection{", "}")
 fake subsubsection: user.insert_between("\\subsubsection{", "}")
 fake label: user.insert_between("\\label{", "}")
-fake tommy: user.insert_between("\\tommy{", "}")
+fake (tommy | tea note): user.insert_between("\\Tnote{", "}")
 

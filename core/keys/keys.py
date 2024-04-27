@@ -221,7 +221,7 @@ symbol_key_words = {
     "percent": "%",
     "power": "^",
     "carrot": "^",
-    "amper": "&",
+    # "amper": "&",
     "pipe": "|",
     "dub quote": '"',
     "double quote": '"',
