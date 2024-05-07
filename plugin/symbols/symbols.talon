@@ -12,7 +12,8 @@ empty escaped (dub string | dub quotes): user.insert_between('\\"', '\\"')
 empty string: user.insert_between("'", "'")
 empty escaped string: user.insert_between("\\'", "\\'")
 (inside parens | args): user.insert_between("(", ")")
-args empty: "()"
+args right: "()"
+args dot: "()."
 inside (squares | square brackets | list): user.insert_between("[", "]")
 inside (angles): user.insert_between("<", ">")
 inside (bracket | braces): user.insert_between("{", "}")

@@ -46,3 +46,7 @@ op new: insert("new ")
 op instance [of]: insert(" instanceof ")
 
 state mock this: user.declare_mock(edit.selected_text())
+
+brick: ";"
+
+when: user.insert_between("when(", ")")

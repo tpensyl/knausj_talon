@@ -26,6 +26,7 @@ katie source: "cd ~/src\n"
 quick build catapult: "quick-build-catapult\n"
 v two cuddle start: "./v2ctl start\n"
 v two cuddle stop: "./v2ctl stop\n"
+v two cuddle reset: "./v2ctl reset\n"
 
 move: "mv "
 remove: "rm "

@@ -182,7 +182,7 @@ code_formatter_names = {
     "dotted": "DOT_SEPARATED",
     "dub string": "DOUBLE_QUOTED_STRING",
     "dot string": "DOUBLE_QUOTED_STRING",
-    "dunder": "DOUBLE_UNDERSCORE",
+    #"dunder": "DOUBLE_UNDERSCORE",
     "hammer": "PUBLIC_CAMEL_CASE",
     "kebab": "DASH_SEPARATED",
     "shell arg": "DASH_SEPARATED_ARG",

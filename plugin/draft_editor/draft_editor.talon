@@ -33,4 +33,6 @@ draft bottom:
   user.draft_editor_open()
 
 draft submit:
+  # copy to clipboard, in case submit fails to paste. (does this work?)
+  edit.copy_all()
   user.draft_editor_paste_last()

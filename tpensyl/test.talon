@@ -15,3 +15,15 @@ look downer: user.start_mouse_move_down()
 look stop: user.stop_mouse_move() 
 auto run: user.system_command_nb("C:\\games\\ahk-scripts\\bstone.ahk") 
 auto stop: key(f24) 
+
+copy down <number>:
+    edit.line_start()
+    #e.g. include indentation of first line
+    edit.line_start() 
+    edit.extend_line_down()
+    repeat(number- 1)
+
+test down <number>:
+    key(home:2)
+    key('shift-down:{number-1ZZz}')
+    key(shift-end)
