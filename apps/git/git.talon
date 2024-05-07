@@ -16,7 +16,7 @@ git commit [allow] empty:
 git show head: "git show HEAD"
 
 
-git {user.git_command} [<user.git_arguments>]:
+(git|get) {user.git_command} [<user.git_arguments>]:
     args = git_arguments or ""
     "git {git_command}{args} "
 git commit [<user.git_arguments>] message [<user.prose>]:
