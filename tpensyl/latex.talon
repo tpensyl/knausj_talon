@@ -2,6 +2,7 @@
 -
 # latex shortcuts
 (phi|fee): "ϕ"
+omega: "ω"
 big delta: "Δ"
 delta: "δ"
 epsilon: "ε"
@@ -30,6 +31,7 @@ fake emf: user.insert_between("\\emph{", "}")
 fake infinity:
 	"\\infty "
 fake in: "\\in "
+fake approx: "\\approx"
 #High potential for unwanted matches
 #fake <user.word>:
 	#"\\{user.word} "

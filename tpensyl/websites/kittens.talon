@@ -1,4 +1,4 @@
-win.title: /Kittens Game.*/
+win.title: /Kittens Game -.*/
 -
 settings():
     speech.timeout = 0.2

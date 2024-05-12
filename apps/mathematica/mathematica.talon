@@ -5,6 +5,7 @@ app.exe: Mathematica.exe
 #test: insert("test worked")
 
 more: key(ctrl-.)
+brick: ';'
 
 go top:
     edit.file_start()
@@ -93,3 +94,6 @@ inside comment:
     key(left)
     key(left)
     key(left)
+
+inside dub squares:
+    user.insert_between("[[","]]")
