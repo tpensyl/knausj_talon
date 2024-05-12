@@ -187,7 +187,7 @@ code_formatter_names = {
     "kebab": "DASH_SEPARATED",
     "shell arg": "DASH_SEPARATED_ARG",
     "packed": "DOUBLE_COLON_SEPARATED",
-    "padded": "SPACE_SURROUNDED_STRING",
+    #"padded": "SPACE_SURROUNDED_STRING",
     "slasher": "SLASH_SEPARATED",
     "smash": "NO_SPACES",
     "snake": "SNAKE_CASE",

@@ -36,7 +36,7 @@ mid click:
 #super = windows key
 
 # tpensyl to improve misrecognitions
-(shove|sit) touch:
+((shove|sit) touch)|grab:
     key("shift:down")
     mouse_click(0)
     key("shift:up")
