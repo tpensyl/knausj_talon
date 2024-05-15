@@ -40,7 +40,7 @@ slap:
     key(shift-enter)
 
 (hard slap | run [that]): key(enter)
-source category: "_sourceCategory"
+[field] source category: "_sourceCategory"
 field time slice: "_timeslice"
 [field] source host: "_sourceHost"
 [field] source name: "_sourceName"
