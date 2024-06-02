@@ -95,5 +95,18 @@ inside comment:
     key(left)
     key(left)
 
-inside dub squares:
+(inside dub squares)|index:
     user.insert_between("[[","]]")
+
+funk table: user.insert_between("Table[",",{}]")
+funk men: user.insert_between("Min[","]")
+funk max: user.insert_between("Max[","]")
+
+funk map: "/@"
+replace: user.insert_between("/.{","}")
+
+args: user.insert_between("[","]")
+
+post simplify: "//Simplify"
+post full simplify: "//FullSimplify"
+slash at: "/@"
