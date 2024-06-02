@@ -5,7 +5,7 @@ os: windows
 app.exe: Mathematica.exe
 """
 
-@ctx.action_class('edit')
-class EditActions:
-    def inside_function_args():
-        actions.user.insert_between("[", "]")
+# @ctx.action_class('edit')
+# class EditActions:
+#     def dummy_function():
+#         x=3

@@ -1,11 +1,12 @@
 # tag: disabled
 -
 # latex shortcuts
-(phi|fee): "ϕ"
-omega: "ω"
-big delta: "Δ"
-delta: "δ"
-epsilon: "ε"
+# (phi|fee): "ϕ"
+greek omega: "ω"
+greek big delta: "Δ"
+greek delta: "δ"
+greek epsilon: "ε"
+greek phi: "ϕ"
 
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 

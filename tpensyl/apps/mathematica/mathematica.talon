@@ -80,7 +80,7 @@ draft (cell | box):
 
 box stop: key(alt-.)
 
-square root:
+funk square root:
     insert("Sqrt[]")
     key(left)
 times: "*"
