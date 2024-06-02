@@ -66,12 +66,17 @@ last_draft = None
 
 @mod.action_class
 class Actions:
+    def draft_editor_open_pre_switch_hook():
+        """Pre Switch Hook"""
+        return 3
+
     def draft_editor_open():
         """Open draft editor"""
         global original_window
         original_window = ui.active_window()
         editor_app = get_editor_app()
         selected_text = actions.edit.selected_text()
+        actions.user.draft_editor_open_pre_switch_hook()
         actions.user.switcher_focus_app(editor_app)
         # Wait additional time for talon context to update.
         actions.sleep("200ms")

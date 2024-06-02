@@ -16,7 +16,8 @@ mod.list(
 # settings/websites.csv in your user directory.
 website_defaults = {
     "talon home page": "http://talonvoice.com",
-    "talon slack": "http://talonvoice.slack.com/messages/help",
+    "talon slack": "http://talonvoice.slack.com/messages/",
+    "talon search": "https://search.talonvoice.com/",
     "talon wiki": "https://talon.wiki/",
     "talon practice": "https://chaosparrot.github.io/talon_practice/",
     "talon repository search": "https://search.talonvoice.com/search/",

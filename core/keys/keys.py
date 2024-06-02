@@ -160,7 +160,7 @@ punctuation_words = {
     "percent sign": "%",
     "at sign": "@",
     "and sign": "&",
-    "ampersand": "&",
+    # "ampersand": "&",
     # Currencies
     "dollar sign": "$",
     "pound sign": "£"
@@ -221,7 +221,7 @@ symbol_key_words = {
     "percent": "%",
     "power": "^",
     "carrot": "^",
-    # "amper": "&",
+    "amper": "&",
     "pipe": "|",
     "dub quote": '"',
     "double quote": '"',
