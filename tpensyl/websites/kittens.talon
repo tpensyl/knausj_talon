@@ -4,6 +4,7 @@ settings():
     speech.timeout = 0.2
 touch <number>: user.game_click(0, number, "2ms")
 
+key(ctrl-shift-space): user.mouse_auto_click(100)
 ^auto click fast$: user.mouse_auto_click(4000)
 ^auto click$: user.mouse_auto_click(10000)
 ^auto click long$: user.mouse_auto_click(40000)

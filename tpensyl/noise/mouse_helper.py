@@ -69,6 +69,14 @@ class TpensylClick:
         new_pos = (pos[0] + dx, pos[1] + dy)
         ctrl.mouse_move(*new_pos)
 
+    def mouse_remote_click(x : int, y : int, delay: str = "1ms"):
+        """Click a remote position without moving the mouse"""
+        pos = ctrl.mouse_pos()
+        ctrl.mouse_move(x, y)
+        ctrl.mouse_click(0)
+        actions.sleep(delay)
+        ctrl.mouse_move(*pos)
+
 def do_mouse_rest(duration_ms, position):
     ctrl.mouse_move(*position)
     if duration_ms > 0:
