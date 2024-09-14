@@ -59,3 +59,4 @@ mouse rest long: user.mouse_rest(10000)
 hold shift: key(shift:down)
 hold control: key(ctrl:down)
 
+unicode (cap|intersect): "∩"

@@ -31,24 +31,25 @@ box bottom:
     key(shift-down:50)
     key(right)
 
-copy (cell | box):
+(cell | box) copy:
     key(shift-up:50)
     key(up)
     key(down)
     key(shift-down:50)
     edit.copy()
 
-(take | select) (cell | box):
+(cell | box) (take | select):
     key(shift-up:50)
     key(up)
     key(down)
     key(shift-down:50)
 
-draft (cell | box):
+(cell | box) draft:
     key(shift-up:50)
     key(up)
     key(down)
     key(shift-down:50)
+    sleep(300ms)
     user.draft_editor_open()
 
 (cell | box) down:
@@ -101,12 +102,16 @@ inside comment:
 funk table: user.insert_between("Table[",",{}]")
 funk men: user.insert_between("Min[","]")
 funk max: user.insert_between("Max[","]")
+funk plot: user.insert_between("Plot[",",{{}}]")
+funk plot three d: user.insert_between("Plot3D[",",{{}},{{}}]")
 
 funk map: "/@"
-replace: user.insert_between("/.{","}")
+replace: "/."
+replace with: user.insert_between("/.{","}")
 
 args: user.insert_between("[","]")
 
 post simplify: "//Simplify"
 post full simplify: "//FullSimplify"
+post together: "//Together"
 slash at: "/@"

@@ -7,6 +7,9 @@ greek big delta: "Δ"
 greek delta: "δ"
 greek epsilon: "ε"
 greek phi: "ϕ"
+greek gamma: "γ"
+greek sigma: "σ"
+greek theta: "θ"
 
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 
@@ -20,6 +23,7 @@ fake bar: "\\bar "
 fake less [than] (equal|equals): "\\le "
 fake greater [than] (equal|equals): "\\ge "
 fake not (equal|equals): "\\ne "
+fake not: "\\not "
 #fake in: "\\in "
 fake ref: user.insert_between("\\ref{", "}") 
 fake cite: user.insert_between("\\cite{", "}") 
@@ -43,6 +47,8 @@ fake see dot: "\\cdot "
 fake some: "\\sum_{}"
 fake left: "\\left"
 fake right: "\\right"
+fake tilde: "\\tilde "
+fake lore: "\\lor "
 fake (textile | text style): "\\textstyle"
 #High potential for unwanted matches
 #fake <user.word>:
@@ -55,7 +61,11 @@ fake (tommy | tea note): user.insert_between("\\Tnote{", "}")
 
 ceiling that: 
     text = edit.selected_text()
-    user.paste("\lceil {text} \\rceil")
+    user.paste("\\lceil {text} \\rceil")
+
+floor that: 
+    text = edit.selected_text()
+    user.paste("\\lfloor {text} \\rfloor")
 
 dollar wrap <user.cursorless_target>:
 	user.cursorless_command("editNewLineAfter", cursorless_target)
