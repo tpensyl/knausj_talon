@@ -1,5 +1,6 @@
 #app: chrome
-browser.host: lucid.app
+# browser.host: lucid.app
+win.title: /.*: Lucidchart/
 -
 
 pan: 

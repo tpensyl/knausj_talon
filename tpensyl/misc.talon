@@ -15,7 +15,7 @@ m v <user.number_string>: "MV-{number_string}"
 north: edit.up()
 #south: edit.down()
 
-(yap|yep): "y\n" 
+(yap|yep): "y\n"
 
 # junk: key(backspace)
 spamma: ", "
@@ -42,9 +42,9 @@ paste plain [text]: key(ctrl-shift-v)
 # TODO move to windows-only files
 task manager: key(ctrl-shift-esc)
 
-key(keypad_enter:up): 
-	speech.toggle()
-	key(ctrl-shift-space)
+# key(keypad_enter:up): 
+# 	speech.toggle()
+# 	key(ctrl-shift-space)
 
 key(f9:up): 
 	speech.toggle()

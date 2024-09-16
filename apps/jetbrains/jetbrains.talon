@@ -12,6 +12,7 @@ settings():
     key_wait = 5
 
 replace it: key(ctrl-r)
+file locate: key(alt-shift-1 1)
 
 #e.g. key(alt-enter)
 show fix: user.idea("action ShowIntentionActions")

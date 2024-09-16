@@ -3,6 +3,7 @@ tag: terminal
 
 (sudo|pseudo): "sudo "
 ansible vault view: "ansible-vault view " 
+IP tables: "iptables "
 
 diff: "diff "
 diff so fancy: " -u|diff-so-fancy"
@@ -22,11 +23,17 @@ katy that:
     " \n"
 katie text: "cd ~/txt\n"
 katie source: "cd ~/src\n"
+kitty var log: "cd /var/log\n"
 
 quick build catapult: "quick-build-catapult\n"
 v two cuddle start: "./v2ctl start\n"
+v two cuddle start no app [service]: "./v2ctl start --no-app-service\n"
 v two cuddle stop: "./v2ctl stop\n"
 v two cuddle reset: "./v2ctl reset\n"
+
+argo cuddle start: "./argoctl start\n"
+argo cuddle stop: "./argoctl stop\n"
+argo cuddle reset: "./argoctl reset\n"
 
 move: "mv "
 remove: "rm "
@@ -65,7 +72,7 @@ sudo: "sudo "
 maven: "mvn "
 maven clean: "mvn clean \n"
 maven clean install: "mvn clean install -T4 \n"
-maven spring boot run: "mvn spring-boot:run"
+maven spring boot run: "mvn spring-boot:run -P developer"
 maven dependency tree: "mvn dependency:tree "
 maven check style: "mvn clean install -Dcobertura.skip -DskipTests  -T3 \n"
 source AWS [connect]: "source aws-connect default"

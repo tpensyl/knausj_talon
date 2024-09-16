@@ -16,7 +16,7 @@ class Actions:
 
     def terminal_list_directories():
         """Lists directories"""
-        actions.insert("ls")
+        actions.insert("ls ")
         actions.key("enter")
 
     def terminal_list_all_directories():

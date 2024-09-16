@@ -16,7 +16,7 @@ git commit [allow] empty:
 git show head: "git show HEAD"
 
 
-(git|get) {user.git_command} [<user.git_arguments>]:
+git {user.git_command} [<user.git_arguments>]:
     args = git_arguments or ""
     "git {git_command}{args} "
 git commit [<user.git_arguments>] message [<user.prose>]:
@@ -31,6 +31,7 @@ git stash [push] [<user.git_arguments>] message [<user.prose>]:
 # Optimistic execution for frequently used commands that are harmless (don't
 # change repository or index state).
 git status$: "git status \n"
+git branch$: "git branch \n"
 git add patch$: "git add --patch \n"
 git show head$: "git show HEAD \n"
 
