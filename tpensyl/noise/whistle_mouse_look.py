@@ -74,7 +74,7 @@ def map_radial(r, θ):
     y = r * cos(θ)
     return x, y
 
-import win32api, win32con
 def mouse_move(dx, dy):
+    import win32api, win32con
     win32api.mouse_event(win32con.MOUSEEVENTF_MOVE,int(dx),int(dy),0,0)
     

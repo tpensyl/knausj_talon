@@ -25,5 +25,5 @@ copy down <number>:
 
 test down <number>:
     key(home:2)
-    key('shift-down:{number-1ZZz}')
+    key('shift-down:{number-1}')
     key(shift-end)
