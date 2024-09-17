@@ -13,13 +13,13 @@ class NoiseActions:
     # def noise_trigger_pop():
     #     pass
 
-    # def noise_hiss_start():
-    #     """Invoked when the user starts hissing (potentially while speaking)"""
-    #     pass
+    def noise_hiss_start():
+        """Invoked when the user starts hissing (potentially while speaking)"""
+        pass
 
-    # def noise_hiss_stop():
-    #     """Invoked when the user finishes hissing (potentially while speaking)"""
-    #     pass
+    def noise_hiss_stop():
+        """Invoked when the user finishes hissing (potentially while speaking)"""
+        pass
 
     def parrot_tut():
         """parrot tut sound"""
