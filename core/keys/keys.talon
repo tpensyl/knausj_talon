@@ -1,10 +1,13 @@
-go <user.arrow_keys>: user.move_cursor(arrow_keys)
-
 (ship | uppercase) <user.letters> [(lowercase | sunk)]:
     user.insert_formatted(letters, "ALL_CAPS")
+go <user.arrow_keys>: user.move_cursor(arrow_keys)
 
-
-
+# Merge croft - I moved these but something changed upstream
+# <user.letter>: key(letter)
+# <user.symbol_key>: key(symbol_key)
+# <user.function_key>: key(function_key)
+# <user.special_key>: key(special_key)
+# <user.keypad_key>: key(keypad_key)
 <user.modifiers> <user.unmodified_key>: key("{modifiers}-{unmodified_key}")
 # for key combos consisting only of modifiers, eg. `press super`.
 press <user.modifiers>: key(modifiers)

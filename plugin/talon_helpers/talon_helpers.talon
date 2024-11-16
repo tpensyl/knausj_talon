@@ -1,4 +1,5 @@
 talon check updates: menu.check_for_updates()
+talon open debug: menu.open_debug_window()
 talon (open|show) log: menu.open_log()
 talon (open|show) rebel: 
     menu.open_repl()
