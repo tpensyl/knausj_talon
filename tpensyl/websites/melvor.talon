@@ -1,8 +1,11 @@
-win.title: /Melvor Idle.*/
+win.title: /^Melvor Idle.*/
 win.title: /Hitpoints .*/
 -
 settings():
     speech.timeout = 0.18
+    key_hold = 100
+    # for map hotkeys
+
 touch <number>: user.game_click(0, number, "2ms")
 
 ^auto click fast$: user.mouse_auto_click(4000)

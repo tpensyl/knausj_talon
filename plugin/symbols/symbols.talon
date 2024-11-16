@@ -6,6 +6,7 @@ triple quote: "'''"
 ellipsis: "..."
 (comma and | spamma): ", "
 arrow: "->"
+left arrow: "<-"
 dub arrow: "=>"
 empty dub string: user.insert_between('"', '"')
 empty escaped (dub string | dub quotes): user.insert_between('\\"', '\\"')

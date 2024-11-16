@@ -72,7 +72,7 @@ mid click:
     mouse_click()
     # close the mouse grid
     user.grid_close()
-left drag | drag | drag start:
+left drag | drag | drag start $:
     # close zoom if open
     user.zoom_close()
     user.mouse_drag(0)

@@ -17,7 +17,10 @@ fake epsilon: "\\eps"
 fake omega: "\\omega"
 fake eta: "\\eta"
 fake sigma: "\\sigma"
+fake delta: "\\delta"
+fake gamma: "\\gamma"
 fake (phi|fee): "\\phi"
+fake ell: "\\ell"
 fake pi: "\\pi"
 fake bar: "\\bar "
 fake less [than] (equal|equals): "\\le "
@@ -43,12 +46,23 @@ fake infinity:
 	"\\infty "
 fake in: "\\in "
 fake approx: "\\approx "
+fake gets: "\\gets "
 fake see dot: "\\cdot "
-fake some: "\\sum_{}"
+fake some: user.insert_between("\\sum_{", "}")
 fake left: "\\left"
 fake right: "\\right"
+fake for all: "\\forall "
+fake exists: "\\exists "
 fake tilde: "\\tilde "
 fake lore: "\\lor "
+fake [set] (intersect|intersection): "\\cap "
+fake [set] union: "\\cup "
+fake big cup: user.insert_between("\\bigcup_{", "}")
+fake set minus: "\\setminus "
+fake subset: "\\subset "
+fake subset (equal|equals): "\\subseteq "
+# custom command
+fake vector sum: "\\vsum "
 fake (textile | text style): "\\textstyle"
 #High potential for unwanted matches
 #fake <user.word>:
@@ -58,6 +72,10 @@ fake subsection: user.insert_between("\\subsection{", "}")
 fake subsubsection: user.insert_between("\\subsubsection{", "}")
 fake label: user.insert_between("\\label{", "}")
 fake (tommy | tea note): user.insert_between("\\Tnote{", "}")
+
+(empty|inside) fake (brace|braces): user.insert_between("\\{", "\\}")
+(empty|inside) math: user.insert_between("$", "$")
+fake mid: "\\mid "
 
 ceiling that: 
     text = edit.selected_text()

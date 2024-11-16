@@ -208,7 +208,6 @@ symbol_key_words = {
 	"close brace": "}",
     "r bracket": "}",
     "right bracket": "}",
-    "angle": "<",
     "left angle": "<",
     "less than": "<",
     "right angle": ">",
