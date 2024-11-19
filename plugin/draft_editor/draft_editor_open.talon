@@ -4,6 +4,7 @@ and tag: user.draft_editor_app_focused
 
 (draft submit|run that|draft save): 
     # put in clipboard only as backup
-    user.copy_all()
+    edit.select_all()
+    edit.copy()
     user.draft_editor_submit()
 draft discard: user.draft_editor_discard()

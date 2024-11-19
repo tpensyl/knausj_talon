@@ -1,0 +1,15 @@
+list: user.system_paths
+hostname: Enumerator
+-
+user: C:\Users\Tommy
+profile: C:\Users\Tommy
+desktop: C:\Users\Tommy\Desktop
+desk: C:\Users\Tommy\Desktop
+documents: C:\Users\Tommy\Documents
+docks: C:\Users\Tommy\Documents
+downloads: C:\Users\Tommy\Downloads
+music: C:\Users\Tommy\Music
+pictures: C:\Users\Tommy\Pictures
+videos: C:\Users\Tommy\Videos
+talon home: C:\Users\Tommy\AppData\Roaming\talon
+talon user: C:\Users\Tommy\AppData\Roaming\talon\user
