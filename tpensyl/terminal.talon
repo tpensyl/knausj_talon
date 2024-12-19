@@ -71,7 +71,7 @@ find name:
 sudo: "sudo "
 maven: "mvn "
 maven clean: "mvn clean \n"
-maven clean install: "mvn clean install -T4 \n"
+maven clean install: "mvn clean install -T4 "
 maven spring boot run: "mvn spring-boot:run -P developer"
 maven dependency tree: "mvn dependency:tree "
 maven check style: "mvn clean install -Dcobertura.skip -DskipTests  -T3 \n"

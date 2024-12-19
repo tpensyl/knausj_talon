@@ -1,4 +1,4 @@
-from talon import Context, Module, actions
+from talon import Context, Module, actions, ctrl
 
 ctx = Context()
 mod = Module()
@@ -27,10 +27,4 @@ app: slack
 class EditActions:
     def line_insert_down():
         actions.edit.line_end()
-        actions.key("shift-enter")
-
-
-@ctx.action_class("user")
-class UserActions:
-    def parrot_palate():
-        ctrl.mouse_click(0)
+        actions.key("ctrl-enter")

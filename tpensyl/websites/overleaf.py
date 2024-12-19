@@ -2,8 +2,8 @@ from talon import Context, ctrl, actions, ui
 import sys
 
 # sys.path.append('../../plugin/draft_editor/')
-sys.path.append('C:/Users/Tommy/AppData/Roaming/talon/user/knausj_talon/plugin/draft_editor')
-import draft_editor
+# sys.path.append('C:/Users/Tommy/AppData/Roaming/talon/user/knausj_talon/plugin/draft_editor')
+# import draft_editor
 
 ctx = Context()
 ctx.matches = r"""

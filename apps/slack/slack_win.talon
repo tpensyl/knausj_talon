@@ -7,7 +7,7 @@ tag(): user.messaging
 tag(): user.emoji
 
 # Custom Additions
-#(slap | shoot | send): key(enter)
+(shoot | send): key(enter)
 hard slap: key(enter)
 (slack | lack) search: key("ctrl-g")
 (slack | lack) [mark] read: key(esc)
@@ -15,6 +15,10 @@ remind me:
     insert('/remind ""')
     key(left)
     key(left)
+grave:    
+    sleep(20ms)
+    insert('`')
+slack help: key(ctrl-/)
 #TODO add delays so this works ?
 
 (slack | lack) huddle: key("ctrl-shift-h")

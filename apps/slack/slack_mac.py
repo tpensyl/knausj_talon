@@ -5,7 +5,10 @@ ctx.matches = r"""
 os: mac
 app: slack
 """
-
+@ctx.action_class("user")
+class UserActions:
+    def parrot_palate():
+        print("squelched palate click in slack")
 
 @ctx.action_class("user")
 class UserActions:
