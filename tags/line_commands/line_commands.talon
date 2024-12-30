@@ -1,4 +1,5 @@
 tag: user.line_commands
+and not tag: user.cursorless
 -
 #this defines some common line commands. More may be defined that are ide-specific.
 lend:

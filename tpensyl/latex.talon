@@ -1,15 +1,19 @@
 # tag: disabled
 -
 # latex shortcuts
-# (phi|fee): "ϕ"
-greek omega: "ω"
-greek big delta: "Δ"
+greek alpha: "α"
+greek beta: "β"
 greek delta: "δ"
+greek big delta: "Δ"
 greek epsilon: "ε"
-greek phi: "ϕ"
 greek gamma: "γ"
+greek phi: "ϕ"
 greek sigma: "σ"
 greek theta: "θ"
+greek omega: "ω"
+
+unicode (cap|intersect): "∩"
+unicode and: "∧"
 
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 
@@ -20,7 +24,7 @@ fake sigma: "\\sigma"
 fake delta: "\\delta"
 fake gamma: "\\gamma"
 fake (phi|fee): "\\phi"
-fake ell: "\\ell"
+(fake ell|fakle): "\\ell"
 fake pi: "\\pi"
 fake bar: "\\bar "
 fake less [than] (equal|equals): "\\le "
@@ -45,7 +49,7 @@ fake emf: user.insert_between("\\emph{", "}")
 fake infinity:
 	"\\infty "
 fake in: "\\in "
-fake approx: "\\approx "
+fake (approx|approximate): "\\approx "
 fake gets: "\\gets "
 fake see dot: "\\cdot "
 fake some: user.insert_between("\\sum_{", "}")

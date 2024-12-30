@@ -15,7 +15,7 @@ draft line:
 draft up <number>:
   edit.select_line()
   key(shift-up)
-  repeat(number - 1)
+  repeat(number-1)
   user.draft_editor_open()
 
 draft down <number>:
@@ -27,17 +27,19 @@ draft down <number>:
 
 draft around <number>:
   key(up)
-  repeat(number - 1)
+  repeat(number-1)
   key(home:2)
   key(shift-end)
   key(shift-down)
   repeat(number)
-  repeat(number - 1)
+  key(shift-down)
+  repeat(number-1)
+  sleep(200ms)
   user.draft_editor_open()
 
-draft top:
-  edit.extend_file_start()
-  user.draft_editor_open()
+# draft top:
+#   edit.extend_file_start()
+#   user.draft_editor_open()
 
 draft bottom:
   edit.extend_file_end()

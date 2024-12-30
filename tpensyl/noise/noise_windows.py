@@ -33,8 +33,9 @@ class NoiseActions:
 
     def parrot_palate():
         """parrot palate sound, has some false positives with speech"""
+        print("noise_windows.py:parrot_palate")
         actions.key("ctrl:down")
-        ctrl.mouse_click(0)
+        # ctrl.mouse_click(0)
         actions.key("ctrl:up")
         # actions.user.toggle_drag(0)
         pass

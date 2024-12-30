@@ -241,6 +241,7 @@ debug console: user.vscode("workbench.debug.action.toggleRepl")
 debug clean: user.vscode("workbench.debug.panel.action.clearReplAction")
 
 file run: user.vscode("workbench.action.debug.run")
+python run: user.vscode("python.execInTerminal")
 
 # Terminal
 terminal external: user.vscode("workbench.action.terminal.openNativeConsole")

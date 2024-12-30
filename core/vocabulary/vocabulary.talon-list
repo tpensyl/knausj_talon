@@ -105,7 +105,7 @@ Silvio: Silviu
 neera: Nera
 melvore: melvor
 pencil: pensyl
-: bipartite
+bipartite
 bipoint: bi-point
 sudo tree: psuedotree
 arvind: Aravind
@@ -114,7 +114,7 @@ discretize
 hooloo: hulu
 mew: mu
 kay median: k-median
-: polytope
+polytope
 aline: align
 a proxim ability: approximability
 discretization
@@ -129,3 +129,5 @@ iterabley: iteratively
 weighting
 id est: i.e.
 submodular
+matroid
+matroids

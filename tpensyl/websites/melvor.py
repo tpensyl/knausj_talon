@@ -11,12 +11,12 @@ close_event=(964, 729)
 travel_button=(524, 973)
 ping=True
 
-@ctx.action_class("user")
-class UserActions:
-    def parrot_palate():
-        ctrl.mouse_click(0)
-        print(ctrl.mouse_pos())
-        # actions.user.mouse_remote_click(*close_event)
+# @ctx.action_class("user")
+# class UserActions:
+#     def parrot_palate():
+#         ctrl.mouse_click(0)
+#         print(ctrl.mouse_pos())
+#         # actions.user.mouse_remote_click(*close_event)
 
     # def noise_trigger_pop():
     #     global ping

@@ -24,7 +24,7 @@ north: edit.up()
 
 # junk: key(backspace)
 spamma: ", "
-nope: edit.undo()
+^nope: edit.undo()
 item: "* "
 dot quote: "\""
 
@@ -42,7 +42,7 @@ go m v <user.number_string>:
 paste plain [text]: key(ctrl-shift-v)
 
 
-^(boom|boon)$: mouse_click(1)
+^boom$: mouse_click(1)
 
 # TODO move to windows-only files
 task manager: key(ctrl-shift-esc)
@@ -63,5 +63,3 @@ mouse rest long: user.mouse_rest(10000)
 
 hold shift: key(shift:down)
 hold control: key(ctrl:down)
-
-unicode (cap|intersect): "∩"
