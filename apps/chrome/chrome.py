@@ -46,6 +46,12 @@ class UserActions:
         actions.sleep("180ms")
         actions.app.tab_close()
 
+    def tab_move_left():
+        actions.key("ctrl-shift-pgup")
+
+    def tab_move_right():
+        actions.key("ctrl-shift-pgdown")
+
 
 @ctx.action_class("browser")
 class BrowserActions:

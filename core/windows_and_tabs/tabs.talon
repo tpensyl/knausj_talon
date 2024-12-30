@@ -8,3 +8,6 @@ tab (reopen | restore): app.tab_reopen()
 go tab <number>: user.tab_jump(number)
 go tab final: user.tab_final()
 tab (duplicate | clone): user.tab_duplicate()
+
+tab move left: user.tab_move_left()
+tab move right: user.tab_move_right()

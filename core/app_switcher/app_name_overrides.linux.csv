@@ -1,5 +1,6 @@
 Spoken form, App name (or list an app name by itself on a line to exclude it)
 grip, DataGrip
 py, jetbrains-pycharm-ce
-chrome, chrome
 terminal, Gnome-terminal
+vpn, com.cisco.anyconnect.gui
+settings, Gnome-control-center

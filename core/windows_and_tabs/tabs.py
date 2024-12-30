@@ -19,3 +19,9 @@ class tab_actions:
 
     def tab_duplicate():
         """Duplicates the current tab."""
+
+    def tab_move_left():
+        """Move tab left"""
+
+    def tab_move_right():
+        """Move tab right"""
