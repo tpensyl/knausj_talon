@@ -6,7 +6,7 @@ ctx.matches = r"""
 app: vscode
 """
 
-@ctx.action_class('user')
-class Actions:
-    def parrot_palate():
-        return
+# @ctx.action_class('user')
+# class Actions:
+#     def parrot_palate():
+#         return

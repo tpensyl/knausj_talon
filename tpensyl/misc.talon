@@ -25,9 +25,12 @@ north: edit.up()
 # junk: key(backspace)
 spamma: ", "
 ^nope: edit.undo()
+^nope nope: 
+	edit.undo()
+	edit.undo()
 item: "* "
 dot quote: "\""
-
+junk junk: key(backspace:2)
 semicolon: ";"
 
 vim save:

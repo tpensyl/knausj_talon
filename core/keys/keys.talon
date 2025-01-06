@@ -1,8 +1,7 @@
 (ship | uppercase) <user.letters> [(lowercase | sunk)]:
     user.insert_formatted(letters, "ALL_CAPS")
-go <user.arrow_keys>: user.move_cursor(arrow_keys)
 
-# Merge croft - I moved these but something changed upstream
+# Merge cruft - I moved these but something changed upstream
 # <user.letter>: key(letter)
 # <user.symbol_key>: key(symbol_key)
 # <user.function_key>: key(function_key)

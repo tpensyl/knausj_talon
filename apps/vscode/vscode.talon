@@ -104,7 +104,7 @@ file delete:
     user.vscode("fileutils.removeFile")
     sleep(150ms)
 file open folder: user.vscode("revealFileInOS")
-file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
+file (reveal|locate): user.vscode("workbench.files.action.showActiveFileInExplorer")
 save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 
 # Language Features

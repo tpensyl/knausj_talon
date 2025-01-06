@@ -23,8 +23,8 @@ class UserActions:
         actions.key("alt-9")
 
 
-@ctx.action_class('user')
-class NoiseActions:
-    def parrot_palate():
-        """parrot palate sound, has some false positives with speech"""
-        pass
+# @ctx.action_class('user')
+# class NoiseActions:
+#     def parrot_palate():
+#         """parrot palate sound, has some false positives with speech"""
+#         pass

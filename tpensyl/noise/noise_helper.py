@@ -41,7 +41,7 @@ class NoiseActions:
 
 def hiss_handler(active):
     if active:
-        print("hiss start")
+        print("noise_helper.py:hiss start")
         actions.user.noise_hiss_start()
     else:
         print("hiss stop")

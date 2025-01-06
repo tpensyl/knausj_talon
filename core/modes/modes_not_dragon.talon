@@ -20,7 +20,7 @@ not speech.engine: dragon
 # We define this *only* if the speech engine isn't Dragon, because if you're using Dragon,
 # "wake up" is used to specifically control Dragon, and not affect Talon.
 #
-# It's a useful and well known command, though, so if you're using any other speech
+# It's a useful and well known command, though, so if you're 2using any other speech
 # engine, this controls Talon.
 ^(wake up)+$: speech.enable()
 
@@ -30,6 +30,7 @@ not speech.engine: dragon
 # It's a useful and well known command, though, so if you're using any other speech
 # engine, this controls Talon.
 ^go to sleep [<phrase>]$: speech.disable()
+and go to sleep [<phrase>]$: speech.disable()
 ^talon sleep [<phrase>]$: speech.disable()
 
 ^sleep all [<phrase>]$:
