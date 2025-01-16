@@ -71,6 +71,9 @@ drag down <number> until <number>:
     edit.line_swap_down()
 clone [line] <number>: user.line_clone(number)
 
+clone that: edit.selection_clone()
+clone line: edit.line_clone()
+
 select camel left: user.extend_camel_left()
 select camel right: user.extend_camel_right()
 go camel left: user.camel_left()

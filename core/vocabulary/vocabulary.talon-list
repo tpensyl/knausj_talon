@@ -65,7 +65,8 @@ misk: misc
 : correlator
 cbp n i: CPNI
 octa: okta
-d n s: dns
+d n s: DNS
+dinas: DNS
 off net: offnet
 on net: onnet
 re ceuing: requeuing
@@ -100,6 +101,7 @@ yall
 peetio: pto
 kraken
 Sachin
+Tevis
 gberberian
 Silvio: Silviu
 neera: Nera

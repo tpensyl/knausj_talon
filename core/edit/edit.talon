@@ -130,8 +130,6 @@ paste line:
 paste match: edit.paste_match_style()
 
 # Duplication
-clone that: edit.selection_clone()
-clone line: edit.line_clone()
 
 # Insert new line
 new line above: edit.line_insert_up()

@@ -5,10 +5,10 @@
 
 # * one command to clear and oleate the line properly
 
-^follow$: 
-    key("ctrl:down")
-    mouse_click(0)
-    key("ctrl:up")
+# ^follow$: 
+#     key("ctrl:down")
+#     mouse_click(0)
+#     key("ctrl:up")
 
 del: key(delete)
 
