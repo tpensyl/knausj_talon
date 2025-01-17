@@ -71,7 +71,7 @@ box bottom:
 
 [cell | box] (expand | collapse | open | close): key(ctrl-')
 
-(cell run | box run | run that | hard slap):
+(cell run | box run | run that | hard slap | compile):
     key(shift-enter)
     sleep(500ms)
     #key(left)

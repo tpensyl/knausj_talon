@@ -14,6 +14,7 @@ greek omega: "ω"
 
 unicode (cap|intersect): "∩"
 unicode and: "∧"
+unicode infinity: "∞"
 
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 

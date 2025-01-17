@@ -10,7 +10,7 @@ hunt all (pace | paste):
 hunt all <user.text>: user.find_everywhere(text)
 hunt case: user.find_toggle_match_by_case()
 hunt word: user.find_toggle_match_by_word()
-hunt expression: user.find_toggle_match_by_regex()
+hunt (expression|regex): user.find_toggle_match_by_regex()
 replace this [<user.text>]: user.replace(text or "")
 replace all: user.replace_everywhere("")
 replace <user.text> all: user.replace_everywhere(text)

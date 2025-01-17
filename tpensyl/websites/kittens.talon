@@ -3,8 +3,13 @@ win.title: /Kittens Game -.*/
 settings():
     speech.timeout = 0.2
 touch <number>: user.game_click(0, number, "2ms")
+touch ten:
+    key(ctrl:down)
+    user.game_click(0)
+    key(ctrl:up)
 
 key(ctrl-shift-space): user.mouse_auto_click(100)
+^auto click ultra fast$: user.mouse_auto_click(500)
 ^auto click fast$: user.mouse_auto_click(4000)
 ^auto click$: user.mouse_auto_click(10000)
 ^auto click long$: user.mouse_auto_click(40000)
@@ -13,10 +18,11 @@ key(ctrl-space): user.mouse_auto_click(40000)
 key(shift-space): user.mouse_auto_click(1000)
 
 # Requires rango
-autoclick long <user.rango_hint>: user.rango_auto_click(rango_hint, 40000)
-autoclick slow <user.rango_hint>: user.rango_auto_click(rango_hint, 10000)
+autoclick long <user.rango_hint>$: user.rango_auto_click(rango_hint, 40000)
+autoclick slow <user.rango_hint>$: user.rango_auto_click(rango_hint, 10000)
 autoclick <user.rango_hint>$: user.rango_auto_click(rango_hint, 5000)
-autoclick fast <user.rango_hint>: user.rango_auto_click(rango_hint, 1000)
+autoclick fast <user.rango_hint>$: user.rango_auto_click(rango_hint, 1000)
+button autoclick <user.text>$: user.rango_auto_click_string(text, 5000)
 
 ^(build|bonfire): key(1)
 ^(village|settlement|town|city|metro|mega|empire|amper|dominion|hegemony|federation|reich|society|civilization)$: key(2)
