@@ -1,7 +1,7 @@
 new line: "\n"
 double dash: "--"
 triple quote: "'''"
-(triple grave | triple back tick | gravy): insert("```")
+triple grave | triple back tick | gravy: "```"
 (dot dot | dotdot): ".."
 ellipsis: "..."
 (comma and | spamma): ", "
@@ -47,3 +47,10 @@ quote that:
 (grave | back tick) that:
     text = edit.selected_text()
     user.paste("`{text}`")
+
+# Insert delimiter pairs
+<user.delimiter_pair>: user.delimiter_pair_insert(delimiter_pair)
+
+#tpensyl TODO replaces some of above commands??
+# Wrap selection with delimiter pairs
+<user.delimiter_pair> that: user.delimiter_pair_wrap_selection(delimiter_pair)
