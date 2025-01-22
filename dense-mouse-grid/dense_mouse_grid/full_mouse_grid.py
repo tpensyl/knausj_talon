@@ -2,7 +2,7 @@
 from talon import Module, Context, app, actions, canvas, screen, settings, ui, ctrl, cron, registry
 from talon.skia import Shader, Color, Paint, Rect
 from talon.types.point import Point2d
-from talon_plugins import eye_mouse, eye_zoom_mouse
+#from talon_plugins import eye_mouse, eye_zoom_mouse 
 from typing import Union
 
 import math, time, string
@@ -311,12 +311,13 @@ class MouseSnapMillion:
         if self.active:
             return
         # noinspection PyUnresolvedReferences
-        if eye_zoom_mouse.zoom_mouse.enabled:
-            self.was_zoom_mouse_active = True
-            eye_zoom_mouse.toggle_zoom_mouse(False)
-        if eye_mouse.control_mouse.enabled:
-            self.was_control_mouse_active = True
-            eye_mouse.control_mouse.toggle()
+        # eye_mouse no longer available from talon_plugins
+        # if eye_zoom_mouse.zoom_mouse.enabled:
+        #     self.was_zoom_mouse_active = True
+        #     eye_zoom_mouse.toggle_zoom_mouse(False)
+        # if eye_mouse.control_mouse.enabled:
+        #     self.was_control_mouse_active = True
+        #     eye_mouse.control_mouse.toggle()
 
         self.bg_transparency = self.saved_bg_transparency
         self.label_transparency = self.saved_label_transparency
@@ -350,10 +351,11 @@ class MouseSnapMillion:
         # actions.user.mouse_grid_help_overlay_close()
 
         self.active = False
-        if self.was_control_mouse_active and not eye_mouse.control_mouse.enabled:
-            eye_mouse.control_mouse.toggle()
-        if self.was_zoom_mouse_active and not eye_zoom_mouse.zoom_mouse.enabled:
-            eye_zoom_mouse.toggle_zoom_mouse(True)
+        # eye_mouse no longer available from talon_plugins
+        # if self.was_control_mouse_active and not eye_mouse.control_mouse.enabled:
+        #     eye_mouse.control_mouse.toggle()
+        # if self.was_zoom_mouse_active and not eye_zoom_mouse.zoom_mouse.enabled:
+        #     eye_zoom_mouse.toggle_zoom_mouse(True)
 
         self.was_zoom_mouse_active = False
         self.was_control_mouse_active = False

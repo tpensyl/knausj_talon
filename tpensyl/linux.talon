@@ -1,7 +1,9 @@
 os: linux
 -
 
-    
+(message clear|go away): 
+    key(super-n)    
+    key(esc)
 
 screenshot unused:
     key(shift:down)

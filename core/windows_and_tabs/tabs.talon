@@ -16,4 +16,10 @@ go tab final: user.tab_final()
 tab (duplicate | clone): user.tab_duplicate()
 
 tab move left: user.tab_move_left()
+tab move left <number_small>: 
+    user.tab_move_left()
+    repeat(number_small-1)
 tab move right: user.tab_move_right()
+tab move right <number_small>: 
+    user.tab_move_right()
+    repeat(number_small-1)

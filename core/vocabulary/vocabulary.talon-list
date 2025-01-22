@@ -67,6 +67,7 @@ cbp n i: CPNI
 octa: okta
 d n s: DNS
 dinas: DNS
+dens: DNS
 off net: offnet
 on net: onnet
 re ceuing: requeuing

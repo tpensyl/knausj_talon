@@ -13,5 +13,5 @@ go last: key(k)
 go (inbox | box): "gi"
 (undo | nope): key(z)
 mark red: key(shift-i)
-mark unread: key(shift-n)
+mark unread: key(shift-u)
 mark: key(x)
