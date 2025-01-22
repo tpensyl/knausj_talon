@@ -1,5 +1,5 @@
 
-mouse up: user.mouse_move(0,-10)
+mouse up: mouse_nudge(0,-10)
 mouse up <number>:
     user.mouse_move(0,-10)
     repeat(number - 1)

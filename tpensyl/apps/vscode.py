@@ -12,3 +12,6 @@ app: vscode
     
 #     def noise_hiss_stop():
 #         return
+
+#     def parrot_palate():
+#         return

@@ -60,7 +60,7 @@ key(f9:up):
 
 mute discord: key(ctrl-shift-m)
 
-center mouse: user.mouse_move_center_active_window()
+mouse center: user.mouse_move_center_active_window()
 mouse rest: user.mouse_rest()
 mouse rest long: user.mouse_rest(10000)
 

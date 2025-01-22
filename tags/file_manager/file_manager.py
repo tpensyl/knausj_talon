@@ -88,6 +88,14 @@ class Actions:
         """file_manager_open_parent"""
         return
 
+    def file_manager_go_back():
+        """file_manager_go_back"""
+        return
+
+    def file_manager_go_forward():
+        """file_manager_go_forward"""
+        return
+
     def file_manager_open_volume(volume: str):
         """file_manager_open_volume"""
 

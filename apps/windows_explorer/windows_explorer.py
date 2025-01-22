@@ -151,3 +151,9 @@ class UserActions:
 
     def address_navigate(address: str):
         actions.user.file_manager_open_directory(address)
+    def file_manager_go_back():
+        actions.key("alt-left")
+
+    def file_manager_go_forward():
+        actions.key("alt-right") 
+        
