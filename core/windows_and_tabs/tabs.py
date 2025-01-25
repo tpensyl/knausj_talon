@@ -17,6 +17,10 @@ class tab_actions:
         """
         actions.app.tab_close()
 
+    def tab_close_force():
+        """Closes the current tab, without saving."""
+        actions.app.tab_close()
+
     def tab_duplicate():
         """Duplicates the current tab."""
 

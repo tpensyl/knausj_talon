@@ -10,6 +10,7 @@ tab right <number_small>:
     app.tab_next()
     repeat(number_small-1)
 tab close: user.tab_close_wrapper()
+tab close force: user.tab_close_force()
 tab (reopen | restore): app.tab_reopen()
 go tab <number>: user.tab_jump(number)
 go tab final: user.tab_final()
