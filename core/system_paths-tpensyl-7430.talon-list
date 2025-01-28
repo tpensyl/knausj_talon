@@ -1,0 +1,16 @@
+list: user.system_paths
+hostname: tpensyl-7430
+-
+user: /home/tpensyl
+desktop: /home/tpensyl/Desktop
+desk: /home/tpensyl/Desktop
+documents: /home/tpensyl/Documents
+docks: /home/tpensyl/Documents
+downloads: /home/tpensyl/Downloads
+music: /home/tpensyl/Music
+pictures: /home/tpensyl/Pictures
+videos: /home/tpensyl/Videos
+talon home: /home/tpensyl/.talon
+talon recordings: /home/tpensyl/.talon/recordings
+talon user: /home/tpensyl/.talon/user
+home: /home/tpensyl

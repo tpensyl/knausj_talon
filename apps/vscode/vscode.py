@@ -309,12 +309,6 @@ class UserActions:
         # vscode does not allow duplicate tabs in the same tab group, and so is implemented through splits
         actions.user.split_window_vertically()
 
-    def tab_move_left():
-        actions.key("ctrl-shift-pgup")
-
-    def tab_move_right():
-        actions.key("ctrl-shift-pgdown")
-
     def tab_force_close():
         actions.app.tab_close()
         actions.sleep("100ms")

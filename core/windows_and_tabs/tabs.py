@@ -26,6 +26,8 @@ class tab_actions:
 
     def tab_move_left():
         """Move tab left"""
+        actions.key("ctrl-shift-pgup")
 
     def tab_move_right():
         """Move tab right"""
+        actions.key("ctrl-shift-pgdown")

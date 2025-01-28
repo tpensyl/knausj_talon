@@ -12,7 +12,7 @@ tracking (calibrate|calibration): tracking.calibrate()
 
 del: key(delete)
 
-^back$: key(esc)
+(back|bacca): key(esc)
 start menu: key(super)
 
 m v <user.number_string>: "MV-{number_string}"
