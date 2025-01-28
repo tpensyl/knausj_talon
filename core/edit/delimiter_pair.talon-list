@@ -10,14 +10,15 @@ list: user.delimiter_pair
 # pad: space space
 
 round: ( )
-box: [ ]
-diamond: < >
+squares: [ ]
+angle: < >
 curly: { }
 twin: "' '"
 quad: '" "'
-skis: ` `
+# skis: ` `
 percentages: % %
-pad: space space
+#pad: space space
+bar: | |
 
 escaped quad: '\\" \\"'
 escaped twin:  "\\' \\'"

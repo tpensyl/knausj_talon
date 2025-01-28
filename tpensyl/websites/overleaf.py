@@ -17,11 +17,11 @@ title: /.*Online LaTeX Editor Overleaf/
 #     def draft_editor_open_pre_switch_hook():
 #         actions.edit.cut()
 
-@ctx.action_class('user')
-class NoiseActions:
-    def parrot_palate():
-        """parrot palate sound, has some false positives with speech"""
-        # actions.key("ctrl:down")
-        ctrl.mouse_click(0)
-        # actions.key("ctrl:up")
-        pass
+# @ctx.action_class('user')
+# class NoiseActions:
+#     def parrot_palate():
+#         """parrot palate sound, has some false positives with speech"""
+#         # actions.key("ctrl:down")
+#         ctrl.mouse_click(0)
+#         # actions.key("ctrl:up")
+#         pass

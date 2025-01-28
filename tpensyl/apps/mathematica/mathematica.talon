@@ -1,6 +1,5 @@
-#title: /Mathematica/
 os: windows
-app.exe: Mathematica.exe
+app.name: /^Wolfram Mathematica/
 -
 #test: insert("test worked")
 

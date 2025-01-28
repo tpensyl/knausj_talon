@@ -8,6 +8,19 @@ touch ten:
     user.game_click(0)
     key(ctrl:up)
 
+build all:
+    key(shift:down)
+    mouse_click(0)
+    key(shift:up)
+    sleep(100ms)
+    key(enter)
+# build all <user.text>:
+#     key(shift:down)
+#     user.rango_run_action_on_text_matched_element("clickElement", text, false)
+#     key(shift:up)
+#     sleep(50ms)
+#     key(enter)
+
 key(ctrl-shift-space): user.mouse_auto_click(100)
 ^auto click ultra fast$: user.mouse_auto_click(500)
 ^auto click fast$: user.mouse_auto_click(4000)

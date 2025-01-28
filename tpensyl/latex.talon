@@ -4,7 +4,7 @@
 greek alpha: "α"
 greek beta: "β"
 greek delta: "δ"
-greek big delta: "Δ"
+greek (big|cap) delta: "Δ"
 greek epsilon: "ε"
 greek gamma: "γ"
 greek phi: "ϕ"
@@ -15,6 +15,7 @@ greek omega: "ω"
 unicode (cap|intersect): "∩"
 unicode and: "∧"
 unicode infinity: "∞"
+unicode element [of]: "∈"
 
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 
