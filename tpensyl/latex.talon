@@ -16,6 +16,8 @@ unicode (cap|intersect): "∩"
 unicode and: "∧"
 unicode infinity: "∞"
 unicode element [of]: "∈"
+unicode greater than [or] equal [to]: "≥"
+unicode less than [or] equal [to]: "≤"
 
 fake prob: user.insert_between("\\Pr[", "]")
 fake expect: user.insert_between("\\E[", "]") 

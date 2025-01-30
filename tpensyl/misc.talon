@@ -1,7 +1,3 @@
-# TODO list
-# * octa shortcuts
-# * get sublime tabs running
-# * find in replace, find_and_replace
 
 # * one command to clear and oleate the line properly
 
@@ -9,6 +5,10 @@
 #     key("ctrl:down")
 #     mouse_click(0)
 #     key("ctrl:up")
+
+tracking on: tracking.control_toggle(true)
+tracking off: tracking.control_toggle(false)
+tracking (calibrate|calibration): tracking.calibrate()
 
 del: key(delete)
 
@@ -62,7 +62,8 @@ mute discord: key(ctrl-shift-m)
 
 mouse center: user.mouse_move_center_active_window()
 mouse rest: user.mouse_rest()
-mouse rest long: user.mouse_rest(10000)
+mouse rest long: user.mouse_rest(5000)
+read tooltip: user.mouse_rest(50000)
 
 hold shift: key(shift:down)
 hold control: key(ctrl:down)

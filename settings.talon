@@ -18,7 +18,7 @@ settings():
     user.help_max_command_lines_per_page = 50
 
     # Set the number of contexts to display per help page
-    user.help_max_contexts_per_page = 20
+    user.help_max_contexts_per_page = 18
 
     # Uncomment to always sort help contexts alphabetically.
     # user.help_sort_contexts_by_specificity = false

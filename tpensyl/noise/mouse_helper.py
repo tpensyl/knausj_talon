@@ -2,6 +2,9 @@ from talon import ctrl, Module, actions, cron
 
 mod = Module()
 
+global mouse_rest_interrupt
+mouse_rest_interrupt = False
+
 @mod.action_class
 class TpensylClick:
     def slow_click(delay_s: str = "16ms"):
@@ -59,9 +62,20 @@ class TpensylClick:
             ctrl.mouse_click(button=button, down=True)
 
     def mouse_rest(duration_ms : int = 1500):
-        """Effectively ignore mouse movements for short duration"""
+        """Effectively ignore mouse movements for short duration, or until explicitly interrupted"""
+        global mouse_rest_interrupt
+        mouse_rest_interrupt = False
         do_mouse_rest(duration_ms, ctrl.mouse_pos())
-        position = ctrl.mouse_pos()
+
+    def interrupt_mouse_rest() -> bool:
+        """Terminate a mouse rest. Early"""
+        global mouse_rest_interrupt
+        if mouse_rest_interrupt == False:
+            print("interrupted mouse rest")
+            mouse_rest_interrupt = True
+            return True
+        else:
+            return False
 
     def mouse_move(dx : int = 0, dy : int = 0):
         """Perform relative mouse movement"""
@@ -78,9 +92,12 @@ class TpensylClick:
         ctrl.mouse_move(*pos)
 
 def do_mouse_rest(duration_ms, position):
+    global mouse_rest_interrupt
     ctrl.mouse_move(*position)
-    if duration_ms > 0:
+    if duration_ms > 0 and mouse_rest_interrupt == False:
         cron.after("10ms", lambda: do_mouse_rest(duration_ms - 10, position))
+    else:
+        mouse_rest_interrupt = False
 
 def to_ms(time_str):
     if not time_str:

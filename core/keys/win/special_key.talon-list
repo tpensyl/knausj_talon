@@ -17,5 +17,5 @@ insert: insert
 wipe: backspace
 junk: backspace
 forward delete: delete
-menu key: menu
+context menu: menu
 print screen: printscr
