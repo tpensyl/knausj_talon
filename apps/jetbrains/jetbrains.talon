@@ -69,7 +69,11 @@ hunt all <user.text> [over]:
     insert(text)
 (search | find) class: user.idea("action GotoClass")
 # (search | find) file: user.idea("action GotoFile")
-file hunt: user.idea("action GotoFile")
+file hunt$: user.idea("action GotoFile")
+file hunt [<user.text>]:
+    user.idea("action GotoFile")
+    sleep(50ms)
+    insert(text or "")
 (search | find) path: user.idea("action FindInPath")
 (search | find) symbol: user.idea("action GotoSymbol")
 (search | find) symbol <user.text>$:

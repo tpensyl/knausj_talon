@@ -41,10 +41,10 @@ class NoiseActions:
 
 def hiss_handler(active):
     if active:
-        print("noise_helper.py:hiss start")
+        # print("noise_helper.py:hiss start")
         actions.user.noise_hiss_start()
     else:
-        print("hiss stop")
+        # print("hiss stop")
         actions.user.noise_hiss_stop()
 
 # delegating to core/noise.py

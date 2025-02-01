@@ -6,9 +6,9 @@
 #     mouse_click(0)
 #     key("ctrl:up")
 
-tracking on: tracking.control_toggle(true)
-tracking off: tracking.control_toggle(false)
-tracking (calibrate|calibration): tracking.calibrate()
+tracker on: tracking.control_toggle(true)
+tracker off: tracking.control_toggle(false)
+tracker (calibrate|calibration): tracking.calibrate()
 
 del: key(delete)
 

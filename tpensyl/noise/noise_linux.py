@@ -22,11 +22,11 @@ class NoiseActions:
         """Invoked when the user finishes hissing (potentially while speaking)"""
         pass
 
-    # def parrot_tut():
-    #     """parrot tut sound"""
-    #     pass
-    #     # would be nice ut tut doesn't seem to be working on my linux machine and microphone
-    #     # actions.toggle_drag()
+    # had to drop the power way down on linuxb/shure
+    def parrot_tut():
+        """parrot tut sound"""
+        # actions.tracking.control_toggle()
+        pass
 
     # def parrot_buzz():
     #     """parrot buzz sound"""
