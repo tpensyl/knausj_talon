@@ -50,6 +50,8 @@ paste plain [text]: key(ctrl-shift-v)
 # TODO move to windows-only files
 task manager: key(ctrl-shift-esc)
 
+full screen: key(f11)
+
 # key(keypad_enter:up): 
 # 	speech.toggle()
 # 	key(ctrl-shift-space)

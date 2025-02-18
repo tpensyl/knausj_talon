@@ -1,18 +1,20 @@
-# Requires https://plugins.jetbrains.com/plugin/10504-voice-code-idea
 app: jetbrains
+and code.language: /.+/
 -
+# Requires https://plugins.jetbrains.com/plugin/10504-voice-code-idea
 tag(): user.line_commands
 tag(): user.multiple_cursors
 tag(): user.splits
 tag(): user.tabs
 tag(): user.command_search
 tag(): user.command_client
+tag(): user.cursorless
 
 # multiple_cursors.py support end
 
-settings():
-    # Sometimes it loses several characters at the start of a word e.g. in global search
-    key_wait = 5
+# settings():
+#     # Sometimes it loses several characters at the start of a word e.g. in global search
+#     key_wait = 5
 
 replace it: key(ctrl-r)
 file locate: key(alt-shift-1 1)

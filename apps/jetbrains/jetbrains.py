@@ -101,6 +101,7 @@ def get_idea_location() -> list[str]:
 
 
 ctx = Context()
+ctx_edit = Context()
 mod = Module()
 
 mod.apps.jetbrains = "app.name: /jetbrains/"
@@ -183,6 +184,11 @@ ctx.matches = r"""
 app: jetbrains
 """
 
+ctx_edit.matches = r"""
+app: jetbrains
+and code.language: /.+/
+"""
+
 
 @ctx.action_class("app")
 class AppActions:
@@ -206,7 +212,7 @@ class CodeActions:
         actions.user.idea("action CommentByLineComment")
 
 
-@ctx.action_class("edit")
+@ctx_edit.action_class("edit")
 class EditActions:
     def delete_line():
         actions.user.idea("action EditorDeleteLine")

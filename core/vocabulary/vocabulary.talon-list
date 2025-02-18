@@ -8,7 +8,7 @@ N map: nmap
 fee: phi
 : nmap
 : admin
-: Cisco
+Cisco
 nurdle: nerdle
 : VPN
 VPN small: vpn
@@ -20,7 +20,6 @@ sumo logic: sumologic
 calla: calais
 calle: calais
 concatenator
-: grep
 data dog: datadog
 v to: V2
 knock: NOC
@@ -93,10 +92,12 @@ snick: synk
 app seck: appsec
 gappy: GAPI
 perf
+tek debt: tech debt
 deserializing
 Parrott: parrot
 grep
 Syniverse
+zipwhip
 yash: Iași
 yall
 peetio: pto

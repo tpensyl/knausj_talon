@@ -5,6 +5,7 @@ app: chrome
 ^(okta | octa): key(alt-o)
 (okta | octa) <user.text>: user.open_okta_extension("{text}")
 (okta | octa) (sumo|sumologic): user.open_okta_extension("sumologic")
+(okta | octa) (sumo|sumologic) non prod: user.open_okta_extension("sumologic non production")
 # amazon=shared accounts, aws=glorg
 (okta | octa) (amazon|a w s): user.open_okta_extension("amazon")
 (okta | octa) (glorg): user.open_okta_extension("global org")
