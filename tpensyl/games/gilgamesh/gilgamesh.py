@@ -1,7 +1,8 @@
 from talon import Context, actions
 ctx = Context()
 ctx.matches = r"""
-app.exe: Quest.exe
+mode: user.gameboy
+and win.title: SteamWorld Quest
 """
 
 @ctx.action_class('user')

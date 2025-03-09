@@ -1,6 +1,5 @@
-# mode: user.gameboy
-os: windows
-and app.exe: Quest.exe
+mode: user.gameboy
+and win.title: SteamWorld Quest
 
 -
 settings():
@@ -9,6 +8,9 @@ settings():
     speech.timeout = 0.1
 
 stats: key(e)
+menu: key(o)
+next: key(e)
+last: key(q)
 
 tab: 
     user.release_all_holds()
@@ -36,25 +38,6 @@ use <number_small>:
     key('right:{number_small}')
     key(space:2)
     
-# one: 
-#     key(right)
-#     key(space)
-# two: 
-#     key(right:2)
-#     key(space)
-# three: 
-#     key(right:3)
-#     key(space)
-# four: 
-#     key(right:4)
-#     key(space)
-# five: 
-#     key(right:5)
-#     key(space)
-# six: 
-#     key(right:6)
-#     key(space)
-
 (discard|chuck): user.long_press('r', 2)
 
 (discard|chuck) <number_small>:

@@ -12,10 +12,12 @@ class NoiseActions:
 
     def noise_hiss_start():
         """Invoked when the user starts hissing (potentially while speaking)"""
+        x=1
         pass
 
     def noise_hiss_stop():
         """Invoked when the user finishes hissing (potentially while speaking)"""
+        x=1
         pass
 
     def parrot_tut():

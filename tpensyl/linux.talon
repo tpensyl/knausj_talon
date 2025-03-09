@@ -1,6 +1,9 @@
 os: linux
 -
 
+settings():
+    user.parrot_scroll_jump_size = 15
+
 (message clear|go away): 
     key(super-n)    
     key(esc)

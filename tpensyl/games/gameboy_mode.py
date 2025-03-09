@@ -18,7 +18,8 @@ game_list = [
     "RCT.EXE",
     "Main executable for OpenRCT2",
     "http://www.scummvm.org/",
-    "Crystal Caves HD.exe"
+    "Crystal Caves HD.exe",
+    "Quest.exe"
 ]
 
 

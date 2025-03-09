@@ -32,6 +32,7 @@ item: "* "
 dot quote: "\""
 junk junk: key(backspace:2)
 semicolon: ";"
+aero pad: "-> "
 
 vim save:
 	key(esc)

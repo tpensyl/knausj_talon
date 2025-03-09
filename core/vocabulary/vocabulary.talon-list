@@ -135,3 +135,6 @@ id est: i.e.
 submodular
 matroid
 matroids
+polymatroid
+comonotone
+comonotonic

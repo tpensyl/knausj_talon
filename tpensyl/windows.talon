@@ -1,5 +1,9 @@
 os: windows
 -
+
+settings():
+    user.parrot_scroll_jump_size = 15
+
 # Can use this app from the Microsoft app store to set up hotkeys. 
 # https://apps.microsoft.com/detail/9nblggh3zd5h?activetab=pivot%3Aoverviewtab&hl=en-us&gl=US
 # TODO how to run on startup
@@ -8,9 +12,14 @@ os: windows
 ^screen (lie|lay) down$: key(ctrl-alt-a)
 
 # Helps if second monitor stops working after sleep
-^screen refresh$: key(super-ctrl-shift-b)
+^talon fix screen$: key(super-ctrl-shift-b)
 
 # Hunt and Peck: Adds letter hotkeys to all visible UI elements, like rango for windows
 # https://github.com/zsims/hunt-and-peck?tab=readme-ov-file
 window (peck|pack)$: key(alt-;)
 ^(taskbar|bar) (peck|pack)$: key(ctrl-;)
+
+# This worked on windows 11 to have "configure" open CSV in vscode
+# HKEY_CLASSES_ROOT\SystemFileAssociations\text\shell\edit\command
+# ORIGINAL: %SystemRoot%\system32\NOTEPAD.EXE %1
+# NEW: code.cmd %1
