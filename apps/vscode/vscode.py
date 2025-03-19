@@ -4,6 +4,7 @@ is_mac = app.platform == "mac"
 
 ctx = Context()
 mac_ctx = Context()
+linux_ctx = Context()
 mod = Module()
 # com.todesktop.230313mzl4w4u92 is for Cursor - https://www.cursor.com/
 mod.apps.vscode = """
@@ -58,6 +59,10 @@ app: vscode
 """
 mac_ctx.matches = r"""
 os: mac
+app: vscode
+"""
+linux_ctx.matches = r"""
+os: linux
 app: vscode
 """
 

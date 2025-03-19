@@ -15,7 +15,7 @@ empty escaped string: user.insert_between("\\'", "\\'")
 (inside parens | args): user.insert_between("(", ")")
 args right: "()"
 args dot: "()."
-# inside (squares | square brackets | list): user.insert_between("[", "]")
+inside (squares): user.insert_between("[", "]")
 square args: user.insert_between("[", "]")
 # inside (angles): user.insert_between("<", ">")
 # inside (bracket | braces): user.insert_between("{", "}")

@@ -6,8 +6,8 @@ class UserActions:
     def noise_trigger_pop():
         # print("pop-click_default")
         #ctrl.mouse_click(button=1, up=True)
-        if actions.user.interrupt_mouse_rest():
-            return
+        # if actions.user.interrupt_mouse_rest():
+        #     return
         actions.user.stop_mouse_move()
         actions.user.slow_click()
 

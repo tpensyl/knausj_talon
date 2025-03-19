@@ -15,7 +15,7 @@ class NoiseActions:
 
     def noise_hiss_start():
         """Invoked when the user starts hissing (potentially while speaking)"""
-        print("noise_linux.py:hiss disabled")
+        # print("noise_linux.py:hiss disabled")
         pass
 
     def noise_hiss_stop():
@@ -25,7 +25,7 @@ class NoiseActions:
     # had to drop the power way down on linuxb/shure
     def parrot_tut():
         """parrot tut sound"""
-        # actions.tracking.control_toggle()
+        actions.tracking.control_toggle()
         pass
 
     # def parrot_buzz():

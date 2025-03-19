@@ -13,6 +13,11 @@ tracker (calibrate|calibration): tracking.calibrate()
 del: key(delete)
 
 (back|bacca): key(esc)
+(back|bacca) (back|bacca): 
+	key(esc)
+	sleep(20ms)
+	key(esc)
+	
 start menu: key(super)
 
 m v <user.number_string>: "MV-{number_string}"
