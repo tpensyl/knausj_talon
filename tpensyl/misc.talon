@@ -27,7 +27,7 @@ north: edit.up()
 
 (yap|yep): "y\n"
 
-# junk: key(backspace)
+junk junk: key(backspace:2)
 spamma: ", "
 ^nope: edit.undo()
 ^nope nope: 
@@ -38,6 +38,7 @@ dot quote: "\""
 junk junk: key(backspace:2)
 semicolon: ";"
 aero pad: "-> "
+unicode trademark: "™"
 
 vim save:
 	key(esc)

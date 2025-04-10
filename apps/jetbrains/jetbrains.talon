@@ -1,5 +1,5 @@
 app: jetbrains
-and code.language: /.+/
+# and code.language: /.+/
 -
 # Requires https://plugins.jetbrains.com/plugin/10504-voice-code-idea
 tag(): user.line_commands

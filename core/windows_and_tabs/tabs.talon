@@ -1,12 +1,15 @@
 tag: user.tabs
 -
-tab (open | new): app.tab_open()
-tab (last | previous | left): app.tab_previous()
-tab left <number_small>: 
+(tab|tabu) (open | new): app.tab_open()
+(tab|tabu) new {user.website}: 
+    app.tab_open()
+    browser.go(website)
+(tab|tabu) (last | previous | left): app.tab_previous()
+(tab|tabu) left <number_small>: 
     app.tab_previous()
     repeat(number_small-1)
-tab (next | right): app.tab_next()
-tab right <number_small>: 
+(tab|tabu) (next | right): app.tab_next()
+(tab|tabu) right <number_small>: 
     app.tab_next()
     repeat(number_small-1)
 (tab|tabu) close: user.tab_close_wrapper()

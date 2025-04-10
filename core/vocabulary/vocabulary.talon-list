@@ -71,6 +71,7 @@ off net: offnet
 on net: onnet
 re ceuing: requeuing
 gera: JIRA
+bandy bot: bandibot
 s q s: sqs
 jo: Joe
 dif: diff

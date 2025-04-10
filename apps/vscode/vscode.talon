@@ -16,14 +16,6 @@ go view [<user.text>]:
     user.vscode("workbench.action.openView")
     insert(user.text or "")
 
-# tpensyl custom
-revert that: user.vscode("git.revertSelectedRanges")
-stage that: user.vscode("git.stageSelectedRanges")
-unstage that: user.vscode("git.unstageSelectedRanges")
-key: user.insert_between("key(", ")")
-# requires ext Git Blame by Wade Anderson
-get blame: user.vscode("gitblame.quickInfo")
-
 # Sidebar
 bar explore: user.vscode("workbench.view.explorer")
 bar extensions: user.vscode("workbench.view.extensions")

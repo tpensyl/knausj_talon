@@ -11,8 +11,10 @@ page down: pagedown
 page up: pageup
 escape: escape
 space: space
+pad: space
 tab: tab
 insert: insert
 wipe: backspace
-delete: backspace
-forward delete: delete
+junk: backspace
+del: delete
+delete: delete
