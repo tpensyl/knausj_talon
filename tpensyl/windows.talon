@@ -10,6 +10,7 @@ settings():
 
 ^screen standup$: key(ctrl-alt-w)
 ^screen (lie|lay) down$: key(ctrl-alt-a)
+^screen (lie|lay) down reverse$: key(ctrl-alt-d)
 
 # Helps if second monitor stops working after sleep
 ^talon fix screen$: key(super-ctrl-shift-b)

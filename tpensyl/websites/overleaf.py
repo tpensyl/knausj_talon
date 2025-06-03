@@ -12,10 +12,10 @@ title: /.*Online LaTeX Editor Overleaf/
 
 # # hack... - In chrome on windows it seems when returning focus to overleaf, SOMETIMES it removes the selection.
 # UPDATE: this is not specific to overleaf, but any chrome if vscode is maximized!
-# @ctx.action_class('user')
-# class Actions:
-#     def draft_editor_open_pre_switch_hook():
-#         actions.edit.cut()
+    # @ctx.action_class('user')
+    # class Actions:
+    #     def draft_editor_open_pre_switch_hook():
+    #         actions.edit.cut()
 
 # @ctx.action_class('user')
 # class NoiseActions:

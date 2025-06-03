@@ -85,6 +85,8 @@ class Actions:
         global original_window
         original_window = ui.active_window()
         editor_app = get_editor_app()
+        # Give time for long selection operations
+        actions.sleep("200ms")
         selected_text = actions.edit.selected_text()
         actions.user.draft_editor_open_pre_switch_hook()
         actions.user.switcher_focus_app(editor_app)

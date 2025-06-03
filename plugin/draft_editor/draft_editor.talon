@@ -37,9 +37,9 @@ draft around <number>:
   sleep(200ms)
   user.draft_editor_open()
 
-# draft top:
-#   edit.extend_file_start()
-#   user.draft_editor_open()
+draft top:
+  edit.extend_file_start()
+  user.draft_editor_open()
 
 draft bottom:
   edit.extend_file_end()

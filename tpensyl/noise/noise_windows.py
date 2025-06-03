@@ -23,8 +23,7 @@ class NoiseActions:
 
     def parrot_tut():
         """parrot tut sound"""
-        x=1
-        print('tut unimplemented')
+        actions.tracking.control_toggle()
         pass
 
     # def parrot_buzz():
@@ -34,8 +33,9 @@ class NoiseActions:
     def parrot_palate():
         """parrot palate sound, has some false positives with speech"""
         print("noise_windows.py:parrot_palate")
-        actions.key("ctrl:down")
+        # actions.tracking.control_toggle()
+        # actions.key("ctrl:down")
         # ctrl.mouse_click(0)
-        actions.key("ctrl:up")
+        # actions.key("ctrl:up")
         # actions.user.toggle_drag(0)
         pass

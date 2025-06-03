@@ -3,6 +3,8 @@
 
 # Merge cruft - I moved these but something changed upstream
 # <user.letter>: key(letter)
+# ok even in context where double letters are reserved: rango,mouse_grid
+^<user.letter>$: key(letter)
 # <user.symbol_key>: key(symbol_key)
 # <user.function_key>: key(function_key)
 # <user.special_key>: key(special_key)

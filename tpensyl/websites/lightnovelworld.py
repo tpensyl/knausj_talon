@@ -10,7 +10,10 @@ class UserActions:
 #         actions.mouse_scroll(by_lines=True, y=15)
 
     def parrot_tut():
-        actions.user.rango_command_with_target("clickElement", "ac")
+        actions.user.rango_click_element({
+        "type": "primitive",
+        "mark": {"type": "elementHint", "value": "ac"},
+        })
 
 #     def noise_hiss_start():
 #         actions.user.mouse_scroll_up_continuous()
