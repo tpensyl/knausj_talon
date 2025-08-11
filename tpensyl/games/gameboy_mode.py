@@ -19,7 +19,8 @@ game_list = [
     "Main executable for OpenRCT2",
     "http://www.scummvm.org/",
     "Crystal Caves HD.exe",
-    "Quest.exe"
+    "Quest.exe",
+    "The Sims™ Legacy"
 ]
 
 

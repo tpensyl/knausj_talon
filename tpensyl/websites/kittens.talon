@@ -1,7 +1,7 @@
 win.title: /Kittens Game -.*/
 -
 settings():
-    speech.timeout = 0.2
+    speech.timeout = 0.18
 touch <number>: user.game_click(0, number, "2ms")
 touch ten:
     key(ctrl:down)
@@ -12,7 +12,7 @@ build all:
     key(shift:down)
     mouse_click(0)
     key(shift:up)
-    sleep(200ms)
+    sleep(250ms)
     key(enter)
 # build all <user.text>:
 #     key(shift:down)
@@ -21,14 +21,17 @@ build all:
 #     sleep(50ms)
 #     key(enter)
 
-key(ctrl-shift-space): user.mouse_auto_click(100)
-^auto click ultra fast$: user.mouse_auto_click(500)
+key(ctrl-alt-space): 
+    sleep(400ms)
+    user.mouse_auto_click(250)
+^auto click ultra fast$: user.mouse_auto_click(250)
+^auto click very fast$: user.mouse_auto_click(1000)
 ^auto click fast$: user.mouse_auto_click(4000)
 ^auto click$: user.mouse_auto_click(10000)
 ^auto click long$: user.mouse_auto_click(40000)
 key(space): user.mouse_auto_click(10000) 
-key(ctrl-space): user.mouse_auto_click(40000) 
-key(shift-space): user.mouse_auto_click(1000)
+key(ctrl-space): user.mouse_auto_click(4000) 
+# key(ctrl-alt-space): user.mouse_auto_click(500)
 
 # Requires rango
 autoclick long <user.rango_target>$: user.rango_auto_click(rango_target, 40000)

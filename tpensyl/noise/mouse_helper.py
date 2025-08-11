@@ -21,7 +21,6 @@ class TpensylClick:
                    modifier: str = None, 
                    modifier_hold_time: str = None):
         """Fully customizable click"""
-        print("hello world")
         for _ in range(times):
             print(button, to_ms(hold), wait,to_ms(wait)-to_ms(modifier_hold_time), times, modifier)
             if modifier:

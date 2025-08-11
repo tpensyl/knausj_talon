@@ -5,7 +5,7 @@ tag(): user.game_repeater
 
 settings():
     # minimum silence time (in seconds) before speech is cut off, default 0.3
-    speech.timeout = .2
+    speech.timeout = .18
     user.default_long_press_ms = .128
     user.default_long_wait_ms = .150
 
