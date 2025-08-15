@@ -1,10 +1,9 @@
 from talon import Context, ctrl, actions
 ctx = Context()
 ctx.matches = r"""
+mode: user.gameboy
 os: windows
-and app.name: RuneScape Client
-os: windows
-and app.exe: /^rs2client\.exe$/i
+app.name: RuneScape Client
 """
 
 @ctx.action_class("user")

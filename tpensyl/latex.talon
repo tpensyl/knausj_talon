@@ -43,8 +43,8 @@ fake less [than] (equal|equals): "\\le "
 fake greater [than] (equal|equals): "\\ge "
 fake not (equal|equals): "\\ne "
 fake not: "\\not "
-fake min: user.insert_between("\\min\{", "\}")
-fake max: user.insert_between("\\max\{", "\}")
+fake min: user.insert_between("\\min\\{", "\\}")
+fake max: user.insert_between("\\max\\{", "\\}")
 #fake in: "\\in "
 fake ref: user.insert_between("\\ref{", "}") 
 fake cite: user.insert_between("\\cite{", "}") 

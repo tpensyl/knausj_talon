@@ -20,7 +20,8 @@ game_list = [
     "http://www.scummvm.org/",
     "Crystal Caves HD.exe",
     "Quest.exe",
-    "The Sims™ Legacy"
+    "The Sims™ Legacy",
+    "RuneScape Client"
 ]
 
 

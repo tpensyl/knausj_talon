@@ -12,6 +12,7 @@ class NoiseActions:
 
     def pedal_left_up():
         """Left Pedal"""
+        x = 3
         # actions.mouse_release()
         pass
 
@@ -22,6 +23,7 @@ class NoiseActions:
 
     def pedal_right_up():
         """Right Pedal""" 
+        x = 3
         # actions.mouse_release()
         pass
 
