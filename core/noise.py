@@ -38,7 +38,7 @@ def noise_trigger_hiss_debounce(active: bool):
     global hiss_cron
     if active:
         hiss_cron = cron.after(
-            str(f"{settings.get('hiss_scroll_debounce_time')}ms"),
+            str(f"{settings.get('user.hiss_scroll_debounce_time')}ms"),
             lambda: actions.user.noise_trigger_hiss(active),
         )
     else:
