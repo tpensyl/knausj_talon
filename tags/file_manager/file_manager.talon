@@ -34,7 +34,7 @@ go forward: user.file_manager_go_forward()
     user.file_manager_open_file(file)
 
 #new folder
-folder new <user.text>: user.file_manager_new_folder(text)
+folder new [<user.text>]: user.file_manager_new_folder(text or "")
 
 #show properties
 properties show: user.file_manager_show_properties()

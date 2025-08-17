@@ -5,7 +5,7 @@ app.name: RuneScape Client
 -
 
 settings():
-    user.noise_debounce = "50ms"
+    user.hiss_scroll_denounce_time = 50
 
 (run|walk): key(r)
 

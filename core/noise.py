@@ -8,11 +8,12 @@ mod = Module()
 hiss_cron = None
 
 mod.setting(
-    "noise_debounce",
+    "hiss_scroll_debounce_time",
     type=int,
-    default="350ms",
-    desc="Lines to scroll up or down on parrot noises",
+    default=350,
+    desc="How much time a hiss must last for to be considered a hiss rather than part of speech, in ms",
 )
+
 
 @mod.action_class
 class Actions:
@@ -37,7 +38,10 @@ def noise_trigger_hiss_debounce(active: bool):
     """Since the hiss noise triggers while you're talking we need to debounce it"""
     global hiss_cron
     if active:
-        hiss_cron = cron.after(settings.get("user.noise_debounce"), lambda: actions.user.noise_trigger_hiss(active))
+        hiss_cron = cron.after(
+            str(f"{settings.getbroll_debounce_time')}ms"),
+            lambda: actions.user.noise_trigger_hiss(active),
+        )
     else:
         cron.cancel(hiss_cron)
         actions.user.noise_trigger_hiss(active)
