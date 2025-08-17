@@ -27,9 +27,6 @@ app: slack
 class EditActions:
     def line_insert_down():
         actions.edit.line_end()
-<<<<<<< HEAD
-        actions.key("ctrl-enter")
-=======
         actions.key("shift-enter")
 
 
@@ -120,4 +117,3 @@ class Actions:
 
     def slack_toggle_right_sidebar():
         """Toggles the visibility of the right sidebar in Slack"""
->>>>>>> 8a5eb59fac5d9a481bb282204c2b49ab67b8d821

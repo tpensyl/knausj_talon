@@ -11,9 +11,8 @@ mod.setting(
     "hiss_scroll_debounce_time",
     type=int,
     default=350,
-    desc="How much time a hiss must last for to be considered a hiss rather than part of speech, in ms",
+    desc="How much time a hiss must last for to be considered a hiss rather than part of speech, in ms"
 )
-
 
 @mod.action_class
 class Actions:
@@ -39,7 +38,7 @@ def noise_trigger_hiss_debounce(active: bool):
     global hiss_cron
     if active:
         hiss_cron = cron.after(
-            str(f"{settings.getbroll_debounce_time')}ms"),
+            str(f"{settings.get('hiss_scroll_debounce_time')}ms"),
             lambda: actions.user.noise_trigger_hiss(active),
         )
     else:
