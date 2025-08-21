@@ -36,6 +36,8 @@ s m s: sms
 m m for: mm4
 : inbound
 s m p p: smpp
+hashy corp: hashicorp
+auth: auth
 dealer: dlr
 d l r: dlr
 dealers: dlrs
@@ -69,12 +71,16 @@ dinas: DNS
 dens: DNS
 off net: offnet
 on net: onnet
+deserialized
+deserializer
+nullable
+nonnullable
 re ceuing: requeuing
 gera: JIRA
 bandy bot: bandibot
 s q s: sqs
 jo: Joe
-dif: diff
+diff: diff
 artifact ory: artifactory
 otto: auto
 cursor less: cursorless
@@ -107,6 +113,7 @@ peetio: pto
 kraken
 Sachin
 Tevis
+Radu
 gberberian
 seal view: Silviu
 neera: Nera

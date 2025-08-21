@@ -1,6 +1,6 @@
 tag: user.full_mouse_grid_enabled
 -
-dense [mouse] grid$:
+dense [mouse] grid [on]$:
     user.full_grid_close()
     user.full_grid_activate()
     user.rango_force_explicit_clicking()

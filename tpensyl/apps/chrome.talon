@@ -2,7 +2,7 @@ tag: browser
 app: chrome
 -
 
-^(okta | octa): key(alt-o)
+^(okta | octa): user.open_okta_extension("")
 (okta | octa) <user.text>: user.open_okta_extension("{text}")
 (okta | octa) (sumo|sumologic): user.open_okta_extension("sumologic")
 (okta | octa) (sumo|sumologic) non prod: user.open_okta_extension("sumologic non production")

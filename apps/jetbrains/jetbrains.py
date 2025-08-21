@@ -204,6 +204,23 @@ class AppActions:
     def tab_reopen():
         actions.user.idea("action ReopenClosedTab")
 
+    #tpensyl
+    def window_close():
+        actions.user.idea("action CloseProject")
+
+@ctx.action_class("user")
+class UserActions:
+    # def tab_close_wrapper():
+    #     actions.sleep("180ms")
+    #     actions.app.tab_close()
+
+    # Requires TabMover plugin
+    def tab_move_left():
+        actions.key("cmd-alt-shift-left")
+
+    def tab_move_right():
+        actions.key("cmd-alt-shift-right")
+
 
 @ctx.action_class("code")
 class CodeActions:
@@ -220,7 +237,7 @@ class EditActions:
     # talon edit actions
     def copy():
         #actions.user.idea("action EditorCopy")
-        actions.key("ctrl-c")
+        actions.key("cmd-c")
 
     def cut():
         actions.user.idea("action EditorCut")
@@ -230,7 +247,7 @@ class EditActions:
 
     def paste():
         # actions.user.idea("action EditorPaste")
-        actions.key("ctrl-v")
+        actions.key("cmd-v")
 
     def find_next():
         # actions.user.idea("action FindNext")

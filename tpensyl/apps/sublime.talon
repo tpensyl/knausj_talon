@@ -8,6 +8,7 @@ tag(): user.git
 todo: "TODO "
 todo <user.text>: "TODO {text}"
 done: "DONE"
+wait: "WAIT"
 
 [go] line <user.number_string>:
     key(ctrl-g)

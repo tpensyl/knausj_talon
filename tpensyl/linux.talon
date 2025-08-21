@@ -2,7 +2,8 @@ os: linux
 -
 
 settings():
-    user.parrot_scroll_jump_size = 15
+    user.parrot_scroll_jump_size = 6
+    user.whistle_scroll_speed = .015
 
 (message clear|go away): 
     key(super-n)    

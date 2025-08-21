@@ -232,6 +232,8 @@ _snap_positions = {
     "RIGHT_THIRD": RelativeScreenPos(2 / 3, 0, 1, 1),
     "LEFT_TWO_THIRDS": RelativeScreenPos(0, 0, 2 / 3, 1),
     "RIGHT_TWO_THIRDS": RelativeScreenPos(1 / 3, 0, 1, 1),
+    "LEFT_THREE_FOURTHS": RelativeScreenPos(0, 0, 3 / 4, 1),
+    "RIGHT_THREE_FOURTHS": RelativeScreenPos(1 / 4, 0, 1, 1),
     # Alternate (simpler) spoken forms for thirds
     "CENTER_SMALL": RelativeScreenPos(1 / 3, 0, 2 / 3, 1),
     "LEFT_SMALL": RelativeScreenPos(0, 0, 1 / 3, 1),

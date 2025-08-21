@@ -16,15 +16,6 @@ tag(): user.cursorless
 #     # Sometimes it loses several characters at the start of a word e.g. in global search
 #     key_wait = 5
 
-replace it: key(ctrl-r)
-file locate: key(alt-shift-1 1)
-
-#e.g. key(alt-enter)
-show fix: user.idea("action ShowIntentionActions")
-show folder: user.idea("action ProjectView.AutoscrollFromSource")
-project build: user.idea("action CompileProject")
-run that: key("shift-f10")
-
 # Auto complete
 complete: user.idea("action CodeCompletion")
 perfect: user.idea("action CodeCompletion,action CodeCompletion")
@@ -47,6 +38,7 @@ extract method: user.idea("action ExtractMethod")
 refactor in line: user.idea("action Inline")
 refactor move: user.idea("action Move")
 refactor rename: user.idea("action RenameElement")
+refactor inline: user.idea("action Inline")
 rename file: user.idea("action RenameFile")
 fix (format | formatting | style): user.idea("action ReformatCode")
 fix imports: user.idea("action OptimizeImports")
@@ -98,15 +90,17 @@ insert template <user.text> [over]:
     sleep(500ms)
     insert(text)
 create (template | snippet): user.idea("action SaveAsTemplate")
+
 # Recording
-toggle recording: user.idea("action StartStopMacroRecording")
-change (recording | recordings): user.idea("action EditMacros")
-play recording: user.idea("action PlaybackLastMacro")
-play recording <user.text> [over]:
-    idea("action PlaySavedMacrosAction")
-    insert(text)
-    sleep(500ms)
-    Key("enter")
+# toggle recording: user.idea("action StartStopMacroRecording")
+# change (recording | recordings): user.idea("action EditMacros")
+# play recording: user.idea("action PlaybackLastMacro")
+# play recording <user.text> [over]:
+#     idea("action PlaySavedMacrosAction")
+#     insert(text)
+#     sleep(500ms)
+#     Key("enter")
+    
 # Marks
 go mark: user.idea("action ShowBookmarks")
 toggle mark: user.idea("action ToggleBookmark")
@@ -139,12 +133,14 @@ create file <user.text> [over]:
     user.idea("action NewElement")
     sleep(500ms)
     insert(text)
+
 # Task Management
-go task: user.idea("action tasks.goto")
-go browser task: user.idea("action tasks.open.in.browser")
-switch task: user.idea("action tasks.switch")
-clear task: user.idea("action tasks.close")
-configure servers: user.idea("action tasks.configure.servers")
+# go task: user.idea("action tasks.goto")
+# go browser task: user.idea("action tasks.open.in.browser")
+# switch task: user.idea("action tasks.switch")
+# clear task: user.idea("action tasks.close")
+# configure servers: user.idea("action tasks.configure.servers")
+
 # Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
 git pull: user.idea("action Vcs.UpdateProject")
 git commit: user.idea("action CheckinProject")

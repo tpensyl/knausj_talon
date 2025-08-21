@@ -1,6 +1,7 @@
 # Compound of action(select, clear, copy, cut, paste, etc.) and modifier(word, line, etc.) commands for editing text.
 # eg: "select line", "clear all"
-<user.edit_action> <user.edit_modifier>: user.edit_command(edit_action, edit_modifier)
+#tpensyl - moving to exclude from cursorless contexts
+#<user.edit_action> <user.edit_modifier>: user.edit_command(edit_action, edit_modifier)
 
 # Zoom
 zoom in: edit.zoom_in()

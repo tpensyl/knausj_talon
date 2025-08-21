@@ -1,6 +1,8 @@
 title: /.*Sumo Logic/
 -
 
+query share: key(cmd-j)
+
 index V two: "_index=msg_api "
 index argo: "_index=argo_infrequent"
 

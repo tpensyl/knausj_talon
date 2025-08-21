@@ -9,6 +9,8 @@ center third: CENTER_THIRD
 left third: LEFT_THIRD
 right third: RIGHT_THIRD
 left two thirds: LEFT_TWO_THIRDS
+right three fourths: RIGHT_THREE_FOURTHS
+left three fourths: LEFT_THREE_FOURTHS
 right two thirds: RIGHT_TWO_THIRDS
 center small: CENTER_SMALL
 left small: LEFT_SMALL

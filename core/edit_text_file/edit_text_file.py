@@ -42,8 +42,8 @@ class WinActions:
 class MacActions:
     def edit_text_file(file: str):
         path = get_full_path(file)
-        # -t means try to open in a text editor.
-        open_with_subprocess(path, ["/usr/bin/open", "-t", path.expanduser().resolve()])
+        # tpensyl use vscode
+        open_with_subprocess(path, ["/usr/local/bin/code", "", path.expanduser().resolve()])
 
 
 @ctx_linux.action_class("user")

@@ -5,6 +5,8 @@ tag: terminal
 ansible vault view: "ansible-vault view " 
 IP tables: "iptables "
 
+docker list: "docker ps\n"
+
 diff: "diff "
 diff so fancy: " -u|diff-so-fancy"
 
@@ -14,18 +16,21 @@ vscode: "code "
 VPN: "vpn\n"
 lisa <user.text>: "ls {text}"
 lisa last: "ls -lastr\n"
-katy up: "cd ..\n"
-katy back: "cd -\n"
+# katy up: "cd ..\n"
+# katy back: "cd -\n"
 katy home: "cd ~\n"
 katy that: 
     "cd "
     edit.paste()
     " \n"
-katie text: "cd ~/txt\n"
-katie source: "cd ~/src\n"
+# katie text: "cd ~/txt\n"
+# katie source: "cd ~/src\n"
 kitty var log: "cd /var/log\n"
 
+brew install: "brew install "
+
 quick build catapult: "quick-build-catapult\n"
+quick build argo: "mvn clean install  -Dos.arch=x86_64 -DunitTests.skip -DsmokeTests.skip -DintegrationTests.skip\n"
 v two cuddle start: "./v2ctl start\n"
 v two cuddle start no app [service]: "./v2ctl start --no-app-service\n"
 v two cuddle stop: "./v2ctl stop\n"
@@ -46,24 +51,18 @@ make der: "mkdir "
 sublime: "subl "
 grip: "|grep "
 recursive grip:
-    "grep -r '' ."
-    key(left)
-    key(left)
-    key(left)
+    "grep -rI '' ."
+    key(left:3)
 recursive grip <user.text>:
-    "grep -r '{text}' ."
-    key(left)
-    key(left)
-    key(left)
+    "grep -rI '{text}' ."
+    key(left:3)
 recursive grip that:
-    "grep -r '"
+    "grep -rI '"
     edit.paste()
     "' .\n"
 grip word:
-    "grep -r -w '' ."
-    key(left)
-    key(left)
-    key(left)
+    "grep -rI -w '' ."
+    key(left:3)
 h top: "htop\n"
 find name:
     "find -name *"
@@ -71,7 +70,7 @@ find name:
 sudo: "sudo "
 maven: "mvn "
 maven clean: "mvn clean \n"
-maven clean install: "mvn clean install -T4 "
+maven clean install: "mvn clean install -T4 \n"
 maven spring boot run: "mvn spring-boot:run -P developer"
 maven dependency tree: "mvn dependency:tree "
 maven check style: "mvn clean install -Dcobertura.skip -DskipTests  -T3 \n"
@@ -85,11 +84,13 @@ my cat bin: "mycatbin\n"
 heroku: "heroku "
 heroku login: "heroku login\n\n"
 
-process list: "ps -aux"
+process list: "ps -ax"
 process kill: "kill "
 live tail: "tail -f "
 
 system c t l: "systemctl "
+
+java (environment|env): "jenv "
 
 # tmp macros. remove after!
 # remove codeowners:

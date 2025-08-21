@@ -13,11 +13,18 @@ tag: user.tabs
     app.tab_next()
     repeat(number_small-1)
 (tab|tabu) close: user.tab_close_wrapper()
-tab force close: user.tab_force_close()
+tab (force close|close force): user.tab_force_close()
 tab (reopen | restore): app.tab_reopen()
 go (tab|tabu) <number>: user.tab_jump(number)
 go tab final: user.tab_final()
 tab (duplicate | clone): user.tab_duplicate()
+
+#TODO make more general for menu access and also mac specific
+tab pin: 
+    key(cmd-shift-/)
+    sleep(10ms)
+    "pin tab"
+    key(down enter)
 
 tab move left: user.tab_move_left()
 tab move left <number_small>: 

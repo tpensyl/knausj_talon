@@ -15,7 +15,7 @@ angle: < >
 curly: { }
 twin: "' '"
 quad: '" "'
-# skis: ` `
+ski: ` `
 percentages: % %
 #pad: space space
 bar: | |

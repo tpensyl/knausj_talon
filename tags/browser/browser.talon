@@ -12,11 +12,7 @@ address copy | url copy | copy address | copy url:
 # tpensyl avoid misrecognitions
 # go home: browser.go_home()
 go to {user.website}: browser.go(website)
-tab new {user.website}: 
-    app.tab_open()
-    browser.go(website)
 
-go home: browser.go_home()
 go private: browser.open_private_window()
 
 bookmark it: browser.bookmark()

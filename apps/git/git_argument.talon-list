@@ -54,6 +54,7 @@ staged: --staged
 stat: --stat
 system: --system
 track: --track
+untracked: --include-untracked
 update: --update
 verbose: --verbose
 branch: -b

@@ -85,6 +85,9 @@ syntax,sent tax
 delay,the lay
 scaled,skilled
 calais,cali
+calais,cale
+calais,kale
+calais,Caley
 hard-coded,hard coated
 route rule,route role
 route rule,route roll
@@ -124,8 +127,12 @@ Stuart,Stewart
 Jeanne,genie
 jenkins,Jenkins
 json,Jason
+links,lynx
+null,nole
 null,noll
 null,knoll
+nullable,knowable
+unnullable,unknowable
 wrapped,rapt
 wraps,raps
 intellij,intel ge
@@ -143,6 +150,12 @@ pr,pier
 pr,pierre
 meet,meat
 Andreea,andrea
+Stuart,Stewart
+url,you are all
+any,Annie
+docker,dogger
+multi channel,multichannel
+discussed,disgust
 
 talon,Tallon
 tech,TECH
@@ -161,7 +174,6 @@ api,a pi
 api,apia
 key,ki
 dispatch,despatch
-null,nole
 which,witch
 whether,wether
 weighting,waiting
@@ -180,3 +192,15 @@ are,re
 symbol,semble
 gunnison,Gunnison
 this extra,sexual
+readme,read me
+mac,mack
+aws,ws
+pr,par
+prod,proud
+summarize,summarise
+into,and two
+into,and to
+into,and too
+wildcarded,wild carted
+vpn,vin
+auth,oath

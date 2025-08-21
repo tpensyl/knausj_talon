@@ -1,6 +1,9 @@
 tag: terminal
 and tag: user.git
+title: /git a .*\-p/
 title: /git add .*\-p/
+title: /git co .*\-p/
+title: /git checkout .*\-p/
 -
 yank:
     key(y)

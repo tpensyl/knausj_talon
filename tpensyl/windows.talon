@@ -8,6 +8,9 @@ settings():
 # https://apps.microsoft.com/detail/9nblggh3zd5h?activetab=pivot%3Aoverviewtab&hl=en-us&gl=US
 # TODO how to run on startup
 
+# TODO make a proper action instead of redefining command for each OS
+paste plain [text]: key(ctrl-shift-v)
+
 ^screen standup$: key(ctrl-alt-w)
 ^screen (lie|lay) down$: key(ctrl-alt-a)
 

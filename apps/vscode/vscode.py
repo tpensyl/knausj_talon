@@ -172,7 +172,7 @@ class Actions:
 
     def command_palette():
         """Show command palette"""
-        actions.key("ctrl-shift-p")
+        actions.key("cmd-shift-p")
 
 
 @mac_ctx.action_class("edit")
@@ -188,6 +188,20 @@ class MacUserActions:
     def command_palette():
         actions.key("cmd-shift-p")
 
+    def tab_force_close():
+        # 'escape' to cancel existing dialogue (make item potent in case forget 'force' the first time)
+        actions.key("esc")
+        actions.app.tab_close()
+        actions.key("cmd-d")
+
+@linux_ctx.action_class("user")
+class LinuxUserActions:
+    def tab_force_close():
+        # TO DO makes separate context for linux vs windows
+        actions.app.tab_close()
+        actions.sleep("50ms")
+        actions.key("tab")
+        actions.key("right ctrl-space") # Try to be somewhat itempotent if there was no closed dialogue
 
 @ctx.action_class("user")
 class UserActions:
@@ -315,6 +329,7 @@ class UserActions:
         actions.user.split_window_vertically()
 
     def tab_force_close():
+        # works for windows - see linux context for override
         actions.app.tab_close()
         actions.sleep("100ms")
         actions.key("right ctrl-space") # Try to be somewhat itempotent if there was no closed dialogue

@@ -8,6 +8,7 @@ katie$: "cd "
 katie <user.text> slap$: "cd {text}\t\n"
 katie <user.text>$: "cd {text}\t"
 katie <user.letter>: "cd {letter}\t"
+katie <user.letter> <user.letter>: "cd {letter_1}{letter_2}\t"
 katie dot <user.text>: "cd .{text}\t"
     #user.terminal_change_directory(text or "")
 katie root: user.terminal_change_directory_root()
@@ -15,7 +16,8 @@ katie up: user.terminal_change_directory("..")
 #impl specific
 katie back: user.terminal_change_directory("-")
 
-katie source: user.terminal_change_directory("src")
+katie source: user.terminal_change_directory("~/src")
+katie text: user.terminal_change_directory("~/txt")
 
 go <user.system_path>: insert('cd "{system_path}"\n')
 path <user.system_path>: insert('"{system_path}"')

@@ -49,9 +49,6 @@ go m v <user.number_string>:
 	app.tab_open()
 	browser.go("https://bandwidth-jira.atlassian.net/browse/MV-{number_string}")
 
-paste plain [text]: key(ctrl-shift-v)
-
-
 ^boom$: mouse_click(1)
 
 # TODO move to windows-only files

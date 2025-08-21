@@ -1,5 +1,8 @@
 not tag: user.cursorless 
 -
+# moved from core/edit/edit.talon
+<user.edit_action> <user.edit_modifier>: user.edit_command(edit_action, edit_modifier)
+
 copy head:
     edit.extend_line_start()
     edit.copy()

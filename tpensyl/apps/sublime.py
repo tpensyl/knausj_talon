@@ -22,6 +22,10 @@ class UserActions:
     def tab_final():
         actions.key("alt-9")
 
+    def tab_close_force():
+        actions.app.tab_close()
+        #TODO
+
 
 # @ctx.action_class('user')
 # class NoiseActions:

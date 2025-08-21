@@ -77,11 +77,12 @@ class TpensylClick:
         else:
             return False
 
-    def mouse_move(dx : int = 0, dy : int = 0):
+    def mouse_move(dx : int = 0, dy : int = 0, delay: str = "1ms"):
         """Perform relative mouse movement"""
         pos = ctrl.mouse_pos() 
         new_pos = (pos[0] + dx, pos[1] + dy)
         ctrl.mouse_move(*new_pos)
+        actions.sleep(delay)
 
     def mouse_remote_click(x : int, y : int, delay: str = "1ms"):
         """Click a remote position without moving the mouse"""
