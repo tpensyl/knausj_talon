@@ -1,6 +1,6 @@
 list: user.prose_formatter
 -
-say: NOOP
+# say: NOOP
 speak: NOOP
 sent: CAPITALIZE_FIRST_WORD
 sentence: CAPITALIZE_FIRST_WORD

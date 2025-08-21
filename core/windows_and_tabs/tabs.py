@@ -4,7 +4,7 @@ mod = Module()
 
 
 @mod.action_class
-class tab_actions:
+class TabActions:
     def tab_jump(number: int):
         """Jumps to the specified tab"""
 

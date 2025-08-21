@@ -43,8 +43,8 @@ fake less [than] (equal|equals): "\\le "
 fake greater [than] (equal|equals): "\\ge "
 fake not (equal|equals): "\\ne "
 fake not: "\\not "
-fake min: user.insert_between("\\min\{", "\}")
-fake max: user.insert_between("\\max\{", "\}")
+fake min: user.insert_between("\\min\\{", "\\}")
+fake max: user.insert_between("\\max\\{", "\\}")
 #fake in: "\\in "
 fake ref: user.insert_between("\\ref{", "}") 
 fake cite: user.insert_between("\\cite{", "}") 
@@ -87,13 +87,14 @@ fake (textile | text style): "\\textstyle"
 #fake <user.word>:
 	#"\\{user.word} "
 fake square root: user.insert_between("\\sqrt{", "}")
+fake section: user.insert_between("\\section{", "}")
 fake subsection: user.insert_between("\\subsection{", "}")
 fake subsubsection: user.insert_between("\\subsubsection{", "}")
 fake label: user.insert_between("\\label{", "}")
 fake (tommy | tea note): user.insert_between("\\Tnote{", "}")
 
-(empty|inside) fake (brace|braces): user.insert_between("\\{", "\\}")
-(empty|inside) math: user.insert_between("$", "$")
+inside fake curly: user.insert_between("\\{", "\\}")
+inside math: user.insert_between("$", "$")
 fake mid: "\\mid "
 
 ceiling that: 
@@ -108,6 +109,8 @@ dollar wrap <user.cursorless_target>:
 	user.cursorless_command("editNewLineAfter", cursorless_target)
 	"\"\"\"\"\"\""
 	key(left:3)
+
+fake state: "\\State "
 
 #  <user.cursorless_target>:
 # 	text = user.cursorless_get_text(cursorless_target)

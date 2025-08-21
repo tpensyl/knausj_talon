@@ -4,7 +4,7 @@ ctx = Context()
 @ctx.action_class('user')
 class UserActions:
     def noise_trigger_pop():
-        # print("pop-click_default")
+        print("pop-click_actions.py")
         #ctrl.mouse_click(button=1, up=True)
         # if actions.user.interrupt_mouse_rest():
         #     return

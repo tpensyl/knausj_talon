@@ -1,32 +1,6 @@
 # tag: user.debug
 -
-# I have mapped the Olympus RS31H foot pedal to these virtual keys.
-# see https://liannaee.blogspot.com/2023/03/olympus-rs31h-hardware-with-talon-voice.html
 
-
-# Left Peddle
-key(f16): 
-    mouse_click(0)
-
-# Center Pedal
-key(f17:down):
-    mouse_drag(0)
-
-# Center Pedal
-key(f17:up):
-    user.mouse_drag_end()
-
-# Right Pedal
-key(f18):
-    mouse_click(0)
-
-# Top Puddle
-key(f19:down): 
-    key(cmd:down)
-
-# Top Puddle
-key(f19:up): 
-    key(cmd:up)
 
 #test: print("test")
 gamepad(dpad_up):           print("dpad_up")

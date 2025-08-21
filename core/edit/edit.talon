@@ -1,7 +1,8 @@
-# Compound of action(select, clear, copy, cut, paste, etc.) and modifier(word, line, etc.) commands for editing text.
+# Compound of action(select, clear, copy, cut, paste, etc.) and modifier(word,
+# line, etc.) commands for editing text.
 # eg: "select line", "clear all"
 #tpensyl - moving to exclude from cursorless contexts
-#<user.edit_action> <user.edit_modifier>: user.edit_command(edit_action, edit_modifier)
+# <user.edit_action> <user.edit_modifier>: user.edit_command(edit_action, edit_modifier)
 
 # Zoom
 zoom in: edit.zoom_in()
@@ -40,13 +41,13 @@ go page down: edit.page_down()
 
 # Selecting
 
-select left: edit.extend_left()
-select right: edit.extend_right()
-select up: edit.extend_line_up()
-select down: edit.extend_line_down()
+# select left: edit.extend_left()
+# select right: edit.extend_right()
+# select up: edit.extend_line_up()
+# select down: edit.extend_line_down()
 
-select word left: edit.extend_word_left()
-select word right: edit.extend_word_right()
+# select word left: edit.extend_word_left()
+# select word right: edit.extend_word_right()
 
 # select way left: edit.extend_line_start()
 # select way right: edit.extend_line_end()
@@ -58,73 +59,14 @@ select word right: edit.extend_word_right()
 
 (indent less | out dent | tug): edit.indent_less()
 
-# Delete
-clear left: edit.delete()
-clear right: user.delete_right()
-
-clear up:
-    edit.extend_line_up()
-    edit.delete()
-
-clear down:
-    edit.extend_line_down()
-    edit.delete()
-
-clear word left:
-    edit.extend_word_left()
-    edit.delete()
-
-clear word right:
-    edit.extend_word_right()
-    edit.delete()
-
 # Copy
 copy that: edit.copy()
-copy word left: user.copy_word_left()
-copy word right: user.copy_word_right()
-
-
-
-#to do: do we want these variants, seem to conflict
-# copy left:
-#      edit.extend_left()
-#      edit.copy()
-# copy right:
-#     edit.extend_right()
-#     edit.copy()
-# copy up:
-#     edit.extend_up()
-#     edit.copy()
-# copy down:
-#     edit.extend_down()
-#     edit.copy()
 
 # Cut
 cut that: edit.cut()
-cut word left: user.cut_word_left()
-cut word right: user.cut_word_right()
-
-paste line:
-    edit.line_insert_down()
-    edit.paste()
-
-#cut commands
-#to do: do we want these variants
-# cut left:
-#      edit.select_all()
-#      edit.cut()
-# cut right:
-#      edit.select_all()
-#      edit.cut()
-# cut up:
-#      edit.select_all()
-#     edit.cut()
-# cut down:
-#     edit.select_all()
-#     edit.cut()
 
 # Paste
-((pace | paste) that | pit slap): edit.paste()
+((pace | paste) (that | it) | pit slap): edit.paste()
 (pace | paste) enter:
     edit.paste()
     key(enter)

@@ -7,30 +7,34 @@ settings():
     key_wait = 64
     speech.timeout = 0.1
 
-stats: key(e)
+(stats|inspect): key(e)
+(details|deets|sit): key(i)
 menu: key(o)
 next: key(e)
 last: key(q)
 
-tab: 
+(tab|turn): 
     user.release_all_holds()
     key(tab)
+turn force: key(tab up enter)
 
 an turn: key(tab)
-back: key(esc)
+(back|bacca): key(esc)
 
 run: user.toggle_hold('shift')
 
-go right: user.long_press('right', 2)
-go left: user.long_press('left', 2)
-go (north|up): user.long_press('up', 1)
-go (south|down): user.long_press('down', 1)
+short <user.arrow_key>: user.long_press(arrow_key, .5)
+step <user.arrow_key>: user.long_press(arrow_key, 1)
+go <user.arrow_key>: user.long_press(arrow_key, 2)
 
-left: key(left)
-right: key(right)
+page down: key(pagedown)
+page up: key(pageup)
+
+<user.arrow_key>: key(arrow_key)
+<user.arrow_key> <number_small>: key('{arrow_key}:{number_small}')
 (yeah|slap): key(enter)
 
-<number_small>:
+^<number_small>$:
     key('right:{number_small}')
     key(space)
 

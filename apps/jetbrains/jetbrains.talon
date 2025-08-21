@@ -77,7 +77,7 @@ file hunt [<user.text>]:
 recent: user.idea("action RecentFiles")
 
 surround [this] with <user.text> [over]:
-    idea("action SurroundWith")
+    user.idea("action SurroundWith")
     sleep(500ms)
     insert(text)
 # Making these longer to reduce collisions with real code dictation.
@@ -86,7 +86,7 @@ insert generated <user.text> [over]:
     sleep(500ms)
     insert(text)
 insert template <user.text> [over]:
-    idea("action InsertLiveTemplate")
+    user.idea("action InsertLiveTemplate")
     sleep(500ms)
     insert(text)
 create (template | snippet): user.idea("action SaveAsTemplate")
