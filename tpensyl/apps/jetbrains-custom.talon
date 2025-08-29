@@ -23,7 +23,10 @@ yes: key(tab)
 
 # run that: key("shift-f10") (linux)
 run that: key("ctrl-f5")
+
+# neither of these work
 git history: user.idea("Git.Log")
+git show history: user.idea("Git.FileHistory.ContextMenu")
 
 #TODO find the action id. This it requires custom shortcut:
 vault edit: key(ctrl-alt-shift-z)
@@ -31,3 +34,4 @@ vault edit: key(ctrl-alt-shift-z)
 # can find action e2es by installing/enabling ideaVim. then type  :actionlist
 
 # Requires TabMover plugin
+# git.MainMenu.FileActions
