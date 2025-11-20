@@ -39,6 +39,7 @@ junk junk: key(backspace:2)
 semicolon: ";"
 aero pad: "-> "
 unicode trademark: "™"
+unicode cents: "¢"
 
 vim save:
 	key(esc)

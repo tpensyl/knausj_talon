@@ -237,6 +237,14 @@ class MacUserActions:
         actions.app.tab_close()
         actions.key("cmd-d")
 
+    def tab_move_left():
+        actions.key("cmd-k")
+        actions.key("cmd-shift-left")
+
+    def tab_move_right():
+        actions.key("cmd-k")
+        actions.key("cmd-shift-right")
+
 @linux_ctx.action_class("user")
 class LinuxUserActions:
     def tab_force_close():

@@ -29,8 +29,17 @@ kitty var log: "cd /var/log\n"
 
 brew install: "brew install "
 
+maven: "mvn "
+maven clean: "mvn clean \n"
+maven clean install: "mvn clean install -T4 -Dos.arch=x86_64 \n"
+maven spring boot run: "mvn spring-boot:run -P developer"
+maven dependency tree: "mvn dependency:tree "
+maven check style: "mvn clean install -Dcobertura.skip -DskipTests  -T3 \n"
+source AWS [connect]: "source aws-connect default"
+
 quick build catapult: "quick-build-catapult\n"
-quick build argo: "mvn clean install  -Dos.arch=x86_64 -DunitTests.skip -DsmokeTests.skip -DintegrationTests.skip\n"
+quick build argo: "mvn clean install -DskipTests -Dos.arch=x86_64 -T 8C\n"
+maven clean install argo: "mvn clean install -DUSE_EXTERNAL_DB=TRUE -Dos.arch=x86_64 -DintegrationTests.skip -T 8C"
 v two cuddle start: "./v2ctl start\n"
 v two cuddle start no app [service]: "./v2ctl start --no-app-service\n"
 v two cuddle stop: "./v2ctl stop\n"
@@ -68,13 +77,6 @@ find name:
     "find -name *"
     key(left)
 sudo: "sudo "
-maven: "mvn "
-maven clean: "mvn clean \n"
-maven clean install: "mvn clean install -T4 \n"
-maven spring boot run: "mvn spring-boot:run -P developer"
-maven dependency tree: "mvn dependency:tree "
-maven check style: "mvn clean install -Dcobertura.skip -DskipTests  -T3 \n"
-source AWS [connect]: "source aws-connect default"
 
 my cat bin: "mycatbin\n"
 

@@ -66,7 +66,7 @@ copy that: edit.copy()
 cut that: edit.cut()
 
 # Paste
-((pace | paste) (that | it) | pit slap): edit.paste()
+((pace | paste) (that | it) | pit slap | pasty): edit.paste()
 (pace | paste) enter:
     edit.paste()
     key(enter)

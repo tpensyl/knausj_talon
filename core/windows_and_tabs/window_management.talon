@@ -4,7 +4,9 @@ window last: app.window_previous()
 window close: app.window_close()
 window hide: app.window_hide()
 app (preferences | prefs | settings): app.preferences()
-focus <user.running_applications>: user.switcher_focus(running_applications)
+focus <user.running_applications>: 
+    user.switcher_focus(running_applications)
+    user.mouse_move_center_active_window()
 # following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
 ^focus all$: user.switcher_menu()
 focus last: user.switcher_focus_last()
