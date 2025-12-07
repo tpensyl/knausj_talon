@@ -41,7 +41,7 @@ autoclick fast <user.rango_target>$: user.rango_auto_click(rango_target, 1000)
 button autoclick <user.text>$: user.rango_auto_click_string(text, 5000)
 
 ^(build|bonfire): key(1)
-^(village|settlement|town|city|metro|mega|empire|amper|dominion|hegemony|federation|rike|society|civilization)$: key(2)
+^(village|settlement|town|city|metro|mega|empire|amper|dominion|hegemony|federation|rike|society|civilization|consortium)$: key(2)
 ^science: key(3)
 ^workshop: key(4)
 ^trade: key(5)

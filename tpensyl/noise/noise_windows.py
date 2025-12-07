@@ -22,8 +22,8 @@ class NoiseActions:
     #     pass
 
     def parrot_tut():
-        """parrot tut sound"""
-        actions.tracking.control_toggle()
+        # actions.tracking.control_toggle()
+        ctrl.mouse_click(1)
         pass
 
     # def parrot_buzz():

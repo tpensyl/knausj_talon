@@ -35,7 +35,7 @@ conflict last: user.vscode("merge-conflict.previous")
 
 todo: "TODO "
 todo <user.text>: "TODO {text}"
-done: "DONE"
+^done: "DONE"
 
 bash that:
     key(cmd-c)

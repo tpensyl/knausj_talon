@@ -1,6 +1,6 @@
 list: user.search_engine
 -
-
+runescape: https://runescape.wiki/w/Special:Search?search=%s
 amazon: https://www.amazon.com/s/?field-keywords=%s
 google: https://www.google.com/search?q=%s
 google maps: https://www.google.com/maps/search/%s

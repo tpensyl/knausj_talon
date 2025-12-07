@@ -1,4 +1,4 @@
-from talon import ctrl, Module, actions, cron
+from talon import ctrl, Module, actions, cron, ui
 
 mod = Module()
 
@@ -50,7 +50,7 @@ class TpensylClick:
         actions.sleep(modifier_hold_time)
         actions.key(modifier + ":up")
 
-    def toggle_drag(button : int = 0):
+    def toggle_drag(button: int = 0):
         """Toggle drag"""
         buttons_held_down = list(ctrl.mouse_buttons_down())
         if buttons_held_down:
@@ -60,7 +60,7 @@ class TpensylClick:
         else:
             ctrl.mouse_click(button=button, down=True)
 
-    def mouse_rest(duration_ms : int = 1500):
+    def mouse_rest(duration_ms: int = 1500):
         """Effectively ignore mouse movements for short duration, or until explicitly interrupted"""
         global mouse_rest_interrupt
         mouse_rest_interrupt = False
@@ -76,20 +76,30 @@ class TpensylClick:
         else:
             return False
 
-    def mouse_move(dx : int = 0, dy : int = 0, delay: str = "1ms"):
+    def mouse_move(dx: int = 0, dy: int = 0, delay: str = "1ms"):
         """Perform relative mouse movement"""
         pos = ctrl.mouse_pos() 
         new_pos = (pos[0] + dx, pos[1] + dy)
         ctrl.mouse_move(*new_pos)
         actions.sleep(delay)
 
-    def mouse_remote_click(x : int, y : int, delay: str = "1ms"):
+    def mouse_remote_click(x: int, y: int, delay: str = "1ms"):
         """Click a remote position without moving the mouse"""
         pos = ctrl.mouse_pos()
         ctrl.mouse_move(x, y)
         ctrl.mouse_click(0)
         actions.sleep(delay)
         ctrl.mouse_move(*pos)
+
+    def mouse_move_window_relative(x: float, y: float):
+        """Move cursor within window, where x,y are between 0 and 1"""
+        rect = ui.active_window().rect
+        actions.mouse_move(rect.left + x*rect.width, rect.top + y*rect.height)
+
+    # already defined in mouse.py
+    # def mouse_move_center_active_window():
+    #     """Move the mouse cursor to the right of the currently active window"""
+    #     mouse_move_window_relative(.5, .5)
 
 def do_mouse_rest(duration_ms, position):
     global mouse_rest_interrupt
@@ -106,4 +116,9 @@ def to_ms(time_str):
         return int(time_str[:-2])*1000
     if time_str[-1:] == 's':
         return int(time_str[:-1])*1000*1000
+
+# Move cursor within window, where x,y are between 0 and 1
+def mouse_move_window_relative(x, y):
+    rect = ui.active_window().rect
+    actions.mouse_move(rect.left + x*rect.width, rect.top + y*rect.height)
     

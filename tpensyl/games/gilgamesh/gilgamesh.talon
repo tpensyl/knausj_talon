@@ -8,7 +8,7 @@ settings():
     speech.timeout = 0.1
 
 (stats|inspect): key(e)
-(details|deets|sit): key(i)
+(details|deets|sit|info ): key(i)
 menu: key(o)
 next: key(e)
 last: key(q)

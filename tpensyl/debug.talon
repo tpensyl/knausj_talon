@@ -1,6 +1,9 @@
 # tag: user.debug
+mode: all
 -
 
+(mouse rest|wait): user.mouse_rest()
+mouse rest long: user.mouse_rest(5000)
 
 #test: print("test")
 gamepad(dpad_up):           print("dpad_up")

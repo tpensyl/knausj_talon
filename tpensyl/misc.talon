@@ -83,7 +83,7 @@ key(f9:up):
 
 mute discord: key(ctrl-shift-m)
 
-mouse center: user.mouse_move_center_active_window()
+# mouse center: user.mouse_move_center_active_window()
 mouse rest: user.mouse_rest()
 mouse rest long: user.mouse_rest(5000)
 read tooltip: user.mouse_rest(50000)
