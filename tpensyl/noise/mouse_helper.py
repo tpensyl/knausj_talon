@@ -41,14 +41,11 @@ class TpensylClick:
             actions.sleep(modifier_hold_time)
             actions.key(modifier + ":up")
 
-    def click_with_modifier(button: int, modifier: str, modifier_hold_time: str = "16ms"): 
+    def drag_with_modifier(button: int, modifier: str, modifier_hold_time: str = "16ms"): 
         """Click with modifier"""
-        print(modifier_hold_time)
-        actions.key(modifier + ":down")
-        actions.sleep(modifier_hold_time)
-        ctrl.mouse_click(button, hold=32000)
-        actions.sleep(modifier_hold_time)
-        actions.key(modifier + ":up")
+        if modifier:
+            actions.user.set_hold(modifier, True)
+        ctrl.mouse_click(button=button, down=True)
 
     def toggle_drag(button: int = 0):
         """Toggle drag"""

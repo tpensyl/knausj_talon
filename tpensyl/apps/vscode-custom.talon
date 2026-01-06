@@ -9,7 +9,7 @@ app: vscode
 
 # tuned for work mac
 settings():
-    user.parrot_scroll_jump_size = -15
+    user.parrot_scroll_jump_size = 30
 
 tag(): terminal
 tag(): user.git

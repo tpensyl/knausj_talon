@@ -10,6 +10,10 @@ tag(): user.game_media
     #half the time focus doesn't work for code, just litters the logs with an air
     #user.switcher_focus("code")
 
+focus <user.running_applications>: 
+    user.switcher_focus(running_applications)
+    user.mouse_move_center_active_window()
+
 ^screenshot$: key(f12)
 
 ^command mode$:

@@ -30,7 +30,13 @@ class Actions:
         https://noise.talonvoice.com/static/previews/hiss.mp3 for an
         example.
         """
-        actions.skip()
+        
+        # tpensyl custom bridging code
+        if active:
+            actions.user.noise_hiss_start()
+        else:
+            actions.user.noise_hiss_stop()
+        # actions.skip()
 
 
 def noise_trigger_hiss_debounce(active: bool):

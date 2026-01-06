@@ -10,6 +10,7 @@ manual_toggle_min_time = .11
 # px/s  Can be changed dynamically via setter
 mouse_move_speed = 100
 
+# class is somewhat hardcoded for satisfactory.  maybe dyson sphere?
 @mod.action_class
 class Actions:
     def set_hold(key:str, new_hold_state:bool = True, half_stop:bool = False):
@@ -17,7 +18,12 @@ class Actions:
         return set_hold(key, new_hold_state, half_stop)
 
     def get_hold(key:str):
-        "Returned the current toggle state of a key"
+        "Returns the current toggle state of a key"
+        return key_is_held[key]
+
+    # alias
+    def is_held(key:str):
+        "Returns the current toggle state of a key"
         return key_is_held[key]
 
     def toggle_hold(key:str, half_stop:bool = False):

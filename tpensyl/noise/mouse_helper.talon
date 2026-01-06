@@ -1,6 +1,14 @@
 # tag: user.no_mouse
 mode: all
 -
+toggle discord: key(ctrl-shift-alt-n)
+
+reset mouse: 
+    key(ctrl-shift-esc)
+    sleep(1s)
+    app.window_close()
+
+
 mouse up: mouse_nudge(0,-10)
 mouse up <number>:
     user.mouse_move(0,-10)

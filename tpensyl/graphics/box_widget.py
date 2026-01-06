@@ -136,4 +136,4 @@ def on_app_switch(app):
     actions.user.init_box_widget()
 
 
-ui.register("app_activate", on_app_switch)
+# ui.register("app_activate", on_app_switch)

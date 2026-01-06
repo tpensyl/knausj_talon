@@ -41,14 +41,15 @@ class NoiseActions:
         """for debugging"""
         print(name, [int(x) for x in (power, f0, f1, f2)])
 
-def hiss_handler(active):
-    if active:
-        # print("noise_helper.py:hiss start")
-        actions.user.noise_hiss_start()
-    else:
-        # print("hiss stop")
-        actions.user.noise_hiss_stop()
+# # TODO merge with the community one which has a debounce built in 
+# def hiss_handler(active):
+#     if active:
+#         # print("noise_helper.py:hiss start")
+#         actions.user.noise_hiss_start()
+#     else:
+#         # print("hiss stop")
+#         actions.user.noise_hiss_stop()
 
-# delegating to core/noise.py
-#noise.register("pop", pop_handler)
-noise.register("hiss", hiss_handler)
+# # delegating to core/noise.py
+# #noise.register("pop", pop_handler)
+# noise.register("hiss", hiss_handler)

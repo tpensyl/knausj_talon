@@ -16,7 +16,7 @@ build all:
     key(enter)
 # build all <user.text>:
 #     key(shift:down)
-#     user.rango_run_action_on_text_matched_element("clickElement", text, false)
+#     ("clickElement", text, false)
 #     key(shift:up)
 #     sleep(50ms)
 #     key(enter)
