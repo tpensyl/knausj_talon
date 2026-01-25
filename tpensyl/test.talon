@@ -1,4 +1,4 @@
-mode: all
+#mode: all
 #tag: user.debug_widget
 # tag: disabled
 -

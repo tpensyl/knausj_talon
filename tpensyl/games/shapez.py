@@ -1,9 +1,29 @@
-from talon import Context, ctrl, actions, ui
+from talon import Context, ctrl, actions, ui, Module
+mod = Module()
 ctx = Context()
 ctx.matches = r"""
 mode: user.gameboy
 and app.name: shapez
 """
+
+@mod.action_class
+class ShapezActions:
+    def cancel_belt_planning_mode():
+        """Return true if belt planning mode was active and is now cancelled"""
+        if is_in_belt_planning_mode():
+            # right-click to end belt-planning mode, before releasing LMB
+            ctrl.mouse_click(button=1)
+            actions.user.mouse_drag_end()
+            return True
+        else:
+            actions.user.set_hold('shift', False) # stop bulk mode
+            actions.user.mouse_drag_end()
+            return False
+
+    def cancel_current():
+        """Cancel bout planning or paste mode"""
+        ctrl.mouse_click(button=1)
+        actions.user.mouse_drag_end()
 
 @ctx.action_class("user")
 class UserActions:
@@ -29,8 +49,10 @@ class UserActions:
         ctrl.mouse_click(button=0,up=True)
 
     def noise_trigger_pop():
-        if actions.user.is_held('shift'):
-            ctrl.mouse_click(button=0)
+        if complete_belt_planning_mode():
+            return
+        elif actions.user.is_held('shift'):
+            ctrl.mouse_click(button=0) #is this obviated by the previous branch:
             return
         # actions.user.set_hold('shift', False)
         if actions.user.is_held('ctrl'):
@@ -42,17 +64,7 @@ class UserActions:
 
     def noise_trigger_hiss(active):
         if active:
-            is_in_belt_planning_mode = (
-                    0 in ctrl.mouse_buttons_down() 
-                and actions.user.is_held('shift')
-            ) 
-            if is_in_belt_planning_mode:
-                # right-click to end belt-planning mode, before releasing LMB
-                ctrl.mouse_click(button=1)
-                actions.user.mouse_drag_end()
-            else:
-                actions.user.set_hold('shift', False) # stop bulk mode
-                actions.user.mouse_drag_end()
+            if not actions.user.cancel_belt_planning_mode():
                 actions.mouse_drag(1)
         else:
             ctrl.mouse_click(button=1,up=True)
@@ -60,10 +72,10 @@ class UserActions:
     def parrot_palate():
         stopped_scrolling = stop_scrolling()
         print("stopped_scrolling=", stopped_scrolling)
-        if 0 in ctrl.mouse_buttons_down():
-            # stop shift-dragging
-            actions.mouse_release(0)
-            actions.user.set_hold('shift', False)
+        if complete_belt_planning_mode():
+            # Prioritized finishing about over scrolling. Otherwise
+            # scrolling is super fast because of the shift modifier
+            return
         elif scroll_if_mouse_region(stopped_scrolling):
             return
         elif not stopped_scrolling:
@@ -81,6 +93,18 @@ mouse_regions = {
     (0, 1, 0, .06): 's',
     (0, 1, .94, 1): 'w'
 }
+
+def is_in_belt_planning_mode():
+    return (0 in ctrl.mouse_buttons_down() 
+            and actions.user.is_held('shift'))
+
+def complete_belt_planning_mode():
+    is_belt_mode = is_in_belt_planning_mode()
+    if is_belt_mode:
+            # stop shift-dragging
+            actions.mouse_release(0)
+            actions.user.set_hold('shift', False)
+    return is_belt_mode
 
 # List of all buttons that were stopped.
 def stop_scrolling():

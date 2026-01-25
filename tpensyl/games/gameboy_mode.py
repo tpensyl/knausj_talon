@@ -23,7 +23,8 @@ game_list = [
     "Crystal Caves HD.exe",
     "Quest.exe",
     "RuneScape Client",
-    "shapez"
+    "shapez",
+    "Borderlands 2"
 ]
 
 

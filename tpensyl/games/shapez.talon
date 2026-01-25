@@ -8,6 +8,8 @@ settings():
     user.whistle_scroll_speed = .02
     key_wait = 30
 
+say <phrase>: insert(phrase)
+
 zoom in: key(+:10)
 zoom out: key(-:10)
 
@@ -30,13 +32,20 @@ mixer: key(8)
 painter: key(9)
 garbage: key(0)
 storage: key(y)
+meter: key(u)
+switch: key(i)
 
-cut: key(x)
+wires: key(e)
+# wire: key(1)
+
+carve: key(x)
 copy: key(c)
 paste: key(v)
 delete: key(del)
 clear: key(b)
 clone: key(q)
+marker: key(m)
+
 
 junk: key(del)
 

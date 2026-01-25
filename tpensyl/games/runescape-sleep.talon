@@ -1,5 +1,5 @@
 mode: user.gameboy
-and mode: user.gameboy_sleep
+mode: user.gameboy_sleep
 os: windows
 app.name: RuneScape Client
 
@@ -13,9 +13,11 @@ settings():
     mode.disable("user.gameboy_sleep")
 
 # one: key(1)
-(five|next): key(5)
+# (five|next): key(5)
 loot: key(alt-l)
 (surge|search): key(alt-1)
+charge: key(alt-5)
+bones: key(shift-5)
 
 # <phrase>: skip()
 
@@ -32,3 +34,7 @@ go (stats|skills):
     key(alt-s)
     sleep(5ms)
     user.mouse_move_window_relative(.92, .75)
+(teleport|magicp): key(alt-m)
+
+runescape hunt <user.text>$:
+    user.search_with_search_engine('https://runescape.wiki/w/Special:Search?search=%s', user.text)

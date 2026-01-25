@@ -1,4 +1,4 @@
-from talon import Module, actions, cron
+from talon import Module, actions, ctrl, cron
 from time import time
 from collections import defaultdict
 
@@ -61,6 +61,7 @@ class Actions:
         mouse_move_speed = speed
 
 
+MOUSE_BUTTON_LEFT = "mouse_button_left"
 MOUSE_MOVE_UP = "mouse_move_up"
 MOUSE_MOVE_DOWN = "mouse_move_down"
 MOUSE_MOVE_LEFT = "mouse_move_left"
@@ -149,7 +150,9 @@ def hold_until_double_press(key):
         keys_release_job[key] = cron.after(double_click_wait_time, finish_press)
 
 def key_down(key):
-    if key == MOUSE_MOVE_UP:
+    if key == MOUSE_BUTTON_LEFT:
+        ctrl.mouse_click(0, down=True)
+    elif key == MOUSE_MOVE_UP:
         actions.user.start_mouse_move_down(-mouse_move_speed)
     elif key == MOUSE_MOVE_DOWN:
         actions.user.start_mouse_move_down(mouse_move_speed)
@@ -161,7 +164,9 @@ def key_down(key):
         actions.key(key+':down')
 
 def key_up(key):
-    if key in [MOUSE_MOVE_UP, MOUSE_MOVE_DOWN, MOUSE_MOVE_LEFT, MOUSE_MOVE_RIGHT]:
+    if key == MOUSE_BUTTON_LEFT:
+        ctrl.mouse_click(0, up=True)
+    elif key in [MOUSE_MOVE_UP, MOUSE_MOVE_DOWN, MOUSE_MOVE_LEFT, MOUSE_MOVE_RIGHT]:
         actions.user.stop_mouse_move()
     else:
         actions.key(key+':up')

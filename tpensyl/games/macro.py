@@ -47,7 +47,7 @@ class Actions:
         actions.key("alt:down")
         actions.sleep("100ms")
         actions.key("tab:down")
-        actions.sleep("20ms")
+        actions.sleep("80ms")
         actions.key("tab:up")
         actions.sleep("20ms")
         actions.key("alt:up")

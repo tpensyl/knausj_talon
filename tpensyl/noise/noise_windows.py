@@ -23,7 +23,7 @@ class NoiseActions:
 
     def parrot_tut():
         # actions.tracking.control_toggle()
-        ctrl.mouse_click(1)
+        # ctrl.mouse_click(1)
         pass
 
     # def parrot_buzz():

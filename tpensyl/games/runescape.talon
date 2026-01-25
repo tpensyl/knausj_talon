@@ -20,26 +20,26 @@ say <phrase>: insert(phrase)
 #<phrase>: skip()
 
 settings():
-    user.hiss_scroll_debounce_time = 40
+    # user.hiss_scroll_debounce_time = 40
     key_wait = 32
     speech.timeout = 0.1
 
 ^(back|bacca)$: key(esc)
 touch: mouse_click(0)
 
-{user.search_engine} hunt <user.text>$:
-    user.search_with_search_engine(search_engine, user.text)
+# runescape hunt <user.text>$:
+#     user.search_with_search_engine('runescape', user.text)
 
 ^(run|walk)$: key(r)
-(surge|search|sprint): key(alt-1)
+# (surge|search|sprint): key(alt-1)
 jump back: key(alt-2)
 defend: key(alt-3)
 (chump|chomp): key(alt-4)
-charge: key(alt-5)
+# charge: key(alt-5)
 (and die|and I): key(alt-6)
 # (and die|and I): key(keypad_multiply)
 pray: key(alt-o)
-loot: key(alt-l)
+# loot: key(alt-l)
 
 pad: key(space)
 comma: key(,)
@@ -50,23 +50,23 @@ bang: key(!)
 (alk|alky|alchemy|gold|alk that|alk it|gold): key(shift-2)
 soil box: key(shift-4)
 
-go (stuff|inventory|backpack): 
-    key(alt-b)
-    sleep(5ms)
-    user.mouse_move_window_relative(.92, .75)
-stuff: key(alt-b)
-[go] minimap: user.mouse_move_window_relative(.92, .15)
+# go (stuff|inventory|backpack): 
+#     key(alt-b)
+#     sleep(5ms)
+#     user.mouse_move_window_relative(.92, .75)
+# stuff: key(alt-b)
+# [go] minimap: user.mouse_move_window_relative(.92, .15)
 
-(equipment|gear): key(alt-e)
-(stats|skills): key(alt-s)
-go (stats|skills):
-    key(alt-s)
-    sleep(5ms)
-    user.mouse_move_window_relative(.92, .75)
-magic: key(alt-m)
+# (equipment|gear): key(alt-e)
+# (stats|skills): key(alt-s)
+# go (stats|skills):
+#     key(alt-s)
+#     sleep(5ms)
+#     user.mouse_move_window_relative(.92, .75)
 pick prayer: key(alt-p)
 notes: key(alt-n)
 challenge: key(f3)
+quests: key(alt-q)
 
 ^<number_small>$: key("{number_small}")
 (pick) <user.number_string>: insert(number_string)

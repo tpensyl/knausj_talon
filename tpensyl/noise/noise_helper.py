@@ -12,6 +12,7 @@ class NoiseActions:
 
     def noise_hiss_start():
         """Invoked when the user starts hissing (potentially while speaking)"""
+        print("noise_helper.noise_hiss_start()")
         x=1
         pass
 

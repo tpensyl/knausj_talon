@@ -13,6 +13,7 @@ tag(): user.game_media
 focus <user.running_applications>: 
     user.switcher_focus(running_applications)
     user.mouse_move_center_active_window()
+snap next [screen]: user.move_window_next_screen()
 
 ^screenshot$: key(f12)
 

@@ -34,7 +34,7 @@ class UserActions:
         actions.user.game_click(button=1, hold='50ms')
 
     def pedal_right_up():
-        pass
+        actions.user.game_click(button=0, hold='50ms')
 
     def pedal_left_down():
         actions.user.game_click(button=0, hold='50ms')

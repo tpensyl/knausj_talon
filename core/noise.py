@@ -30,7 +30,7 @@ class Actions:
         https://noise.talonvoice.com/static/previews/hiss.mp3 for an
         example.
         """
-        
+        print("noise.py:noise_trigger_hiss()")
         # tpensyl custom bridging code
         if active:
             actions.user.noise_hiss_start()
