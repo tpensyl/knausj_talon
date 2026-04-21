@@ -22,7 +22,7 @@ tab (duplicate | clone): user.tab_duplicate()
 #TODO make more general for menu access and also mac specific
 tab pin: 
     key(cmd-shift-/)
-    sleep(10ms)
+    sleep(200ms)
     "pin tab"
     key(down enter)
 

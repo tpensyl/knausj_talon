@@ -62,6 +62,16 @@ combined: -c
 deep: -d
 very verbose: -vv
 HEAD
+head one: HEAD~1
+head two: HEAD~2
+head three: HEAD~3
+head four: HEAD~4
+head five: HEAD~5
+head six: HEAD~6
+head seven: HEAD~7
+head eight: HEAD~8
+head nine: HEAD~9
+head ten: HEAD~10
 main
 master
 origin

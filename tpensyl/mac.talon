@@ -27,3 +27,11 @@ screenshot: key(cmd-shift-4)
 
 # Bruno seems to require launch command instead of focus
 focus bruno: user.switcher_launch("/Applications/Bruno.app")
+
+base sixty four decode that:
+    edit.copy()
+    user.idea("action ActivateTerminalToolWindow")
+    sleep(100ms)
+    insert("echo '")
+    edit.paste()
+    insert("' | base64 --decode\n")

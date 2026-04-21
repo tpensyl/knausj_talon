@@ -17,7 +17,7 @@ cut tail:
     edit.extend_line_end()
     edit.cut()
 
-chuck line: edit.delete_line()
+chuck line$: edit.delete_line()
 chuck head:
     edit.extend_line_start()
     edit.delete()

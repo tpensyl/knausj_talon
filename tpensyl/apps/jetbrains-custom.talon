@@ -4,7 +4,7 @@ app: jetbrains
 
 # tuned for mac at work
 settings():
-    user.parrot_scroll_jump_size = -60
+    user.parrot_scroll_jump_size = -50
 
 replace it: key(cmd-alt-f)
 hunt case: key(alt-c)
@@ -18,18 +18,33 @@ show fix: user.idea("action ShowIntentionActions")
 show folder: user.idea("action ProjectView.AutoscrollFromSource")
 project build: user.idea("action CompileProject")
 
-copilot: user.idea("copilot.requestCompletions")
+copilot: user.idea("action copilot.requestCompletions")
 yes: key(tab)
 
 # run that: key("shift-f10") (linux)
 run that: key("ctrl-f5")
 
 # neither of these work
-git history: user.idea("Git.Log")
-git show history: user.idea("Git.FileHistory.ContextMenu")
+# git history: user.idea("Git.Log")
+# git show history: user.idea("action Git.FileHistory.ContextMenu")
+# git history: user.idea("action Vcs.ShowHistoryForBlock")
+git compare branch: user.idea("action Git.CompareWithBranch")
+# git show history selected: user.idea("action Compare.Selected")
+# git show history: user.idea("action Compare.Specified")
+
 
 #TODO find the action id. This it requires custom shortcut:
 vault edit: key(ctrl-alt-shift-z)
+diff next: key(cmd-alt-i)
+stage:
+    key(ctrl-cmd-left)
+    sleep(15ms)
+    key(cmd-alt-i)
+unstage:
+    key(ctrl-cmd-right)
+    sleep(15ms)
+    key(cmd-alt-i)
+to do: "//TODO tpensyl "
 
 # can find action e2es by installing/enabling ideaVim. then type  :actionlist
 

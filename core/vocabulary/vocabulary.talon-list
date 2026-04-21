@@ -1,19 +1,22 @@
 list: user.vocabulary
 -
+catbin
+unencrypt: unencrypt
+unencrypted: unencrypted
 wrango: rango
 chat G P T: chatgpt
 naus jay: knausj
 zork
 N map: nmap
 fee: phi
-: nmap
-: admin
+nmap
+admin
 Cisco
 nurdle: nerdle
-: VPN
+VPN
 VPN small: vpn
-: DNS
-: Minecraft
+DNS
+Minecraft
 wortle: wordle
 tea pencil: tpensyl
 sumo logic: sumologic
@@ -34,19 +37,20 @@ mamas: mms
 samus: sms
 s m s: sms
 m m for: mm4
-: inbound
+inbound
 s m p p: smpp
 hashy corp: hashicorp
 auth: auth
 dealer: dlr
 d l r: dlr
 dealers: dlrs
-: perf
+perf
 rolly: Raleigh
 windburn: Windbyrne
 umsted: Umstead
 e to e: e2e
 eeduh e: e2e
+e duh e: e2e
 e to ease: "e2e's"
 s d k: sdk
 u r l: url
@@ -63,7 +67,7 @@ hey
 p cap: pcap
 p caps: pcaps
 misk: misc
-: correlator
+correlator
 cbp n i: CPNI
 octa: okta
 d n s: DNS

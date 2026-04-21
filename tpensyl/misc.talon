@@ -74,3 +74,6 @@ read tooltip: user.mouse_rest(50000)
 
 hold shift: key(shift:down)
 hold control: key(ctrl:down)
+
+dedent that:
+    user.remove_indentation()
