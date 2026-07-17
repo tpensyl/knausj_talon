@@ -4,6 +4,7 @@ abort: --abort
 all: --all
 allow empty: --allow-empty
 amend: --amend
+autosquash: --autosquash
 cached: --cached
 cashed: --cached
 color words: --color-words
@@ -18,6 +19,7 @@ directory diff: --dir-diff
 dry run: --dry-run
 edit: --edit
 fast forward only: --ff-only
+fixup: --fixup
 force: --force
 force create: --force-create
 force with lease: --force-with-lease

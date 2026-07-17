@@ -10,6 +10,8 @@ app: chrome
 (okta | octa) (amazon|a w s): user.open_okta_extension("amazon")
 (okta | octa) (glorg): user.open_okta_extension("global org")
 (okta | octa) (snowflake): user.open_okta_extension("snowflake prod")
+(okta | octa) (datadog): user.open_okta_extension("datadog - prod")
+(okta | octa) (datadog non prod): user.open_okta_extension("datadog - nonprod")
 
 go (download|downloads): key(ctrl-j)
 

@@ -234,6 +234,16 @@ class CodeActions:
         actions.user.idea("action CommentByLineComment")
 
 
+@ctx.action_class("edit")
+class EditActions:
+    def jump_line(n: int):
+        print("jetbrains jump")
+        actions.user.idea(f"goto {n} 0")
+        # move the cursor to the first nonwhite space character of the line
+        actions.user.idea("action EditorLineEnd")
+        actions.user.idea("action EditorLineStart")
+    
+
 @ctx_edit.action_class("edit")
 class EditActions:
     def delete_line():
@@ -308,11 +318,6 @@ class EditActions:
     def extend_word_right():
         actions.user.idea("action EditorNextWordWithSelection")
 
-    def jump_line(n: int):
-        actions.user.idea(f"goto {n} 0")
-        # move the cursor to the first nonwhite space character of the line
-        actions.user.idea("action EditorLineEnd")
-        actions.user.idea("action EditorLineStart")
 
 
 @ctx.action_class("win")

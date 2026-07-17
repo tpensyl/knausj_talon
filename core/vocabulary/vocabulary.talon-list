@@ -1,6 +1,8 @@
 list: user.vocabulary
 -
 catbin
+clod: claude
+claud: claude
 unencrypt: unencrypt
 unencrypted: unencrypted
 wrango: rango
@@ -96,6 +98,7 @@ GLORG
 catbin
 journal cuddle: journalctl
 p r: pr
+pee are: pr
 intellijay: intellij
 rex java: rxjava
 async s q s: async-sqs
@@ -110,6 +113,8 @@ tek debt: tech debt
 deserializing
 Parrott: parrot
 grep
+worktree
+multisegment
 Syniverse
 zipwhip
 yash: Iași

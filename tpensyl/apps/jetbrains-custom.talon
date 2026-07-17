@@ -17,11 +17,13 @@ file locate: key(alt-f1 1)
 show fix: user.idea("action ShowIntentionActions")
 show folder: user.idea("action ProjectView.AutoscrollFromSource")
 project build: user.idea("action CompileProject")
+stash filename: user.idea("action CopyFileName")
 
 copilot: user.idea("action copilot.requestCompletions")
 yes: key(tab)
 
 # run that: key("shift-f10") (linux)
+go source: key(f4)
 run that: key("ctrl-f5")
 
 # neither of these work
@@ -44,6 +46,10 @@ unstage:
     key(ctrl-cmd-right)
     sleep(15ms)
     key(cmd-alt-i)
+file next:
+    key(ctrl-shift-right)
+file last:
+    key(ctrl-shift-left)
 to do: "//TODO tpensyl "
 
 # can find action e2es by installing/enabling ideaVim. then type  :actionlist

@@ -47,6 +47,7 @@ bash that:
 bash <user.cursorless_target>:
     x = user.cursorless_get_text(cursorless_target)
     user.vscode("workbench.action.terminal.focus")
+    sleep(10ms)
     insert(x)
     key(enter)
 

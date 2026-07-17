@@ -37,6 +37,12 @@ round wrap this:
     text = edit.selected_text()
     user.paste("({text})")
 
+skis wrap this:
+    text = edit.selected_text()
+    user.paste("`{text}")
+    # trigger auto format with trailing ` keystroke
+    key(`)
+
 drink (this|line): edit.line_insert_up()
 pour (this|line): edit.line_insert_down()
 

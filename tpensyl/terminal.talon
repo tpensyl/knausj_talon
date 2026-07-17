@@ -99,6 +99,10 @@ system c t l: "systemctl "
 
 java (environment|env): "jenv "
 
+vim save:
+    key(esc)
+    ":wq\n"
+
 # tmp macros. remove after!
 # remove codeowners:
 #     "git co master && g pull && rm CODEOWNERS && g a . && g diff --cached\n"

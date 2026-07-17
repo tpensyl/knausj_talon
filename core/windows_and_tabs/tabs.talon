@@ -23,8 +23,13 @@ tab (duplicate | clone): user.tab_duplicate()
 tab pin: 
     key(cmd-shift-/)
     sleep(200ms)
-    "pin tab"
-    key(down enter)
+    "p"
+    sleep(300ms)
+    "in tab"
+    sleep(300ms)
+    key(down)
+    sleep(300ms)
+    key(enter)
 
 tab move left: user.tab_move_left()
 tab move left <number_small>: 

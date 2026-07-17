@@ -1,6 +1,6 @@
 list: user.prose_formatter
 -
-# say: NOOP
+# I just want to use these without punctuation, so moved to code formatter
 say: NOOP
 sent: CAPITALIZE_FIRST_WORD
 sentence: CAPITALIZE_FIRST_WORD

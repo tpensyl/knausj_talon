@@ -95,3 +95,6 @@ file save: edit.save()
 file save all: edit.save_all()
 
 [go] line mid: user.line_middle()
+
+# hack: moved from line_commands.talon to avoid excluding from cursorless
+go <number>: edit.jump_line(number)

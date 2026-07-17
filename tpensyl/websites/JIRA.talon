@@ -1,6 +1,8 @@
-title: /.*Jira/
+app.name: /Google Chrome/
+win.doc: /https://bandwidth-jira.atlassian.net/*/
 -
 bullet: key(cmd-shift-8)
+strike through: key(cmd-shift-S)
 
 # log work:
 #     key('.')

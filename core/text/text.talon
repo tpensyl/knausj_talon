@@ -5,9 +5,10 @@ phrase <user.text>$:
 phrase <user.text> {user.phrase_ender}:
     user.add_phrase_to_history(text)
     insert("{text}{phrase_ender}")
-{user.prose_formatter} <user.prose>$: user.insert_formatted(prose, prose_formatter)
-{user.prose_formatter} <user.prose> {user.phrase_ender}:
-    user.insert_formatted(prose, prose_formatter)
+# tpensyl, replaced <user.prose> with <user.text> to try to avoid symbol substitution
+{user.prose_formatter} <user.text>$: user.insert_formatted(text, prose_formatter)
+{user.prose_formatter} <user.text> {user.phrase_ender}:
+    user.insert_formatted(text, prose_formatter)
     insert(phrase_ender)
 <user.format_code>+$: user.insert_many(format_code_list)
 <user.format_code>+ {user.phrase_ender}:

@@ -27,7 +27,6 @@ north: edit.up()
 
 (yap|yep): "y\n"
 
-junk junk: key(backspace:2)
 spamma: ", "
 ^nope: edit.undo()
 ^nope nope: 
@@ -40,8 +39,9 @@ semicolon: ";"
 aero pad: "-> "
 unicode trademark: "™"
 unicode cents: "¢"
+unicode pencil: "✎"
 
-vim save:
+(vim|vem) save:
 	key(esc)
 	":wq\n"
 
@@ -49,6 +49,17 @@ go m v <user.number_string>:
 	user.switcher_focus("chrome")
 	app.tab_open()
 	browser.go("https://bandwidth-jira.atlassian.net/browse/MV-{number_string}")
+go here:
+    edit.copy()
+    #url = edit.selected_text()
+	user.switcher_focus("chrome")
+	sleep(100ms)
+	app.tab_open()
+	sleep(50ms)
+	user.address_focus()
+	edit.paste()
+	key(enter)
+	#browser.go(url)
 
 ^boom$: mouse_click(1)
 

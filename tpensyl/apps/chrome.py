@@ -26,7 +26,7 @@ class MacActions:
         print("mac okta action")
         actions.key("shift-cmd-o")
         if name:
-            actions.sleep("200ms")
+            actions.sleep("250ms")
             actions.insert(name)
-            actions.sleep("200ms")
+            actions.sleep("250ms")
             actions.key("enter")

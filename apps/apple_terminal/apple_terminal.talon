@@ -1,9 +1,9 @@
 app: apple_terminal
 -
 settings():
-    # tpensyl - solving for weird keypress buffering? (5ms didn't work)
-    key_wait = 5
-    key_hold = 10
+    # tpensyl - solving for weird keypress buffering? (5/8 was pretty stable)
+    key_wait = 3
+    key_hold = 5
     
 # makes the commands in terminal.talon available
 tag(): terminal

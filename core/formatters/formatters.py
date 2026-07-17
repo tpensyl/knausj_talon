@@ -248,52 +248,6 @@ formatter_list = [
 
 formatters_dict = {f.id: f for f in formatter_list}
 
-# ### tpensyl TODO these removed in community??
-# # Mapping from spoken phrases to formatter names
-# code_formatter_names = {
-#     "all cap": "ALL_CAPS",
-#     "all down": "ALL_LOWERCASE",
-#     "camel": "PRIVATE_CAMEL_CASE",
-#     "dotted": "DOT_SEPARATED",
-#     "dub string": "DOUBLE_QUOTED_STRING",
-#     "dot string": "DOUBLE_QUOTED_STRING",
-#     #"dunder": "DOUBLE_UNDERSCORE",
-#     "hammer": "PUBLIC_CAMEL_CASE",
-#     "kebab": "DASH_SEPARATED",
-#     "shell arg": "DASH_SEPARATED_ARG",
-#     "packed": "DOUBLE_COLON_SEPARATED",
-#     # "padded": "SPACE_SURROUNDED_STRING",
-#     # "slasher": "ALL_SLASHES",
-#     "slasher": "SLASH_SEPARATED",
-#     "conga": "SLASH_SEPARATED",
-#     "smash": "NO_SPACES",
-#     "snake": "SNAKE_CASE",
-#     "snake cap": "ALL_CAPS,SNAKE_CASE",
-#     "string": "SINGLE_QUOTED_STRING",
-#     "constant": "ALL_CAPS,SNAKE_CASE",
-# }
-# prose_formatter_names = {
-#     "say": "NOOP",
-#     "speak": "NOOP",
-#     "sent": "CAPITALIZE_FIRST_WORD",
-#     "sentence": "CAPITALIZE_FIRST_WORD",
-#     "title": "CAPITALIZE_ALL_WORDS",
-# }
-# reformatter_names = {
-#     "cap": "CAPITALIZE",
-#     "list": "COMMA_SEPARATED",
-#     "unformat": "REMOVE_FORMATTING",
-# }
-# word_formatter_names = {
-#     "word": "ALL_LOWERCASE",
-#     # "trot": "TRAILING_SPACE,ALL_LOWERCASE",
-#     "proud": "CAPITALIZE_FIRST_WORD",
-#     "leap": "TRAILING_SPACE,CAPITALIZE_FIRST_WORD",
-# }
-
-
-# all_phrase_formatters = code_formatter_names | prose_formatter_names | reformatter_names
-
 mod = Module()
 mod.list("reformatter", desc="list of all reformatters")
 mod.list("code_formatter", desc="list of formatters typically applied to code")
