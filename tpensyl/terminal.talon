@@ -1,6 +1,25 @@
 tag: terminal
 -
 
+tab new v two:
+    app.tab_open()
+    "cd ~/src/v2\n"
+
+tab new argo:
+    app.tab_open()
+    "cd ~/src/argo\n"
+
+tab new dot claude:
+    app.tab_open()
+    "cd ~/.claude\n"
+
+tab new talon:
+    app.tab_open()
+    "cd ~/.talon/user\n"
+
+claude opus: "claude --model Opus\n"
+claude sonnet: "claude --model Sonnet\n"
+
 (sudo|pseudo): "sudo "
 ansible vault view: "ansible-vault view " 
 IP tables: "iptables "

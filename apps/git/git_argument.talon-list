@@ -76,6 +76,7 @@ head nine: HEAD~9
 head ten: HEAD~10
 main
 master
+oneline: --oneline
 origin
 upstream
 origin main: origin/main

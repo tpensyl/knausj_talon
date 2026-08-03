@@ -1,7 +1,9 @@
-#app: chrome
-browser.host: bandwidth-jira.atlassian.net
-win.title: /Edit.*/
+app.name: /Google Chrome/
+win.doc: /https://bandwidth-jira.atlassian.net/*/
+#win.title: /Edit.*Confluence.*/
 -
+
+# maybe should just be the same file as JIRA, currently they're basically both matching same thing?
 
 link: key(ctrl-k)
 paste link:
@@ -11,4 +13,4 @@ paste link:
     sleep(30ms)
     key(enter)
 
-bold: key(ctrl-b)
+#bold: key(cmd-b)

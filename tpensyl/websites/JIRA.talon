@@ -3,6 +3,7 @@ win.doc: /https://bandwidth-jira.atlassian.net/*/
 -
 bullet: key(cmd-shift-8)
 strike through: key(cmd-shift-S)
+bold: key(cmd-b)
 
 # log work:
 #     key('.')

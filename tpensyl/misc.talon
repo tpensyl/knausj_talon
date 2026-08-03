@@ -88,3 +88,6 @@ hold control: key(ctrl:down)
 
 dedent that:
     user.remove_indentation()
+
+# address common misrecognition with ordinals (6th, 7th)
+<user.number> slash: "{number}/"
