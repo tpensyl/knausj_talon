@@ -10,4 +10,5 @@ and win.title: /[Cc]laude/
 @ctx.action_class("edit")
 class EditActions:
     def line_insert_down():
+        actions.key("end")
         actions.key("alt-enter")

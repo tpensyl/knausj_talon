@@ -5,7 +5,10 @@ claude model <user.word>: "/model {word}\n"
 claude model: "/model \n"
 claude cost: "/cost\n"
 claude rewind: "/rewind\n"
+claude resume: "/resume\n"
+claude rename: "/rename "
 claude context: "/context\n"
+claude exit: "/exit\n"
 (claude kill | claude close):
     key(escape)
     sleep(40ms)

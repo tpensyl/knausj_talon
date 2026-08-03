@@ -1,0 +1,6 @@
+list: user.terminal_dir
+-
+v two: ~/src/v2
+argo: ~/src/argo
+dot claude: ~/.claude
+talon: ~/.talon/user
