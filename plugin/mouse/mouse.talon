@@ -57,7 +57,7 @@ mid click:
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-(dub click):
+dub click | duke:
     # close zoom if open
     tracking.zoom_cancel()
     mouse_click()

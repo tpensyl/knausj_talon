@@ -27,8 +27,18 @@ class user_actions:
     def tab_jump(number):
         actions.key(f"alt-{number}")
 
-    def tab_duplicate():
-        actions.key("ctrl-shift-t")
+    # user.file_manager
+    def file_manager_current_path():
+        title = ui.active_window().title
+
+        # split on colon to find the path
+        if ": " in title:
+            title = title.split(": ")[1]
+
+        if "~" in title:
+            title = os.path.expanduser(title)
+
+        return title
 
 
 @ctx.action_class("app")
