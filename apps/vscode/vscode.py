@@ -28,6 +28,8 @@ mod.apps.vscode = """
 os: linux
 and app.name: Code
 os: linux
+and app.name: code
+os: linux
 and app.name: code-oss
 os: linux
 and app.name: code-insiders
@@ -120,7 +122,7 @@ class CodeActions:
 # Only do this for editor, so that e.g. modal windows can still be pasted into with
 # ctrl-v.
 @ctx_editor.action_class("edit")
-class EditActions:
+class EditorEditActions:
     def undo():
         actions.user.vscode("undo")
 
@@ -133,13 +135,23 @@ class EditActions:
     def paste():
         actions.user.vscode("editor.action.clipboardPasteAction")
 
-    def find(text: str = None):
+    def find(text=None):
         if text:
             actions.user.run_rpc_command(
                 "editor.actions.findWithArgs", {"searchString": text}
             )
         else:
             actions.user.vscode("actions.find")
+
+
+@ctx_editor.action_class("user")
+class EditorUserActions:
+    def insert_between(before: str, after: str):
+        """Use the snippet system to directly insert the text around the cursor"""
+        escaped_before = actions.user.escape_snippet_stops(before)
+        escaped_after = actions.user.escape_snippet_stops(after)
+        snippet = f"{escaped_before}$0{escaped_after}"
+        actions.user.insert_snippet(snippet)
 
 
 @ctx.action_class("edit")
@@ -220,7 +232,7 @@ class Actions:
 
 @mac_ctx.action_class("edit")
 class MacEditActions:
-    def find(text: str = None):
+    def find(text=None):
         actions.key("cmd-f")
         if text:
             actions.insert(text)

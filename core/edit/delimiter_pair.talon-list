@@ -21,6 +21,6 @@ percentages: % %
 bar: | |
 
 escaped quad: '\\" \\"'
-escaped twin:  "\\' \\'"
+escaped twin: "\\' \\'"
 escaped round: \( \)
 escaped box: \[ \]

@@ -1,4 +1,6 @@
-from talon import Context, Module, actions
+import os
+
+from talon import Context, Module, actions, ui
 
 # App definition
 mod = Module()
@@ -67,7 +69,7 @@ class EditActions:
     def copy():
         actions.key("ctrl-shift-c")
 
-    def find(text: str = None):
+    def find(text=None):
         actions.key("ctrl-shift-f")
         if text:
             actions.insert(text)

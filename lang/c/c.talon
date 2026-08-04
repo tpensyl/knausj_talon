@@ -1,5 +1,6 @@
 code.language: c
 -
+
 tag(): user.code_imperative
 
 tag(): user.code_comment_line
@@ -14,6 +15,7 @@ tag(): user.code_operators_assignment
 tag(): user.code_operators_bitwise
 tag(): user.code_operators_math
 tag(): user.code_operators_pointer
+tag(): user.code_keywords
 
 settings():
     user.code_private_function_formatter = "SNAKE_CASE"
@@ -76,8 +78,8 @@ cast to <user.c_cast>: "{c_cast}"
 standard cast to <user.stdint_cast>: "{stdint_cast}"
 <user.c_types>: "{c_types}"
 <user.c_pointers>: "{c_pointers}"
-<user.c_keywords>: "{c_keywords}"
 <user.c_signed>: "{c_signed} "
+<user.c_fixed_integer>: "{c_fixed_integer}"
 standard <user.stdint_types>: "{stdint_types}"
 int main: user.insert_between("int main(", ")")
 

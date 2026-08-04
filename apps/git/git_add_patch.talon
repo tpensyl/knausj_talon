@@ -5,6 +5,7 @@ title: /git add .*\-p/
 title: /git co .*\-p/
 title: /git checkout .*\-p/
 -
+
 yank:
     key(y)
     key(enter)

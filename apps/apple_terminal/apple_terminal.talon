@@ -20,7 +20,6 @@ tag(): user.git
 # tag(): user.anaconda
 # tag(): user.kubectl
 
-# TODO: explain
 tag(): user.tabs
 tag(): user.file_manager
 

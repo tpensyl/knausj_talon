@@ -20,7 +20,7 @@ tag(): user.cursorless
 complete: user.idea("action CodeCompletion")
 perfect: user.idea("action CodeCompletion,action CodeCompletion")
 smart: user.idea("action SmartTypeCompletion")
-(done | finish): user.idea("action EditorCompleteStatement")
+done | finish: user.idea("action EditorCompleteStatement")
 # Copying
 grab <number>: user.idea_grab(number)
 action [<user.text>]: user.deprecate_command("2024-09-02", "action", "please")
@@ -144,7 +144,7 @@ create file <user.text> [over]:
 # Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
 git pull: user.idea("action Vcs.UpdateProject")
 git commit: user.idea("action CheckinProject")
-git push: user.idea("action CheckinProject")
+git push: user.idea("action Vcs.Push")
 git log: user.idea("action Vcs.ShowTabbedFileHistory")
 git browse: user.idea("action Github.Open.In.Browser")
 git (gets | gist): user.idea("action Github.Create.Gist")
@@ -200,7 +200,7 @@ toggle comment: code.toggle_comment()
 change scheme: user.idea("action QuickChangeScheme")
 # Always javadoc
 (toggle | pop) (doc | documentation): user.idea("action QuickJavaDoc")
-(pop deaf | toggle definition): user.idea("action QuickImplementations")
+pop deaf | toggle definition: user.idea("action QuickImplementations")
 pop type: user.idea("action ExpressionTypeInfo")
 pop parameters: user.idea("action ParameterInfo")
 # Breakpoints / debugging
