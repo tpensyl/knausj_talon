@@ -1,4 +1,4 @@
-from talon import Module, actions
+from talon import Module, actions, clip
 from typing import Optional
 mod = Module()
 
@@ -6,7 +6,14 @@ mod = Module()
 class EditActions:
     def dummy_function():
         """placeholder"""
-        x=3 
+        x=3
+
+    def go_confluence_clipboard():
+        """Open the Confluence MES page whose id is on the clipboard in a new Chrome tab"""
+        page_id = (clip.text() or "").strip()
+        actions.user.switcher_focus("chrome")
+        actions.app.tab_open()
+        actions.browser.go(f"https://bandwidth-jira.atlassian.net/wiki/spaces/MES/pages/{page_id}")
 
     def remove_indentation():
         """Remove lowest common level of indentation of the currently selected text"""

@@ -14,7 +14,7 @@ claude exit: "/exit\n"
     sleep(40ms)
     key(ctrl-c)
     "/exit\n"
-    sleep(1100ms)
+    sleep(1200ms)
     app.tab_close()
 details: key(ctrl-o)
 

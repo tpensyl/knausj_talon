@@ -23,7 +23,8 @@ tag(): user.git
 tag(): user.tabs
 tag(): user.file_manager
 
-suspend: key(ctrl-z)
-resume:
-    insert("fg")
-    key(enter)
+# tpensyl - not sure what these do, but resume was false firing.
+# suspend: key(ctrl-z)
+# resume:
+#     insert("fg")
+#     key(enter)
