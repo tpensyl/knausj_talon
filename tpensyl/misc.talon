@@ -40,6 +40,8 @@ aero pad: "-> "
 unicode trademark: "™"
 unicode cents: "¢"
 unicode pencil: "✎"
+unicode (check | checkmark): "✅"
+unicode [red] x: "❌"
 
 (vim|vem) save:
 	key(esc)
@@ -49,6 +51,7 @@ go m v <user.number_string>:
 	user.switcher_focus("chrome")
 	app.tab_open()
 	browser.go("https://bandwidth-jira.atlassian.net/browse/MV-{number_string}")
+confluence that: user.go_confluence_clipboard()
 go here:
     edit.copy()
     #url = edit.selected_text()
