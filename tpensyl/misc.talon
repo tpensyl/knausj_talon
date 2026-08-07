@@ -42,6 +42,8 @@ unicode cents: "¢"
 unicode pencil: "✎"
 unicode (check | checkmark): "✅"
 unicode [red] x: "❌"
+unicode question: "❓"
+unicode warning: "⚠️"
 
 (vim|vem) save:
 	key(esc)
