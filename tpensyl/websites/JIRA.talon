@@ -1,5 +1,6 @@
 app.name: /Google Chrome/
 win.doc: /https://bandwidth-jira.atlassian.net/*/
+win.title: /* - Jira/
 -
 bullet: key(cmd-shift-8)
 strike through: key(cmd-shift-S)

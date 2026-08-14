@@ -1,5 +1,6 @@
 list: user.website
 -
+datadog: https://bandwidth.datadoghq.com/logs?query=&agg_m=count&agg_m_source=base&agg_t=count&cols=service%2Cenv&fromUser=true&index=messaging-delivery&messageDisplay=expanded-md&refresh_mode=sliding&storage=flex_tier&stream_sort=desc&viz=stream&from_ts=1786722303979&to_ts=1786723203979&live=true
 talon slack: https://app.slack.com/client/T7FPSMV8F/C026KPTJE6T
 slack: https://bandwidth.slack.com/
 amazon: https://www.amazon.com/
