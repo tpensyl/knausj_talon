@@ -49,13 +49,11 @@ unicode warning: "⚠️"
 	key(esc)
 	":wq\n"
 
-go m v <user.number_string>:
-	user.switcher_focus("chrome")
-	app.tab_open()
-	browser.go("https://bandwidth-jira.atlassian.net/browse/MV-{number_string}")
+go m v <user.number_string>: user.go_jira_mv(number_string)
 confluence that: user.go_confluence_clipboard()
+code that: user.code_open_clipboard()
 go here:
-    edit.copy()
+    user.copy_selection_for_go_here()
     #url = edit.selected_text()
 	user.switcher_focus("chrome")
 	sleep(100ms)
@@ -95,4 +93,4 @@ dedent that:
     user.remove_indentation()
 
 # address common misrecognition with ordinals (6th, 7th)
-<user.number> slash: "{number}/"
+<number> slash: "{number}/"
