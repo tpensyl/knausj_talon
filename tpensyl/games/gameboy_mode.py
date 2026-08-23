@@ -1,4 +1,4 @@
-from talon import Module, ui, actions, scope
+from talon import Module, Context, ui, actions, scope
 
 mod = Module()
 mod.mode("gameboy", desc="Limited command mode intended for games")
@@ -61,8 +61,8 @@ def on_app_switch(app):
     else:
         if "user.gameboy" in modes:
             print("switching from gameboy mode to regular")
-            actions.user.set_hold('shift', False)
-            actions.user.set_hold('ctrl', False)
+            actions.user.release_all_holds()
+            
             actions.mode.enable("sleep" if "user.gameboy_sleep" in modes else "command")
             actions.mode.disable("user.gameboy")
             actions.mode.disable("user.gameboy_sleep")
@@ -74,7 +74,21 @@ def on_app_switch(app):
 
             print(f"App [{app.name}] triggered command mode.")
 
+ctx = Context()
+ctx.matches = r"""
+mode: user.gameboy
+"""
 
+@ctx.action_class("user")
+class UserActions:
+    def noise_trigger_hiss(active):
+        """Bridge to old hiss hooks"""
+        print("gameboy_mode.noise_trigger_hiss()")
+        if active:
+            actions.user.noise_hiss_start()
+        else:
+            actions.user.noise_hiss_stop()
+            
 
 ui.register("app_activate", on_app_switch)
 

@@ -38,11 +38,11 @@ class NoiseActions:
         pass
 
     def pedal_top_down():
-        """Right Pedal""" 
+        """Top Pedal""" 
         actions.mouse_drag()
         pass
 
     def pedal_top_up():
-        """Right Pedal""" 
+        """Top Pedal""" 
         actions.mouse_release()
         pass

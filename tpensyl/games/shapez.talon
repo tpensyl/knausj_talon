@@ -1,7 +1,12 @@
 mode: user.gameboy
 and app.name: shapez
 -
-
+#puzzle: WyRc--Rc:----Wy--
+#buffer
+#multiplex 1: " RcRcRcRc:CcCcCcCc:------Sy"
+#multiplex 2: RcRcRcRc:CcCcCcCc:Sy------
+#multiplex 2: RcRcRcRc:CcCcCcCc:--Sy----
+#multiplex 4: traffic light: WgWgWgWg:WyWyWyWy:WrWrWrWr
 settings():
     speech.timeout = 0.15
     user.hiss_scroll_debounce_time = 100
@@ -20,20 +25,22 @@ grab: user.drag_with_modifier(0, 'ctrl')
 many: user.set_hold('shift', true)
 
 belt: key(1)
-(merger|splitter): key(2)
-(tunnel|bridge): key(3)
+(merger|splitter|crossing): key(2)
+(tunnel|bridge|constant|signal): key(3)
 extractor: 
     user.set_hold('shift', true)
     key(4)
 cutter: key(5)
 rotator: key(6)
 stacker: key(7)
-mixer: key(8)
+(mixer|transistor): key(8)
 painter: key(9)
 garbage: key(0)
 storage: key(y)
 meter: key(u)
 switch: key(i)
+filter: key(o)
+display: key(p)
 
 wires: key(e)
 # wire: key(1)

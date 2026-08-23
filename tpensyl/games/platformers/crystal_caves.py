@@ -5,26 +5,48 @@ mode: user.gameboy
 and win.title: /Crystal Caves HD/
 """
 
+global last_dir
+last_dir = "left"
+
 @ctx.action_class("user")
 class UserActions:
     def noise_trigger_pop():
         # For menu navigation
-        move_left()
-        # actions.key("enter")
+        #move_left()
+        #actions.key("enter")
+        #fire()
+        pass
 
     def noise_hiss_start():
-        jump()
+        actions.user.long_press(last_dir, arg_hold_ms=.020)
 
     def noise_hiss_stop():
-        return
+        #actions.key(last_dir + ":up")
+        pass
 
     def parrot_palate():
-        move_right()
+        jump()
 
     def parrot_tut():
-        # Remapped fire from alt to space, to allow for safe alt+tab
-        actions.user.long_press("space")
-        
+        fire()
+
+    def pedal_left_down():
+        global last_dir
+        last_dir = 'left'
+        actions.key('left:down')
+
+    def pedal_left_up():
+        actions.key('left:up')
+
+    def pedal_right_down():
+        global last_dir
+        last_dir = 'right'
+        actions.key('right:down')
+
+    def pedal_right_up():
+        actions.key('right:up')
+
+# unused idea for holding left right movement. using real pedal holds instead        
 moving_left = False
 moving_right = False
 
@@ -52,5 +74,10 @@ def move_right():
         actions.key("right:up")
         moving_right = False
 
+# Remapped jump from ctrl, which played poorly with the virtual f-keys used by peddle
 def jump():
-    actions.user.long_press("ctrl")
+    actions.user.long_press("j")
+
+# Remapped fire from alt to space, to allow for safe alt+tab
+def fire():
+    actions.user.long_press("space")

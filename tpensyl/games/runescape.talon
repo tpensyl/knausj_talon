@@ -14,7 +14,7 @@ app.name: RuneScape Client
     mode.disable("sleep")
     mode.enable("user.gameboy_sleep")
 
-tag(): user.game_generic_keys
+# tag(): user.game_generic_keys
 say <phrase>: insert(phrase)
 
 #<phrase>: skip()
@@ -38,17 +38,21 @@ defend: key(alt-3)
 # charge: key(alt-5)
 (and die|and I): key(alt-6)
 # (and die|and I): key(keypad_multiply)
-pray: key(alt-o)
+^pray$: key(alt-o)
 # loot: key(alt-l)
+pray mage: key(ctrl-1)
+pray range: key(ctrl-2)
+pray melee: key(ctrl-3)
+(tosca|tuska): key(ctrl-7)
 
 pad: key(space)
 comma: key(,)
 question: key(?)
-bang: key(!)
+# bang: key(!)
 
 (go home): key(shift-1)
-(alk|alky|alchemy|gold|alk that|alk it|gold): key(shift-2)
-soil box: key(shift-4)
+(gold): key(shift-2)
+(item|idem): key(shift-4)
 
 # go (stuff|inventory|backpack): 
 #     key(alt-b)
@@ -69,6 +73,8 @@ challenge: key(f3)
 quests: key(alt-q)
 
 ^<number_small>$: key("{number_small}")
+dash: '-'
+equals: '='
 (pick) <user.number_string>: insert(number_string)
 take <user.number_string>:
     insert(number_string)

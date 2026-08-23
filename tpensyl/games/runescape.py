@@ -45,7 +45,7 @@ class UserActions:
 
     def parrot_palate():
         actions.key("space")
-        # ctrl.mouse_click(1)
+        # actions.user.game_click(button=0, hold='50ms')
 
     def parrot_tut():
         ctrl.mouse_click(1)

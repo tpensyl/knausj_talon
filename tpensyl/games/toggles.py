@@ -62,6 +62,7 @@ class Actions:
 
 
 MOUSE_BUTTON_LEFT = "mouse_button_left"
+MOUSE_BUTTON_RIGHT = "mouse_button_right"
 MOUSE_MOVE_UP = "mouse_move_up"
 MOUSE_MOVE_DOWN = "mouse_move_down"
 MOUSE_MOVE_LEFT = "mouse_move_left"
@@ -103,9 +104,11 @@ def set_hold(key, new_state, half_stop = False, respect_mutex = True):
                     set_hold(incompatible_key, False, False)
                     if half_stop:
                         return True
+        print("key_down")            
         key_down(key)
     elif old_state == True and new_state == False: 
         # Doing :up carelessly leads to repeated key press during a hold
+        print("key_up")
         key_up(key)
 
     state_changed = (old_state != new_state)
@@ -152,6 +155,8 @@ def hold_until_double_press(key):
 def key_down(key):
     if key == MOUSE_BUTTON_LEFT:
         ctrl.mouse_click(0, down=True)
+    elif key == MOUSE_BUTTON_RIGHT:
+        ctrl.mouse_click(1, down=True)
     elif key == MOUSE_MOVE_UP:
         actions.user.start_mouse_move_down(-mouse_move_speed)
     elif key == MOUSE_MOVE_DOWN:
@@ -166,6 +171,8 @@ def key_down(key):
 def key_up(key):
     if key == MOUSE_BUTTON_LEFT:
         ctrl.mouse_click(0, up=True)
+    elif key == MOUSE_BUTTON_RIGHT:
+        ctrl.mouse_click(1, up=True)
     elif key in [MOUSE_MOVE_UP, MOUSE_MOVE_DOWN, MOUSE_MOVE_LEFT, MOUSE_MOVE_RIGHT]:
         actions.user.stop_mouse_move()
     else:

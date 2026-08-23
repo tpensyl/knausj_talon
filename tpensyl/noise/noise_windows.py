@@ -10,8 +10,9 @@ os: windows
 
 @ctx.action_class('user')
 class NoiseActions:
-    # def noise_trigger_pop():
-    #     pass
+    def noise_trigger_pop():
+        print("noise_windows.py;noise_trigger_pop()")
+        ctrl.mouse_click(button=0)
 
     # def noise_hiss_start():
     #     """Invoked when the user starts hissing (potentially while speaking)"""

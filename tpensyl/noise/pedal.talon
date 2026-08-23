@@ -10,7 +10,7 @@ key(f16:up):
     user.pedal_left_up()
 
 # Center Pedal
-key(f17:down): 
+key(f17:down):
     user.pedal_center_down()
 
 key(f17:up): 

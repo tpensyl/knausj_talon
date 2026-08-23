@@ -22,12 +22,12 @@ class Actions:
         actions.user.long_press(key)
         actions.sleep(pause_ms)
 
-    def multi_press(key:str, times:int=1, arg_wait_ms:float=None):
+    def multi_press(key:str, times:int=1, arg_wait_ms:float=None, arg_hold_ms:float=None):
         """up"""
         global global_wait_ms
         pause_ms = arg_wait_ms if arg_wait_ms else global_wait_ms.get()
         for i in range(times):
-            actions.user.long_press(key)
+            actions.user.long_press(key, arg_hold_ms)
             actions.sleep(pause_ms)
 
     def combo_key(k1:str, k2:str, pause:float=None):

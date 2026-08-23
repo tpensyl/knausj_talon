@@ -8,6 +8,7 @@ ctx = Context()
 ctx.matches = """
 tag: user.whistle_mouse_scroll
 and not tag: user.whistle_mouse_look
+and tag: user.parrot_scroll
 """
 
 config_scaler = mod.setting("whistle_scroll_speed", float, default=1)
@@ -53,7 +54,7 @@ class WhistleActions:
         if len(start_frames) >= 2:
             stop_ts = ts
 
-    def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float): 
+    def whistle_repeat(ts:float, power:float, f0:float, f1:float, f2:float):
         # print("whistle", [int(x) for x in [power, f0, f1, f2]])
         # Use first few ticks to record starting pitch
         global start_frames, remainder
