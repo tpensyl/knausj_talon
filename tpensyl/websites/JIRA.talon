@@ -2,9 +2,10 @@ app.name: /Google Chrome/
 win.doc: /https://bandwidth-jira.atlassian.net/*/
 win.title: /* - Jira/
 -
-bullet: key(cmd-shift-8)
-strike through: key(cmd-shift-S)
-bold: key(cmd-b)
+# Not sure if the matter actually works... it is covered by confluence.talon
+
+# strike through: key(cmd-shift-S)
+# bold: key(cmd-b)
 
 # log work:
 #     key('.')

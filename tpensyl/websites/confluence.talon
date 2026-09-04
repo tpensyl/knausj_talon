@@ -4,6 +4,7 @@ win.doc: /https://bandwidth-jira.atlassian.net/*/
 -
 
 # maybe should just be the same file as JIRA, currently they're basically both matching same thing?
+bullet: key(cmd-shift-8)
 strike through: key(cmd-shift-S)
 italics: key(cmd-i)
 bold: key(cmd-b)

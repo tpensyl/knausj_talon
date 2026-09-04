@@ -4,3 +4,4 @@ v two: ~/src/v2
 argo: ~/src/argo
 dot claude: ~/.claude
 talon: ~/.talon/user
+app service: ~/src/catapult-application-service

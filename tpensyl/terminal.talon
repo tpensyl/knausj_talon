@@ -56,6 +56,8 @@ argo cuddle reset: "./argoctl reset\n"
 
 #mac
 time log: "pmset -g log | grep 'Display is turned'\n"
+# custom script
+claude session: "claude-sessions\n" 
 
 move: "mv "
 remove: "rm "
@@ -68,17 +70,17 @@ make der: "mkdir "
 sublime: "subl "
 grip: "|grep "
 recursive grip:
-    "grep -rI '' ."
+    "grep  --exclude-dir .worktrees --exclude-dir .claude/worktrees -rI '' ."
     key(left:3)
 recursive grip <user.text>:
-    "grep -rI '{text}' ."
+    "grep   --exclude-dir .worktrees --exclude-dir .claude/worktrees -rI '{text}' ."
     key(left:3)
 recursive grip that:
-    "grep -rI '"
+    "grep   --exclude-dir .worktrees --exclude-dir .claude/worktrees -rI '"
     edit.paste()
     "' .\n"
 grip word:
-    "grep -rI -w '' ."
+    "grep   --exclude-dir .worktrees --exclude-dir .claude/worktrees -rI -w '' ."
     key(left:3)
 h top: "htop\n"
 find name:
