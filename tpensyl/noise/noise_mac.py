@@ -11,8 +11,9 @@ os: mac
 @ctx.action_class('user')
 class NoiseActions:
 
-    # def noise_trigger_pop():
-    #     actions.user.game_click(button=0, hold='50ms')
+    def noise_trigger_pop():
+        actions.user.stop_mouse_move()
+        actions.user.slow_click()
 
     # def noise_trigger_hiss(active):
     #     if active:
