@@ -119,7 +119,7 @@ go next (method | function): user.idea("action MethodDown")
 go last (method | function): user.idea("action MethodUp")
 # Clipboard
 clippings: user.idea("action PasteMultiple")
-copy path: user.idea("action CopyPaths")
+# copy path: user.idea("action CopyPaths")
 copy reference: user.idea("action CopyReference")
 copy pretty: user.idea("action CopyAsRichText")
 # File Creation
